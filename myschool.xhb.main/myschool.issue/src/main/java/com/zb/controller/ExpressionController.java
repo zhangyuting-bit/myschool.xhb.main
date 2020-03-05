@@ -13,6 +13,7 @@ public class ExpressionController {
     @Resource
     private ExpressionServiceImpl expressionService;
 
+    //获取全部表情信息
     @GetMapping("getExpressionAll")
     public Dto getExpressionAll(){
         return DtoUtil.returnSuccess("ok",expressionService.getExpressionAll());

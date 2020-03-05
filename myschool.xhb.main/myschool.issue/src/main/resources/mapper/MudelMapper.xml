@@ -11,4 +11,13 @@
         WHERE
             typeId=#{typeId}
     </select>
+    
+    <select id="getMudelById" resultType="com.zb.entity.Mudel">
+        SELECT
+            *
+        FROM
+            `mudel`
+        WHERE
+            mudelId=#{mudelId}
+    </select>
 </mapper>

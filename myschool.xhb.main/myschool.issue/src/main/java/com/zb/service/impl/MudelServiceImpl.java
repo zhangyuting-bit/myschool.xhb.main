@@ -13,8 +13,15 @@ public class MudelServiceImpl implements MudelService {
     @Resource
     private MudelMapper mudelMapper;
 
+    //根据功能类型编号获取模板
     @Override
     public List<Mudel> getMudelByTypeId(Integer typeId) {
         return mudelMapper.getMudelByTypeId(typeId);
+    }
+
+    // 根据模板编号获取模板信息
+    @Override
+    public Mudel getMudelById(Integer mudelId) {
+        return mudelMapper.getMudelById(mudelId);
     }
 }

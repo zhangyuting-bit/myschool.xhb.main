@@ -13,6 +13,7 @@ public class ExpressionServiceImpl implements ExpressionService {
     @Resource
     private ExpressionMapper expressionMapper;
 
+    //获取全部表情信息
     @Override
     public List<Expression> getExpressionAll() {
         return expressionMapper.getExpressionAll();
