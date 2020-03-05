@@ -14,7 +14,7 @@ public class MudelServiceImpl implements MudelService {
     private MudelMapper mudelMapper;
 
     @Override
-    public List<Mudel> getMudelAll(){
-        return mudelMapper.getMudelAll();
+    public List<Mudel> getMudelByTypeId(Integer typeId) {
+        return mudelMapper.getMudelByTypeId(typeId);
     }
 }

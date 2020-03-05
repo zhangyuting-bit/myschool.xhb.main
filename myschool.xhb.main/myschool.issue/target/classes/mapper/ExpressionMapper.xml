@@ -2,13 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zb.mapper.MudelMapper">
-    <select id="getMudelByTypeId" resultType="com.zb.entity.Mudel">
+<mapper namespace="com.zb.mapper.ExpressionMapper">
+    <select id="getExpressionAll" resultType="com.zb.entity.Expression">
         SELECT
             *
         FROM
-            `mudel`
-        WHERE
-            typeId=#{typeId}
+            `expression`
     </select>
 </mapper>

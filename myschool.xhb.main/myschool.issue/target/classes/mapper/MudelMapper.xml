@@ -3,12 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zb.mapper.MudelMapper">
-    <select id="getMudelByTypeId" resultType="com.zb.entity.Mudel">
+    <select id="getMudelAll" resultType="com.zb.entity.Mudel">
         SELECT
             *
         FROM
             `mudel`
-        WHERE
-            typeId=#{typeId}
     </select>
 </mapper>
