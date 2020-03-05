@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="myschool.eureka" />
+        <module name="myschool.issue" />
+        <module name="myschool.common.api" />
         <module name="myschool.issue.api" />
         <module name="myschool.common" />
         <module name="myschool.gataway" />
-        <module name="myschool.common.api" />
+        <module name="myschool.eureka" />
       </profile>
     </annotationProcessing>
   </component>
