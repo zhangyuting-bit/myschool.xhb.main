@@ -1,12 +1,23 @@
 package com.zb.entity;
 
-public class Notification {
+import java.io.Serializable;
+
+public class Notification implements Serializable {
     private String notificationId;
+    private Integer typeId;
+
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
     private String gradeId;
     private String notifyMessage;
     private String notifyTime;
     private Integer mudelId;
-    private Integer videoId;
     private Integer audioId;
 
     public String getNotificationId() {
@@ -47,14 +58,6 @@ public class Notification {
 
     public void setMudelId(Integer mudelId) {
         this.mudelId = mudelId;
-    }
-
-    public Integer getVideoId() {
-        return videoId;
-    }
-
-    public void setVideoId(Integer videoId) {
-        this.videoId = videoId;
     }
 
     public Integer getAudioId() {

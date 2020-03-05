@@ -1,8 +1,9 @@
 package com.zb.entity;
 
-public class AddExpression {
+import java.io.Serializable;
+
+public class AddExpression implements Serializable {
     private Integer id;
-    private Integer typeId;
     private Integer expressionId;
 
     public Integer getId() {
@@ -11,14 +12,6 @@ public class AddExpression {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
     }
 
     public Integer getExpressionId() {

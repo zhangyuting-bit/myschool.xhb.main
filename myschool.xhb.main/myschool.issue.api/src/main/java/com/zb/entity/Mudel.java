@@ -1,7 +1,19 @@
 package com.zb.entity;
 
-public class Mudel {
+import java.io.Serializable;
+
+public class Mudel implements Serializable {
     private String mudelId;
+    private Integer typeId;
+
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
     private String mudelTitle;
     private String mudelMessage;
     private String mudelPic;

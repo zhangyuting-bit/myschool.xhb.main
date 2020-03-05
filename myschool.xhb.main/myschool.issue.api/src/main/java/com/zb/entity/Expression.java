@@ -1,6 +1,8 @@
 package com.zb.entity;
 
-public class Expression {
+import java.io.Serializable;
+
+public class Expression implements Serializable {
     private Integer expressionId;
     private String expressionSrc;
 

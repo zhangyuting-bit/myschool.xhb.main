@@ -1,6 +1,8 @@
 package com.zb.entity;
 
-public class Audio {
+import java.io.Serializable;
+
+public class Audio implements Serializable {
     private String audioId;
     private String audioSrc;
 

@@ -1,8 +1,9 @@
 package com.zb.entity;
 
-public class Document {
+import java.io.Serializable;
+
+public class Document implements Serializable {
     private Integer documentId;
-    private Integer typeId;
     private Integer functionId;
     private String documentSrc;
 
@@ -12,14 +13,6 @@ public class Document {
 
     public void setDocumentId(Integer documentId) {
         this.documentId = documentId;
-    }
-
-    public Integer getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(Integer typeId) {
-        this.typeId = typeId;
     }
 
     public Integer getFunctionId() {

@@ -51,14 +51,15 @@
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="issue_LZQ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExpressionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExpressionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ExpressionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ExpressionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/MudelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/MudelMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ExpressionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ExpressionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/MudelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/MudelService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/MudelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/MudelServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/MudelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/MudelMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Picture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Video.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +178,7 @@
       <workItem from="1583377391460" duration="5821000" />
       <workItem from="1583392223558" duration="404000" />
       <workItem from="1583392826521" duration="550000" />
-      <workItem from="1583393491668" duration="8010000" />
+      <workItem from="1583393491668" duration="8353000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -228,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583403738812</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="issue_LZQ">
+      <created>1583409480108</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583409480108</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,10 +258,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583405859943">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583409620649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583405859943" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583409620649" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583406776797">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
