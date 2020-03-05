@@ -9,6 +9,7 @@
         <module>myschool.gataway</module>
         <module>myschool.common</module>
         <module>myschool.common.api</module>
+        <module>myschool.issue.api</module>
     </modules>
 
     <parent>
