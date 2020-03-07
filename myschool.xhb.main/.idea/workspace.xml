@@ -49,12 +49,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="issue_LZQ">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +61,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Mapper__Xml" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Mapper__XML" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -182,7 +179,7 @@
       <workItem from="1583562036901" duration="1724000" />
       <workItem from="1583567487389" duration="166000" />
       <workItem from="1583567671284" duration="302000" />
-      <workItem from="1583568500781" duration="4795000" />
+      <workItem from="1583568500781" duration="7968000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -261,7 +258,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583575883495</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="issue_LZQ">
+      <created>1583576364732</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576364732</updated>
+    </task>
+    <task id="LOCAL-00013" summary="issue_LZQ">
+      <created>1583576379004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576379004</updated>
+    </task>
+    <task id="LOCAL-00014" summary="issue_LZQ">
+      <created>1583578904450</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583578904450</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,14 +302,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583576349662">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583578397579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583576349662" />
-    <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583575881625">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583578397579" />
+    <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583578902590">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="294" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583575881625" />
+    <state x="294" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583578902590" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583573714665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
