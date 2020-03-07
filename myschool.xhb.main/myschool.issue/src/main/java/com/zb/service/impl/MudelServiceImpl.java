@@ -28,7 +28,7 @@ public class MudelServiceImpl implements MudelService {
 
     // 根据模板编号获取模板信息
     @Override
-    @Cacheable(value = "cache" ,key="#id")
+    @Cacheable(value = "cache" ,key="#mudelId")
     public Mudel getMudelById(Integer mudelId) {
         Mudel mudel=null;
         String key="mudel:"+mudelId;
