@@ -50,16 +50,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="issue_LZQ">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Expression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Audio.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Mudel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Picture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Video.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/北大青鸟课程/S3/微服/31/qiniu_upload" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -120,10 +115,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zb.config" />
+      <recent name="com.zb.controller" />
+      <recent name="com.zb.service" />
+      <recent name="com.zb.service.impl" />
       <recent name="com.zb" />
-      <recent name="com.zb.filter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.gataway\src\main\resources" />
@@ -178,7 +177,12 @@
       <workItem from="1583377391460" duration="5821000" />
       <workItem from="1583392223558" duration="404000" />
       <workItem from="1583392826521" duration="550000" />
-      <workItem from="1583393491668" duration="8353000" />
+      <workItem from="1583393491668" duration="9676000" />
+      <workItem from="1583488387521" duration="110000" />
+      <workItem from="1583562036901" duration="1724000" />
+      <workItem from="1583567487389" duration="166000" />
+      <workItem from="1583567671284" duration="302000" />
+      <workItem from="1583568500781" duration="4795000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -236,7 +240,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583409480108</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="issue_LZQ">
+      <created>1583409797718</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583409797718</updated>
+    </task>
+    <task id="LOCAL-00010" summary="issue_LZQ">
+      <created>1583573211980</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583573211980</updated>
+    </task>
+    <task id="LOCAL-00011" summary="issue_LZQ">
+      <created>1583575883495</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583575883495</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,20 +277,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="issue_LZQ" />
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583409620649">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583576349662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583409620649" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583406776797">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583576349662" />
+    <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583575881625">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583406776797" />
+    <state x="294" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583575881625" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583573714665">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583573714665" />
     <state width="1493" height="333" key="GridCell.Tab.0.bottom" timestamp="1583403540420">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -298,17 +328,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="333" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583403540421" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1583377509650">
+    <state x="270" y="56" key="SettingsEditor" timestamp="1583488403781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583377509650" />
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583488403781" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583380463801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583380463801" />
-    <state x="178" y="107" key="new project wizard" timestamp="1583377726130">
+    <state x="178" y="107" key="new project wizard" timestamp="1583488495557">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1583377726130" />
+    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1583488495557" />
   </component>
 </project>
