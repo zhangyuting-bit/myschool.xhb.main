@@ -18,7 +18,24 @@ public class Notification implements Serializable {
     private String notifyMessage;
     private String notifyTime;
     private Integer mudelId;
-    private Integer audioId;
+    private String title;
+    private String endTime;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
 
     public String getNotificationId() {
         return notificationId;
@@ -60,11 +77,4 @@ public class Notification implements Serializable {
         this.mudelId = mudelId;
     }
 
-    public Integer getAudioId() {
-        return audioId;
-    }
-
-    public void setAudioId(Integer audioId) {
-        this.audioId = audioId;
-    }
 }

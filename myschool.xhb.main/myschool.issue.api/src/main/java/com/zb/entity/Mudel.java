@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 
 public class Mudel implements Serializable {
-    private String mudelId;
+    private Integer mudelId;
     private Integer typeId;
 
     public Integer getTypeId() {
@@ -18,11 +18,11 @@ public class Mudel implements Serializable {
     private String mudelMessage;
     private String mudelPic;
 
-    public String getMudelId() {
+    public Integer getMudelId() {
         return mudelId;
     }
 
-    public void setMudelId(String mudelId) {
+    public void setMudelId(Integer mudelId) {
         this.mudelId = mudelId;
     }
 
