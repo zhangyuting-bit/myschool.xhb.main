@@ -43,7 +43,16 @@ public class NotificationServiceImpl implements NotificationService {
         }else {
             Map<String,Object>map=new HashMap<>();
             notification=notificationMapper.getNotificationById(notificationId);
+            map.put("notificationId",notification.getNotificationId());
+            map.put("typeId",notification.getTypeId());
+            map.put("gradeId",notification.getGradeId());
+            map.put("notifyMessage",notification.getNotifyMessage());
+            map.put("mudelId",notification.getMudelId());
+            map.put("notifyTime",notification.getNotifyTime());
+            map.put("title",notification.getTitle());
+            map.put("endTime",notification.getEndTime());
+            redisUtil.hmset(key,map);
         }
-        return null;
+        return notification;
     }
 }
