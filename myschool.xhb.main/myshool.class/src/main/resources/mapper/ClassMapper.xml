@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.ClassMapper">
+    <select id="getClassBy" resultType="com.zb.pojo.Class_add">
+        SELECT * FROM class_add WHERE class_number=#{class_number}
+    </select>
+    <insert id="addClass" parameterType="com.zb.pojo.Class_add">
+            INSERT INTO class.class_add
+            (id,
+            class_number,
+            teacher_id,
+            class_Name,
+            class_emblem,
+            class_subject,
+            school,
+            real_id,
+            age_id,
+            real_class,
+            createdTime,
+            updatedTime
+            )
+            VALUES
+            (
+            #{id},
+            #{class_number},
+            #{teacher_id},
+            #{class_Name},
+            #{class_emblem},
+            #{class_subject},
+            #{school},
+            #{real_id},
+            #{age_id},
+            #{real_class},
+            NOW(),
+            NOW()
+            );
+    </insert>
+    <select id="getSubject" resultType="com.zb.pojo.Class_Subject">
+        SELECT * FROM SUBJECT
+    </select>
+    <select id="getReal" resultType="com.zb.pojo.Class_real">
+            SELECT * FROM class_real
+    </select>
+    <select id="getAgeReal" resultType="com.zb.pojo.Class_age_real">
+        SELECT a.age_name,a.id AS ageid FROM class_age_real ar
+                INNER JOIN class_real r ON ar.real_id=r.real_id
+                INNER JOIN class_age a ON ar.age_id=a.age_id
+                WHERE ar.real_id=#{real_id};
+    </select>
+</mapper>
