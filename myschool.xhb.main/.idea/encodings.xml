@@ -4,9 +4,16 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.common.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.common.api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.eureka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.gataway" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myshool.class" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myshool.class.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.gataway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.gataway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.issue.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.issue/src/main/java" charset="UTF-8" />
   </component>
 </project>
