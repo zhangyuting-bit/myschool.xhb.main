@@ -13,4 +13,13 @@
         AND
             gradeId=#{gradeId}
     </select>
+
+    <select id="getNotificationById" resultType="com.zb.entity.Notification">
+        SELECT
+            *
+        FROM
+            `notification`
+        WHERE
+            notificationId=#{notificationId}
+    </select>
 </mapper>
