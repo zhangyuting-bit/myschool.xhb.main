@@ -38,8 +38,8 @@ public class UploadController {
 
     @Autowired
     private UploadService uploadService;
-    @PostMapping("/singlefile")
-    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,String functionId) {
+    @PostMapping("/singlefile/{functionId}")
+    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("functionId") String functionId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return "文件为空，请重新上传";
@@ -55,13 +55,13 @@ public class UploadController {
                 destFile.getParentFile().mkdirs();
                 //将文件传到对应的文件位置
                 file.transferTo(destFile);
-//                Document document=new Document();
-//                document.setFunctionId(functionId);
+                Document document=new Document();
+                document.setFunctionId(functionId);
                 FileVo fileVo=new FileVo();
                 fileVo.setFile(destFile);
-//                fileVo.setDocument(document);
+                fileVo.setDocument(document);
                 rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.docKey,fileVo);
-
+                //System.out.println(putRet.key);//这个就是从七牛云获取的文件名
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -89,9 +89,8 @@ public class UploadController {
         Response response = uploadService.uploadFile(fileVo.getFile());
         //解析上传成功的结果
         DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-//        Document document=fileVo.getDocument();
-//        document.setDocumentSrc(path+""+putRet.key);
-//        documentMapper.addDocument(document);
-        System.out.println(putRet.key);//这个就是从七牛云获取的文件名
+        Document document=fileVo.getDocument();
+        document.setDocumentSrc(path+""+putRet.key);
+        documentMapper.addDocument(document);
     }
 }
