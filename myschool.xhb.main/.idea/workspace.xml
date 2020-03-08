@@ -1,34 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="" />
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/smartfox_info.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_age.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_age_real.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_real.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Jurisdiction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_Subject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_age.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_age_real.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_real.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Jurisdiction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/myschool.eureka.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.xhb.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="mymapper" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.6.0\conf\settings.xml" />
+        <option name="mavenHome" value="C:/DrvPath/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="C:\DrvPath\apache-maven-3.6.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="D:/idea/Administrator/IdeaProjects/my.zhoukao" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zb.config" />
       <recent name="com.zb.filter" />
       <recent name="com.zb" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\resources" />
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\pojo" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.gataway\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.eureka\src\main\resources" />
@@ -46,7 +103,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MyEurekaServerApp">
+  <component name="RunManager" selected="Spring Boot.MyClassApp">
+    <configuration name="MyClassApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myshool.class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyClassApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyEurekaServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyEurekaServerApp" />
@@ -61,6 +131,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.MyClassApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,10 +148,47 @@
       <option name="presentableId" value="Default" />
       <updated>1582970147103</updated>
       <workItem from="1582970150562" duration="851000" />
+      <workItem from="1583135250113" duration="2844000" />
+      <workItem from="1583211447689" duration="1298000" />
+      <workItem from="1583383796341" duration="39595000" />
+      <workItem from="1583542534156" duration="3183000" />
     </task>
+    <task id="LOCAL-00001" summary="mc_dev提交了一段代码">
+      <created>1583135444339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583135444339</updated>
+    </task>
+    <task id="LOCAL-00002" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
+      <created>1583630647194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583630647195</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mc_dev提交了一段代码" />
+    <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="mc_dev 提交班级的创建以及加入班级的一些功能" />
   </component>
 </project>
