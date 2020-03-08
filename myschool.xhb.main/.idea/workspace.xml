@@ -50,7 +50,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/config/RabbitConfigs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/DocumentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/DocumentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExpressionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExpressionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/MudelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/MudelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AddExpressionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AddExpressionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ExpressionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ExpressionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/UploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/UploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +76,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Mapper__Xml" />
-        <option value="Class" />
-        <option value="Mapper__XML" />
         <option value="Interface" />
+        <option value="Mapper__XML" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,7 +116,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util" />
+    <property name="last_opened_file_path" value="F:/北大青鸟课程/S3/微服/18/01/myshop.main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -179,7 +194,8 @@
       <workItem from="1583562036901" duration="1724000" />
       <workItem from="1583567487389" duration="166000" />
       <workItem from="1583567671284" duration="302000" />
-      <workItem from="1583568500781" duration="7968000" />
+      <workItem from="1583568500781" duration="7978000" />
+      <workItem from="1583630147604" duration="8105000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -279,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583578904450</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="issue_LZQ">
+      <created>1583588650208</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583588650208</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,18 +325,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583578397579">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583637887525">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583578397579" />
-    <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583578902590">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583637887525" />
+    <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583588648868">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="294" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583578902590" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583573714665">
+    <state x="294" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583588648868" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583643449233">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583573714665" />
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583643449233" />
     <state width="1493" height="333" key="GridCell.Tab.0.bottom" timestamp="1583403540420">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

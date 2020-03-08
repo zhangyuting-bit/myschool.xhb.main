@@ -25,9 +25,6 @@ public class UploadServiceImpl implements UploadService, InitializingBean {
     @Resource
     private Auth auth;
 
-    @Value("${qiniu.path}")
-    public  String path;
-
     @Value("${qiniu.bucket}")
     private String bucket;
 
@@ -37,7 +34,6 @@ public class UploadServiceImpl implements UploadService, InitializingBean {
     @Override
     public Response uploadFile(File file) throws QiniuException {
         Response response = this.uploadManager.put(file, key, getUploadToken());
-        System.out.println(path);
         int retry = 0;
         while (response.needRetry() && retry < 3) {
             response = this.uploadManager.put(file, key, getUploadToken());

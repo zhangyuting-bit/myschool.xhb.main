@@ -3,11 +3,15 @@ package com.zb.controller;
 import com.google.gson.Gson;
 import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
+import com.zb.entity.Document;
+import com.zb.mapper.DocumentMapper;
 import com.zb.service.UploadService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
@@ -17,10 +21,16 @@ import java.util.Objects;
 @RequestMapping("/upload")
 @CrossOrigin
 public class UploadController {
+    @Value("${qiniu.path}")
+    public  String path;
+
+    @Resource
+    private DocumentMapper documentMapper;
+
     @Autowired
     private UploadService uploadService;
     @PostMapping("/singlefile")
-    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files) {
+    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,String functionId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return "文件为空，请重新上传";
@@ -40,7 +50,11 @@ public class UploadController {
                 Response response = uploadService.uploadFile(destFile);
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-                System.out.println(putRet.key);//这个就是从七牛云获取的文件名
+                Document document=new Document();
+                document.setFunctionId(functionId);
+                document.setDocumentSrc(path+""+putRet.key);
+                documentMapper.addDocument(document);
+                //System.out.println(putRet.key);//这个就是从七牛云获取的文件名
             }catch (IOException e){
                 e.printStackTrace();
             }

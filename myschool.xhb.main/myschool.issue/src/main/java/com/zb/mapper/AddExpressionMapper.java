@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface AddExpressionMapper {
-    List<AddExpression>getAddExpressionByNId(@Param("functionId")Integer functionId);
+    List<AddExpression>getAddExpressionByNId(@Param("functionId")String functionId);
 }

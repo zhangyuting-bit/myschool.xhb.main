@@ -10,8 +10,8 @@ public interface ExpressionService {
     public List<Expression> getExpressionAll();
 
     //根据通知编号获取表情信息
-    List<Expression> getExpressionByNId(Integer functionId);
+    public List<Expression> getExpressionByNId(String functionId);
 
     //根据表情编号获取表情信息
-    Expression getExpressionById(Integer expressionId);
+    public Expression getExpressionById(Integer expressionId);
 }

@@ -22,13 +22,13 @@ public class AddExpression implements Serializable {
         this.expressionId = expressionId;
     }
 
-    public Integer getFunctionId() {
+    private String functionId;
+
+    public String getFunctionId() {
         return functionId;
     }
 
-    public void setFunctionId(Integer functionId) {
+    public void setFunctionId(String functionId) {
         this.functionId = functionId;
     }
-
-    private Integer functionId;
 }

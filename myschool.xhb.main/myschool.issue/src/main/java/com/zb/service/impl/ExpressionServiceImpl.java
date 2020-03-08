@@ -35,7 +35,7 @@ public class ExpressionServiceImpl implements ExpressionService {
 
     //根据通知编号获取表情信息
     @Override
-    public List<Expression> getExpressionByNId(Integer functionId) {
+    public List<Expression> getExpressionByNId(String functionId) {
         List<AddExpression>list=addExpressionMapper.getAddExpressionByNId(functionId);
         List<Expression>list1=new ArrayList<>();
         for (AddExpression addExpression:list) {
