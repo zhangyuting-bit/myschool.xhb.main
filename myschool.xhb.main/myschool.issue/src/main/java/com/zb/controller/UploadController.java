@@ -1,11 +1,17 @@
 package com.zb.controller;
 
 import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
+import com.zb.config.RabbitConfig;
+import com.zb.config.RabbitConfigs;
 import com.zb.entity.Document;
 import com.zb.mapper.DocumentMapper;
 import com.zb.service.UploadService;
+import com.zb.vo.FileVo;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +29,9 @@ import java.util.Objects;
 public class UploadController {
     @Value("${qiniu.path}")
     public  String path;
+
+    @Resource
+    private RabbitTemplate rabbitTemplate;
 
     @Resource
     private DocumentMapper documentMapper;
@@ -46,15 +55,13 @@ public class UploadController {
                 destFile.getParentFile().mkdirs();
                 //将文件传到对应的文件位置
                 file.transferTo(destFile);
+//                Document document=new Document();
+//                document.setFunctionId(functionId);
+                FileVo fileVo=new FileVo();
+                fileVo.setFile(destFile);
+//                fileVo.setDocument(document);
+                rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.docKey,fileVo);
 
-                Response response = uploadService.uploadFile(destFile);
-                //解析上传成功的结果
-                DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-                Document document=new Document();
-                document.setFunctionId(functionId);
-                document.setDocumentSrc(path+""+putRet.key);
-                documentMapper.addDocument(document);
-                //System.out.println(putRet.key);//这个就是从七牛云获取的文件名
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -75,5 +82,16 @@ public class UploadController {
             }*/
         }
         return "文件上传成功";
+    }
+
+    @RabbitListener(queues = RabbitConfigs.docQueue)
+    public void addDocument(FileVo fileVo) throws QiniuException {
+        Response response = uploadService.uploadFile(fileVo.getFile());
+        //解析上传成功的结果
+        DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+//        Document document=fileVo.getDocument();
+//        document.setDocumentSrc(path+""+putRet.key);
+//        documentMapper.addDocument(document);
+        System.out.println(putRet.key);//这个就是从七牛云获取的文件名
     }
 }
