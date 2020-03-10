@@ -3,8 +3,10 @@ package com.zb.service.impl;
 import com.zb.entity.Notification;
 import com.zb.mapper.NotificationMapper;
 import com.zb.service.NotificationService;
+import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -20,8 +22,8 @@ public class NotificationServiceImpl implements NotificationService {
 
     //根据班级编号和通知类型编号获取全部对应通知
     @Override
-    public List<Notification> getNotificationGradeId(String gradeId) {
-        return notificationMapper.getNotificationGradeId(gradeId);
+    public List<Notification> getNotificationGradeId(Integer typeId,String gradeId) {
+        return notificationMapper.getNotificationGradeId(typeId,gradeId);
     }
 
     //根据通知编号获取通知信息
@@ -54,5 +56,16 @@ public class NotificationServiceImpl implements NotificationService {
             redisUtil.hmset(key,map);
         }
         return notification;
+    }
+
+    //添加新的通知信息
+    @Override
+    @Transactional
+    public Notification addNotification(Notification notification) {
+        notification.setNotificationId(IdWorker.getId());
+        if (notificationMapper.addNotification(notification)>0) {
+            return getNotificationById(notification.getNotificationId());
+        }
+        return null;
     }
 }

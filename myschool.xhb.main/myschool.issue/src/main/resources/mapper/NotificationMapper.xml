@@ -9,9 +9,8 @@
         FROM
             `notification`
         WHERE
-            typeId=1
-        AND
             gradeId=#{gradeId}
+        <if test="typeId != 0">AND typeId=#{typeId}</if>
     </select>
 
     <select id="getNotificationById" resultType="com.zb.entity.Notification">
@@ -22,4 +21,24 @@
         WHERE
             notificationId=#{notificationId}
     </select>
+
+    <insert id="addNotification">
+        INSERT INTO `issue`.`notification`
+            (`notificationId`,
+             `typeId`,
+             `gradeId`,
+             `notifyMessage`,
+             `notifyTime`,
+             `mudelId`,
+             `title`,
+             `endTime`)
+        VALUES (#{notificationId},
+                #{typeId},
+                #{gradeId},
+                #{notifyMessage},
+                #{notifyTime},
+                #{mudelId},
+                #{title},
+                #{endTime});
+    </insert>
 </mapper>
