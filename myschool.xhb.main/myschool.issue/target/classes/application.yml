@@ -21,8 +21,8 @@ spring:
     port: 5672
   http:
     multipart:
-      max-file-size: 200MB
-      max-request-size: 200MB
+      max-file-size: 50MB
+      max-request-size: 50MB
 
 qiniu:
   accessKey: ZFYhmom1h56k40C8hBzlx_fVcvsJRcvytGxrDo4L

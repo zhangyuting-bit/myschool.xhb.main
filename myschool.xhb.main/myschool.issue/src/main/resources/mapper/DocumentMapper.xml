@@ -5,9 +5,11 @@
 <mapper namespace="com.zb.mapper.DocumentMapper">
     <insert id="addDocument">
         INSERT INTO `document`
-            (`functionId`,
+            (`documentId`,
+             `functionId`,
              `documentSrc`)
-        VALUES (#{functionId},
+        VALUES (#{documentId},
+                #{functionId},
                 #{documentSrc});
     </insert>
     
