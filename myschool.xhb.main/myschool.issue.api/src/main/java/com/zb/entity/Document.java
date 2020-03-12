@@ -3,7 +3,16 @@ package com.zb.entity;
 import java.io.Serializable;
 
 public class Document implements Serializable {
-    private Integer documentId;
+    private String documentId;
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
     private String functionId;
 
     public String getFunctionId() {
@@ -15,15 +24,6 @@ public class Document implements Serializable {
     }
 
     private String documentSrc;
-
-    public Integer getDocumentId() {
-        return documentId;
-    }
-
-    public void setDocumentId(Integer documentId) {
-        this.documentId = documentId;
-    }
-
     public String getDocumentSrc() {
         return documentSrc;
     }

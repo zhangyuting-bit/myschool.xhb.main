@@ -6,13 +6,14 @@ import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Service
 public class NotificationServiceImpl implements NotificationService {
     @Resource
     private NotificationMapper notificationMapper;

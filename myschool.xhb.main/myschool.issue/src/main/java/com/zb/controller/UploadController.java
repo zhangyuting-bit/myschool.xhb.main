@@ -9,6 +9,7 @@ import com.zb.config.RabbitConfigs;
 import com.zb.entity.Document;
 import com.zb.mapper.DocumentMapper;
 import com.zb.service.UploadService;
+import com.zb.util.IdWorker;
 import com.zb.vo.FileVo;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -55,12 +56,14 @@ public class UploadController {
                 destFile.getParentFile().mkdirs();
                 //将文件传到对应的文件位置
                 file.transferTo(destFile);
+                Response response = uploadService.uploadFile(destFile);
+                //解析上传成功的结果
+                DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 Document document=new Document();
+                document.setDocumentId(IdWorker.getId());
                 document.setFunctionId(functionId);
-                FileVo fileVo=new FileVo();
-                fileVo.setFile(destFile);
-                fileVo.setDocument(document);
-                rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.docKey,fileVo);
+                document.setDocumentSrc(path+""+putRet.key);
+                rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.docKey,document);
                 //System.out.println(putRet.key);//这个就是从七牛云获取的文件名
             }catch (IOException e){
                 e.printStackTrace();
@@ -85,12 +88,7 @@ public class UploadController {
     }
 
     @RabbitListener(queues = RabbitConfigs.docQueue)
-    public void addDocument(FileVo fileVo) throws QiniuException {
-        Response response = uploadService.uploadFile(fileVo.getFile());
-        //解析上传成功的结果
-        DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-        Document document=fileVo.getDocument();
-        document.setDocumentSrc(path+""+putRet.key);
+    public void addDocument(Document document) throws QiniuException {
         documentMapper.addDocument(document);
     }
 }
