@@ -50,16 +50,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/AddExpressionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/AddExpressionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/AddExpressionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/AddExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Document.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AddExpressionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AddExpressionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AddExpressionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AddExpressionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/DocumentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/DocumentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/UploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/DocumentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/DocumentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/vo/FileVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/MudelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/MudelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +196,8 @@
       <workItem from="1583826973980" duration="6779000" />
       <workItem from="1583984837882" duration="5716000" />
       <workItem from="1583998515563" duration="4968000" />
+      <workItem from="1584147460288" duration="1807000" />
+      <workItem from="1584154010594" duration="3074000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -368,10 +369,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1584004181893">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1584156713219">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584004181893" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584156713219" />
     <state x="294" y="0" key="CommitChangelistDialog2" timestamp="1583999264757">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -420,17 +421,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583380463801" />
-    <state x="178" y="107" key="new project wizard" timestamp="1583488495557">
+    <state x="275" y="66" key="new project wizard" timestamp="1584147539342">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1583488495557" />
+    <state x="275" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584147539342" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1583668422403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1583668422403" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583668430264">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1584157012341">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583668430264" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1584157012341" />
   </component>
 </project>

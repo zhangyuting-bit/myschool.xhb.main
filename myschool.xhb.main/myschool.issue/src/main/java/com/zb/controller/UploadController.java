@@ -10,7 +10,6 @@ import com.zb.entity.Document;
 import com.zb.mapper.DocumentMapper;
 import com.zb.service.UploadService;
 import com.zb.util.IdWorker;
-import com.zb.vo.FileVo;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

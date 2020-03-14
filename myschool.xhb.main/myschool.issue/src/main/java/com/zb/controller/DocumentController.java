@@ -1,5 +1,7 @@
 package com.zb.controller;
 
+import com.zb.dto.Dto;
+import com.zb.dto.DtoUtil;
 import com.zb.entity.Document;
 import com.zb.service.DocumentService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +17,7 @@ public class DocumentController {
     private DocumentService documentService;
 
     @GetMapping("/getDocumentByNId/{functionId}")
-    public List<Document> getDocumentByNId(@PathVariable("functionId") String functionId){
-        return  documentService.getDocumentByNId(functionId);
+    public Dto getDocumentByNId(@PathVariable("functionId") String functionId){
+        return DtoUtil.returnSuccess("ok",documentService.getDocumentByNId(functionId));
     }
 }
