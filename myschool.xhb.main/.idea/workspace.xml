@@ -51,17 +51,15 @@
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/GrowthRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/Lable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/RecordServerApp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/mapper/RecordMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/RecordService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/impl/RecordServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/RetrievalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/RetrievalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -235,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583378817609</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修复无法启动的bug">
+      <created>1584601007603</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584601007603</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +262,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mc_dev提交了一段代码" />
     <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="mc_dev 提交班级的创建以及加入班级的一些功能" />
+    <MESSAGE value="修复无法启动的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复无法启动的bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583379622972">

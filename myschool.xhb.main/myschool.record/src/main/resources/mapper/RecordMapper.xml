@@ -14,9 +14,7 @@
         <if test="userId != '' and userId != null ">
             AND userId = #{userId}
         </if>
-        <if test="visible != '' and visible != null ">
-            AND visible = #{visible}
-        </if>
+        AND visible = #{visible}
         AND isDelete = 0
         ORDER BY createDate DESC
     </select>

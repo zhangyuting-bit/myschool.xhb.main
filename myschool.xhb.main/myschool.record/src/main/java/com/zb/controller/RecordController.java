@@ -17,13 +17,13 @@ public class RecordController {
     RecordService recordService;
 
     @RequestMapping(value = "/showrecords")
-    public List<GrowthRecord> showRecords(@RequestParam("userId") String userId,
-                                         @RequestParam("classId") String classId,
-                                         @RequestParam("visible") Integer visible){
+    public List<GrowthRecord> showRecords(@RequestParam(value = "userId",required = false) String userId,
+                                         @RequestParam(value = "classId",required = false) String classId,
+                                         @RequestParam(value = "visible",defaultValue = "0") Integer visible){
         RetrievalRecord retrievalRecord=new RetrievalRecord();
         retrievalRecord.setUserId(userId);
         retrievalRecord.setClassId(classId);
-        retrievalRecord.setIsDelete(visible);
+        retrievalRecord.setVisible(visible);
         return recordService.listRecordsByCondition(retrievalRecord);
     }
 

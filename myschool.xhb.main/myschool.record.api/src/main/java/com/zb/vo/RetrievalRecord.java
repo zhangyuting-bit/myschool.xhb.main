@@ -6,7 +6,7 @@ public class RetrievalRecord implements Serializable {
 
     private String userId;
     private String classId;
-    private Integer isDelete;
+    private Integer visible;
 
     public String getUserId() {
         return userId;
@@ -24,11 +24,11 @@ public class RetrievalRecord implements Serializable {
         this.classId = classId;
     }
 
-    public Integer getIsDelete() {
-        return isDelete;
+    public Integer getVisible() {
+        return visible;
     }
 
-    public void setIsDelete(Integer isDelete) {
-        this.isDelete = isDelete;
+    public void setVisible(Integer visible) {
+        this.visible = visible;
     }
 }
