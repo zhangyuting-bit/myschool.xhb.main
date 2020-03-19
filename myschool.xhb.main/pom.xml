@@ -17,6 +17,8 @@
         <module>myschool.user.api</module>
         <module>myschool.record</module>
         <module>myschool.record.api</module>
+        <module>myschool.lable</module>
+        <module>myschool.lable.api</module>
     </modules>
 
     <parent>

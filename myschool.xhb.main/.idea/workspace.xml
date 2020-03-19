@@ -51,15 +51,20 @@
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable.api/src/main/java/com/zb/pojo/Lable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/LableServerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/controller/LableController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/LableService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/impl/LableServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/resources/mapper/LableMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/RetrievalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/RetrievalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +77,7 @@
       <list>
         <option value="mymapper" />
         <option value="Mapper__Xml" />
+        <option value="mybatisMapper" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -94,7 +100,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -111,7 +119,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.issue/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.lable/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -122,12 +130,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zb" />
       <recent name="com.zb.config" />
       <recent name="com.zb.filter" />
-      <recent name="com.zb" />
       <recent name="com.zb.filter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.lable\src\main\resources" />
       <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\resources" />
       <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\pojo" />
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
@@ -148,7 +157,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RecordServerApp">
+  <component name="RunManager" selected="Spring Boot.LableServerApp">
+    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.issue" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.IssueServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LableServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.lable" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.LableServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyClassApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myshool.class" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyClassApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyEurekaServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyEurekaServerApp" />
@@ -159,6 +189,13 @@
     <configuration name="MyGatWayServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.gataway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyGatWayServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySchoolUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MySchoolUserApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584601007603</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)">
+      <created>1584604172451</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584604172451</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +307,8 @@
     <MESSAGE value="mc_dev提交了一段代码" />
     <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
     <MESSAGE value="修复无法启动的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复无法启动的bug" />
+    <MESSAGE value="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583379622972">
