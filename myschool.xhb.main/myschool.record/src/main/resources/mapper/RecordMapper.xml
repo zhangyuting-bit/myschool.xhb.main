@@ -19,7 +19,7 @@
         ORDER BY createDate DESC
     </select>
 
-    <insert id="addRocord">
+    <insert id="addRecord">
         INSERT INTO growth_record
         (classId,
         userId,
@@ -38,4 +38,18 @@
         );
     </insert>
 
+    <insert id="addRecordLables">
+        INSERT INTO recordlablemessage
+        (recordId,
+        lableId
+        )
+        VALUES
+        (#{recordId},
+        #{lableId}
+        );
+    </insert>
+
+    <select id="getMaxRecordId" resultType="java.lang.Integer">
+        SELECT MAX(recordId) FROM growth_record
+    </select>
 </mapper>

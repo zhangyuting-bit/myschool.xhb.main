@@ -10,5 +10,6 @@ public interface RecordService {
 
     List<GrowthRecord> listRecordsByCondition(RetrievalRecord retrievalRecord);
     int addRecord(AddRecord addRecord);
-
+    int addRecordLables(Integer recordId,Integer lableId);
+    int getMaxRecordId();
 }

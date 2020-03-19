@@ -11,7 +11,7 @@ public class AddRecord {
     private String userId;
     private String recordContent;
     private Integer visible;
-    private List<Lable> lables;
+    private String lables;
 
     public Integer getRecordId() {
         return recordId;
@@ -53,11 +53,12 @@ public class AddRecord {
         this.visible = visible;
     }
 
-    public List<Lable> getLables() {
+    public String getLables() {
         return lables;
     }
 
-    public void setLables(List<Lable> lables) {
+    public void setLables(String lables) {
         this.lables = lables;
     }
 }
+
