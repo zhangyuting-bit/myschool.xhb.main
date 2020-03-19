@@ -23,4 +23,9 @@ public class LableServiceImpl implements LableService {
     public List<Lable> listPersonalLables(String userId) {
         return lableMapper.listPersonalLables(userId);
     }
+
+    @Override
+    public int addLable(Lable lable) {
+        return lableMapper.addLable(lable);
+    }
 }

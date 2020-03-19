@@ -14,4 +14,17 @@
         AND userId = #{userId}
     </select>
 
+    <insert id="addLable">
+        INSERT INTO xhb_lable_db.lable
+        (lableContent,
+        lableType,
+        userId
+        )
+        VALUES
+        (#{lableContent},
+        1,
+        #{userId}
+        );
+    </insert>
+
 </mapper>

@@ -51,20 +51,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable.api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable.api/src/main/java/com/zb/pojo/Lable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/LableServerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/controller/LableController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/LableService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/impl/LableServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.lable/src/main/resources/mapper/LableMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/controller/LableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/controller/LableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/LableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/LableService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/impl/LableServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/service/impl/LableServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/resources/mapper/LableMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/resources/mapper/LableMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -284,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584604172451</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="标签的公共类型和个人类型的展示">
+      <created>1584605891955</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584605891955</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +307,8 @@
     <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
     <MESSAGE value="修复无法启动的bug" />
     <MESSAGE value="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)" />
+    <MESSAGE value="标签的公共类型和个人类型的展示" />
+    <option name="LAST_COMMIT_MESSAGE" value="标签的公共类型和个人类型的展示" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583379622972">

@@ -7,7 +7,7 @@ public class Lable implements Serializable {
     private Integer lableId;
     private String lableContent;
     private Integer lableType;
-    private Integer userId;
+    private String userId;
 
     public Integer getLableId() {
         return lableId;
@@ -33,11 +33,11 @@ public class Lable implements Serializable {
         this.lableType = lableType;
     }
 
-    public Integer getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 }

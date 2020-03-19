@@ -11,5 +11,6 @@ public interface LableMapper {
 
     List<Lable> listAllPublicLables();
     List<Lable> listPersonalLables(@Param("userId") String userId);
+    int addLable(Lable lable);
 
 }
