@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.RecordMapper">
+
+    <select id="listRecordsByCondition" resultType="com.zb.pojo.GrowthRecord" parameterType="com.zb.vo.RetrievalRecord">
+        SELECT * FROM growth_record
+        WHERE 1 = 1
+        <if test="classId != '' and classId != null ">
+            AND classId = #{classId}
+        </if>
+        <if test="userId != '' and userId != null ">
+            AND userId = #{userId}
+        </if>
+        <if test="visible != '' and visible != null ">
+            AND visible = #{visible}
+        </if>
+        AND isDelete = 0
+        ORDER BY createDate DESC
+    </select>
+
+</mapper>
