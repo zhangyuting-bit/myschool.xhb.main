@@ -52,4 +52,9 @@
     <select id="getMaxRecordId" resultType="java.lang.Integer">
         SELECT MAX(recordId) FROM growth_record
     </select>
+
+    <update id="deleteRecord">
+        UPDATE growth_record SET isDelete = 1 WHERE recordId = #{recordId}
+    </update>
+
 </mapper>

@@ -34,4 +34,9 @@ public class RecordServiceImpl implements RecordService {
     public int getMaxRecordId() {
         return recordMapper.getMaxRecordId();
     }
+
+    @Override
+    public int deleteRecord(Integer recordId) {
+        return recordMapper.deleteRecord(recordId);
+    }
 }

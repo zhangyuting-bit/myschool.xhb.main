@@ -8,10 +8,7 @@ import com.zb.service.RecordService;
 import com.zb.vo.AddRecord;
 import com.zb.vo.RetrievalRecord;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -57,6 +54,17 @@ public class RecordController {
             return DtoUtil.returnSuccess("新增成长记录成功");
         } else {
             return DtoUtil.returnFail("新增失败", "8888");
+        }
+    }
+
+
+    @RequestMapping(value = "/deleterecord/{recordId}")
+    public Dto deleterecord(@PathVariable("recordId") Integer recordId){
+        int val = recordService.deleteRecord(recordId);
+        if (val == 1) {
+            return DtoUtil.returnSuccess("成长记录撤销成功");
+        } else {
+            return DtoUtil.returnFail("撤销失败", "8888");
         }
     }
 

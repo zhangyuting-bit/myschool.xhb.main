@@ -8,4 +8,5 @@ public interface LableService {
     List<Lable> listAllPublicLables();
     List<Lable> listPersonalLables(String userId);
     int addLable(Lable lable);
+    int delectLable(Integer lableId);
 }

@@ -28,4 +28,9 @@ public class LableServiceImpl implements LableService {
     public int addLable(Lable lable) {
         return lableMapper.addLable(lable);
     }
+
+    @Override
+    public int delectLable(Integer lableId) {
+        return lableMapper.delectLable(lableId);
+    }
 }

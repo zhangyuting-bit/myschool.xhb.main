@@ -12,4 +12,5 @@ public interface RecordService {
     int addRecord(AddRecord addRecord);
     int addRecordLables(Integer recordId,Integer lableId);
     int getMaxRecordId();
+    int deleteRecord(Integer recordId);
 }

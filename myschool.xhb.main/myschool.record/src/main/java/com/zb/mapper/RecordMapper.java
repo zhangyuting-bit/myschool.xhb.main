@@ -20,5 +20,7 @@ public interface RecordMapper {
                         @Param("lableId") Integer lableId);
     //获取最新的成长记录
     int getMaxRecordId();
+    //撤销成长记录
+    int deleteRecord(@Param("recordId") Integer recordId);
 
 }

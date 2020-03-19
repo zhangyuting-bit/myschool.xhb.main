@@ -27,4 +27,9 @@
         );
     </insert>
 
+    <delete id="delectLable">
+        DELETE FROM lable WHERE lableType = 1
+        AND lableId = #{lableId}
+    </delete>
+
 </mapper>

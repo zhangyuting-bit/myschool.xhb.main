@@ -5,6 +5,7 @@ import com.zb.dto.DtoUtil;
 import com.zb.pojo.Lable;
 import com.zb.service.LableService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +36,16 @@ public class LableController {
         lable.setLableContent(lableContent);
         if(lableService.addLable(lable) == 1){
            return DtoUtil.returnSuccess("新增个人标签成功");
+        }else {
+            return DtoUtil.returnFail("失败","9999");
+        }
+    }
+
+    @RequestMapping(value = "/deletelable/{lableId}")
+    public Dto deletelable(@PathVariable("lableId") Integer lableId){
+        int val = lableService.delectLable(lableId);
+        if(val == 1){
+            return DtoUtil.returnSuccess("删除个人标签成功");
         }else {
             return DtoUtil.returnFail("失败","9999");
         }
