@@ -15,9 +15,5 @@ public interface NotificationService {
     //添加新的通知信息
     public Notification addNotification(Notification notification);
 
-    //从消息队列获取通知
-    public Notification getNotificationByMq(Integer typeId,String gradeId);
 
-    //删除list中的数据
-    public void delMq();
 }

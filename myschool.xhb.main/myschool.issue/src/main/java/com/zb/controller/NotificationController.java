@@ -35,16 +35,4 @@ public class NotificationController {
         return notificationService.getNotificationById(notificationId);
     }
 
-    //从消息队列获取通知
-    @GetMapping("/getNotificationByMq")
-    public Notification getNotificationByMq(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
-                                            String gradeId){
-        return notificationService.getNotificationByMq(typeId,gradeId);
-    }
-
-    //删除list中的数据
-    @GetMapping("/delMq")
-    public void delMq(){
-        notificationService.delMq();
-    }
 }

@@ -16,13 +16,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Service
 public class NotificationServiceImpl implements NotificationService {
-
-    public List<Notification> notifications;
 
     @Resource
     private NotificationMapper notificationMapper;
@@ -83,33 +82,8 @@ public class NotificationServiceImpl implements NotificationService {
     @RabbitListener(queues = RabbitConfigs.nocQueue)
     public void getNotification(Notification notification){
         notificationMapper.addNotification(notification);
-        //notifications.add(notification);
-    }
-
-    //从消息队列获取通知
-    @Override
-    public Notification getNotificationByMq(Integer typeId,String gradeId){
-        if (notifications!=null) {
-            for (Notification notification : notifications) {
-                System.out.println(notification.getNotificationId());
-                if (typeId == 0) {
-                    if (gradeId.equals(notification.getGradeId())) {
-                        return notification;
-                    }
-                } else {
-                    if (typeId == notification.getTypeId() && gradeId.equals(notification.getGradeId())) {
-                        return notification;
-                    }
-                }
-            }
-        }
-        return null;
     }
 
 
-    //删除list中的数据
-    @Override
-    public void delMq(){
-        notifications.clear();
-    }
+
 }
