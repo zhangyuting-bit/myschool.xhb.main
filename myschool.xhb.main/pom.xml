@@ -15,6 +15,8 @@
         <module>myschool.issue</module>
         <module>myschool.user</module>
         <module>myschool.user.api</module>
+        <module>myschool.record</module>
+        <module>myschool.record.api</module>
     </modules>
 
     <parent>
