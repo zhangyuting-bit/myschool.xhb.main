@@ -19,4 +19,23 @@
         ORDER BY createDate DESC
     </select>
 
+    <insert id="addRocord">
+        INSERT INTO growth_record
+        (classId,
+        userId,
+        recordContent,
+        visible,
+        isDelete,
+        createDate
+        )
+        VALUES
+        (#{classId},
+        #{userId},
+        #{recordContent},
+        #{visible},
+        0,
+        NOW()
+        );
+    </insert>
+
 </mapper>
