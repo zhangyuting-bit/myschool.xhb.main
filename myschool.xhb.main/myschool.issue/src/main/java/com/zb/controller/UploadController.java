@@ -87,7 +87,7 @@ public class UploadController {
     }
 
     @RabbitListener(queues = RabbitConfigs.docQueue)
-    public void addDocument(Document document) throws QiniuException {
+    public void addDocument(Document document){
         documentMapper.addDocument(document);
     }
 }

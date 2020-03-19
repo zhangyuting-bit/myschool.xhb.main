@@ -11,4 +11,14 @@
         WHERE
             functionId=#{functionId}
     </select>
+
+    <insert id="addAddExpression">
+        INSERT INTO `addexpression`
+            (`id`,
+             `expressionId`,
+             `functionId`)
+        VALUES (#{id},
+                #{expressionId},
+                #{functionId});
+    </insert>
 </mapper>

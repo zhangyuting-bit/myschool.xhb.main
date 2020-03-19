@@ -11,10 +11,11 @@ import java.util.List;
 
 @RestController
 public class NotificationController {
+    
     @Resource
     private NotificationService notificationService;
 
-    //根据班级编号和通知类型编号获取全部对应通知
+
     @GetMapping("/getNotificationGradeId")
     public Dto getNotificationGradeId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
@@ -28,5 +29,22 @@ public class NotificationController {
         return DtoUtil.returnSuccess("ok",notificationService.addNotification(notification));
     }
 
+    //根据通知编号获取通知信息
+    @GetMapping("/getNotificationById/{notificationId}")
+    public Notification getNotificationById(@PathVariable("notificationId") String notificationId) {
+        return notificationService.getNotificationById(notificationId);
+    }
 
+    //从消息队列获取通知
+    @GetMapping("/getNotificationByMq")
+    public Notification getNotificationByMq(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
+                                            String gradeId){
+        return notificationService.getNotificationByMq(typeId,gradeId);
+    }
+
+    //删除list中的数据
+    @GetMapping("/delMq")
+    public void delMq(){
+        notificationService.delMq();
+    }
 }

@@ -23,12 +23,11 @@
     </select>
 
     <insert id="addNotification">
-        INSERT INTO `issue`.`notification`
+        INSERT INTO `notification`
             (`notificationId`,
              `typeId`,
              `gradeId`,
              `notifyMessage`,
-             `notifyTime`,
              `mudelId`,
              `title`,
              `endTime`)
@@ -36,7 +35,6 @@
                 #{typeId},
                 #{gradeId},
                 #{notifyMessage},
-                #{notifyTime},
                 #{mudelId},
                 #{title},
                 #{endTime});

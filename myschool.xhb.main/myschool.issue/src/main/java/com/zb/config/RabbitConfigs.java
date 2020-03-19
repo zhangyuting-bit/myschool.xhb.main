@@ -15,6 +15,11 @@ public class RabbitConfigs {
     //上传文件钥匙
     public static final String docKey="doc.key.queue";
 
+    //上传通知消息队列
+    public static final String nocQueue="noc.boot.queue";
+    //上传文件钥匙
+    public static final String nocKey="noc.key.queue";
+
     //交换机配置
     @Bean(myexchange)
     public Exchange createExchange(){
@@ -28,10 +33,23 @@ public class RabbitConfigs {
         return queue;
     }
 
+    //创建上传通知消息队列
+    @Bean(nocQueue)
+    public Queue createNocQueue(){
+        Queue queue =new Queue(nocQueue);
+        return queue;
+    }
+
     //将上传文件消息对列绑定到交换机上
     @Bean
-    public Binding bindingSms(@Qualifier(myexchange) Exchange exchange , @Qualifier(docQueue) Queue queue){
+    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(docQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(docKey).noargs();
+    }
+
+    //将上传通知消息对列绑定到交换机上
+    @Bean
+    public Binding bindingNoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(nocKey).noargs();
     }
 
 }

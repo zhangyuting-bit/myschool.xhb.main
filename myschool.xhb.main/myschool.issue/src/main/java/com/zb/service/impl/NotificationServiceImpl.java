@@ -1,10 +1,16 @@
 package com.zb.service.impl;
 
+import com.qiniu.common.QiniuException;
+import com.zb.config.RabbitConfigs;
+import com.zb.entity.AddExpression;
+import com.zb.entity.Document;
 import com.zb.entity.Notification;
 import com.zb.mapper.NotificationMapper;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +21,14 @@ import java.util.List;
 import java.util.Map;
 @Service
 public class NotificationServiceImpl implements NotificationService {
+
+    public List<Notification> notifications;
+
     @Resource
     private NotificationMapper notificationMapper;
+
+    @Resource
+    private RabbitTemplate rabbitTemplate;
 
     @Resource
     private RedisUtil redisUtil;
@@ -64,9 +76,40 @@ public class NotificationServiceImpl implements NotificationService {
     @Transactional
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
-        if (notificationMapper.addNotification(notification)>0) {
-            return getNotificationById(notification.getNotificationId());
+        rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.nocKey,notification);
+        return notification;
+    }
+
+    @RabbitListener(queues = RabbitConfigs.nocQueue)
+    public void getNotification(Notification notification){
+        notificationMapper.addNotification(notification);
+        //notifications.add(notification);
+    }
+
+    //从消息队列获取通知
+    @Override
+    public Notification getNotificationByMq(Integer typeId,String gradeId){
+        if (notifications!=null) {
+            for (Notification notification : notifications) {
+                System.out.println(notification.getNotificationId());
+                if (typeId == 0) {
+                    if (gradeId.equals(notification.getGradeId())) {
+                        return notification;
+                    }
+                } else {
+                    if (typeId == notification.getTypeId() && gradeId.equals(notification.getGradeId())) {
+                        return notification;
+                    }
+                }
+            }
         }
         return null;
+    }
+
+
+    //删除list中的数据
+    @Override
+    public void delMq(){
+        notifications.clear();
     }
 }
