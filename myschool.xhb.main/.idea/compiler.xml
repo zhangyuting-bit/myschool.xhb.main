@@ -14,8 +14,10 @@
         <module name="myschool.issue.api" />
         <module name="myschool.user.api" />
         <module name="myschool.common.api" />
+        <module name="myschool.agreement" />
         <module name="myschool.issue" />
         <module name="myschool.lable" />
+        <module name="myschool.agreement.api" />
         <module name="myschool.gataway" />
         <module name="myschool.eureka" />
         <module name="myschool.record.api" />

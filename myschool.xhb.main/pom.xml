@@ -19,6 +19,8 @@
         <module>myschool.record.api</module>
         <module>myschool.lable</module>
         <module>myschool.lable.api</module>
+        <module>myschool.agreement</module>
+        <module>myschool.agreement.api</module>
     </modules>
 
     <parent>

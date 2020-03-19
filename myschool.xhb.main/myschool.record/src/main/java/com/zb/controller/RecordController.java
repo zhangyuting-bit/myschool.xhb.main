@@ -2,6 +2,8 @@ package com.zb.controller;
 
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
+import com.zb.feign.AgreementFeginClient;
+import com.zb.pojo.Agreement;
 import com.zb.pojo.GrowthRecord;
 import com.zb.pojo.Lable;
 import com.zb.service.RecordService;
@@ -19,6 +21,9 @@ public class RecordController {
 
     @Autowired
     RecordService recordService;
+
+    @Autowired
+    AgreementFeginClient agreementFeginClient;
 
     @RequestMapping(value = "/showrecords")
     public List<GrowthRecord> showRecords(@RequestParam(value = "userId", required = false) String userId,
@@ -59,12 +64,28 @@ public class RecordController {
 
 
     @RequestMapping(value = "/deleterecord/{recordId}")
-    public Dto deleterecord(@PathVariable("recordId") Integer recordId){
+    public Dto deleterecord(@PathVariable("recordId") Integer recordId) {
         int val = recordService.deleteRecord(recordId);
         if (val == 1) {
             return DtoUtil.returnSuccess("成长记录撤销成功");
         } else {
             return DtoUtil.returnFail("撤销失败", "8888");
+        }
+    }
+
+    @RequestMapping(value = "/giveagreement")
+    public Dto giveagreement(@RequestBody Agreement agreement) {
+        agreement.setRecordType(4);
+        int val = agreementFeginClient.isgive(agreement);
+        if (val == 0) {
+            val = agreementFeginClient.giveagreement(agreement);
+            if (val == 1) {
+                return DtoUtil.returnSuccess("点赞成功");
+            } else {
+                return DtoUtil.returnFail("失败", "8889");
+            }
+        } else {
+            return DtoUtil.returnFail("重复点赞", "8888");
         }
     }
 
