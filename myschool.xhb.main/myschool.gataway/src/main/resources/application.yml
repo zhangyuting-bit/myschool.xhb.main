@@ -12,6 +12,7 @@ eureka:
 zuul:
   routes:
     myuserserver:
+
       path: /userserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: USERSERVICE
     authserver:
@@ -20,6 +21,13 @@ zuul:
   host:
     connect-timeout-millis: 3000
     socket-timeout-millis: 3000
+
+      path: /classservice/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: CLASSSERVICE
+#    myorderserver:
+#      path: /orderserver/**        #http://localhost:7003/userserver/user/show?uid=2
+#      serviceId: ORDERSERVER
+
 #    mygoodsserver:
 #      path: /goodsserver/**        #http://localhost:7003/userserver/user/show?uid=2
 #      serviceId: GOODSSERVER

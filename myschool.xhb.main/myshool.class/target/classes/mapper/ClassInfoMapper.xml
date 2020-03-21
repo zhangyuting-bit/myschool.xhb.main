@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.ClassInfoMapper">
+    <insert id="addClassInfo" parameterType="com.zb.pojo.Class_info">
+       INSERT INTO class.class_info
+            (id,
+            class_number,
+            user_id,
+            `call`,
+            remarks,
+            jurisdiction_id,
+            class_subject,
+            reason,
+            createdTime,
+            updatedTime
+            )
+            VALUES
+            (
+            #{id},
+            #{class_number},
+            #{user_id},
+            #{call},
+            #{remarks},
+            #{jurisdiction_id},
+            #{class_subject},
+            #{reason},
+            NOW(),
+            NOW()
+            );
+    </insert>
+    <select id="getClassInfoBy" resultType="com.zb.pojo.Class_info">
+        SELECT * FROM class_info WHERE class_number=#{class_number}
+    </select>
+    <update id="updateClassInfoTime" parameterType="com.zb.pojo.Class_info">
+    UPDATE class_info SET createdTime=#{createdTime},updatedTime=#{updatedTime} WHERE id=#{id}
+    </update>
+</mapper>

@@ -1,0 +1,23 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: GATEWAYSERVER
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:ok@localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true #显示浏览器中的状态栏显示ip
+zuul:
+  routes:
+    myuserserver:
+      path: /classservice/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: CLASSSERVICE
+#    myorderserver:
+#      path: /orderserver/**        #http://localhost:7003/userserver/user/show?uid=2
+#      serviceId: ORDERSERVER
+#    mygoodsserver:
+#      path: /goodsserver/**        #http://localhost:7003/userserver/user/show?uid=2
+#      serviceId: GOODSSERVER
+
