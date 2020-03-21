@@ -91,7 +91,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 初始化服务地址和端口
-	 * 
+	 *
 	 * @param serverIP
 	 *            必选参数 服务器地址
 	 * @param serverPort
@@ -110,7 +110,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 初始化主帐号信息
-	 * 
+	 *
 	 * @param accountSid
 	 *            必选参数 主帐号
 	 * @param accountToken
@@ -129,7 +129,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 初始化子帐号信息
-	 * 
+	 *
 	 * @param subAccountSid
 	 *            必选参数 子帐号
 	 * @param subAccountToken
@@ -148,7 +148,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 初始化应用Id
-	 * 
+	 *
 	 * @param appId
 	 *            必选参数 应用Id
 	 */
@@ -163,7 +163,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 话单下载
-	 * 
+	 *
 	 * @param date
 	 *            必选参数 day 代表前一天的数据（从00:00 – 23:59）
 	 * @param keywords
@@ -226,9 +226,9 @@ public class CCPRestSDK {
 			httppost.setEntity(requestBody);
 
 			HttpResponse response = httpclient.execute(httppost);
-			
+
 			status = response.getStatusLine().getStatusCode();
-			
+
 			System.out.println("Https请求返回状态码："+status);
 
 			HttpEntity entity = response.getEntity();
@@ -266,7 +266,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 发起IVR外呼请求
-	 * 
+	 *
 	 * @param number
 	 *            必选参数 待呼叫号码，为Dial节点的属性
 	 * @param userdata
@@ -278,7 +278,7 @@ public class CCPRestSDK {
 	 * @return
 	 */
 	public HashMap<String, Object> ivrDial(String number, String userdata,
-			boolean record,String disnumber) {
+										   boolean record,String disnumber) {
 		HashMap<String, Object> validate = accountValidate();
 		if (validate != null){
 			return validate;
@@ -323,7 +323,7 @@ public class CCPRestSDK {
 
 			LoggerUtil.info("ivrDial Request body = : " + requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
@@ -333,7 +333,7 @@ public class CCPRestSDK {
 			status = response.getStatusLine().getStatusCode();
 
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -365,7 +365,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 发起语音验证码请求
-	 * 
+	 *
 	 * @param verifyCode
 	 *            必选参数 验证码内容，为数字和英文字母，不区分大小写，长度4-8位
 	 * @param to
@@ -382,15 +382,15 @@ public class CCPRestSDK {
 	 *            可选参数 第三方私有数据
 	 * @param welcomePrompt
 	 * 			     可选参数 wav格式的文件名，欢迎提示音，在播放验证码语音前播放此内容，配合verifyCode使用，默认值空，当playVerifyCode为空有效。
-	 * @param playVerifyCode 
+	 * @param playVerifyCode
 	 *            可选参数 wav格式的文件名，语音验证码的内容全部播放此节点下的全部语音文件，也就是实现了语音验证码功能播放用户自己的语音文件，该参数和verifyCode二者不能同时为空，当二者都不为空时优先使用playVerifyCode。
-	 * @param maxCallTime 
+	 * @param maxCallTime
 	 * 			     可选参数 最大通话时长 
 	 * @return
 	 */
 	public HashMap<String, Object> voiceVerify(String verifyCode, String to,
-			String displayNum, String playTimes, String respUrl, String lang,
-			String userData, String welcomePrompt, String playVerifyCode, String maxCallTime) {
+											   String displayNum, String playTimes, String respUrl, String lang,
+											   String userData, String welcomePrompt, String playVerifyCode, String maxCallTime) {
 		HashMap<String, Object> validate = accountValidate();
 		if (validate != null){
 			return validate;
@@ -506,16 +506,16 @@ public class CCPRestSDK {
 
 			LoggerUtil.info("voiceVerify Request body = : " + requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
 			requestBody.setContentLength(requsetbody.getBytes("UTF-8").length);
 			httppost.setEntity(requestBody);
-			HttpResponse response = httpclient.execute(httppost);			
+			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -551,7 +551,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 发送外呼通知请求
-	 * 
+	 *
 	 * @param to
 	 *            必选参数 被叫号码
 	 * @param mediaName
@@ -579,9 +579,9 @@ public class CCPRestSDK {
 	 * @return
 	 */
 	public HashMap<String, Object> landingCall(String to, String mediaName,
-		    String mediaTxt, String displayNum, String playTimes,
-			String respUrl,String userData, String txtSpeed, String txtVolume,
-			String txtPitch, String txtBgsound, String playMode) {
+											   String mediaTxt, String displayNum, String playTimes,
+											   String respUrl,String userData, String txtSpeed, String txtVolume,
+											   String txtPitch, String txtBgsound, String playMode) {
 		HashMap<String, Object> validate = accountValidate();
 		if (validate != null){
 			return validate;
@@ -720,7 +720,7 @@ public class CCPRestSDK {
 				requsetbody = sb.toString();
 			}
 			LoggerUtil.info("landingCalls Request body = : " + requsetbody);
-			
+
 			System.out.println("请求的包体："+requsetbody);
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
@@ -730,7 +730,7 @@ public class CCPRestSDK {
 			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -769,7 +769,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 发送短信模板请求
-	 * 
+	 *
 	 * @param to
 	 *            必选参数 短信接收端手机号码集合，用英文逗号分开，每批发送的手机号数量不得超过100个
 	 * @param templateId
@@ -779,7 +779,7 @@ public class CCPRestSDK {
 	 * @return
 	 */
 	public HashMap<String, Object> sendTemplateSMS(String to,
-			String templateId, String[] datas) {
+												   String templateId, String[] datas) {
 		HashMap<String, Object> validate = accountValidate();
 		if (validate != null){
 			return validate;
@@ -801,7 +801,7 @@ public class CCPRestSDK {
 			throw new RuntimeException("初始化httpclient异常" + e1.getMessage());
 		}
 		String result = "";
-		
+
 		try {
 			HttpPost httppost = (HttpPost) getHttpRequestBase(1, TemplateSMS);
 			String requsetbody = "";
@@ -847,14 +847,14 @@ public class CCPRestSDK {
 					.getBytes("UTF-8")));
 			requestBody.setContentLength(requsetbody.getBytes("UTF-8").length);
 			httppost.setEntity(requestBody);
-			
+
 			HttpResponse response = httpclient.execute(httppost);
-			
-			
+
+
 			//获取响应码
-			
+
 			status = response.getStatusLine().getStatusCode();
-			
+
 			System.out.println("Https请求返回状态码："+status);
 
 			HttpEntity entity = response.getEntity();
@@ -938,7 +938,7 @@ public class CCPRestSDK {
 			LoggerUtil.info("querySubAccountByName Request body =  "
 					+ requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
@@ -947,7 +947,7 @@ public class CCPRestSDK {
 			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -986,7 +986,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 获取子帐号
-	 * 
+	 *
 	 * @param startNo
 	 *            可选参数 开始的序号，默认从0开始
 	 * @param offset
@@ -1042,7 +1042,7 @@ public class CCPRestSDK {
 			}
 			LoggerUtil.info("GetSubAccounts Request body =  " + requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
@@ -1051,7 +1051,7 @@ public class CCPRestSDK {
 			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -1087,7 +1087,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 获取主帐号信息查询
-	 * 
+	 *
 	 * @return
 	 */
 	public HashMap<String, Object> queryAccountInfo() {
@@ -1120,7 +1120,7 @@ public class CCPRestSDK {
 			HttpResponse response = httpclient.execute(httpGet);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -1155,7 +1155,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 创建子帐号
-	 * 
+	 *
 	 * @param friendlyName
 	 *            必选参数 子帐号名称。可由英文字母和阿拉伯数字组成子帐号唯一名称，推荐使用电子邮箱地址
 	 * @return
@@ -1201,7 +1201,7 @@ public class CCPRestSDK {
 			}
 			LoggerUtil.info("CreateSubAccount Request body =  " + requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
@@ -1213,7 +1213,7 @@ public class CCPRestSDK {
 
 
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 
 			if (entity != null) {
@@ -1250,7 +1250,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 短信模板查询
-	 * 
+	 *
 	 * @param templateId
 	 *            可选参数 模板Id，不带此参数查询全部可用模板
 	 * @return
@@ -1297,11 +1297,11 @@ public class CCPRestSDK {
 			httppost.setEntity(requestBody);
 
 			HttpResponse response = httpclient.execute(httppost);
-		
+
 			//获取响应码
-			
+
 			status = response.getStatusLine().getStatusCode();
-			
+
 			System.out.println("Https请求返回状态码："+status);
 
 			HttpEntity entity = response.getEntity();
@@ -1338,7 +1338,7 @@ public class CCPRestSDK {
 	}
 	/**
 	 * 呼叫状态查询
-	 * 
+	 *
 	 * @param callid
 	 *            必选参数 呼叫Id
 	 * @param action
@@ -1384,8 +1384,8 @@ public class CCPRestSDK {
 				StringBuilder sb = new StringBuilder(
 						"<?xml version='1.0' encoding='utf-8'?><Request>");
 				sb.append("<Appid>").append(App_ID).append("</Appid>")
-				.append("<QueryCallState callid=").append("\"").append(callid)
-				.append("\"");
+						.append("<QueryCallState callid=").append("\"").append(callid)
+						.append("\"");
 				if (action != null) {
 					sb.append(" action=").append("\"").append(action)
 							.append("\"").append("/");
@@ -1396,7 +1396,7 @@ public class CCPRestSDK {
 			}
 			LoggerUtil.info("queryCallState Request body = : " + requsetbody);
 			System.out.println("请求的包体："+requsetbody);
-			
+
 			BasicHttpEntity requestBody = new BasicHttpEntity();
 			requestBody.setContent(new ByteArrayInputStream(requsetbody
 					.getBytes("UTF-8")));
@@ -1405,7 +1405,7 @@ public class CCPRestSDK {
 			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -1441,7 +1441,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 呼叫结果查询
-	 * 
+	 *
 	 * @param callSid
 	 *            必选参数 呼叫Id
 	 * @return
@@ -1474,9 +1474,9 @@ public class CCPRestSDK {
 		try {
 			HttpGet httpGet = (HttpGet) getHttpRequestBase(0, callResult);
 			HttpResponse response = httpclient.execute(httpGet);
-			
+
 			status = response.getStatusLine().getStatusCode();
-		
+
 			System.out.println("Https请求返回状态码："+status);
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
@@ -1512,7 +1512,7 @@ public class CCPRestSDK {
 
 	/**
 	 * 语音文件上传
-	 * 
+	 *
 	 * @param filename
 	 *            必选参数 文件名
 	 * @param fis
@@ -1537,7 +1537,7 @@ public class CCPRestSDK {
 
 		Filename=filename;
 		CcopHttpClient chc = new CcopHttpClient();
-		DefaultHttpClient httpclient = new DefaultHttpClient();	
+		DefaultHttpClient httpclient = new DefaultHttpClient();
 		try {
 			httpclient = chc.registerSSL(SERVER_IP, "TLS",
 					Integer.parseInt(SERVER_PORT), "https");
@@ -1555,12 +1555,12 @@ public class CCPRestSDK {
 			requestBody.setContent(fis);
 			requestBody.setContentLength(fis.available());
 			System.out.println("请求的包体："+requestBody);
-			
+
 			httppost.setEntity(requestBody);
-			HttpResponse response = httpclient.execute(httppost);			
+			HttpResponse response = httpclient.execute(httppost);
 			status = response.getStatusLine().getStatusCode();
 			System.out.println("Https请求返回状态码："+status);
-			
+
 			HttpEntity entity = response.getEntity();
 			if (entity != null){
 				result = EntityUtils.toString(entity, "UTF-8");
@@ -1769,7 +1769,7 @@ public class CCPRestSDK {
 	}
 
 	private HttpRequestBase getHttpRequestBase(int get, String action,
-			AccountType mAccountType) throws NoSuchAlgorithmException,
+											   AccountType mAccountType) throws NoSuchAlgorithmException,
 			UnsupportedEncodingException {
 		String timestamp = DateUtil.dateToStr(new Date(),
 				DateUtil.DATE_TIME_NO_SLASH);
@@ -1825,7 +1825,7 @@ public class CCPRestSDK {
 		mHttpRequestBase.setHeader("Authorization", auth);
 		System.out.println("请求的Url："+mHttpRequestBase);//打印Url
 		return mHttpRequestBase;
-		
+
 	}
 
 	private String getmethodName(String action) {
@@ -1858,7 +1858,7 @@ public class CCPRestSDK {
 		httpMessage.setHeader("Accept", "application/xml");
 		httpMessage.setHeader("Content-Type", "application/xml;charset=utf-8");
 	}
-	
+
 	private void setHttpHeaderMedia(AbstractHttpMessage httpMessage) {
 		if (BODY_TYPE == BodyType.Type_JSON) {
 			httpMessage.setHeader("Accept", "application/json");
@@ -1874,7 +1874,7 @@ public class CCPRestSDK {
 			httpMessage.setHeader("Accept", "application/json");
 			httpMessage.setHeader("Content-Type",
 					"application/json;charset=utf-8");
-			
+
 		} else {
 			httpMessage.setHeader("Accept", "application/xml");
 			httpMessage.setHeader("Content-Type",
