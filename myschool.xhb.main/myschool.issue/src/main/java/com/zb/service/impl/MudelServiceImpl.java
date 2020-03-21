@@ -1,5 +1,7 @@
 package com.zb.service.impl;
 
+import com.alibaba.fastjson.JSON;
+import com.zb.entity.Expression;
 import com.zb.entity.Mudel;
 import com.zb.mapper.MudelMapper;
 import com.zb.service.MudelService;
@@ -33,21 +35,11 @@ public class MudelServiceImpl implements MudelService {
         Mudel mudel=null;
         String key="mudel:"+mudelId;
         if (redisUtil.hasKey(key)){
-            Map<Object, Object> hmget = redisUtil.hmget(key);
-            mudel.setMudelId(Integer.parseInt(hmget.get("id").toString()));
-            mudel.setMudelMessage(hmget.get("mudelMessage").toString());
-            mudel.setMudelPic(hmget.get("mudelPic").toString());
-            mudel.setMudelTitle(hmget.get("mudelTitle").toString());
-            mudel.setTypeId(Integer.parseInt(hmget.get("typeId").toString()));
+            Object o = redisUtil.get(key);
+            mudel= JSON.parseObject(o.toString(), Mudel.class);
         }else {
-            Map<String,Object>map=new HashMap<>();
             mudel=mudelMapper.getMudelById(mudelId);
-            map.put("id",mudel.getMudelId());
-            map.put("mudelMessage",mudel.getMudelMessage());
-            map.put("mudelPic",mudel.getMudelPic());
-            map.put("mudelTitle",mudel.getMudelTitle());
-            map.put("typeId",mudel.getTypeId());
-            redisUtil.hmset(key,map);
+            redisUtil.set(key, JSON.toJSONString(mudel));
         }
         return mudel;
     }

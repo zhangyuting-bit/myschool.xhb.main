@@ -1,5 +1,6 @@
 package com.zb.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.zb.entity.Expression;
 import com.zb.mapper.ExpressionMapper;
 import com.zb.service.ExpressionService;
@@ -34,15 +35,11 @@ public class ExpressionServiceImpl implements ExpressionService {
         Expression expression=null;
         String key="expression:"+expressionId;
         if (redisUtil.hasKey(key)){
-            Map<Object, Object> hmget = redisUtil.hmget(key);
-            expression.setExpressionId(Integer.parseInt(hmget.get("expressionId").toString()));
-            expression.setExpressionSrc(hmget.get("expressionSrc").toString());
+            Object o = redisUtil.get(key);
+            expression=JSON.parseObject(o.toString(),Expression.class);
         }else {
-            Map<String,Object>map=new HashMap<>();
             expression=expressionMapper.getExpressionById(expressionId);
-            map.put("expressionId",expression.getExpressionId());
-            map.put("expressionSrc",expression.getExpressionSrc());
-            redisUtil.hmset(key,map);
+            redisUtil.set(key, JSON.toJSONString(expression));
         }
         return expression;
     }
