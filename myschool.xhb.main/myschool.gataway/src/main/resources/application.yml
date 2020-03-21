@@ -14,10 +14,22 @@ zuul:
     myuserserver:
       path: /userserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: USERSERVICE
-#    myorderserver:
-#      path: /orderserver/**        #http://localhost:7003/userserver/user/show?uid=2
-#      serviceId: ORDERSERVER
+    authserver:
+      path: /authserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: auth2.server
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
 #    mygoodsserver:
 #      path: /goodsserver/**        #http://localhost:7003/userserver/user/show?uid=2
 #      serviceId: GOODSSERVER
-
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 3000
