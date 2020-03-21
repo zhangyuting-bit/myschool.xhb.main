@@ -15,5 +15,6 @@ public interface NotificationService {
     //添加新的通知信息
     public Notification addNotification(Notification notification);
 
-
+    //学生端实时显示信息
+    public Notification getNocStu(Integer typeId,String gradeId);
 }

@@ -11,6 +11,7 @@
         WHERE
             gradeId=#{gradeId}
         <if test="typeId != 0">AND typeId=#{typeId}</if>
+        ORDER BY notifyTime DESC
     </select>
 
     <select id="getNotificationById" resultType="com.zb.entity.Notification">
@@ -28,6 +29,7 @@
              `typeId`,
              `gradeId`,
              `notifyMessage`,
+             `notifyTime`,
              `mudelId`,
              `title`,
              `endTime`)
@@ -35,6 +37,7 @@
                 #{typeId},
                 #{gradeId},
                 #{notifyMessage},
+                #{notifyTime},
                 #{mudelId},
                 #{title},
                 #{endTime});

@@ -1,8 +1,6 @@
 package com.zb.service.impl;
 
-import com.zb.entity.AddExpression;
 import com.zb.entity.Expression;
-import com.zb.mapper.AddExpressionMapper;
 import com.zb.mapper.ExpressionMapper;
 import com.zb.service.ExpressionService;
 import com.zb.util.RedisUtil;
@@ -11,7 +9,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,9 +18,6 @@ public class ExpressionServiceImpl implements ExpressionService {
     @Resource
     private ExpressionMapper expressionMapper;
 
-    @Resource
-    private AddExpressionMapper addExpressionMapper;
-
     @Autowired
     private RedisUtil redisUtil;
 
@@ -31,18 +25,6 @@ public class ExpressionServiceImpl implements ExpressionService {
     @Override
     public List<Expression> getExpressionAll() {
         return expressionMapper.getExpressionAll();
-    }
-
-    //根据通知编号获取表情信息
-    @Override
-    public List<Expression> getExpressionByNId(String functionId) {
-        List<AddExpression>list=addExpressionMapper.getAddExpressionByNId(functionId);
-        List<Expression>list1=new ArrayList<>();
-        for (AddExpression addExpression:list) {
-            Expression expression=getExpressionById(addExpression.getExpressionId());
-            list1.add(expression);
-        }
-        return list1;
     }
 
     //根据表情编号获取表情信息

@@ -1,9 +1,7 @@
 package com.zb.service.impl;
 
-import com.qiniu.common.QiniuException;
+import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
-import com.zb.entity.AddExpression;
-import com.zb.entity.Document;
 import com.zb.entity.Notification;
 import com.zb.mapper.NotificationMapper;
 import com.zb.service.NotificationService;
@@ -16,13 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Service
 public class NotificationServiceImpl implements NotificationService {
-
     @Resource
     private NotificationMapper notificationMapper;
 
@@ -82,8 +78,22 @@ public class NotificationServiceImpl implements NotificationService {
     @RabbitListener(queues = RabbitConfigs.nocQueue)
     public void getNotification(Notification notification){
         notificationMapper.addNotification(notification);
+        String key="notification:"+notification.getGradeId();
+        redisUtil.set(key, JSON.toJSONString(notification));
     }
 
-
+    //学生端实时显示信息
+    @Override
+    public Notification getNocStu(Integer typeId,String gradeId){
+        String key="notification:"+gradeId;
+        Object o = redisUtil.get(key);
+        if (o!=null){
+            Notification notification=JSON.parseObject(o.toString(),Notification.class);
+            if (typeId==notification.getTypeId()||typeId==0){
+                return notification;
+            }
+        }
+        return null;
+    }
 
 }

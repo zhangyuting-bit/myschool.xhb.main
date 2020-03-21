@@ -22,11 +22,10 @@ public class ExpressionController {
         return DtoUtil.returnSuccess("ok",expressionService.getExpressionAll());
     }
 
-    //根据通知编号获取表情信息
-    @GetMapping("/getExpressionByNId/{functionId}")
-    public Dto getExpressionByNId(@PathVariable("functionId") String functionId) {
-        return DtoUtil.returnSuccess("ok",expressionService.getExpressionByNId(functionId));
+    //根据表情编号获取表情信息
+    @GetMapping("/getExpressionById/{expressionId}")
+    public Dto getExpressionById(@PathVariable("expressionId") Integer expressionId){
+        return DtoUtil.returnSuccess("ok",expressionService.getExpressionById(expressionId));
     }
-
 
 }

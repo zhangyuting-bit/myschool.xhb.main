@@ -35,4 +35,10 @@ public class NotificationController {
         return notificationService.getNotificationById(notificationId);
     }
 
+    //学生端实时显示信息
+    @GetMapping("/getNocStu")
+    public Dto getNocStu(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
+                         String gradeId){
+        return DtoUtil.returnSuccess("ok",notificationService.getNocStu(typeId, gradeId));
+    }
 }

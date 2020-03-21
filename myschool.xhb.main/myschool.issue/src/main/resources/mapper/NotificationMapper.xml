@@ -29,6 +29,7 @@
              `typeId`,
              `gradeId`,
              `notifyMessage`,
+             `notifyTime`,
              `mudelId`,
              `title`,
              `endTime`)
@@ -36,6 +37,7 @@
                 #{typeId},
                 #{gradeId},
                 #{notifyMessage},
+                #{notifyTime},
                 #{mudelId},
                 #{title},
                 #{endTime});
