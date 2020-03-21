@@ -9,6 +9,10 @@
         <module>myschool.gataway</module>
         <module>myschool.common</module>
         <module>myschool.common.api</module>
+        <module>myschool.user</module>
+        <module>myschool.user.api</module>
+        <module>myschool.auth</module>
+        <module>myschool.auth.api</module>
     </modules>
 
     <parent>
