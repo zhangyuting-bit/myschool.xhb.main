@@ -28,16 +28,16 @@
             (`notificationId`,
              `typeId`,
              `gradeId`,
+             `title`,
              `notifyMessage`,
              `notifyTime`,
-             `title`,
              `endTime`)
         VALUES (#{notificationId},
                 #{typeId},
                 #{gradeId},
+                #{title},
                 #{notifyMessage},
                 #{notifyTime},
-                #{title},
                 #{endTime});
     </insert>
 </mapper>
