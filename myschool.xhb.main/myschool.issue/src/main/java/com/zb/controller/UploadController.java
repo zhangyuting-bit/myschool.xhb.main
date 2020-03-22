@@ -1,13 +1,11 @@
 package com.zb.controller;
 
 import com.google.gson.Gson;
-import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
-import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
-import com.zb.entity.Document;
-import com.zb.mapper.DocumentMapper;
+import com.zb.entity.NotDocument;
+import com.zb.mapper.NotDocumentMapper;
 import com.zb.service.UploadService;
 import com.zb.util.IdWorker;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -34,7 +32,7 @@ public class UploadController {
     private RabbitTemplate rabbitTemplate;
 
     @Resource
-    private DocumentMapper documentMapper;
+    private NotDocumentMapper documentMapper;
 
     @Autowired
     private UploadService uploadService;
@@ -58,10 +56,11 @@ public class UploadController {
                 Response response = uploadService.uploadFile(destFile);
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-                Document document=new Document();
+                NotDocument document=new NotDocument();
                 document.setDocumentId(IdWorker.getId());
                 document.setFunctionId(functionId);
                 document.setDocumentSrc(path+""+putRet.key);
+                System.out.println(document.getFunctionId());
                 rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.docKey,document);
                 //System.out.println(putRet.key);//这个就是从七牛云获取的文件名
             }catch (IOException e){
@@ -87,7 +86,7 @@ public class UploadController {
     }
 
     @RabbitListener(queues = RabbitConfigs.docQueue)
-    public void addDocument(Document document){
+    public void addDocument(NotDocument document){
         documentMapper.addDocument(document);
     }
 }

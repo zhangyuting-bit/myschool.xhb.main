@@ -2,7 +2,7 @@ package com.zb.entity;
 
 import java.io.Serializable;
 
-public class Document implements Serializable {
+public class NotDocument implements Serializable {
     private String documentId;
 
     public String getDocumentId() {

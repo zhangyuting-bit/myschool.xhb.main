@@ -17,10 +17,18 @@ public class Notification implements Serializable {
     private String gradeId;
     private String notifyMessage;
     private String notifyTime;
-    private Integer mudelId;
     private String title;
     private String endTime;
 
+    public String getPicSrc() {
+        return picSrc;
+    }
+
+    public void setPicSrc(String picSrc) {
+        this.picSrc = picSrc;
+    }
+
+    private String picSrc;
     public String getTitle() {
         return title;
     }
@@ -69,12 +77,5 @@ public class Notification implements Serializable {
         this.notifyTime = notifyTime;
     }
 
-    public Integer getMudelId() {
-        return mudelId;
-    }
-
-    public void setMudelId(Integer mudelId) {
-        this.mudelId = mudelId;
-    }
 
 }

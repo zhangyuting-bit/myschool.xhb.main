@@ -46,7 +46,6 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setTypeId(Integer.parseInt(hmget.get("typeId").toString()));
             notification.setGradeId(hmget.get("gradeId").toString());
             notification.setNotifyMessage(hmget.get("notifyMessage").toString());
-            notification.setMudelId(Integer.parseInt(hmget.get("mudelId").toString()));
             notification.setNotifyTime(hmget.get("notifyTime").toString());
             notification.setTitle(hmget.get("title").toString());
             notification.setEndTime(hmget.get("endTime").toString());
@@ -57,7 +56,6 @@ public class NotificationServiceImpl implements NotificationService {
             map.put("typeId",notification.getTypeId());
             map.put("gradeId",notification.getGradeId());
             map.put("notifyMessage",notification.getNotifyMessage());
-            map.put("mudelId",notification.getMudelId());
             map.put("notifyTime",notification.getNotifyTime());
             map.put("title",notification.getTitle());
             map.put("endTime",notification.getEndTime());
