@@ -2,6 +2,7 @@ package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
+import com.zb.entity.Expression;
 import com.zb.entity.Notification;
 import com.zb.mapper.NotificationMapper;
 import com.zb.service.NotificationService;
@@ -41,25 +42,11 @@ public class NotificationServiceImpl implements NotificationService {
         Notification notification=null;
         String key="notification:"+notificationId;
         if (redisUtil.hasKey(key)){
-            Map<Object, Object> hmget = redisUtil.hmget(key);
-            notification.setNotificationId(hmget.get("notificationId").toString());
-            notification.setTypeId(Integer.parseInt(hmget.get("typeId").toString()));
-            notification.setGradeId(hmget.get("gradeId").toString());
-            notification.setNotifyMessage(hmget.get("notifyMessage").toString());
-            notification.setNotifyTime(hmget.get("notifyTime").toString());
-            notification.setTitle(hmget.get("title").toString());
-            notification.setEndTime(hmget.get("endTime").toString());
+            Object o = redisUtil.get(key);
+            notification=JSON.parseObject(o.toString(), Notification.class);
         }else {
-            Map<String,Object>map=new HashMap<>();
             notification=notificationMapper.getNotificationById(notificationId);
-            map.put("notificationId",notification.getNotificationId());
-            map.put("typeId",notification.getTypeId());
-            map.put("gradeId",notification.getGradeId());
-            map.put("notifyMessage",notification.getNotifyMessage());
-            map.put("notifyTime",notification.getNotifyTime());
-            map.put("title",notification.getTitle());
-            map.put("endTime",notification.getEndTime());
-            redisUtil.hmset(key,map);
+            redisUtil.set(key, JSON.toJSONString(notification));
         }
         return notification;
     }

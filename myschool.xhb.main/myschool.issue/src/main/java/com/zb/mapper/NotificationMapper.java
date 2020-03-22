@@ -15,4 +15,6 @@ public interface NotificationMapper {
     //添加新的通知信息
     Integer addNotification(Notification notification);
 
+    //修改通知的语音路径或视频路径
+    Integer updateVdoAndAudio(Notification notification);
 }

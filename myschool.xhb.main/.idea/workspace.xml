@@ -50,11 +50,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotPicMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotPicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotPicServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotPicMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/DelayRabbitConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/Swagger2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/dto/Dto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/dto/DtoUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/dto/Page.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/BigDecimalUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/BigDecimalUtil$BigDecimalOprations.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/BigDecimalUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$ErrorCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$MessageStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$OrderStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$QgStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$QueueName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$Redis_Expire.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$StockStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$User_AUTH.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants$WxpayStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/DateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/EmptyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/IdWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/MqUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/RedisUtils$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/RedisUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/vo/EshopException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/classes/com/zb/MyEurekaServerApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/com/zb/MyGatWayServerApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/com/zb/filter/PowerFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Mudel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/NotDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/NotPic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ExpressionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/IssueServerApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/config/FileUploadConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/config/RabbitConfigs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ExpressionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/MudelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotDocumentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotificationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/UploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/ExpressionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/MudelMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotDocumentMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotificationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/ExpressionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/MudelService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NotDocumentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NotificationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/UploadService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ExpressionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/MudelServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotDocumentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/UploadServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/util/RedisUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/util/Status$ExpireEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/util/Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/ehcache.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ExpressionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/MudelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotDocumentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +185,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/北大青鸟课程/S3/微服/18/01/myshop.main" />
+    <property name="last_opened_file_path" value="F:/idea项目/springclud-wf-all" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -131,7 +211,7 @@
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.eureka\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.IssueServerApp">
+  <component name="RunManager" selected="Spring Boot.MyGatWayServerApp">
     <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
@@ -207,6 +287,7 @@
       <workItem from="1584778193854" duration="80000" />
       <workItem from="1584778389992" duration="6059000" />
       <workItem from="1584841283497" duration="9456000" />
+      <workItem from="1584857590616" duration="20062000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -427,10 +508,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1584855482116">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1584864503726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584855482116" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584864503726" />
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -447,58 +528,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584855505128" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1584761454634">
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1584878649020">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584761454634" />
-    <state width="1493" height="279" key="GridCell.Tab.0.bottom" timestamp="1584857061938">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584878649020" />
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.0.center" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.0.center" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.0.left" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.0.left" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.0.right" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.0.right" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.1.bottom" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.1.center" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.1.left" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="279" key="GridCell.Tab.1.right" timestamp="1584857061938">
+    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="279" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584857061938" />
-    <state width="1493" height="265" key="GridCell.Tab.2.bottom" timestamp="1584779236721">
+    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.2.bottom" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584779236721" />
-    <state width="1493" height="265" key="GridCell.Tab.2.center" timestamp="1584779236721">
+    <state width="1493" height="265" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.2.center" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584779236721" />
-    <state width="1493" height="265" key="GridCell.Tab.2.left" timestamp="1584779236721">
+    <state width="1493" height="265" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.2.left" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584779236721" />
-    <state width="1493" height="265" key="GridCell.Tab.2.right" timestamp="1584779236721">
+    <state width="1493" height="265" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
+    <state width="1493" height="265" key="GridCell.Tab.2.right" timestamp="1584884542809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584779236721" />
+    <state width="1493" height="265" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584884542809" />
     <state x="270" y="56" key="SettingsEditor" timestamp="1584241825299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

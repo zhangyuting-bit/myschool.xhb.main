@@ -1,5 +1,6 @@
 server:
   port: 8001
+  connection-timeout: 1000000
 spring:
   application:
     name: ISSUESERVER
@@ -23,7 +24,6 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-
 qiniu:
   accessKey: ZFYhmom1h56k40C8hBzlx_fVcvsJRcvytGxrDo4L
   secretKey: M6p0Uta1CEjw1j-Sx_bX-U8Ikb4lUN8QFrZxGXDJ
@@ -51,3 +51,9 @@ eureka:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false

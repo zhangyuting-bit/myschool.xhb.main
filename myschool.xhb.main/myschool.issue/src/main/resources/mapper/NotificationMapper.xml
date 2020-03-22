@@ -40,4 +40,12 @@
                 #{notifyTime},
                 #{endTime});
     </insert>
+
+    <update id="updateVdoAndAudio">
+        UPDATE `notification`
+        SET
+          `audioSrc` = #{audioSrc},
+          `videoSrc` = #{videoSrc}
+        WHERE `notificationId` = #{notificationId};
+    </update>
 </mapper>

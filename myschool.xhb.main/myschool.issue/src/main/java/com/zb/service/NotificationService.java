@@ -17,4 +17,5 @@ public interface NotificationService {
 
     //学生端实时显示信息
     public Notification getNocStu(Integer typeId,String gradeId);
+
 }
