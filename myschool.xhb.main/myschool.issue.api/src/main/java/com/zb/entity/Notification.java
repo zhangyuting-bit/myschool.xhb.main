@@ -19,6 +19,24 @@ public class Notification implements Serializable {
     private String notifyTime;
     private String title;
     private String endTime;
+    private String audioSrc;
+    private String videoSrc;
+
+    public String getAudioSrc() {
+        return audioSrc;
+    }
+
+    public void setAudioSrc(String audioSrc) {
+        this.audioSrc = audioSrc;
+    }
+
+    public String getVideoSrc() {
+        return videoSrc;
+    }
+
+    public void setVideoSrc(String videoSrc) {
+        this.videoSrc = videoSrc;
+    }
 
     public String getPicSrc() {
         return picSrc;

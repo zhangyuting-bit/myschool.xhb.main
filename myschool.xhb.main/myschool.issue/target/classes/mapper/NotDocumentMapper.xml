@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zb.mapper.DocumentMapper">
+<mapper namespace="com.zb.mapper.NotDocumentMapper">
     <insert id="addDocument">
-        INSERT INTO `document`
+        INSERT INTO `notdocument`
             (`documentId`,
              `functionId`,
              `documentSrc`)
@@ -13,11 +13,11 @@
                 #{documentSrc});
     </insert>
     
-    <select id="getDocumentByNId" resultType="com.zb.entity.Document">
+    <select id="getDocumentByNId" resultType="com.zb.entity.NotDocument">
         SELECT
             *
         FROM
-            `document`
+            `notdocument`
         WHERE
             functionId=#{functionId}
     </select>
