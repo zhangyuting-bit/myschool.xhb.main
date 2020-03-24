@@ -3,10 +3,11 @@ package com.zb.service.impl;
 import com.zb.entity.NotPic;
 import com.zb.mapper.NotPicMapper;
 import com.zb.service.NotPicService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
-
+@Service
 public class NotPicServiceImpl implements NotPicService {
     @Resource
     private NotPicMapper notPicMapper;

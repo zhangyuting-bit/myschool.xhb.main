@@ -46,7 +46,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification=JSON.parseObject(o.toString(), Notification.class);
         }else {
             notification=notificationMapper.getNotificationById(notificationId);
-            redisUtil.set(key, JSON.toJSONString(notification),12000);
+            redisUtil.set(key, JSON.toJSONString(notification),120000);
         }
         return notification;
     }
@@ -64,7 +64,7 @@ public class NotificationServiceImpl implements NotificationService {
     public void getNotification(Notification notification){
         notificationMapper.addNotification(notification);
         String key="notification:"+notification.getGradeId();
-        redisUtil.set(key, JSON.toJSONString(notification));
+        redisUtil.set(key, JSON.toJSONString(notification),12000);
     }
 
     //学生端实时显示信息
