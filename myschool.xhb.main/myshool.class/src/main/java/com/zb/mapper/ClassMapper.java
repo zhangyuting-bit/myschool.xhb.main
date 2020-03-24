@@ -18,6 +18,8 @@ public interface ClassMapper {
      * @return
      */
     Class_add getClassBy(@Param("class_number")Integer class_number);
+    //根据老师的id来查询班级的信息
+    List<Class_add> findClassesBy(@Param("teacher_id")Integer teacher_id);
 
     /**
      * 创建班级
@@ -41,4 +43,6 @@ public interface ClassMapper {
     List<Class_real> getReal();
     //根据学历的id查询所属的班级
     List<Class_age_real> getAgeReal(@Param("real_id")Integer real_id);
+    //修改班级信息
+    int updateClass(Class_add classes);
 }

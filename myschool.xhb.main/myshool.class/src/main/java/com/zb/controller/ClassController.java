@@ -7,6 +7,8 @@ import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.pojo.Class_Subject;
 import com.zb.pojo.Class_add;
+import com.zb.pojo.Class_info;
+import com.zb.service.ClassInfoService;
 import com.zb.service.ClassService;
 import com.zb.util.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +27,16 @@ import java.util.Random;
 public class ClassController {
     @Autowired
     private ClassService classService;
+    @Autowired
+    private ClassInfoService classInfoService;
     @Value("${qiniu.path}")
     private String path;
     private String key=null;
     @PostMapping("/classfiles")
-    public String classfiles(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,Class_add classAdd)throws Exception{
+    public Dto classfiles(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,Class_add classAdd)throws Exception{
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
-                return "文件为空，请重新上传";
+                return DtoUtil.returnSuccess("文件为空，请重新上传");
             }
             try {
                 //根据时间戳创建文件名
@@ -54,13 +58,14 @@ public class ClassController {
                 classAdd.setClass_number(number);
                 classAdd.setId(IdWorker.getId());
                 classAdd.setTeacher_id(1);
+                classAdd.setTeacherName("孟老师");//这里根据用户的id获取用户的名称
                 classAdd.setClass_emblem(path+key);
                 classService.addClass(classAdd);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        return "创建成功！";
+        return DtoUtil.returnSuccess("ok", classAdd);
     }
     @GetMapping("/subject")
     public Dto subject(){
@@ -73,5 +78,58 @@ public class ClassController {
     @GetMapping("/agereal/{real_id}")
     public Dto agereal(@PathVariable("real_id")Integer real_id){
         return DtoUtil.returnSuccess("ok", classService.getAgeReal(real_id));
+    }
+    //修改班级的信息
+    @PostMapping("/updateclass")
+    public Dto updateclass(Class_add classes){
+        return DtoUtil.returnSuccess("ok", classService.updateClass(classes));
+    }
+    //根据班号查看班级的信息
+    @GetMapping("/classnumber/{class_number}")
+    public Dto classnumber(@PathVariable("class_number")Integer class_number){
+        return DtoUtil.returnSuccess("ok", classService.findClassBy(class_number));
+    }
+    //查询老师所 创建的班级集合
+    @GetMapping("/showclass/{teacher_id}")
+    public Dto showclass(@PathVariable("teacher_id")Integer teacher_id){
+        return DtoUtil.returnSuccess("ok", classService.findClassesList(teacher_id));
+}
+    //获取班级内部人员的信息
+    @GetMapping("/classinfo/{class_number}")
+    public Dto classinfo(@PathVariable("class_number")Integer class_number){
+        return DtoUtil.returnSuccess("ok",classInfoService.findClassinfoBy(class_number));
+    }
+    @PostMapping("/updateclassinfo")
+    public Dto updateclassinfo(Class_info classinfo){
+        return DtoUtil.returnSuccess("ok", classInfoService.updateClassInfo(classinfo));
+    }
+    //获取某个成员的信息
+    @GetMapping("/classinfoby/{id}")
+    public Dto classinfoby(@PathVariable("id")String id){
+        return DtoUtil.returnSuccess("ok", classInfoService.getClassInfoBy(id));
+    }
+    @PostMapping("/addclassjob/{class_number}/{user_id}")
+    public Dto addclassjob(
+            Class_info classInfo,@PathVariable("class_number")Integer class_number,@PathVariable("user_id")Integer user_id){
+        return DtoUtil.returnSuccess("ok", classInfoService.addClassInfo(classInfo,class_number,user_id));
+    }
+    //
+    @GetMapping("/addclassinfo/{class_number}")
+    public Dto addclassinfo(@PathVariable("class_number")Integer class_number){
+        return DtoUtil.returnSuccess("ok",classInfoService.classinfojob(class_number));
+    }
+    //获取某个成员的信息
+    @GetMapping("/dletejob/{id}")
+    public Dto dletejob(@PathVariable("id")String  id){
+        return DtoUtil.returnSuccess("ok", classInfoService.classdeletejobs(id));
+    }
+    //根据班号监控查询有没有人申请加入此班级 等待老师通过
+    @GetMapping("/classjobshow/{class_number}")
+    public Dto classjobshow(@PathVariable("class_number")Integer  class_number){
+        return DtoUtil.returnSuccess("ok",classInfoService.findclassjob(class_number));
+    }
+    @GetMapping("/jobshowby/{class_number}")
+    public Dto jobshowby(@PathVariable("class_number")Integer  class_number){
+        return DtoUtil.returnSuccess("ok",classInfoService.findClassjobBy(class_number));
     }
 }

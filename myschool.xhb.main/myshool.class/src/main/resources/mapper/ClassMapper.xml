@@ -12,6 +12,7 @@
             (id,
             class_number,
             teacher_id,
+            teacherName,
             class_Name,
             class_emblem,
             class_subject,
@@ -27,6 +28,7 @@
             #{id},
             #{class_number},
             #{teacher_id},
+            #{teacherName},
             #{class_Name},
             #{class_emblem},
             #{class_subject},
@@ -49,5 +51,20 @@
                 INNER JOIN class_real r ON ar.real_id=r.real_id
                 INNER JOIN class_age a ON ar.age_id=a.age_id
                 WHERE ar.real_id=#{real_id};
+    </select>
+    <update id="updateClass" parameterType="com.zb.pojo.Class_add">
+        UPDATE class_add SET class_Name = #{class_Name} ,
+            class_emblem = #{class_emblem} ,
+            class_subject = #{class_subject} ,
+            school = #{school} ,
+            real_id = #{real_id} ,
+            age_id = #{age_id},
+            real_class = #{real_class} ,
+            updatedTime = NOW()
+            WHERE
+            class_number=#{class_number};
+    </update>
+    <select id="findClassesBy" resultType="com.zb.pojo.Class_add">
+        SELECT * FROM class_add WHERE teacher_id=#{teacher_id}
     </select>
 </mapper>

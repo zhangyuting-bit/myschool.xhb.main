@@ -5,11 +5,13 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
 import com.zb.config.RabbitConfig;
+import com.zb.dto.Dto;
+import com.zb.dto.DtoUtil;
 import com.zb.mapper.ClassInfoMapper;
-import com.zb.mapper.ClassMapper;
-import com.zb.pojo.*;
-import com.zb.service.ClassService;
-import com.zb.util.IdWorker;
+import com.zb.mapper.ClassleaveMapper;
+import com.zb.pojo.Class_leave;
+import com.zb.pojo.Leave_job;
+import com.zb.service.ClassleaveService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,30 +22,23 @@ import java.io.File;
 import java.util.List;
 
 @Service
-public class ClassServiceImpl implements ClassService, InitializingBean {
-    @Autowired
-    private ClassMapper classMapper;
+
+public class ClassleaveServiceImpl implements ClassleaveService, InitializingBean {
     @Autowired
     private UploadManager uploadManager;
     @Autowired
-    private Auth auth;
-    @Autowired
     private RabbitTemplate rabbitTemplate;
     @Autowired
-    private RabbitConfig rabbitConfig;
+    private Auth auth;
     @Autowired
-    private ClassInfoMapper classInfoMapper;
+    private ClassleaveMapper classleaveMapper;
     @Value("${qiniu.bucket}")
     private String bucket;
     private StringMap putPolicy;
     String key=null;
     @Override
-    public int addClass(Class_add classAdd) {
-        int cont = classMapper.addClass(classAdd);
-        if(cont>0){
-            rabbitTemplate.convertAndSend(rabbitConfig.myexchange,"inform.class",classAdd);
-        }
-        return cont;
+    public int addleave(Leave_job leaveJob) {
+        return classleaveMapper.addleavejob(leaveJob);
     }
 
     @Override
@@ -58,38 +53,44 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
     }
 
     @Override
-    public List<Class_real> getReal() {
-        return classMapper.getReal();
-    }
-
-    @Override
-    public List<Class_Subject> getSubject() {
-        return classMapper.getSubject();
-    }
-
-    @Override
-    public List<Class_age_real> getAgeReal(Integer real_id) {
-        return classMapper.getAgeReal(real_id);
-    }
-
-    @Override
-    public Class_add findClassBy(Integer class_number) {
-        return classMapper.getClassBy(class_number);
-    }
-
-    @Override
-    public int updateClass(Class_add classes) {
-        return classMapper.updateClass(classes);
-    }
-
-    @Override
-    public List<Class_add> findClassesList(Integer teacher_id) {
-        List<Class_add> classesBy = classMapper.findClassesBy(teacher_id);
-        for (Class_add classAdd : classesBy) {
-            Integer classcount=classInfoMapper.classcount(classAdd.getClass_number());
-            classAdd.setClass_count(classcount);
+    public Dto updateleaveAgree(String id) {
+        //同意请假
+        int agree = classleaveMapper.updataleaveAgree(id);
+        if(agree==1){
+            Leave_job job = classleaveMapper.getleaveBy(id);
+            rabbitTemplate.convertAndSend(RabbitConfig.myexchange, "inform.job",job);
+            //并删除这条任务
+            classleaveMapper.deleteleave(id);
         }
-        return classesBy;
+        return DtoUtil.returnSuccess("agree");
+    }
+
+    @Override
+    public Dto updateleavefuse(String id) {
+        //同意请假
+        int agree = classleaveMapper.updataleaverefuse(id);
+        if(agree==1){
+            Leave_job job = classleaveMapper.getleaveBy(id);
+            rabbitTemplate.convertAndSend(RabbitConfig.myexchange, "inform.job",job);
+            //并删除这条任务
+            classleaveMapper.deleteleave(id);
+        }
+        return DtoUtil.returnSuccess("fuse");
+    }
+
+    @Override
+    public List<Leave_job> findleavenumber(Integer class_number) {
+        return classleaveMapper.findleavenumber(class_number);
+    }
+
+    @Override
+    public List<Leave_job> findleaveBy() {
+        return classleaveMapper.findleaveBy();
+    }
+
+    @Override
+    public int addclassleave(Class_leave classLeave) {
+        return classleaveMapper.addclassleave(classLeave);
     }
 
     @Override

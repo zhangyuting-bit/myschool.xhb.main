@@ -27,6 +27,9 @@ public class Class_add implements Serializable {
     private String real_class;
     //老师的id
     private Integer teacher_id;
+    private String teacherName;
+    //总人数
+    public Integer class_count;
     private  String createdTime;
     private String updatedTime;
     //getter setter
@@ -115,5 +118,21 @@ public class Class_add implements Serializable {
 
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    public Integer getClass_count() {
+        return class_count;
+    }
+
+    public void setClass_count(Integer class_count) {
+        this.class_count = class_count;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 }

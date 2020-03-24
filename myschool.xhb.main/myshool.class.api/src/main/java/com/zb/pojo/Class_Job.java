@@ -1,11 +1,8 @@
 package com.zb.pojo;
-import java.io.Serializable;
-import java.util.Date;
 
-/**
-*   pojo of class_info
-*/
-public class Class_info implements Serializable {
+import java.io.Serializable;
+
+public class Class_Job implements Serializable {
     //
     private String id;
     //班级编号
@@ -33,51 +30,20 @@ public class Class_info implements Serializable {
     private  String createdTime;
     private String updatedTime;
 
-    //getter setter
-    public void setId (String  id){
-        this.id=id;
-    }
-    public  String getId(){
-        return this.id;
-    }
-    public void setClass_number (Integer  class_number){
-        this.class_number=class_number;
-    }
-    public  Integer getClass_number(){
-        return this.class_number;
-    }
-    public void setCall (String  call){
-        this.call=call;
-    }
-    public  String getCall(){
-        return this.call;
-    }
-    public void setRemarks (String  remarks){
-        this.remarks=remarks;
-    }
-    public  String getRemarks(){
-        return this.remarks;
-    }
-    public void setReason (String  reason){
-        this.reason=reason;
-    }
-    public  String getReason(){
-        return this.reason;
-    }
-    public String getCreatedTime() {
-        return createdTime;
+    public String getId() {
+        return id;
     }
 
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getUpdatedTime() {
-        return updatedTime;
+    public Integer getClass_number() {
+        return class_number;
     }
 
-    public void setUpdatedTime(String updatedTime) {
-        this.updatedTime = updatedTime;
+    public void setClass_number(Integer class_number) {
+        this.class_number = class_number;
     }
 
     public Integer getUser_id() {
@@ -88,12 +54,44 @@ public class Class_info implements Serializable {
         this.user_id = user_id;
     }
 
+    public String getCall() {
+        return call;
+    }
+
+    public void setCall(String call) {
+        this.call = call;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public String getJurisdiction() {
+        return jurisdiction;
+    }
+
+    public void setJurisdiction(String jurisdiction) {
+        this.jurisdiction = jurisdiction;
+    }
+
     public Integer getClass_subject() {
         return class_subject;
     }
 
     public void setClass_subject(Integer class_subject) {
         this.class_subject = class_subject;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public Integer getState() {
@@ -120,12 +118,20 @@ public class Class_info implements Serializable {
         this.relationship = relationship;
     }
 
-    public String getJurisdiction() {
-        return jurisdiction;
+    public String getCreatedTime() {
+        return createdTime;
     }
 
-    public void setJurisdiction(String jurisdiction) {
-        this.jurisdiction = jurisdiction;
+    public void setCreatedTime(String createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public String getUpdatedTime() {
+        return updatedTime;
+    }
+
+    public void setUpdatedTime(String updatedTime) {
+        this.updatedTime = updatedTime;
     }
 
     public Integer getJurisdiction_id() {
