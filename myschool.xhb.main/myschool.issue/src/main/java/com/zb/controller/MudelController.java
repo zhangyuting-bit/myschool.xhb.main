@@ -19,13 +19,13 @@ public class MudelController {
 
     //根据功能类型编号获取模板
     @GetMapping("/getMudelByTypeId/{typeId}")
-    public Dto getMudelByTypeId(@PathVariable("typeId") Integer typeId) {
+    public Dto<List<Mudel>> getMudelByTypeId(@PathVariable("typeId") Integer typeId) {
         return DtoUtil.returnSuccess("ok",mudelService.getMudelByTypeId(typeId));
     }
 
     // 根据模板编号获取模板信息
     @GetMapping("/getMudelById/{mudelId}")
-    public Dto getMudelById(@PathVariable("mudelId")Integer mudelId) {
+    public Dto<Mudel> getMudelById(@PathVariable("mudelId")Integer mudelId) {
         return DtoUtil.returnSuccess("ok",mudelService.getMudelById(mudelId));
     }
 

@@ -75,6 +75,9 @@ public class UploadController {
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 String str=file.getContentType().split("/")[1];
+                String key="notification:"+gradeId;
+                Object o = redisUtil.get(key);
+                Notification notification=JSON.parseObject(o.toString(),Notification.class);
                 System.out.println(str);
                 if (str.equals("bmp")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
                     NotPic notPic=new NotPic();
@@ -85,23 +88,13 @@ public class UploadController {
                         notPic.setStatu(1);
                     }else {
                         notPic.setStatu(0);
-                        String key="notification:"+gradeId;
-                        Object o = redisUtil.get(key);
-                        Notification notification=JSON.parseObject(o.toString(),Notification.class);
                         notification.setPicSrc(notPic.getPicSrc());
-                        redisUtil.set(key, JSON.toJSONString(notification));
                     }
                     notPicMapper.addNotPic(notPic);
                 }else if (str.equals("wav")||str.equals("mp3")||str.equals("wma")||str.equals("mp4")){
-                    String key="notification:"+gradeId;
-                    Object o = redisUtil.get(key);
-                    Notification notification=JSON.parseObject(o.toString(),Notification.class);
                     notification.setAudioSrc(path+""+putRet.key);
                     notificationMapper.updateVdoAndAudio(notification);
                 }else if (str.equals("avi")||str.equals("mov")||str.equals("octet-stream")){
-                    String key="notification:"+gradeId;
-                    Object o = redisUtil.get(key);
-                    Notification notification=JSON.parseObject(o.toString(),Notification.class);
                     notification.setVideoSrc(path+""+putRet.key);
                     notificationMapper.updateVdoAndAudio(notification);
                 }else {
@@ -111,6 +104,7 @@ public class UploadController {
                     document.setDocumentSrc(path+""+putRet.key);
                     documentMapper.addDocument(document);
                 }
+                redisUtil.set(key, JSON.toJSONString(notification));
             }catch (IOException e){
                 e.printStackTrace();
                 //System.out.println(putRet.key);//这个就是从七牛云获取的文件名

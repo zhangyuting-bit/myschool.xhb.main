@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.NotificationMapper">
+    <select id="getNotificationGradeId" resultType="com.zb.entity.Notification">
+        SELECT
+            *
+        FROM
+            `notification`
+        WHERE
+            gradeId=#{gradeId}
+        <if test="typeId != 0">AND typeId=#{typeId}</if>
+        ORDER BY notifyTime DESC
+    </select>
+
+    <select id="getNotificationById" resultType="com.zb.entity.Notification">
+        SELECT
+            *
+        FROM
+            `notification`
+        WHERE
+            notificationId=#{notificationId}
+    </select>
+
+    <insert id="addNotification">
+        INSERT INTO `notification`
+            (`notificationId`,
+             `typeId`,
+             `gradeId`,
+             `title`,
+             `notifyMessage`,
+             `notifyTime`,
+             `endTime`)
+        VALUES (#{notificationId},
+                #{typeId},
+                #{gradeId},
+                #{title},
+                #{notifyMessage},
+                #{notifyTime},
+                #{endTime});
+    </insert>
+
+    <update id="updateVdoAndAudio">
+        UPDATE `notification`
+        SET
+          `audioSrc` = #{audioSrc},
+          `videoSrc` = #{videoSrc}
+        WHERE `notificationId` = #{notificationId};
+    </update>
+</mapper>

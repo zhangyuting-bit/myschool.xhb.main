@@ -10,5 +10,5 @@ public interface MudelService {
     public List<Mudel> getMudelByTypeId(Integer typeId);
 
      // 根据模板编号获取模板信息
-    Mudel getMudelById(@Param("mudelId")Integer mudelId);
+    public Mudel getMudelById(@Param("mudelId")Integer mudelId);
 }

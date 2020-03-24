@@ -46,7 +46,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification=JSON.parseObject(o.toString(), Notification.class);
         }else {
             notification=notificationMapper.getNotificationById(notificationId);
-            redisUtil.set(key, JSON.toJSONString(notification));
+            redisUtil.set(key, JSON.toJSONString(notification),12000);
         }
         return notification;
     }

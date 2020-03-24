@@ -5,6 +5,7 @@ import com.zb.mapper.NotPicMapper;
 import com.zb.service.NotPicService;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 public class NotPicServiceImpl implements NotPicService {
     @Resource
@@ -14,5 +15,17 @@ public class NotPicServiceImpl implements NotPicService {
     @Override
     public Integer addNotPic(NotPic notPic) {
         return notPicMapper.addNotPic(notPic);
+    }
+
+    //根据通知编号查询图片
+    @Override
+    public List<NotPic> getPicByFId(String functionId) {
+        return notPicMapper.getPicByFId(functionId);
+    }
+
+    //根据通知编号查询状态为0的图片
+    @Override
+    public NotPic getPicByStatu(String functionId) {
+        return notPicMapper.getPicByStatu(functionId);
     }
 }

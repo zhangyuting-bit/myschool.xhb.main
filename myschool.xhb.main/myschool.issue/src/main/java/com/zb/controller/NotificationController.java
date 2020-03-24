@@ -17,7 +17,7 @@ public class NotificationController {
 
 
     @GetMapping("/getNotificationGradeId")
-    public Dto getNotificationGradeId(
+    public Dto<List<Notification>> getNotificationGradeId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
             String gradeId) {
         return DtoUtil.returnSuccess("ok",notificationService.getNotificationGradeId(typeId,gradeId));
@@ -25,19 +25,19 @@ public class NotificationController {
 
     //添加新的通知信息
     @RequestMapping("/addNotification")
-    public Dto addNotification(Notification notification) {
+    public Dto<Notification> addNotification(Notification notification) {
         return DtoUtil.returnSuccess("ok",notificationService.addNotification(notification));
     }
 
     //根据通知编号获取通知信息
     @GetMapping("/getNotificationById/{notificationId}")
-    public Notification getNotificationById(@PathVariable("notificationId") String notificationId) {
-        return notificationService.getNotificationById(notificationId);
+    public Dto<Notification> getNotificationById(@PathVariable("notificationId") String notificationId) {
+        return DtoUtil.returnSuccess("ok",notificationService.getNotificationById(notificationId));
     }
 
     //学生端实时显示信息
     @GetMapping("/getNocStu")
-    public Dto getNocStu(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
+    public Dto<Notification> getNocStu(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
                          String gradeId){
         return DtoUtil.returnSuccess("ok",notificationService.getNocStu(typeId, gradeId));
     }

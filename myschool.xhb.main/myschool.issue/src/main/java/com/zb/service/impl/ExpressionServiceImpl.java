@@ -39,7 +39,7 @@ public class ExpressionServiceImpl implements ExpressionService {
             expression=JSON.parseObject(o.toString(),Expression.class);
         }else {
             expression=expressionMapper.getExpressionById(expressionId);
-            redisUtil.set(key, JSON.toJSONString(expression),12000);
+            redisUtil.set(key, JSON.toJSONString(expression));
         }
         return expression;
     }

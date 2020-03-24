@@ -18,13 +18,13 @@ public class ExpressionController {
 
     //获取全部表情信息
     @GetMapping("/getExpressionAll")
-    public Dto getExpressionAll(){
+    public Dto<List<Expression>> getExpressionAll(){
         return DtoUtil.returnSuccess("ok",expressionService.getExpressionAll());
     }
 
     //根据表情编号获取表情信息
     @GetMapping("/getExpressionById/{expressionId}")
-    public Dto getExpressionById(@PathVariable("expressionId") Integer expressionId){
+    public Dto<Expression> getExpressionById(@PathVariable("expressionId") Integer expressionId){
         return DtoUtil.returnSuccess("ok",expressionService.getExpressionById(expressionId));
     }
 

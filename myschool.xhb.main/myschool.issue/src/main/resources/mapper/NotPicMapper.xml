@@ -23,4 +23,24 @@
         WHERE
             functionId=#{functionId}
     </select>
+    
+    <select id="getPicByFId" resultType="com.zb.entity.NotPic">
+        select
+            *
+        from
+            notpic
+        where
+            functionId=#{functionId}
+    </select>
+
+    <select id="getPicByStatu" resultType="com.zb.entity.NotPic">
+        SELECT
+            *
+        FROM
+            notpic
+        WHERE
+            functionId=#{functionId}
+        AND
+            statu=0
+    </select>
 </mapper>
