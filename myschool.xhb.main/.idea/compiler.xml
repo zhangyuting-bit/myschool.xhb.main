@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="myschool.issue" />
+        <module name="myschool.user" />
+        <module name="myschool.user.api" />
         <module name="myschool.issue.api" />
         <module name="myschool.eureka" />
         <module name="myschool.common" />

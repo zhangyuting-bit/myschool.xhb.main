@@ -17,4 +17,7 @@ public interface NotificationMapper {
 
     //修改通知的语音路径或视频路径
     Integer updateVdoAndAudio(Notification notification);
+
+    //修改结束时间
+    Integer updateEndTime(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
 }

@@ -15,7 +15,7 @@ public class NotificationController {
     @Resource
     private NotificationService notificationService;
 
-
+    ////根据班级编号和通知类型编号获取全部对应通知
     @GetMapping("/getNotificationGradeId")
     public Dto<List<Notification>> getNotificationGradeId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
@@ -40,5 +40,11 @@ public class NotificationController {
     public Dto<Notification> getNocStu(@RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
                          String gradeId){
         return DtoUtil.returnSuccess("ok",notificationService.getNocStu(typeId, gradeId));
+    }
+
+    //修改结束时间
+    @RequestMapping("updateEndTime")
+    public Dto<Integer> updateEndTime(String endTime, String notificationId) {
+        return DtoUtil.returnSuccess("ok",notificationService.updateEndTime(endTime, notificationId));
     }
 }

@@ -50,4 +50,11 @@
           `videoSrc` = #{videoSrc}
         WHERE `notificationId` = #{notificationId};
     </update>
+
+    <update id="updateEndTime">
+        UPDATE `notification`
+        SET
+          `endTime` = #{endTime}
+        WHERE `notificationId` = #{notificationId};
+    </update>
 </mapper>

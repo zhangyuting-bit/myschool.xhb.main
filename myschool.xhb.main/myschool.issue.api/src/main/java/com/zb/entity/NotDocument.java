@@ -1,9 +1,14 @@
 package com.zb.entity;
 
 import java.io.Serializable;
-
+//通知,习惯,讨论,作业,活动附件类
 public class NotDocument implements Serializable {
+    //附件编号
     private String documentId;
+    //通知编号
+    private String functionId;
+    //附件路径
+    private String documentSrc;
 
     public String getDocumentId() {
         return documentId;
@@ -13,8 +18,6 @@ public class NotDocument implements Serializable {
         this.documentId = documentId;
     }
 
-    private String functionId;
-
     public String getFunctionId() {
         return functionId;
     }
@@ -23,7 +26,6 @@ public class NotDocument implements Serializable {
         this.functionId = functionId;
     }
 
-    private String documentSrc;
     public String getDocumentSrc() {
         return documentSrc;
     }

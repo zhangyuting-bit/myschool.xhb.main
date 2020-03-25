@@ -81,4 +81,10 @@ public class NotificationServiceImpl implements NotificationService {
         return null;
     }
 
+    //修改结束时间
+    @Override
+    public Integer updateEndTime(String endTime, String notificationId) {
+        return notificationMapper.updateEndTime(endTime,notificationId);
+    }
+
 }

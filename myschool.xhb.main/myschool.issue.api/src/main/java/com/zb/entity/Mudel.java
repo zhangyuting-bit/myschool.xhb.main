@@ -1,10 +1,18 @@
 package com.zb.entity;
 
 import java.io.Serializable;
-
+//模板类
 public class Mudel implements Serializable {
+    //模板编号
     private Integer mudelId;
+    //通知类型
     private Integer typeId;
+    //模板标题
+    private String mudelTitle;
+    //模板内容
+    private String mudelMessage;
+    //模板图片
+    private String mudelPic;
 
     public Integer getTypeId() {
         return typeId;
@@ -13,10 +21,6 @@ public class Mudel implements Serializable {
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
     }
-
-    private String mudelTitle;
-    private String mudelMessage;
-    private String mudelPic;
 
     public Integer getMudelId() {
         return mudelId;

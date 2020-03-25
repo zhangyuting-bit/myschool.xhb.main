@@ -1,10 +1,28 @@
 package com.zb.entity;
 
 import java.io.Serializable;
-
+//通知,习惯,讨论,作业,活动类
 public class Notification implements Serializable {
+    //通知编号
     private String notificationId;
+    //类型编号
     private Integer typeId;
+    //教师编号
+    private String teacherId;
+    //班级编号
+    private String gradeId;
+    //发布内容
+    private String notifyMessage;
+    //发布时间
+    private String notifyTime;
+    //发布标题
+    private String title;
+    //结束时间
+    private String endTime;
+    //音频路径
+    private String audioSrc;
+    //视频路径
+    private String videoSrc;
 
     public Integer getTypeId() {
         return typeId;
@@ -21,15 +39,6 @@ public class Notification implements Serializable {
     public void setTeacherId(String teacherId) {
         this.teacherId = teacherId;
     }
-
-    private String teacherId;
-    private String gradeId;
-    private String notifyMessage;
-    private String notifyTime;
-    private String title;
-    private String endTime;
-    private String audioSrc;
-    private String videoSrc;
 
     public String getAudioSrc() {
         return audioSrc;

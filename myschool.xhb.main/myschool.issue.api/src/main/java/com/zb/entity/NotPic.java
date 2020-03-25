@@ -1,11 +1,15 @@
 package com.zb.entity;
 
 import java.io.Serializable;
-
+//通知,习惯,讨论,作业,活动图片类
 public class NotPic implements Serializable {
+    //图片编号
     private String picId;
+    //通知编号
     private String functionId;
+    //图片路径
     private String picSrc;
+    //是否为第一张图片
     private Integer statu;
 
     public String getPicId() {
