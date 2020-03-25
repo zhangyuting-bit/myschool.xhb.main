@@ -22,6 +22,16 @@ public class Survey implements Serializable {
     private Integer status;
     //是否已结束
     private Integer statu;
+    //题目数量
+    private Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public Integer getStatu() {
         return statu;

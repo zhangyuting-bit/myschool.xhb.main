@@ -23,6 +23,16 @@ public class Notification implements Serializable {
     private String audioSrc;
     //视频路径
     private String videoSrc;
+    //是否已结束
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getTypeId() {
         return typeId;
