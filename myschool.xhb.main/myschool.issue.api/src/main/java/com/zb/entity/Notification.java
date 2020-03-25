@@ -14,6 +14,15 @@ public class Notification implements Serializable {
         this.typeId = typeId;
     }
 
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    private String teacherId;
     private String gradeId;
     private String notifyMessage;
     private String notifyTime;
