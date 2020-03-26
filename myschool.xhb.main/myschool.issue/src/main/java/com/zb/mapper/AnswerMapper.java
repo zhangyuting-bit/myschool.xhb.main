@@ -13,5 +13,5 @@ public interface AnswerMapper {
     Integer addAnswer(Answer answer);
 
     //修改答案图片路径
-    Integer updateAnswer(@Param("picSrc")String picSrc,@Param("selectId")String selectId);
+    Integer updateAnswer(@Param("picSrc")String picSrc,@Param("answerId")String answerId);
 }
