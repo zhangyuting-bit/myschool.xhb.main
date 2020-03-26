@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 public class NotificationController {
-    
     @Resource
     private NotificationService notificationService;
 
@@ -43,8 +42,16 @@ public class NotificationController {
     }
 
     //修改结束时间
-    @RequestMapping("updateEndTime")
-    public Dto<Integer> updateEndTime(String endTime, String notificationId) {
-        return DtoUtil.returnSuccess("ok",notificationService.updateEndTime(endTime, notificationId));
+    @RequestMapping("/updateEndTimeOne")
+    public Dto<Integer> updateEndTimeOne(String endTime, String notificationId) {
+        return DtoUtil.returnSuccess("ok",notificationService.updateEndTimeOne(endTime, notificationId));
     }
+
+    //把通知状态修改为已结束
+    @RequestMapping("/updateEndTime/{notificationId}")
+    public Dto<Integer> updateEndTime(@PathVariable("notificationId") String notificationId) {
+        return DtoUtil.returnSuccess("ok",notificationService.updateEndTime(notificationId));
+    }
+
+
 }

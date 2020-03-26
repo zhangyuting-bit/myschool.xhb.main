@@ -10,10 +10,10 @@ public class RabbitConfigs {
     //交换机
     public static final String myexchange="myexchange.boot";
 
-    //上传文件消息队列
-    public static final String docQueue="doc.boot.queue";
-    //上传文件钥匙
-    public static final String docKey="doc.key.queue";
+    //上传调查消息队列
+    public static final String surQueue="sur.boot.queue";
+    //上传调查钥匙
+    public static final String surKey="sur.key.queue";
 
     //上传通知消息队列
     public static final String nocQueue="noc.boot.queue";
@@ -27,9 +27,9 @@ public class RabbitConfigs {
     }
 
     //创建上传文件消息队列
-    @Bean(docQueue)
+    @Bean(surQueue)
     public Queue createDocQueue(){
-        Queue queue =new Queue(docQueue);
+        Queue queue =new Queue(surQueue);
         return queue;
     }
 
@@ -42,8 +42,8 @@ public class RabbitConfigs {
 
     //将上传文件消息对列绑定到交换机上
     @Bean
-    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(docQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with(docKey).noargs();
+    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(surQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(surKey).noargs();
     }
 
     //将上传通知消息对列绑定到交换机上

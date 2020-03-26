@@ -19,5 +19,8 @@ public interface NotificationMapper {
     Integer updateVdoAndAudio(Notification notification);
 
     //修改结束时间
-    Integer updateEndTime(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
+    Integer updateEndTimeOne(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
+
+    //把通知状态修改为已结束
+    Integer updateEndTime(@Param("notificationId")String notificationId);
 }

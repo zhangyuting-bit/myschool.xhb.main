@@ -4,23 +4,17 @@ import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
-import com.zb.config.RabbitConfigs;
-import com.zb.entity.Mudel;
 import com.zb.entity.NotDocument;
 import com.zb.entity.NotPic;
 import com.zb.entity.Notification;
-import com.zb.mapper.NotDocumentMapper;
-import com.zb.mapper.NotPicMapper;
-import com.zb.mapper.NotificationMapper;
+import com.zb.entity.SelectPic;
+import com.zb.mapper.*;
 import com.zb.service.NotificationService;
 import com.zb.service.UploadService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,29 +27,20 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/upload")
 @CrossOrigin
-public class UploadController {
+public class SelectUploadController {
     @Value("${qiniu.path}")
     public  String path;
 
     @Resource
-    private RedisUtil redisUtil;
+    private SelectPicMapper selectPicMapper;
 
     @Resource
-    private NotificationService notificationService;
-
-    @Resource
-    private NotDocumentMapper documentMapper;
-
-    @Resource
-    private NotificationMapper notificationMapper;
-
-    @Resource
-    private NotPicMapper notPicMapper;
+    private SelectMapper selectMapper;
 
     @Autowired
     private UploadService uploadService;
-    @PostMapping("/singlefile/{functionId}/{gradeId}")
-    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("functionId") String functionId,@PathVariable("gradeId") String gradeId) {
+    @PostMapping("/singlefile/{selectId}")
+    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("selectId") String selectId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return "文件为空，请重新上传";
@@ -75,36 +60,16 @@ public class UploadController {
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 String str=file.getContentType().split("/")[1];
-                String key="notification:"+gradeId;
-                Object o = redisUtil.get(key);
-                Notification notification=JSON.parseObject(o.toString(),Notification.class);
                 System.out.println(str);
                 if (str.equals("bmp")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
-                    NotPic notPic=new NotPic();
-                    notPic.setPicId(IdWorker.getId());
-                    notPic.setFunctionId(functionId);
-                    notPic.setPicSrc(path+""+putRet.key);
-                    if (notPicMapper.getPicCount(functionId)>0){
-                        notPic.setStatu(1);
-                    }else {
-                        notPic.setStatu(0);
-                        notification.setPicSrc(notPic.getPicSrc());
-                    }
-                    notPicMapper.addNotPic(notPic);
+                    SelectPic selectPic=new SelectPic();
+                    selectPic.setPicId(IdWorker.getId());
+                    selectPic.setSelectId(selectId);
+                    selectPic.setPicSrc(path+""+putRet.key);
+                    selectPicMapper.addSelectPic(selectPic);
                 }else if (str.equals("wav")||str.equals("mp3")||str.equals("wma")||str.equals("mp4")){
-                    notification.setAudioSrc(path+""+putRet.key);
-                    notificationMapper.updateVdoAndAudio(notification);
-                }else if (str.equals("avi")||str.equals("mov")||str.equals("octet-stream")){
-                    notification.setVideoSrc(path+""+putRet.key);
-                    notificationMapper.updateVdoAndAudio(notification);
-                }else {
-                    NotDocument document=new NotDocument();
-                    document.setDocumentId(IdWorker.getId());
-                    document.setFunctionId(functionId);
-                    document.setDocumentSrc(path+""+putRet.key);
-                    documentMapper.addDocument(document);
+                    selectMapper.updateAudio(path+""+putRet.key,selectId);
                 }
-                redisUtil.set(key, JSON.toJSONString(notification));
             }catch (IOException e){
                 e.printStackTrace();
                 //System.out.println(putRet.key);//这个就是从七牛云获取的文件名

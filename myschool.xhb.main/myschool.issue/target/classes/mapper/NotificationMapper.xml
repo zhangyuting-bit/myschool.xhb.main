@@ -51,10 +51,19 @@
         WHERE `notificationId` = #{notificationId};
     </update>
 
+    <update id="updateEndTimeOne">
+        UPDATE `notification`
+        SET
+          `endTime` = #{endTime},
+          `status` = 0
+        WHERE `notificationId` = #{notificationId};
+    </update>
+
     <update id="updateEndTime">
         UPDATE `notification`
         SET
-          `endTime` = #{endTime}
+          `status` = 1
         WHERE `notificationId` = #{notificationId};
     </update>
+
 </mapper>

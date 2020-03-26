@@ -3,7 +3,10 @@ package com.zb.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.Expression;
+import com.zb.entity.NotDocument;
 import com.zb.entity.Notification;
+import com.zb.mapper.NotDocumentMapper;
+import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
@@ -24,6 +27,12 @@ public class NotificationServiceImpl implements NotificationService {
     private NotificationMapper notificationMapper;
 
     @Resource
+    private NotDocumentMapper notDocumentMapper;
+
+    @Resource
+    private NotPicMapper notPicMapper;
+
+    @Resource
     private RabbitTemplate rabbitTemplate;
 
     @Resource
@@ -32,7 +41,12 @@ public class NotificationServiceImpl implements NotificationService {
     //根据班级编号和通知类型编号获取全部对应通知
     @Override
     public List<Notification> getNotificationGradeId(Integer typeId,String gradeId) {
-        return notificationMapper.getNotificationGradeId(typeId,gradeId);
+        List<Notification>notifications=notificationMapper.getNotificationGradeId(typeId,gradeId);
+        for (Notification notification:notifications) {
+            //根据通知编号查询状态为0的图片
+            notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
+        }
+        return notifications;
     }
 
     //根据通知编号获取通知信息
@@ -46,6 +60,10 @@ public class NotificationServiceImpl implements NotificationService {
             notification=JSON.parseObject(o.toString(), Notification.class);
         }else {
             notification=notificationMapper.getNotificationById(notificationId);
+            //根据通知编号查询图片
+            notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
+            //根据通知编号查询附件
+            notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
             redisUtil.set(key, JSON.toJSONString(notification),120000);
         }
         return notification;
@@ -53,18 +71,18 @@ public class NotificationServiceImpl implements NotificationService {
 
     //添加新的通知信息
     @Override
-    @Transactional
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
         rabbitTemplate.convertAndSend(RabbitConfigs.myexchange,RabbitConfigs.nocKey,notification);
         return notification;
     }
 
+    //监听添加通知队列
     @RabbitListener(queues = RabbitConfigs.nocQueue)
     public void getNotification(Notification notification){
         notificationMapper.addNotification(notification);
         String key="notification:"+notification.getGradeId();
-        redisUtil.set(key, JSON.toJSONString(notification),12000);
+        redisUtil.set(key, JSON.toJSONString(notification),120000);
     }
 
     //学生端实时显示信息
@@ -83,8 +101,14 @@ public class NotificationServiceImpl implements NotificationService {
 
     //修改结束时间
     @Override
-    public Integer updateEndTime(String endTime, String notificationId) {
-        return notificationMapper.updateEndTime(endTime,notificationId);
+    public Integer updateEndTimeOne(String endTime, String notificationId) {
+        return notificationMapper.updateEndTimeOne(endTime,notificationId);
+    }
+
+    //把通知状态修改为已结束
+    @Override
+    public Integer updateEndTime(String notificationId) {
+        return notificationMapper.updateEndTime(notificationId);
     }
 
 }

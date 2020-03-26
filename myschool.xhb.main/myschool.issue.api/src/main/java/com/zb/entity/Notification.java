@@ -1,6 +1,8 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 //通知,习惯,讨论,作业,活动类
 public class Notification implements Serializable {
     //通知编号
@@ -25,6 +27,36 @@ public class Notification implements Serializable {
     private String videoSrc;
     //是否已结束
     private Integer status;
+    //状态为零的图片
+    private NotPic notPic;
+    //图片集合
+    private List<NotPic>notPics;
+    //附件集合
+    private List<NotDocument>documents;
+
+    public List<NotDocument> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(List<NotDocument> documents) {
+        this.documents = documents;
+    }
+
+    public List<NotPic> getNotPics() {
+        return notPics;
+    }
+
+    public void setNotPics(List<NotPic> notPics) {
+        this.notPics = notPics;
+    }
+
+    public NotPic getNotPic() {
+        return notPic;
+    }
+
+    public void setNotPic(NotPic notPic) {
+        this.notPic = notPic;
+    }
 
     public Integer getStatus() {
         return status;

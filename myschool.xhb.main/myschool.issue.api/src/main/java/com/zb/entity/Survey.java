@@ -1,6 +1,7 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 //调查通知类
 public class Survey implements Serializable {
@@ -24,6 +25,16 @@ public class Survey implements Serializable {
     private Integer statu;
     //题目数量
     private Integer count;
+    //题目集合
+    private List<Select>selects;
+
+    public List<Select> getSelects() {
+        return selects;
+    }
+
+    public void setSelects(List<Select> selects) {
+        this.selects = selects;
+    }
 
     public Integer getCount() {
         return count;

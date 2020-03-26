@@ -1,6 +1,7 @@
 package com.zb.service;
 
 import com.zb.entity.Notification;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,5 +19,9 @@ public interface NotificationService {
     public Notification getNocStu(Integer typeId,String gradeId);
 
     //修改结束时间
-    public Integer updateEndTime(String endTime,String notificationId);
+    public Integer updateEndTimeOne(String endTime,String notificationId);
+
+    //把通知状态修改为已结束
+    public Integer updateEndTime(String notificationId);
+
 }
