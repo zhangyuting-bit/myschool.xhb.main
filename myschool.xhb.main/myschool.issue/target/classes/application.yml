@@ -1,0 +1,41 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: ISSUESERVER
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/issue
+    username: root
+    password:
+  redis:
+    database: 0
+    password:
+    host: localhost
+    port: 6379
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    virtual-host: /
+    port: 5672
+#    publisher-confirms: true
+#    publisher-returns: true
+#    template:
+#      mandatory: true
+#    listener:
+#      simple:
+#        acknowledge-mode: manual  #消费端手工ack的配置
+#        concurrency: 1
+#        max-concurrency: 5
+#  kafka:
+#    bootstrap-servers: 192.168.1.110:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:ok@localhost:7001/eureka/
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
