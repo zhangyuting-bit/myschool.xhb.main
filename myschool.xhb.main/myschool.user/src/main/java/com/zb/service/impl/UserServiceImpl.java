@@ -315,5 +315,13 @@ public class UserServiceImpl implements UserService {
         return DtoUtil.returnSuccess("ok",userinfo);
     }
 
+    @Override
+    public UserInfo getUserInfoById(String id) {
+        return userMapper.getUserInfoById(id);
+    }
 
+    @Override
+    public TeacherInfo getTeacherInfoById(String id) {
+        return userMapper.getTeacherInfoById(id);
+    }
 }
