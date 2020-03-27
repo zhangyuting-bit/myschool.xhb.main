@@ -23,15 +23,13 @@
     </select>
 
     <insert id="addSurvey">
-        INSERT INTO `issue`.`survey`
+        INSERT INTO `survey`
             (`surveyId`,
              `teacherId`,
              `gradeId`,
              `title`,
              `another`,
              `startTime`,
-             `endTime`,
-             `audioSrc`,
              `status`,
              `count`)
         VALUES (#{surveyId},
@@ -40,8 +38,7 @@
                 #{title},
                 #{another},
                 #{startTime},
-                #{endTime},
-                #{status},,
+                #{status},
                 #{count});
     </insert>
 

@@ -63,7 +63,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),120000);
+            redisUtil.set(key, JSON.toJSONString(survey),120);
         }
         return survey;
     }

@@ -33,8 +33,8 @@ public class AnswerUploadController {
 
     @Autowired
     private UploadService uploadService;
-    @PostMapping("/singlefile/{answerId}")
-    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("answerId") String answerId) {
+    @PostMapping("/singlefile/answer/{answerId}")
+    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "file") MultipartFile[] files,@PathVariable("answerId") String answerId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return "文件为空，请重新上传";

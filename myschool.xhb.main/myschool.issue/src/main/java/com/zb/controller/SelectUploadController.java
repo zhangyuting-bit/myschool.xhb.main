@@ -39,7 +39,7 @@ public class SelectUploadController {
 
     @Autowired
     private UploadService uploadService;
-    @PostMapping("/singlefile/{selectId}")
+    @PostMapping("/singlefile/select/{selectId}")
     public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("selectId") String selectId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
@@ -60,7 +60,7 @@ public class SelectUploadController {
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 String str=file.getContentType().split("/")[1];
-                if (str.equals("bmp")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
+                if (str.equals("bmp")||str.equals("jpeg")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
                     SelectPic selectPic=new SelectPic();
                     selectPic.setPicId(IdWorker.getId());
                     selectPic.setSelectId(selectId);

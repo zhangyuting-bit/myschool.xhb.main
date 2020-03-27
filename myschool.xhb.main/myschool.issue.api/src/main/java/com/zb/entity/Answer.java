@@ -12,7 +12,16 @@ public class Answer implements Serializable {
     private String answer;
     //题目图片
     private String picSrc;
+    //排序
+    private Integer sort;
 
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
     public String getAnswerId() {
         return answerId;
     }

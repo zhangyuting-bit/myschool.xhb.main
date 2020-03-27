@@ -30,8 +30,6 @@
              `title`,
              `another`,
              `startTime`,
-             `endTime`,
-             `audioSrc`,
              `status`,
              `count`)
         VALUES (#{surveyId},
@@ -40,8 +38,7 @@
                 #{title},
                 #{another},
                 #{startTime},
-                #{endTime},
-                #{status},,
+                #{status},
                 #{count});
     </insert>
 

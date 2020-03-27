@@ -64,7 +64,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification),120000);
+            redisUtil.set(key, JSON.toJSONString(notification),120);
         }
         return notification;
     }
@@ -82,7 +82,7 @@ public class NotificationServiceImpl implements NotificationService {
     public void getNotification(Notification notification){
         notificationMapper.addNotification(notification);
         String key="notification:"+notification.getGradeId();
-        redisUtil.set(key, JSON.toJSONString(notification),120000);
+        redisUtil.set(key, JSON.toJSONString(notification),60);
     }
 
     //学生端实时显示信息
