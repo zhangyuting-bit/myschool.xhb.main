@@ -2,6 +2,7 @@ package com.zb.controller;
 
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
+import com.zb.pojo.TeacherInfo;
 import com.zb.pojo.TeacherJob;
 import com.zb.pojo.UserInfo;
 import com.zb.pojo.XcUserExt;
@@ -173,6 +174,28 @@ public class UserController {
     public Dto getUserInfoByToken(@RequestParam(value = "token") String token){
         Dto userInfoByToken = userService.getUserInfoByToken(token);
         return userInfoByToken;
+    }
+
+    /**
+     * 根据用户编号获取用户信息
+     * @param id
+     * @return
+     */
+    @RequestMapping("/getUserInfoById")
+    public Dto getUserInfoById(@RequestParam(value = "id") String id){
+        UserInfo userInfoById = userService.getUserInfoById(id);
+        return DtoUtil.returnSuccess("ok",userInfoById);
+    }
+
+    /**
+     * 根据教师编号获取教师信息
+     * @param id
+     * @return
+     */
+    @RequestMapping("/getTeacherInfoById")
+    public Dto getTeacherInfoById(@RequestParam(value = "id") String id){
+        TeacherInfo teacherInfoById = userService.getTeacherInfoById(id);
+        return DtoUtil.returnSuccess("ok",teacherInfoById);
     }
 
 }

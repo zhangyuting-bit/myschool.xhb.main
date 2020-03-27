@@ -24,4 +24,6 @@ public interface UserMapper {
     UserInfo getUserInfoById(@Param("id") String id);
     //新增工作时间
     int addTeacherJob(TeacherJob teacherJob);
+    //根据教师编号查询教师信息
+    TeacherInfo getTeacherInfoById(@Param("id") String id);
 }
