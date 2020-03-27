@@ -18,4 +18,21 @@ public interface UserFeignClient {
      */
     @RequestMapping("/getUserInfoByToken")
     public Dto getUserInfoByToken(@RequestParam(value = "token") String token);
+
+
+    /**
+     * 根据用户编号获取用户信息
+     * @param id
+     * @return
+     */
+    @RequestMapping("/getUserInfoById")
+    public Dto getUserInfoById(@RequestParam(value = "id") String id);
+
+    /**
+     * 根据教师编号获取教师信息
+     * @param id
+     * @return
+     */
+    @RequestMapping("/getTeacherInfoById")
+    public Dto getTeacherInfoById(@RequestParam(value = "id") String id);
 }
