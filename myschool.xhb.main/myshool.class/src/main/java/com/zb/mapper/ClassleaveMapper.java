@@ -25,4 +25,6 @@ public interface ClassleaveMapper {
     int deleteleave(@Param("id") String id);
     //根据班级班号获取这个班级的请假信息
     List<Leave_job> findleavenumber(@Param("class_number") Integer class_number);
+    //历史记录请假的详情
+    List<Class_leave> fingleaveList();
 }

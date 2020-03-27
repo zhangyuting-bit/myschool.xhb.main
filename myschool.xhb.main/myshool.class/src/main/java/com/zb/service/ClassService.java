@@ -25,4 +25,5 @@ public interface ClassService {
     int updateClass(Class_add classes);
     //根据老师的id来获取这位老师创建的班级信息
     List<Class_add> findClassesList(Integer teacher_id);
+
 }

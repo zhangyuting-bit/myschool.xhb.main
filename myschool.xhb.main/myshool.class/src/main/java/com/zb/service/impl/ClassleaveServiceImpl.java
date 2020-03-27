@@ -94,6 +94,11 @@ public class ClassleaveServiceImpl implements ClassleaveService, InitializingBea
     }
 
     @Override
+    public List<Class_leave> fingleaveList() {
+        return classleaveMapper.fingleaveList();
+    }
+
+    @Override
     public void afterPropertiesSet() throws Exception {
         this.putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");

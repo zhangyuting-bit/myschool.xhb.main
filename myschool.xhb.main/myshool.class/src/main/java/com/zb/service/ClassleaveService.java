@@ -22,4 +22,6 @@ public interface ClassleaveService {
     List<Leave_job> findleaveBy();
     //添加请假的信息
     int addclassleave(Class_leave classLeave);
+    //历史记录请假的详情
+    List<Class_leave> fingleaveList();
 }

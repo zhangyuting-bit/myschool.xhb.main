@@ -76,4 +76,7 @@
     <delete id="deleteleave">
         DELETE FROM leave_job WHERE id=#{id}
     </delete>
+    <select id="fingleaveList" resultType="com.zb.pojo.Class_leave">
+            SELECT * FROM class_leave
+    </select>
 </mapper>
