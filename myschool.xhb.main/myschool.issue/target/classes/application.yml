@@ -1,6 +1,9 @@
 server:
   port: 8001
+<<<<<<< HEAD
   connection-timeout: 1000000
+=======
+>>>>>>> master
 spring:
   application:
     name: ISSUESERVER
@@ -20,6 +23,7 @@ spring:
     password: guest
     virtual-host: /
     port: 5672
+<<<<<<< HEAD
   http:
     multipart:
       max-file-size: 50MB
@@ -29,6 +33,8 @@ qiniu:
   secretKey: M6p0Uta1CEjw1j-Sx_bX-U8Ikb4lUN8QFrZxGXDJ
   bucket: mydemo5418
   path: http://q6nz2qzez.bkt.clouddn.com/
+=======
+>>>>>>> master
 #    publisher-confirms: true
 #    publisher-returns: true
 #    template:
@@ -47,6 +53,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://root:ok@localhost:7001/eureka/
+<<<<<<< HEAD
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -57,3 +64,7 @@ hystrix:
       execution:
         timeout:
           enabled: false
+=======
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+>>>>>>> master

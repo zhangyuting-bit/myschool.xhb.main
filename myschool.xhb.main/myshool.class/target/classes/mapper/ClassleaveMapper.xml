@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.ClassleaveMapper">
+    <insert id="addleavejob" parameterType="com.zb.pojo.Leave_job">
+            INSERT INTO class.leave_job
+                (
+                id,
+                class_number,
+                student_id,
+                leave_type,
+                leave_time,
+                end_time,
+                state,
+                reason,
+                leaveimg,
+                updatedTime
+                )
+                VALUES
+                (
+                #{id},
+                #{class_number},
+                #{student_id},
+                #{leave_type},
+                #{leave_time},
+                #{end_time},
+                0,
+                #{reason},
+                #{leaveimg},
+                NOW()
+                );
+    </insert>
+    <update id="updataleaveAgree">
+        UPDATE leave_job SET state=1 WHERE id=#{id}
+    </update>
+    <update id="updataleaverefuse">
+        UPDATE leave_job SET state=2 WHERE id=#{id}
+    </update>
+    <select id="findleaveBy" resultType="com.zb.pojo.Leave_job">
+       SELECT * FROM leave_job WHERE TIMESTAMPDIFF(SECOND,updatedTime, NOW())>1
+    </select>
+    <select id="getleaveBy" resultType="com.zb.pojo.Leave_job">
+        SELECT * FROM leave_job WHERE id=#{id}
+    </select>
+    <insert id="addclassleave" parameterType="com.zb.pojo.Class_leave">
+        INSERT INTO class.class_leave
+                (
+                id,
+                class_number,
+                student_id,
+                leave_type,
+                leave_time,
+                end_time,
+                state,
+                reason,
+                leaveimg
+                )
+                VALUES
+                (
+                #{id},
+                #{class_number},
+                #{student_id},
+                #{leave_type},
+                #{leave_time},
+                #{end_time},
+                #{state},
+                #{reason},
+                #{leaveimg}
+                );
+    </insert>
+    <select id="findleavenumber" resultType="com.zb.pojo.Leave_job">
+        SELECT * FROM leave_job WHERE class_number=#{class_number}
+    </select>
+    <delete id="deleteleave">
+        DELETE FROM leave_job WHERE id=#{id}
+    </delete>
+    <select id="fingleaveList" resultType="com.zb.pojo.Class_leave">
+            SELECT * FROM class_leave
+    </select>
+</mapper>
