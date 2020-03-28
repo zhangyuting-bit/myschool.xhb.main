@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.RoleMapper">
+    <select id="getRoleByUserId" resultType="com.zb.pojo.Role">
+        SELECT * FROM xhb_role AS r
+        INNER JOIN xhb_user_role AS ru
+        ON r.id=ru.role_id
+        AND user_id=#{userid}
+    </select>
+    <select id="getRoleList" resultType="com.zb.pojo.Role">
+        SELECT * FROM xhb_role
+    </select>
+    <insert id="addXuRole" parameterType="com.zb.pojo.XuRole">
+        INSERT INTO xhb_user.xhb_user_role
+            (id,
+            user_id,
+            role_id,
+            create_time,
+            update_time,
+            creator
+            )
+            VALUES
+            (#{id},
+            #{user_id},
+            #{role_id},
+            NOW(),
+            NOW(),
+            #{creator}
+            )
+    </insert>
+    <select id="getRoleByRoleCode" resultType="com.zb.pojo.Role">
+        SELECT * FROM xhb_role WHERE role_code=#{role_code}
+    </select>
+</mapper>
