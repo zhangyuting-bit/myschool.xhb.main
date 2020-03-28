@@ -51,6 +51,42 @@
   <component name="ChangeListManager">
 
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Leave_job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/LeaveMq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassleaveServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/src/main/java/com/zb/MyEurekaServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/src/main/java/com/zb/MyEurekaServerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/classes/com/zb/MyEurekaServerApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/classes/com/zb/MyEurekaServerApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_add.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/MyClassApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/MyClassApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/ClassInfoMq.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/ClassInfoMq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/MyClassApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/MyClassApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassInfoMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/ClassInfoMq.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/ClassInfoMq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassMapper.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.eureka/myschool.eureka.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.xhb.main.iml" beforeDir="false" />
@@ -146,6 +182,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
 
+    <property name="last_opened_file_path" value="D:/idea/Administrator/IdeaProjects/my.real" />
+
+
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
 
@@ -159,6 +198,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
 
   </component>
@@ -285,7 +325,17 @@
       <workItem from="1583135250113" duration="2844000" />
       <workItem from="1583211447689" duration="1298000" />
       <workItem from="1583383796341" duration="39595000" />
-      <workItem from="1583542534156" duration="3183000" />
+      <workItem from="1583542534156" duration="5896000" />
+      <workItem from="1583734974166" duration="5857000" />
+      <workItem from="1583807023357" duration="18756000" />
+      <workItem from="1583903218278" duration="24643000" />
+      <workItem from="1584145756371" duration="4349000" />
+      <workItem from="1584335583294" duration="22799000" />
+      <workItem from="1584576317893" duration="12610000" />
+      <workItem from="1584672023419" duration="1627000" />
+      <workItem from="1584750428521" duration="286000" />
+      <workItem from="1584938629225" duration="2655000" />
+      <workItem from="1584969867589" duration="11302000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -323,6 +373,16 @@
       <option name="project" value="LOCAL" />
       <updated>1583378817609</updated>
     </task>
+
+    <task id="LOCAL-00003" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
+      <created>1583631244803</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583631244803</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+
     <task id="LOCAL-00006" summary="修复无法启动的bug">
       <created>1584601007603</created>
       <option name="number" value="00006" />
@@ -373,6 +433,7 @@
       <updated>1584633128568</updated>
     </task>
     <option name="localTasksCounter" value="13" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,6 +10,8 @@ public class Class_info implements Serializable {
     private String id;
     //班级编号
     private Integer class_number;
+    //登录者的权限id
+    private Integer jurisdiction_id;
     //登录者的编号
     private Integer user_id;
     //班级内的称呼
@@ -17,13 +19,17 @@ public class Class_info implements Serializable {
     //家访的备注
     private String remarks;
     //班级内部的权限
-    private Integer jurisdiction_id;
+    private String jurisdiction;
     //任课学科的id
     private Integer class_subject;
     //原因
     private String reason;
     //状态
     private Integer state;
+    //人数
+    private Integer number;
+    //关系
+    private String relationship;
     private  String createdTime;
     private String updatedTime;
 
@@ -51,12 +57,6 @@ public class Class_info implements Serializable {
     }
     public  String getRemarks(){
         return this.remarks;
-    }
-    public void setJurisdiction_id (Integer  jurisdiction_id){
-        this.jurisdiction_id=jurisdiction_id;
-    }
-    public  Integer getJurisdiction_id(){
-        return this.jurisdiction_id;
     }
     public void setReason (String  reason){
         this.reason=reason;
@@ -102,5 +102,37 @@ public class Class_info implements Serializable {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
+
+    public String getJurisdiction() {
+        return jurisdiction;
+    }
+
+    public void setJurisdiction(String jurisdiction) {
+        this.jurisdiction = jurisdiction;
+    }
+
+    public Integer getJurisdiction_id() {
+        return jurisdiction_id;
+    }
+
+    public void setJurisdiction_id(Integer jurisdiction_id) {
+        this.jurisdiction_id = jurisdiction_id;
     }
 }

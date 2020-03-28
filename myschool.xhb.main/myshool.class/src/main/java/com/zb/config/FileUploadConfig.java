@@ -89,8 +89,7 @@ public class FileUploadConfig {
      */
     @Bean
     public Auth auth() {
-        return Auth.create(ak,
-                sk);
+        return Auth.create(ak, sk);
     }
 
     /**
@@ -110,4 +109,5 @@ public class FileUploadConfig {
     public Gson gson() {
         return new Gson();
     }
+
 }

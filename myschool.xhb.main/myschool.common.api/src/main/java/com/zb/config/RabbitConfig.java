@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
     public static final String CLASSQUEUE="class.queue";
-    public static final String smsQueue="sms.boot.queue";
+    public static final String jobQueue="job.leave.queue";
     public static final String myexchange="myexchange.boot";
     public static final String qgQueue="qg.boot.queue";
 
@@ -29,9 +29,9 @@ public class RabbitConfig {
         return queue;
     }
 
-    @Bean(smsQueue)
+    @Bean(jobQueue)
     public Queue createSmsQueue(){
-        Queue queue=new Queue(smsQueue);
+        Queue queue=new Queue(jobQueue);
         return queue;
     }
 
@@ -44,8 +44,8 @@ public class RabbitConfig {
 
 
     @Bean
-    public Binding bindingSms(@Qualifier(myexchange) Exchange exchange,@Qualifier(smsQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with("inform.#.sms.#").noargs();
+    public Binding bindingSms(@Qualifier(myexchange) Exchange exchange,@Qualifier(jobQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with("inform.#.job.#").noargs();
     }
 
     @Bean

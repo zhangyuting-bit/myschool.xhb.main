@@ -21,4 +21,9 @@ public interface ClassService {
     List<Class_age_real> getAgeReal(Integer real_id);
     //根据班级号查询班级
     Class_add findClassBy(Integer class_number);
+    //修改班级的信息
+    int updateClass(Class_add classes);
+    //根据老师的id来获取这位老师创建的班级信息
+    List<Class_add> findClassesList(Integer teacher_id);
+
 }
