@@ -9,4 +9,13 @@
         FROM
             `expression`
     </select>
+
+    <select id="getExpressionById" resultType="com.zb.entity.Expression">
+        SELECT
+            *
+        FROM
+            `expression`
+        WHERE
+            expressionId=#{expressionId}
+    </select>
 </mapper>

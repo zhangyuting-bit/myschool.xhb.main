@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.SelectMapper">
+    <select id="getSelectBySurveyId" resultType="com.zb.entity.Select">
+        SELECT
+            *
+        FROM
+            `select`
+        WHERE
+            surveyId=#{surveyId}
+    </select>
+
+    <insert id="addSelect">
+        INSERT INTO `select`
+            (`selectId`,
+             `type`,
+             `surveyId`,
+             `question`,
+             `status`)
+        VALUES (#{selectId},
+                #{type},
+                #{surveyId},
+                #{question},
+                #{status});
+    </insert>
+
+    <update id="updateAudio">
+        UPDATE `select`
+        SET
+          `audioSrc` = #{audioSrc}
+        WHERE `selectId` = #{selectId};
+    </update>
+
+</mapper>

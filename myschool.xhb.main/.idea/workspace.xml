@@ -49,6 +49,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerUploadController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Answer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Select.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Survey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/AnswerUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/AnswerUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SelectUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SelectUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/AnswerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectPicService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/AnswerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectPicServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" afterDir="false" />
+=======
 
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
 
@@ -114,6 +146,7 @@
       <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
 
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +162,11 @@
       <list>
         <option value="mymapper" />
         <option value="Mapper__Xml" />
+<<<<<<< HEAD
+        <option value="Mapper__XML" />
+=======
         <option value="mybatisMapper" />
+>>>>>>> master
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -181,6 +218,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="E:/面试题2/网络七层协议/demo" />
+=======
 
     <property name="last_opened_file_path" value="D:/idea/Administrator/IdeaProjects/my.real" />
 
@@ -189,22 +229,36 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
 
     <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.agreement/src/main/resources" />
+>>>>>>> master
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+<<<<<<< HEAD
+    <property name="nodejs_package_manager_path" value="npm" />
+=======
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
 
+>>>>>>> master
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
 
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zb.controller" />
+      <recent name="com.zb.config" />
+      <recent name="com.zb.service" />
+      <recent name="com.zb.service.impl" />
       <recent name="com.zb" />
+<<<<<<< HEAD
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
+=======
       <recent name="com.zb.config" />
       <recent name="com.zb.filter" />
       <recent name="com.zb.filter" />
@@ -214,12 +268,18 @@
       <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.lable\src\main\resources" />
       <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\resources" />
       <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\pojo" />
+>>>>>>> master
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.gataway\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.eureka\src\main\resources" />
     </key>
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Spring Boot.IssueServerApp">
+    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.issue" />
+=======
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -235,12 +295,15 @@
   <component name="RunManager" selected="Spring Boot.RecordServerApp">
     <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.agreement" />
+>>>>>>> master
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.zb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+<<<<<<< HEAD
+=======
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -248,11 +311,14 @@
     </configuration>
     <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.issue" />
+>>>>>>> master
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.IssueServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+=======
     <configuration name="LableServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.lable" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.LableServerApp" />
@@ -267,6 +333,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+>>>>>>> master
     <configuration name="MyEurekaServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyEurekaServerApp" />
@@ -288,6 +355,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.IssueServerApp" />
+=======
     <configuration name="RecordServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.record" />
       <extension name="coverage">
@@ -305,6 +377,7 @@
       <list>
         <item itemvalue="Spring Boot.RecordServerApp" />
         <item itemvalue="Spring Boot.AgreementServerApp" />
+>>>>>>> master
       </list>
     </recent_temporary>
   </component>
@@ -319,6 +392,45 @@
       <option name="presentableId" value="Default" />
       <updated>1582970147103</updated>
       <workItem from="1582970150562" duration="851000" />
+<<<<<<< HEAD
+      <workItem from="1583377391460" duration="5821000" />
+      <workItem from="1583392223558" duration="404000" />
+      <workItem from="1583392826521" duration="550000" />
+      <workItem from="1583393491668" duration="9676000" />
+      <workItem from="1583488387521" duration="110000" />
+      <workItem from="1583562036901" duration="1724000" />
+      <workItem from="1583567487389" duration="166000" />
+      <workItem from="1583567671284" duration="302000" />
+      <workItem from="1583568500781" duration="7978000" />
+      <workItem from="1583630147604" duration="8515000" />
+      <workItem from="1583651029729" duration="15536000" />
+      <workItem from="1583749898899" duration="1944000" />
+      <workItem from="1583811359779" duration="1755000" />
+      <workItem from="1583826973980" duration="6779000" />
+      <workItem from="1583984837882" duration="5716000" />
+      <workItem from="1583998515563" duration="4968000" />
+      <workItem from="1584147460288" duration="1807000" />
+      <workItem from="1584154010594" duration="9661000" />
+      <workItem from="1584241419782" duration="16682000" />
+      <workItem from="1584420271422" duration="253000" />
+      <workItem from="1584590003379" duration="4745000" />
+      <workItem from="1584597822183" duration="168000" />
+      <workItem from="1584598028710" duration="13882000" />
+      <workItem from="1584663121168" duration="8992000" />
+      <workItem from="1584710284484" duration="549000" />
+      <workItem from="1584752513787" duration="390000" />
+      <workItem from="1584756050423" duration="13021000" />
+      <workItem from="1584777744385" duration="364000" />
+      <workItem from="1584778193854" duration="80000" />
+      <workItem from="1584778389992" duration="6059000" />
+      <workItem from="1584841283497" duration="9456000" />
+      <workItem from="1584857590616" duration="20062000" />
+      <workItem from="1584968496473" duration="280000" />
+      <workItem from="1585026425490" duration="10806000" />
+      <workItem from="1585109990990" duration="9801000" />
+      <workItem from="1585184133576" duration="29710000" />
+      <workItem from="1585285725524" duration="6694000" />
+=======
 
       <workItem from="1583153721384" duration="635000" />
 
@@ -336,6 +448,7 @@
       <workItem from="1584750428521" duration="286000" />
       <workItem from="1584938629225" duration="2655000" />
       <workItem from="1584969867589" duration="11302000" />
+>>>>>>> master
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -373,6 +486,226 @@
       <option name="project" value="LOCAL" />
       <updated>1583378817609</updated>
     </task>
+<<<<<<< HEAD
+    <task id="LOCAL-00006" summary="issue_LZQ">
+      <created>1583379668473</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583379668473</updated>
+    </task>
+    <task id="LOCAL-00007" summary="issue_LZQ">
+      <created>1583403738811</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583403738812</updated>
+    </task>
+    <task id="LOCAL-00008" summary="issue_LZQ">
+      <created>1583409480108</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583409480108</updated>
+    </task>
+    <task id="LOCAL-00009" summary="issue_LZQ">
+      <created>1583409797718</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583409797718</updated>
+    </task>
+    <task id="LOCAL-00010" summary="issue_LZQ">
+      <created>1583573211980</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583573211980</updated>
+    </task>
+    <task id="LOCAL-00011" summary="issue_LZQ">
+      <created>1583575883495</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583575883495</updated>
+    </task>
+    <task id="LOCAL-00012" summary="issue_LZQ">
+      <created>1583576364732</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576364732</updated>
+    </task>
+    <task id="LOCAL-00013" summary="issue_LZQ">
+      <created>1583576379004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576379004</updated>
+    </task>
+    <task id="LOCAL-00014" summary="issue_LZQ">
+      <created>1583578904450</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583578904450</updated>
+    </task>
+    <task id="LOCAL-00015" summary="issue_LZQ">
+      <created>1583588650208</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583588650208</updated>
+    </task>
+    <task id="LOCAL-00016" summary="issue_LZQ">
+      <created>1583644127090</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583644127090</updated>
+    </task>
+    <task id="LOCAL-00017" summary="issue_LZQ">
+      <created>1583654799614</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1583654799614</updated>
+    </task>
+    <task id="LOCAL-00018" summary="issue_LZQ">
+      <created>1583662641956</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583662641956</updated>
+    </task>
+    <task id="LOCAL-00019" summary="issue_LZQ">
+      <created>1583668689038</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583668689038</updated>
+    </task>
+    <task id="LOCAL-00020" summary="issue_LZQ">
+      <created>1583676594587</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583676594587</updated>
+    </task>
+    <task id="LOCAL-00021" summary="issue_LZQ">
+      <created>1583999268407</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583999268407</updated>
+    </task>
+    <task id="LOCAL-00022" summary="issue_LZQ">
+      <created>1584169351779</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1584169351779</updated>
+    </task>
+    <task id="LOCAL-00023" summary="issue_LZQ">
+      <created>1584598127454</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1584598127454</updated>
+    </task>
+    <task id="LOCAL-00024" summary="issue_LZQ">
+      <created>1584616755745</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1584616755745</updated>
+    </task>
+    <task id="LOCAL-00025" summary="issue_LZQ">
+      <created>1584672433099</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1584672433099</updated>
+    </task>
+    <task id="LOCAL-00026" summary="issue_LZQ">
+      <created>1584777976400</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1584777976400</updated>
+    </task>
+    <task id="LOCAL-00027" summary="issue_LZQ">
+      <created>1584850454656</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1584850454656</updated>
+    </task>
+    <task id="LOCAL-00028" summary="issue_LZQ">
+      <created>1584855508637</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1584855508637</updated>
+    </task>
+    <task id="LOCAL-00029" summary="issue_LZQ">
+      <created>1584968566987</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1584968566987</updated>
+    </task>
+    <task id="LOCAL-00030" summary="issue_LZQ">
+      <created>1585034480242</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1585034480242</updated>
+    </task>
+    <task id="LOCAL-00031" summary="issue_LZQ">
+      <created>1585046629544</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1585046629544</updated>
+    </task>
+    <task id="LOCAL-00032" summary="issue_LZQ">
+      <created>1585128015998</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1585128015998</updated>
+    </task>
+    <task id="LOCAL-00033" summary="issue_LZQ">
+      <created>1585140866965</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1585140866965</updated>
+    </task>
+    <task id="LOCAL-00034" summary="issue_LZQ">
+      <created>1585144782517</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1585144782518</updated>
+    </task>
+    <task id="LOCAL-00035" summary="issue_LZQ">
+      <created>1585208380177</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1585208380177</updated>
+    </task>
+    <task id="LOCAL-00036" summary="issue_LZQ">
+      <created>1585217848890</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1585217848890</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
+=======
 
     <task id="LOCAL-00003" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
       <created>1583631244803</created>
@@ -434,6 +767,7 @@
     </task>
     <option name="localTasksCounter" value="13" />
 
+>>>>>>> master
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,6 +785,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mc_dev提交了一段代码" />
@@ -465,21 +800,97 @@
     <option name="LAST_COMMIT_MESSAGE" value="完成个人标签删除功能和成长记录撤销功能" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1583379622972">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585296431553">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583379622972" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1583377508136">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585296431553" />
+    <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583377508136" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1583377509650">
+    <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1584255995838" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584850346816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583377509650" />
-    <state x="178" y="107" key="new project wizard" timestamp="1583377726130">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1584850346816" />
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585205000580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="107" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1583377726130" />
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585205000580" />
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1585217847110">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585217847110" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1585208397530">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585208397530" />
+    <state width="1493" height="303" key="GridCell.Tab.0.bottom" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.0.center" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.0.left" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.0.right" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.1.bottom" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.1.center" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.1.left" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="303" key="GridCell.Tab.1.right" timestamp="1585309231754">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="303" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
+    <state width="1493" height="265" key="GridCell.Tab.2.bottom" timestamp="1585229147637">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
+    <state width="1493" height="265" key="GridCell.Tab.2.center" timestamp="1585229147637">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
+    <state width="1493" height="265" key="GridCell.Tab.2.left" timestamp="1585229147637">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
+    <state width="1493" height="265" key="GridCell.Tab.2.right" timestamp="1585229147637">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="265" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
+    <state x="270" y="56" key="SettingsEditor" timestamp="1584241825299">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584241825299" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1585128060799">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585128060799" />
+    <state x="275" y="66" key="new project wizard" timestamp="1584147539342">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="275" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584147539342" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1585140615497">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585140615497" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585143438792">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585143438792" />
   </component>
 </project>
