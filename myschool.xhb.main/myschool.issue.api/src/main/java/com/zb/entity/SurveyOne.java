@@ -1,24 +1,13 @@
 package com.zb.entity;
 
 import java.io.Serializable;
-////调查用户类
+
+//通知用户类
 public class SurveyOne implements Serializable {
     //
     private String oneId;
-    //调查编号
+    //通知编号
     private String surveyId;
-    //用户编号
-    private String userId;
-    //增加时间
-    private String createTime;
-
-    public String getOneId() {
-        return oneId;
-    }
-
-    public void setOneId(String oneId) {
-        this.oneId = oneId;
-    }
 
     public String getSurveyId() {
         return surveyId;
@@ -28,13 +17,10 @@ public class SurveyOne implements Serializable {
         this.surveyId = surveyId;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
+    //用户编号
+    private String userId;
+    //增加时间
+    private String createTime;
 
     public String getCreateTime() {
         return createTime;
@@ -42,5 +28,21 @@ public class SurveyOne implements Serializable {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getOneId() {
+        return oneId;
+    }
+
+    public void setOneId(String oneId) {
+        this.oneId = oneId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

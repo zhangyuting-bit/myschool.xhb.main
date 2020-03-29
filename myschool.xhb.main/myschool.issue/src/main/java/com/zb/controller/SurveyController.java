@@ -17,10 +17,10 @@ public class SurveyController {
     @Resource
     private SurveyService surveyService;
 
-    //根据班级编号查询调查通知
-    @GetMapping("/getSurveyByGradeId/{gradeId}")
-    public List<Survey> getSurveyByGradeId(@PathVariable("gradeId") String gradeId) {
-        return surveyService.getSurveyByGradeId(gradeId);
+    //根据用户编号查询调查通知
+    @GetMapping("/getSurveyByUserId/{userId}")
+    public Dto<List<Survey>> getSurveyByUserId(@PathVariable("userId") String userId) {
+        return DtoUtil.returnSuccess("ok",surveyService.getSurveyByUserId(userId));
     }
 
     //根据调查编号查询调查信息
@@ -36,9 +36,9 @@ public class SurveyController {
     }
 
     //学生端实时显示信息
-    @GetMapping("/getSurStu/{gradeId}")
-    public Dto<Survey> getSurStu(@PathVariable("gradeId") String gradeId){
-        return DtoUtil.returnSuccess("ok",surveyService.getSurStu(gradeId));
+    @GetMapping("/getSurStu")
+    public Dto<Survey> getSurStu(String userId,String gradeId){
+        return DtoUtil.returnSuccess("ok",surveyService.getSurStu(userId,gradeId));
     }
 
     //修改结束时间
@@ -51,6 +51,24 @@ public class SurveyController {
     @RequestMapping("/updateSurEndTime/{surveyId}")
     public Dto<Integer> updateSurEndTime(@PathVariable("surveyId") String surveyId) {
         return DtoUtil.returnSuccess("ok",surveyService.updateSurEndTime(surveyId));
+    }
+
+    //删除推送消息
+    @GetMapping("/delStuSur")
+    public void delStuSur(String userId, String surveyId, String gradeId){
+        surveyService.delStuSur(userId, surveyId, gradeId);
+    }
+
+    //添加推送状态
+    @GetMapping("/addOkSur")
+    public void addStatus(String gradeId) {
+        surveyService.addStatus(gradeId);
+    }
+
+    //获取推送状态
+    @GetMapping("/getSurStatus")
+    public Dto<Integer> getStatus(String userId,String gradeId){
+        return DtoUtil.returnSuccess("ok",surveyService.getStatus(userId,gradeId));
     }
 
 }

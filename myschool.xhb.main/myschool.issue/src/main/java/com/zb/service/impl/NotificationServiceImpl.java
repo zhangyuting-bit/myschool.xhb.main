@@ -64,6 +64,9 @@ public class NotificationServiceImpl implements NotificationService {
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
             notification = notificationMapper.getNotificationById(notificationId);
+            //根据teacherId获取老师信息
+            ///////////////////////////
+
             //根据通知编号查询状态为0的图片
             notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
             //根据通知编号查询图片
@@ -94,6 +97,8 @@ public class NotificationServiceImpl implements NotificationService {
     @RabbitListener(queues = RabbitConfigs.nocQueue)
     public void getNotification(Notification notification) {
         notificationMapper.addNotification(notification);
+        //根据teacherId获取老师信息
+        ///////////////////////////
         for (User user : notificationMapper.getUserByGradeId(notification.getGradeId())) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
@@ -156,12 +161,6 @@ public class NotificationServiceImpl implements NotificationService {
         Notification notification1=notificationMapper.getNotificationById(notification.getNotificationId());
         //根据通知编号查询状态为0的图片
         notification1.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
-        //根据通知编号查询图片
-        notification1.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
-        //根据通知编号查询附件
-        notification1.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-        //
-
         for (User user : notificationMapper.getUserByGradeId(gradeId)) {
             String key1 = "notification:" + user.getUserId() + user.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification1), 20);

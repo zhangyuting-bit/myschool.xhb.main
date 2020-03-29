@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.SurveyOneMapper">
+    <insert id="addSurveyOne">
+        INSERT INTO `issue`.`surveyone`
+            (`oneId`,
+             `surveyId`,
+             `userId`,
+             `createTime`)
+        VALUES (#{oneId},
+                #{surveyId},
+                #{userId},
+                #{createTime});
+    </insert>
+    
+    <select id="getSurveyOneByUserId" resultType="com.zb.entity.SurveyOne">
+        SELECT
+            *
+        FROM
+            `surveyone`
+        WHERE
+            userId=#{userId}
+        ORDER BY createTime DESC
+    </select>
+</mapper>

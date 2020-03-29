@@ -2,26 +2,30 @@ package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
-import com.zb.entity.Select;
-import com.zb.entity.Survey;
-import com.zb.mapper.AnswerMapper;
-import com.zb.mapper.SelectMapper;
-import com.zb.mapper.SelectPicMapper;
-import com.zb.mapper.SurveyMapper;
+import com.zb.entity.*;
+import com.zb.mapper.*;
 import com.zb.service.SurveyService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class SurveyServiceImpl implements SurveyService {
     @Resource
     private SurveyMapper surveyMapper;
+
+    @Resource
+    private SurveyOneMapper surveyOneMapper;
+
+    @Resource
+    private NotificationMapper notificationMapper;
 
     @Resource
     private SelectMapper selectMapper;
@@ -38,14 +42,19 @@ public class SurveyServiceImpl implements SurveyService {
     @Resource
     private RedisUtil redisUtil;
 
-    //根据班级编号查询调查通知
+    //根据用户编号获取对应调查
     @Override
-    public List<Survey> getSurveyByGradeId(String gradeId) {
-        return surveyMapper.getSurveyByGradeId(gradeId);
+    public List<Survey> getSurveyByUserId(String userId) {
+        List<Survey>list=new ArrayList<>();
+        for (SurveyOne surveyOne:surveyOneMapper.getSurveyOneByUserId(userId)) {
+            list.add(getSurveyBySurveyId(surveyOne.getSurveyId()));
+        }
+        return list;
     }
 
     //根据调查编号查询调查信息
     @Override
+    @Cacheable(value = "cache", key = "#surveyId")
     public Survey getSurveyBySurveyId(String surveyId) {
         Survey survey=null;
         String key="survey:"+surveyId;
@@ -54,6 +63,9 @@ public class SurveyServiceImpl implements SurveyService {
             survey= JSON.parseObject(o.toString(), Survey.class);
         }else {
             survey=surveyMapper.getSurveyBySurveyId(surveyId);
+            //根据teacherId获取老师信息
+            ///////////////////////////
+
             //根据调查编号获取全部题目
             List<Select>selects=selectMapper.getSelectBySurveyId(survey.getSurveyId());
             for (Select select:selects) {
@@ -80,14 +92,23 @@ public class SurveyServiceImpl implements SurveyService {
     @RabbitListener(queues = RabbitConfigs.surQueue)
     public void getNotification(Survey survey){
         surveyMapper.addSurvey(survey);
-        String key="survey:"+survey.getGradeId();
-        redisUtil.set(key, JSON.toJSONString(survey),120000);
+        //根据teacherId获取老师信息
+        ///////////////////////////
+        for (User user : notificationMapper.getUserByGradeId(survey.getGradeId())) {
+            SurveyOne surveyOne=new SurveyOne();
+            surveyOne.setOneId(IdWorker.getId());
+            surveyOne.setUserId(user.getUserId());
+            surveyOne.setSurveyId(survey.getSurveyId());
+            surveyOneMapper.addSurveyOne(surveyOne);
+            String key = "survey:" + user.getUserId() + user.getGradeId();
+            redisUtil.set(key, JSON.toJSONString(survey), 20);
+        }
     }
 
     //学生端实时显示信息
     @Override
-    public Survey getSurStu(String gradeId){
-        String key="survey:"+gradeId;
+    public Survey getSurStu( String userId,String gradeId){
+        String key="survey:"+userId+gradeId;
         Object o = redisUtil.get(key);
         if (o!=null){
             Survey survey=JSON.parseObject(o.toString(),Survey.class);
@@ -107,4 +128,39 @@ public class SurveyServiceImpl implements SurveyService {
     public Integer updateSurEndTime(String surveyId) {
         return surveyMapper.updateSurEndTime(surveyId);
     }
+
+    //删除推送消息
+    @Override
+    public void delStuSur(String userId, String surveyId, String gradeId) {
+        String key = "survey:" + userId + gradeId;
+        Object o = redisUtil.get(key);
+        if (o != null) {
+            Survey survey = JSON.parseObject(o.toString(), Survey.class);
+            if (surveyId.equals(survey.getSurveyId())) {
+                redisUtil.del(key);
+                redisUtil.del("ok:" + userId + gradeId);
+            }
+        }
+    }
+
+    //添加推送状态
+    @Override
+    public void addStatus(String gradeId){
+        for (User user : notificationMapper.getUserByGradeId(gradeId)) {
+            String key= "ok:" + user.getUserId() + gradeId;
+            String ok = "";
+            redisUtil.set(key, JSON.toJSONString(ok), 20);
+        }
+    }
+
+    //获取推送状态
+    @Override
+    public Integer getStatus(String userId, String gradeId) {
+        String key = "ok:" + userId + gradeId;
+        if (redisUtil.hasKey(key)) {
+            return 1;
+        }
+        return null;
+    }
+
 }
