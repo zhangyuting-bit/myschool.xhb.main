@@ -54,8 +54,8 @@ public class NotificationUploadController {
 
     @Autowired
     private UploadService uploadService;
-    @PostMapping("/singlefile/{functionId}/{gradeId}")
-    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("functionId") String functionId,@PathVariable("gradeId") String gradeId) {
+    @PostMapping("/singlefile/{functionId}")
+    public Object singleFileUpload(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,@PathVariable("functionId") String functionId) {
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return "文件为空，请重新上传";
@@ -75,9 +75,6 @@ public class NotificationUploadController {
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 String str=file.getContentType().split("/")[1];
-                String key="notification:"+gradeId;
-                Object o = redisUtil.get(key);
-                Notification notification=JSON.parseObject(o.toString(),Notification.class);
                 System.out.println(str);
                 if (str.equals("bmp")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
                     NotPic notPic=new NotPic();
@@ -88,15 +85,12 @@ public class NotificationUploadController {
                         notPic.setStatu(1);
                     }else {
                         notPic.setStatu(0);
-                        notification.setPicSrc(notPic.getPicSrc());
                     }
                     notPicMapper.addNotPic(notPic);
                 }else if (str.equals("wav")||str.equals("mp3")||str.equals("wma")||str.equals("mp4")){
-                    notification.setAudioSrc(path+""+putRet.key);
-                    notificationMapper.updateVdoAndAudio(notification);
+                    notificationMapper.updateVdoAndAudio(path+""+putRet.key,"",functionId);
                 }else if (str.equals("avi")||str.equals("mov")||str.equals("octet-stream")){
-                    notification.setVideoSrc(path+""+putRet.key);
-                    notificationMapper.updateVdoAndAudio(notification);
+                    notificationMapper.updateVdoAndAudio("",path+""+putRet.key,functionId);
                 }else {
                     NotDocument document=new NotDocument();
                     document.setDocumentId(IdWorker.getId());
@@ -104,7 +98,6 @@ public class NotificationUploadController {
                     document.setDocumentSrc(path+""+putRet.key);
                     documentMapper.addDocument(document);
                 }
-                redisUtil.set(key, JSON.toJSONString(notification));
             }catch (IOException e){
                 e.printStackTrace();
                 //System.out.println(putRet.key);//这个就是从七牛云获取的文件名

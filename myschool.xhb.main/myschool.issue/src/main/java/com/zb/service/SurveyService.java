@@ -24,4 +24,6 @@ public interface SurveyService {
 
      //把调查状态修改为已结束
      public Integer updateSurEndTime(String surveyId);
+
+
 }
