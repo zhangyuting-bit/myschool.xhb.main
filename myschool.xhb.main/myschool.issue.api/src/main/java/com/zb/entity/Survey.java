@@ -7,6 +7,17 @@ import java.util.List;
 public class Survey implements Serializable {
     //调查编号
     private String surveyId;
+    //通知类型
+    private Integer typeId;
+
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
+
     //教师编号
     private String teacherId;
     //用户编号

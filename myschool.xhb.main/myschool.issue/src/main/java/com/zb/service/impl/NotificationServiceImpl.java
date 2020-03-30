@@ -144,7 +144,6 @@ public class NotificationServiceImpl implements NotificationService {
         Object o = redisUtil.get(key);
         if (o != null) {
             Notification notification = JSON.parseObject(o.toString(), Notification.class);
-            System.out.println(notification.getNotificationId());
             if (notificationId.equals(notification.getNotificationId())) {
                 redisUtil.del(key);
                 redisUtil.del("ok:" + userId + gradeId);
