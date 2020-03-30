@@ -101,7 +101,7 @@ public class SurveyServiceImpl implements SurveyService {
             surveyOne.setSurveyId(survey.getSurveyId());
             surveyOneMapper.addSurveyOne(surveyOne);
             String key = "survey:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(survey), 20);
+            redisUtil.set(key, JSON.toJSONString(survey), 120);
         }
     }
 
@@ -149,7 +149,7 @@ public class SurveyServiceImpl implements SurveyService {
         for (User user : notificationMapper.getUserByGradeId(gradeId)) {
             String key= "ok:" + user.getUserId() + gradeId;
             String ok = "";
-            redisUtil.set(key, JSON.toJSONString(ok), 20);
+            redisUtil.set(key, JSON.toJSONString(ok), 40);
         }
     }
 

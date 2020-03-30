@@ -163,10 +163,10 @@ public class NotificationServiceImpl implements NotificationService {
         notification1.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
         for (User user : notificationMapper.getUserByGradeId(gradeId)) {
             String key1 = "notification:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(notification1), 20);
+            redisUtil.set(key1, JSON.toJSONString(notification1), 40);
             String key2 = "ok:" + user.getUserId() + gradeId;
             String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 20);
+            redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
         redisUtil.del(key);
     }
