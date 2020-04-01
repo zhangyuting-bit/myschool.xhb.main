@@ -5,7 +5,7 @@ spring:
     name: USERSERVICE
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test_user
+    url: jdbc:mysql://localhost:3306/xhb_user
     username: root
     password: ok
 eureka:
@@ -14,3 +14,16 @@ eureka:
       defaultZone: http://root:ok@localhost:7001/eureka/
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  cache:
+    ehcache:
+      config: classpath:/ehcache.xml
+    type: ehcache
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+qiniu:
+  accessKey: Jl-FpIFWdHDP2bwna-J1nC7Ff62AkQaycChlzqoo
+  secretKey: 1gWgu7zer-0lzucWrhhT_lhVsosT88On_eQePPgi
+  bucket: zyttest
+  path: http://q6phyfl2d.bkt.clouddn.com/
