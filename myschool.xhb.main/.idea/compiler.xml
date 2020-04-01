@@ -6,14 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+
         <module name="myschool.issue" />
         <module name="myschool.common" />
         <module name="myschool.user.api" />
         <module name="myschool.issue.api" />
         <module name="myschool.eureka" />
+
         <module name="myschool.user" />
         <module name="myschool.gataway" />
+        <module name="myschool.lable.api" />
+        <module name="myshool.class.api" />
+        <module name="myschool.common" />
+        <module name="myschool.record" />
+        <module name="myshool.class" />
+        <module name="myschool.issue.api" />
+        <module name="myschool.user.api" />
         <module name="myschool.common.api" />
+        <module name="myschool.agreement" />
+        <module name="myschool.issue" />
+        <module name="myschool.lable" />
+        <module name="myschool.agreement.api" />
+        <module name="myschool.gataway" />
+
+        <module name="myschool.issue.api" />
+
+        <module name="myschool.common.api" />
+        <module name="myschool.eureka" />
+        <module name="myschool.record.api" />
+        <module name="myschool.user" />
+
       </profile>
     </annotationProcessing>
   </component>

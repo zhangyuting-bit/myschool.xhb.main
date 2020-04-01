@@ -9,6 +9,7 @@
         FROM
             `expression`
     </select>
+<<<<<<< HEAD
 
     <select id="getExpressionById" resultType="com.zb.entity.Expression">
         SELECT
@@ -18,4 +19,6 @@
         WHERE
             expressionId=#{expressionId}
     </select>
+=======
+>>>>>>> master
 </mapper>

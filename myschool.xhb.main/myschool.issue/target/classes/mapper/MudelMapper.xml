@@ -3,11 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zb.mapper.MudelMapper">
+<<<<<<< HEAD
     <select id="getMudelByTypeId" resultType="com.zb.entity.Mudel">
+=======
+    <select id="getMudelAll" resultType="com.zb.entity.Mudel">
+>>>>>>> master
         SELECT
             *
         FROM
             `mudel`
+<<<<<<< HEAD
         WHERE
             typeId=#{typeId}
     </select>
@@ -19,5 +24,7 @@
             `mudel`
         WHERE
             mudelId=#{mudelId}
+=======
+>>>>>>> master
     </select>
 </mapper>
