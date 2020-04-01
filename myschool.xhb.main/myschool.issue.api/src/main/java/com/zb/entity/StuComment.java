@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 //老师给学生的评论表
 public class StuComment implements Serializable {
-    //评论编号
+    ///评论编号
     private String commentId;
     //成绩通知编号
     private String scoreId;

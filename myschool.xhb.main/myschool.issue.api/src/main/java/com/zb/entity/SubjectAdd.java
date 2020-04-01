@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 //新增科目表
 public class SubjectAdd implements Serializable {
-    //科目编号
+    ///科目编号
     private String id;
     //科目名称
     private String subjectName;

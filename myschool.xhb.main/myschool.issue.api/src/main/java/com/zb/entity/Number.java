@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 //学员学号表
 public class Number implements Serializable {
-    //学号编号
+    ///学号编号
     private String numberId;
     //班级编号
     private String gradeId;
@@ -11,6 +11,16 @@ public class Number implements Serializable {
     private String stuId;
     //学号
     private String stuNo;
+    //学生姓名
+    private String stuName;
+
+    public String getStuName() {
+        return stuName;
+    }
+
+    public void setStuName(String stuName) {
+        this.stuName = stuName;
+    }
 
     public String getNumberId() {
         return numberId;
