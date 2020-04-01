@@ -10,6 +10,11 @@ public class RabbitConfigs {
     //交换机
     public static final String myexchange="myexchange.boot";
 
+    //上传成绩消息队列
+    public static final String scoQueue="sco.boot.queue";
+    //上传成绩钥匙
+    public static final String scoKey="sco.key.queue";
+
     //上传调查消息队列
     public static final String surQueue="sur.boot.queue";
     //上传调查钥匙
@@ -26,13 +31,19 @@ public class RabbitConfigs {
         return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
     }
 
-    //创建上传文件消息队列
+    //创建上传调查消息队列
     @Bean(surQueue)
-    public Queue createDocQueue(){
+    public Queue createSurQueue(){
         Queue queue =new Queue(surQueue);
         return queue;
     }
 
+    //创建上传成绩消息队列
+    @Bean(scoQueue)
+    public Queue createScoQueue(){
+        Queue queue =new Queue(scoQueue);
+        return queue;
+    }
     //创建上传通知消息队列
     @Bean(nocQueue)
     public Queue createNocQueue(){
@@ -50,6 +61,12 @@ public class RabbitConfigs {
     @Bean
     public Binding bindingNoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(nocKey).noargs();
+    }
+
+    //将上传成绩消息对列绑定到交换机上
+    @Bean
+    public Binding bindingSco(@Qualifier(myexchange) Exchange exchange , @Qualifier(scoQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(scoKey).noargs();
     }
 
 }

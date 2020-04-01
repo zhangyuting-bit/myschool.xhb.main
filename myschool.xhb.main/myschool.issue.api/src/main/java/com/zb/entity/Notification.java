@@ -33,6 +33,7 @@ public class Notification implements Serializable {
     private List<NotPic>notPics;
     //附件集合
     private List<NotDocument>documents;
+    //教师信息
 
     public List<NotDocument> getDocuments() {
         return documents;

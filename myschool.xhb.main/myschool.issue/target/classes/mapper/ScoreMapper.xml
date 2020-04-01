@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.ScoreMapper">
+    <insert id="addScore">
+         INSERT INTO `score`
+            (`scoreId`,
+             `teacherId`,
+             `gradeId`,
+             `examName`,
+             `examTime`)
+        VALUES (#{scoreId},
+                #{teacherId},
+                #{gradeId},
+                #{examName},
+                #{examTime});
+    </insert>
+
+    <select id="getScoreListByGradeId" resultType="com.zb.entity.Score">
+        SELECT
+            *
+        FROM
+            `score`
+        WHERE
+            gradeId=#{gradeId}
+    </select>
+
+    <update id="updateScore">
+        UPDATE `score`
+        SET
+          `examTime` = #{examTime},
+          `comment` = #{comment}
+        WHERE `scoreId` = #{scoreId};
+    </update>
+
+    <select id="getScoreByScoreId" resultType="com.zb.entity.Score">
+        SELECT
+            *
+        FROM
+            `score`
+        WHERE
+            scoreId=#{scoreId}
+    </select>
+</mapper>

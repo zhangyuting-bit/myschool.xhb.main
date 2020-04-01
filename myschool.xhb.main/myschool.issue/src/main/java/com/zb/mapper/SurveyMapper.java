@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface SurveyMapper {
-    //根据班级编号查询调查通知
-    List<Survey>getSurveyByGradeId(@Param("gradeId") String gradeId);
+    //根据用户编号查询调查通知
+    List<Survey>getSurveyByUserId(@Param("userId") String userId);
 
     //根据调查编号查询调查信息
     Survey getSurveyBySurveyId(@Param("surveyId")String surveyId);

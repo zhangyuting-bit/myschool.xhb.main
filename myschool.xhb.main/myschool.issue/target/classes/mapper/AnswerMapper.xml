@@ -16,10 +16,12 @@
         INSERT INTO `answer`
             (`answerId`,
              `selectId`,
-             `answer`)
+             `answer`,
+             `sort`)
         VALUES (#{answerId},
                 #{selectId},
-                #{answer});
+                #{answer},
+                #{sort});
     </insert>
 
     <update id="updateAnswer">
