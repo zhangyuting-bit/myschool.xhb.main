@@ -104,6 +104,9 @@ public class SurveyServiceImpl implements SurveyService {
             surveyOneMapper.addSurveyOne(surveyOne);
             String key = "survey:" + user.getUserId() + user.getGradeId();
             redisUtil.set(key, JSON.toJSONString(survey), 120);
+            String key1= "ok:" + user.getUserId() + user.getGradeId();
+            String ok = "";
+            redisUtil.set(key1, JSON.toJSONString(ok), 40);
         }
     }
 
@@ -142,16 +145,6 @@ public class SurveyServiceImpl implements SurveyService {
                 redisUtil.del(key);
                 redisUtil.del("ok:" + userId + gradeId);
             }
-        }
-    }
-
-    //添加推送状态
-    @Override
-    public void addStatus(String gradeId){
-        for (User user : notificationMapper.getUserByGradeId(gradeId)) {
-            String key= "ok:" + user.getUserId() + gradeId;
-            String ok = "";
-            redisUtil.set(key, JSON.toJSONString(ok), 40);
         }
     }
 
