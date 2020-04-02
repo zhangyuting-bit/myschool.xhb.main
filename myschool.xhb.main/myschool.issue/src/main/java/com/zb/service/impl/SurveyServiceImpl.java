@@ -94,7 +94,9 @@ public class SurveyServiceImpl implements SurveyService {
         surveyMapper.addSurvey(survey);
         //根据teacherId获取老师信息
         ///////////////////////////
-        for (User user : notificationMapper.getUserByGradeId(survey.getGradeId())) {
+        //根据班级编号获取用户信息
+        List<User>users=notificationMapper.getUserByGradeId(survey.getGradeId());
+        for (User user : users) {
             SurveyOne surveyOne=new SurveyOne();
             surveyOne.setOneId(IdWorker.getId());
             surveyOne.setUserId(user.getUserId());
