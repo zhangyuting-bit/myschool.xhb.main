@@ -42,7 +42,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Resource
     private RedisUtil redisUtil;
 
-    //根据班级编号和通知类型编号获取全部对应通知
+    //根据用户编号和通知类型编号获取全部对应通知
     @Override
     public List<Notification> getNotificationGradeId(Integer typeId, String userId) {
         List<Notification> list = new ArrayList<>();
@@ -99,7 +99,9 @@ public class NotificationServiceImpl implements NotificationService {
         notificationMapper.addNotification(notification);
         //根据teacherId获取老师信息
         ///////////////////////////
-        for (User user : notificationMapper.getUserByGradeId(notification.getGradeId())) {
+        //根据班级编号获取用户信息
+        List<User>users=notificationMapper.getUserByGradeId(notification.getGradeId());
+        for (User user : users) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(notification.getNotificationId());
@@ -160,7 +162,10 @@ public class NotificationServiceImpl implements NotificationService {
         Notification notification1=notificationMapper.getNotificationById(notification.getNotificationId());
         //根据通知编号查询状态为0的图片
         notification1.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
-        for (User user : notificationMapper.getUserByGradeId(gradeId)) {
+
+        //根据班级编号获取用户信息
+        List<User>users=notificationMapper.getUserByGradeId(notification.getGradeId());
+        for (User user : users) {
             String key1 = "notification:" + user.getUserId() + user.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification1), 40);
             String key2 = "ok:" + user.getUserId() + gradeId;
