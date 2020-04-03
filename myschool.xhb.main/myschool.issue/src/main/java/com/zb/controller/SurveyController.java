@@ -59,12 +59,6 @@ public class SurveyController {
         surveyService.delStuSur(userId, surveyId, gradeId);
     }
 
-    //添加推送状态
-    @GetMapping("/addOkSur")
-    public void addStatus(String gradeId) {
-        surveyService.addStatus(gradeId);
-    }
-
     //获取推送状态
     @GetMapping("/getSurStatus")
     public Dto<Integer> getStatus(String userId,String gradeId){

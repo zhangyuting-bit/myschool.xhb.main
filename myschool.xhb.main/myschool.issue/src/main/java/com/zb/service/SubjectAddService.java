@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface SubjectAddService {
-    //新增科目信息
+    ///新增科目信息
     Integer addSubjectAdd(SubjectAdd subjectAdd);
 
     //根据班级编号查询新增科目

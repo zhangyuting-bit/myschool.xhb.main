@@ -133,11 +133,11 @@ public class NotificationServiceImpl implements NotificationService {
         return notificationMapper.updateEndTimeOne(endTime, notificationId);
     }
 
-    //把通知状态修改为已结束
-    @Override
-    public Integer updateEndTime(String notificationId) {
-        return notificationMapper.updateEndTime(notificationId);
-    }
+//    //把通知状态修改为已结束
+//    @Override
+//    public Integer updateEndTime(String notificationId) {
+//        return notificationMapper.updateEndTime(notificationId);
+//    }
 
     //删除推送消息
     @Override

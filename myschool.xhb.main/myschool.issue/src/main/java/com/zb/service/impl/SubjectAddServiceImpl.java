@@ -14,7 +14,7 @@ public class SubjectAddServiceImpl implements SubjectAddService {
     @Resource
     private SubjectAddMapper subjectAddMapper;
 
-    //新增科目信息
+    ///新增科目信息
     @Override
     public Integer addSubjectAdd(SubjectAdd subjectAdd) {
         subjectAdd.setId(IdWorker.getId());

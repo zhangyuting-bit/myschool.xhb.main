@@ -1,6 +1,6 @@
 package com.zb.service.impl;
 
-import com.zb.entity.Number;
+import com.zb.entity.StuNumber;
 import com.zb.mapper.NumberMapper;
 import com.zb.service.NumberService;
 import com.zb.util.IdWorker;
@@ -14,16 +14,16 @@ public class NumberServiceImpl implements NumberService {
     @Resource
     private NumberMapper numberMapper;
 
-    //添加学生学号
+    ///添加学生学号
     @Override
-    public Integer addNumber(Number number) {
+    public Integer addNumber(StuNumber number) {
         number.setNumberId(IdWorker.getId());
         return numberMapper.addNumber(number);
     }
 
     //根据班级编号查询学生学号
     @Override
-    public List<Number> getNumberByGradeId(String gradeId) {
+    public List<StuNumber> getNumberByGradeId(String gradeId) {
         return numberMapper.getNumberByGradeId(gradeId);
     }
 

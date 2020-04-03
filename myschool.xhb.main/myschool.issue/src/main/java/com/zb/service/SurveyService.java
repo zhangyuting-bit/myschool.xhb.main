@@ -28,9 +28,6 @@ public interface SurveyService {
      //删除推送消息
      public void delStuSur(String userId, String surveyId, String gradeId);
 
-     //添加推送状态
-     public void addStatus(String gradeId);
-
      //获取推送状态
      public Integer getStatus(String userId, String gradeId);
 }

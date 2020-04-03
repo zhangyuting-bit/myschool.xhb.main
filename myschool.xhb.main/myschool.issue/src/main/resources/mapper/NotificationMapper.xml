@@ -62,16 +62,15 @@
     <update id="updateEndTimeOne">
         UPDATE `notification`
         SET
-          `endTime` = #{endTime},
-          `status` = 0
+          `endTime` = #{endTime}
         WHERE `notificationId` = #{notificationId};
     </update>
 
-    <update id="updateEndTime">
+    <!--<update id="updateEndTime">
         UPDATE `notification`
         SET
           `status` = 1
         WHERE `notificationId` = #{notificationId};
-    </update>
+    </update>-->
 
 </mapper>

@@ -25,6 +25,6 @@ public interface NotificationMapper {
     //修改结束时间
     Integer updateEndTimeOne(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
 
-    //把通知状态修改为已结束
-    Integer updateEndTime(@Param("notificationId")String notificationId);
+//    //把通知状态修改为已结束
+//    Integer updateEndTime(@Param("notificationId")String notificationId);
 }

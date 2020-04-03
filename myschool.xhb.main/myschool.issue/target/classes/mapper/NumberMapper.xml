@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zb.mapper.NumberMapper">
+    <!---->
         <insert id="addNumber">
             INSERT INTO `number`
             (`numberId`,
@@ -17,7 +18,7 @@
                     #{stuName});
         </insert>
 
-    <select id="getNumberByGradeId" resultType="com.zb.entity.Number">
+    <select id="getNumberByGradeId" resultType="com.zb.entity.StuNumber">
         SELECT
             *
         FROM
@@ -32,4 +33,13 @@
           `stuNo` = #{stuNo}
         WHERE `numberId` = #{numberId};
     </update>
+
+    <select id="getNumberByNumberId" resultType="com.zb.entity.StuNumber">
+        SELECT
+            *
+        FROM
+            `number`
+        WHERE
+            numberId=#{numberId}
+    </select>
 </mapper>

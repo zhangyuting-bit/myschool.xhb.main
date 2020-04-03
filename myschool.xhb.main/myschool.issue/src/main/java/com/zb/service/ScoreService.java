@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ScoreService {
-    //新增成绩消息
+    ///新增成绩消息
     Score addScore(Score score);
 
     //根据班级编号获取成绩消息
@@ -17,4 +17,32 @@ public interface ScoreService {
 
     //根据成绩编号获取信息
     Score getScoreByScoreId(String scoreId);
+
+    //推送消息给用户
+    public void sendScore(String scoreId);
+
+    //根据成绩编号查询成绩信息
+    public Score getScore(String scoreId);
+
+    //学生端实时显示信息
+    public Score getScoStu(String userId, String gradeId);
+
+    //删除推送消息
+    public void delStuSco(String userId, String scoreId, String gradeId);
+
+    //获取推送状态
+    public Integer getStatus(String userId, String gradeId);
+
+    //撤销成绩信息
+    public void returnScore(String scoreId,String gradeId);
+
+    //获取撤销信息
+    public Integer getDelStatus(String userId,String gradeId);
+
+    //删除撤销信息
+    public void delStatus(String userId,String gradeId);
+
+    //删除成绩表
+    public Integer delScore(String scoreId);
+
 }
