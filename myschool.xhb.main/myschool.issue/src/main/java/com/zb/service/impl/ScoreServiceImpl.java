@@ -226,6 +226,11 @@ public class ScoreServiceImpl implements ScoreService {
         return null;
     }
 
+    //根据用户编号和成绩编号删除成绩信息
+    @Override
+    public Integer delScoreOne(String userId,String scoreId){
+        return scoreOneMapper.delScoreByUserIdAndScoreId(userId, scoreId);
+    }
 
     //撤销成绩信息
     @Override
@@ -272,7 +277,7 @@ public class ScoreServiceImpl implements ScoreService {
 
     //获取撤销信息
     @Override
-    public String getDelStatus(String userId,String gradeId){
+    public String getScoDelStatus(String userId,String gradeId){
         String key="delScore:"+userId+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
@@ -294,13 +299,6 @@ public class ScoreServiceImpl implements ScoreService {
     public Integer delScore(String scoreId){
         return scoreMapper.delScore(scoreId);
     }
-
-    //根据用户编号和成绩编号删除成绩信息
-    @Override
-    public Integer delScoreOne(String userId,String scoreId){
-        return scoreOneMapper.delScoreByUserIdAndScoreId(userId, scoreId);
-    }
-
 
     //根据用户编号获取用户信息
     @Override
