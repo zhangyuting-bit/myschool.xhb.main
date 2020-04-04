@@ -16,4 +16,19 @@
     <delete id="delScoreOneByScoreId">
         delete from scoreone where scoreId=#{scoreId}
     </delete>
+
+    <delete id="delScoreByUserIdAndScoreId">
+        delete from scoreone where userId=#{userId} and scoreId=#{scoreId}
+    </delete>
+
+    <select id="getScoreListByUserId" resultType="com.zb.entity.ScoreOne">
+        SELECT
+            *
+        FROM
+            `scoreone`
+        WHERE
+            userId=#{userId}
+        ORDER BY
+            createTime DESC
+    </select>
 </mapper>

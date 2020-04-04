@@ -11,6 +11,25 @@
         WHERE
             gradeId=#{gradeId}
     </select>
+
+    <select id="getUserByUserId" resultType="com.zb.entity.User">
+        SELECT
+            *
+        FROM
+            `user`
+        WHERE
+            userId=#{userId}
+    </select>
+
+    <select id="getGradeByUserId" resultType="com.zb.entity.Grade">
+        SELECT
+            gradeId
+        FROM
+            `user`
+        WHERE
+            userId=#{userId}
+    </select>
+
     <select id="getNotificationGradeId" resultType="com.zb.entity.Notification">
         SELECT
             *

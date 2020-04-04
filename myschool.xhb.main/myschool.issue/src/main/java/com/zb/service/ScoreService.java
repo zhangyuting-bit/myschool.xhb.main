@@ -1,6 +1,8 @@
 package com.zb.service;
 
+import com.zb.entity.Grade;
 import com.zb.entity.Score;
+import com.zb.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,7 +12,10 @@ public interface ScoreService {
     Score addScore(Score score);
 
     //根据班级编号获取成绩消息
-    List<Score> getScoreListByGradeId(String gradeId);
+    List<Score> getScoreListByUserId(String userId);
+
+    //根据用户编号获取用户信息
+    User getUserByUserId(String userId);
 
     //根据消息编号修改消息
     Integer updateScore(Score score);
@@ -37,7 +42,7 @@ public interface ScoreService {
     public void returnScore(String scoreId,String gradeId);
 
     //获取撤销信息
-    public Integer getDelStatus(String userId,String gradeId);
+    public String getDelStatus(String userId,String gradeId);
 
     //删除撤销信息
     public void delStatus(String userId,String gradeId);
@@ -45,4 +50,6 @@ public interface ScoreService {
     //删除成绩表
     public Integer delScore(String scoreId);
 
+    //根据用户编号和成绩编号删除成绩信息
+    public Integer delScoreOne(String userId,String scoreId);
 }

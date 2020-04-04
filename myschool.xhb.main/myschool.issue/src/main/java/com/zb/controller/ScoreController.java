@@ -2,7 +2,9 @@ package com.zb.controller;
 
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
+import com.zb.entity.Grade;
 import com.zb.entity.Score;
+import com.zb.entity.User;
 import com.zb.service.ScoreService;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,9 +28,9 @@ public class ScoreController {
     }
 
     //根据班级编号获取成绩消息
-    @GetMapping("/getScoreListByGradeId/{gradeId}")
-    public Dto<List<Score>> getScoreListByGradeId(@PathVariable("gradeId") String gradeId) {
-        return DtoUtil.returnSuccess("ok",service.getScoreListByGradeId(gradeId));
+    @GetMapping("/getScoreListByUserId/{userId}")
+    public Dto<List<Score>> getScoreListByUserId(@PathVariable("userId") String userId) {
+        return DtoUtil.returnSuccess("ok",service.getScoreListByUserId(userId));
     }
 
     //根据消息编号修改消息
@@ -69,7 +71,7 @@ public class ScoreController {
 
     //获取撤销信息
     @GetMapping("/getDelStatus")
-    public Dto<Integer> getDelStatus(String userId,String gradeId){
+    public Dto<String> getDelStatus(String userId,String gradeId){
         return DtoUtil.returnSuccess("ok",service.getDelStatus(userId,gradeId));
     }
 
@@ -83,5 +85,17 @@ public class ScoreController {
     @GetMapping("/delScore/{scoreId}")
     public Dto<Integer> delScore(@PathVariable("scoreId") String scoreId){
         return DtoUtil.returnSuccess("ok",service.delScore(scoreId));
+    }
+
+    //根据用户编号和成绩编号删除成绩信息
+    @GetMapping("/delScoreOne")
+    public Dto<Integer> delScoreOne(String userId,String scoreId){
+        return DtoUtil.returnSuccess("ok",service.delScoreOne(userId, scoreId));
+    }
+
+    //根据用户编号获取班级信息
+    @GetMapping("/getUserByUserId")
+    public User getUserByUserId(String userId){
+        return service.getUserByUserId(userId);
     }
 }

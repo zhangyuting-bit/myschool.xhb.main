@@ -1,5 +1,6 @@
 package com.zb.mapper;
 
+import com.zb.entity.Grade;
 import com.zb.entity.Notification;
 import com.zb.entity.User;
 import org.apache.ibatis.annotations.Param;
@@ -9,6 +10,11 @@ import java.util.List;
 public interface NotificationMapper {
     //根据班级编号获取用户信息
     List<User>getUserByGradeId(@Param("gradeId")String gradeId);
+
+    //根据用户编号获取班级信息
+    List<Grade>getGradeByUserId(@Param("userId")String userId);
+
+    User getUserByUserId(@Param("userId")String userId);
 
     //根据班级编号和通知类型编号获取全部对应通知
     List<Notification>getNotificationGradeId(@Param("typeId")Integer typeId,@Param("gradeId")String userId);

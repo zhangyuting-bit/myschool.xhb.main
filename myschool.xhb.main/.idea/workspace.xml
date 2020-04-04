@@ -50,243 +50,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ScoreOneMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/ScoreOneMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Grade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/myschool.agreement.api.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/feign/AgreementFeginClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/pojo/Agreement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/myschool.agreement.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/AgreementServerApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/controller/AgreementController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/mapper/AgreementMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/AgreementService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/impl/AgreementServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/mapper/AgreementMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common/target/myschool.common-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Number.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Score.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/ScoreOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/ScoreOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuComment.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuComment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/SubjectAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/SubjectAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/AddExpression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Audio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Number.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Picture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Score.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/StuComment.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/StuComment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Subject.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Subject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Video.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/myschool.issue.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NumberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NumberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/StuCommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/StuCommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/StuSubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/StuSubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SubjectAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SubjectAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SubjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SurveyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SurveyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NumberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NumberMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ScoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ScoreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuCommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuCommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuSubjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuSubjectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SubjectAddMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SubjectAddMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SubjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SubjectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NumberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NumberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ScoreOneMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/ScoreOneMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/ScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/StuCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/StuCommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/StuSubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/StuSubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SubjectAddService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SubjectAddService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SurveyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SurveyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NumberServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuCommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuCommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuSubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuSubjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SubjectAddServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SubjectAddServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SubjectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NumberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NumberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/ScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/ScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuCommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SubjectAddMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SubjectAddMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/META-INF/myschool.issue.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NumberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NumberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/ScoreOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/ScoreOneMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotificationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ScoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/StuCommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/StuCommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/StuSubjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/StuSubjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SurveyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SurveyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NumberMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NumberMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/ScoreMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/ScoreMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuCommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuCommentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuSubjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuSubjectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SubjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SubjectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NumberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NumberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/ScoreOneMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/ScoreOneMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/NotificationService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/ScoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/ScoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/StuCommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/StuCommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SurveyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SurveyService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NumberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NumberServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/StuCommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/StuCommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ExpressionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ExpressionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/MudelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/MudelMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NumberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NumberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuCommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SubjectAddMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SubjectAddMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/myschool.issue-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/myschool.issue-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable.api/target/classes/com/zb/pojo/Lable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/com/zb/LableServerApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/com/zb/controller/LableController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/com/zb/mapper/LableMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/com/zb/service/LableService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/com/zb/service/impl/LableServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.lable/target/classes/mapper/LableMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/myschool.record.api.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/GrowthRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/Lable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/AddRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/myschool.record.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/RecordServerApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/mapper/RecordMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/RecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/impl/RecordServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/feign/UserFeignClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user.api/target/myschool.user.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/MySchoolUserApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/config/FileUploadConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/controller/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/controller/UploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/controller/ViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/mapper/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/controller/SendSmsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/BASE64Decoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/BASE64Encoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/CEFormatException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/CEStreamExhausted.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/CharacterDecoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/encoder/CharacterEncoder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/service/CCPRestSDK$AccountType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/service/CCPRestSDK$BodyType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/service/CCPRestSDK.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/CcopHttpClient$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/CcopHttpClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/DateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/EncryptUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/LoggerUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/register/utils/PropertiesUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/UploadService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/impl/RoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/impl/UploadServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/com/zb/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/ehcache.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.user/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_File.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_Job.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_Subject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_age.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_age_real.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_leave.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_real.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Jurisdiction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Leave_job.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/myshool.class.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/META-INF/myshool.class.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/MyClassApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/config/DownLoad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/config/FileUploadConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassFileController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/Classdownloadcontroller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassleaveController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/job/LeaveJob.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassFileMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassInfoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassleaveMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/ClassInfoMq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/LeaveMq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassfiledownloadService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassleaveService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassInfoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassfiledownloadServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassleaveServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/ehcache.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassFileMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassInfoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassleaveMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/myshool.class-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/myshool.class-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ScoreOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/ScoreOneMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -496,7 +282,12 @@
       <workItem from="1585618223323" duration="26811000" />
       <workItem from="1585701827138" duration="2558000" />
       <workItem from="1585791040968" duration="24247000" />
-      <workItem from="1585897256146" duration="2145000" />
+      <workItem from="1585897256146" duration="5422000" />
+      <workItem from="1585912267419" duration="664000" />
+      <workItem from="1585915957552" duration="2578000" />
+      <workItem from="1585960597710" duration="4647000" />
+      <workItem from="1585970406161" duration="4461000" />
+      <workItem from="1585988594304" duration="3799000" />
     </task>
     <task id="LOCAL-00001" summary="issue_LZQ">
       <created>1583377701694</created>
@@ -806,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585811125039</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="issue_LZQ">
+      <created>1585902994971</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1585902994971</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -829,10 +627,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585817325311">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585973667617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585817325311" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585973667617" />
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -845,46 +643,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585471420678" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1585811122818">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1585902980747">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585811122818" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1585817211541">
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585902980747" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1585990150614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585817211541" />
-    <state width="1493" height="303" key="GridCell.Tab.0.bottom" timestamp="1585831066869">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585990150614" />
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.0.center" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
+    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1585992389053">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.0.left" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585992389053" />
+    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1585992389053">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.0.right" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585992389053" />
+    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.1.bottom" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.1.center" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
+    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.1.left" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
+    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
-    <state width="1493" height="303" key="GridCell.Tab.1.right" timestamp="1585831066869">
+    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1585992389054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585831066869" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585992389054" />
     <state width="1493" height="300" key="GridCell.Tab.2.bottom" timestamp="1585489952431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -917,9 +715,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585558818378" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585746401983">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585972240629">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585746401983" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585972240629" />
   </component>
 </project>

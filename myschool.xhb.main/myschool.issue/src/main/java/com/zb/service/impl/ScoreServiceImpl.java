@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.Number;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -55,8 +56,8 @@ public class ScoreServiceImpl implements ScoreService {
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
             Integer count=JSON.parseObject(o.toString(),Integer.class);
-            System.out.println(count++);
-            redisUtil.set(key,JSON.toJSONString(count++));
+            count++;
+            redisUtil.set(key,JSON.toJSONString(count));
         }else {
             redisUtil.set(key,JSON.toJSONString(1));
         }
@@ -65,8 +66,13 @@ public class ScoreServiceImpl implements ScoreService {
 
     ///根据班级编号获取成绩消息
     @Override
-    public List<Score> getScoreListByGradeId(String gradeId) {
-        return scoreMapper.getScoreListByGradeId(gradeId);
+    public List<Score> getScoreListByUserId(String userId) {
+        List<Score>list=new ArrayList<>();
+        List<ScoreOne>scoreOnes=scoreOneMapper.getScoreListByUserId(userId);
+        for (ScoreOne scoreOne : scoreOnes) {
+            list.add(getScore(scoreOne.getScoreId()));
+        }
+        return list;
     }
 
     //根据消息编号修改消息
@@ -129,9 +135,10 @@ public class ScoreServiceImpl implements ScoreService {
         //根据成绩编号修改发送状态
         scoreMapper.updateStatus(scoreId);
         List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
-        int count=1;
+        int count=0;
         for (StuComment stuComment:stuComments) {
-            stuComment.setSort(count++);
+            count++;
+            stuComment.setSort(count);
             //根据评论编号修改排名
             stuCommentMapper.updateStuComment(stuComment.getSort(),stuComment.getCommentId());
         }
@@ -246,19 +253,33 @@ public class ScoreServiceImpl implements ScoreService {
             String key1= "ok:" + user.getUserId() + user.getGradeId();
             redisUtil.del(key1);
             String key2="delScore:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString("del"));
+            redisUtil.set(key2,JSON.toJSONString(scoreId),120);
+        }
+        String key="scoreCount:"+gradeId;
+        //根据班级编号统计成绩表数量
+        if (redisUtil.hasKey(key)){
+            Object o=redisUtil.get(key);
+            Integer count=JSON.parseObject(o.toString(),Integer.class);
+            count--;
+            redisUtil.set(key,JSON.toJSONString(count));
+        }
+        String key1="score:"+scoreId;
+        if (redisUtil.hasKey(key1)){
+            redisUtil.del(key1);
         }
 
     }
 
     //获取撤销信息
     @Override
-    public Integer getDelStatus(String userId,String gradeId){
+    public String getDelStatus(String userId,String gradeId){
         String key="delScore:"+userId+gradeId;
         if (redisUtil.hasKey(key)){
-            return 1;
+            Object o=redisUtil.get(key);
+            String scoreId=JSON.toJSONString(o.toString());
+            return scoreId;
         }
-        return 0;
+        return null;
     }
 
     //删除撤销信息
@@ -273,4 +294,29 @@ public class ScoreServiceImpl implements ScoreService {
     public Integer delScore(String scoreId){
         return scoreMapper.delScore(scoreId);
     }
+
+    //根据用户编号和成绩编号删除成绩信息
+    @Override
+    public Integer delScoreOne(String userId,String scoreId){
+        return scoreOneMapper.delScoreByUserIdAndScoreId(userId, scoreId);
+    }
+
+
+    //根据用户编号获取用户信息
+    @Override
+    public User getUserByUserId(String userId) {
+        User user=null;
+        String key="user:"+userId;
+        if (redisUtil.hasKey(key)){
+            Object o=redisUtil.get(key);
+            user=JSON.parseObject(o.toString(),User.class);
+        }else {
+            user=notificationMapper.getUserByUserId(userId);
+            user.setGrades(notificationMapper.getGradeByUserId(userId));
+            redisUtil.set(key,JSON.toJSONString(user),120);
+        }
+        return user;
+    }
+
+
 }
