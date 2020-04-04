@@ -11,6 +11,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -128,12 +129,6 @@ public class SurveyServiceImpl implements SurveyService {
         return surveyMapper.updateSurEndTimeOne(endTime, surveyId);
     }
 
-    //把调查状态修改为已结束
-    @Override
-    public Integer updateSurEndTime(String surveyId) {
-        return surveyMapper.updateSurEndTime(surveyId);
-    }
-
     //删除推送消息
     @Override
     public void delStuSur(String userId, String surveyId, String gradeId) {
@@ -157,5 +152,63 @@ public class SurveyServiceImpl implements SurveyService {
         }
         return null;
     }
+
+    //根据用户编号和调查编号删除成绩信息
+    @Override
+    public Integer delSurvey(String userId,String surveyId){
+        return surveyOneMapper.delSurveyByUserId(userId, surveyId);
+    }
+
+    //撤销调查信息
+    @Override
+    @Transactional
+    public void returnSurvey(String surveyId,String gradeId){
+        //根据调查编号删除调查
+        surveyMapper.delSurveyBySurveyId(surveyId);
+        //根据调查编号删除个人信息
+        surveyOneMapper.delSurveyOneBySurId(surveyId);
+        //根据调查编号查询题目信息
+        List<Select>list=selectMapper.getSelectBySurveyId(surveyId);
+        for (Select select:list) {
+            //根据题目编号删除图片信息
+            selectPicMapper.delPicBySelectId(select.getSelectId());
+            //根据题目编号删除答案信息
+            answerMapper.delAnswerBySelId(select.getSelectId());
+        }
+        //根据班级编号获取用户信息
+        List<User>users=notificationMapper.getUserByGradeId(gradeId);
+        for (User user : users) {
+            String key = "survey:" + user.getUserId() + user.getGradeId();
+            redisUtil.del(key);
+            String key1= "ok:" + user.getUserId() + user.getGradeId();
+            redisUtil.del(key1);
+            String key2="delSurvey:"+user.getUserId()+gradeId;
+            redisUtil.set(key2,JSON.toJSONString(surveyId),120);
+        }
+        String key="survey:"+surveyId;
+        if (redisUtil.hasKey(key)){
+            redisUtil.del(key);
+        }
+    }
+
+    //获取撤销信息
+    @Override
+    public String getSurDelStatus(String userId,String gradeId){
+        String key="delSurvey:"+userId+gradeId;
+        if (redisUtil.hasKey(key)){
+            Object o=redisUtil.get(key);
+            String scoreId=JSON.toJSONString(o.toString());
+            return scoreId;
+        }
+        return null;
+    }
+
+    //删除撤销信息
+    @Override
+    public void delStatus(String userId,String gradeId){
+        String key="delSurvey:"+userId+gradeId;
+        redisUtil.del(key);
+    }
+
 
 }

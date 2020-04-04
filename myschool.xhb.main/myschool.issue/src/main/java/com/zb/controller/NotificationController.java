@@ -48,12 +48,6 @@ public class NotificationController {
         return DtoUtil.returnSuccess("ok",notificationService.updateEndTimeOne(endTime, notificationId));
     }
 
-//    //把通知状态修改为已结束
-//    @RequestMapping("/updateEndTime/{notificationId}")
-//    public Dto<Integer> updateEndTime(@PathVariable("notificationId") String notificationId) {
-//        return DtoUtil.returnSuccess("ok",notificationService.updateEndTime(notificationId));
-//    }
-
     //删除推送消息
     @GetMapping("/delStuNoc")
     public void delStuNoc(String userId,String notificationId,String gradeId) {

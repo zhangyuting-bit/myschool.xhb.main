@@ -21,4 +21,8 @@
                 #{selectId},
                 #{picSrc});
     </insert>
+
+    <delete id="delPicBySelectId">
+        delete from selectpic where selectId=#{selectId}
+    </delete>
 </mapper>

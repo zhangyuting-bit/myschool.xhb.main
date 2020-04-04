@@ -11,4 +11,7 @@ public interface SelectPicMapper {
 
     //添加题目图片
     Integer addSelectPic(SelectPic selectPic);
+
+    //根据题目编号删除图片信息
+    Integer delPicBySelectId(@Param("selectId")String selectId);
 }

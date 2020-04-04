@@ -22,12 +22,22 @@ public interface SurveyService {
      //修改结束时间
      public Integer updateSurEndTimeOne(String endTime,String surveyId);
 
-     //把调查状态修改为已结束
-     public Integer updateSurEndTime(String surveyId);
-
      //删除推送消息
      public void delStuSur(String userId, String surveyId, String gradeId);
 
      //获取推送状态
      public Integer getStatus(String userId, String gradeId);
+
+     //根据用户编号和调查编号删除成绩信息
+     public Integer delSurvey(String userId,String surveyId);
+
+     //撤销调查信息
+     public void returnSurvey(String surveyId,String gradeId);
+
+     //获取撤销信息
+     public String getSurDelStatus(String userId,String gradeId);
+
+     //删除撤销信息
+     public void delStatus(String userId,String gradeId);
+
 }

@@ -19,9 +19,6 @@ public interface NotificationService {
     //修改结束时间
     public Integer updateEndTimeOne(String endTime,String notificationId);
 
-//    //把通知状态修改为已结束
-//    public Integer updateEndTime(String notificationId);
-
     //删除推送消息
     public void delStuNoc(String userId,String notificationId,String gradeId);
 

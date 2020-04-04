@@ -14,4 +14,7 @@ public interface SelectMapper {
 
     //修改音频路径
     Integer updateAudio(@Param("audioSrc")String audioSrc,@Param("surveyId")String surveyId);
+
+    //根据调查编号删除题目信息
+    Integer delSelectBySurId(@Param("surveyId")String surveyId);
 }
