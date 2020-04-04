@@ -63,6 +63,18 @@ public class ScoreController {
         return DtoUtil.returnSuccess("ok",service.getScoStu(userId, gradeId));
     }
 
+    //获取推送状态
+    @GetMapping("/getStatus")
+    public Dto<Integer> getStatus(String userId, String gradeId){
+        return DtoUtil.returnSuccess("ok",service.getStatus(userId, gradeId));
+    }
+
+    //删除推送消息
+    @GetMapping("/delStuSco")
+    public void delStuSco(String userId, String scoreId, String gradeId){
+        service.delStuSco(userId, scoreId, gradeId);
+    }
+
     //撤销成绩信息
     @GetMapping("/returnScore")
     public void returnScore(String scoreId,String gradeId){
@@ -72,7 +84,7 @@ public class ScoreController {
     //获取撤销信息
     @GetMapping("/getDelStatus")
     public Dto<String> getDelStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",service.getDelStatus(userId,gradeId));
+        return DtoUtil.returnSuccess("ok",service.getScoDelStatus(userId,gradeId));
     }
 
     //删除撤销信息
