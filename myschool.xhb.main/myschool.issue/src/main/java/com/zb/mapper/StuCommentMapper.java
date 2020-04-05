@@ -20,4 +20,10 @@ public interface StuCommentMapper {
 
     //根据成绩编号删除评论
     Integer delCommentByScoreId(@Param("scoreId")String scoreId);
+
+    //根据成绩编号获取评论并排序
+    List<StuComment>getCommentByScoreIdOne(@Param("scoreId")String scoreId);
+
+    //根据评论编号修改总分
+    Integer updateStuCommentSum(@Param("sum")double sum,@Param("commentId")String commentId);
 }

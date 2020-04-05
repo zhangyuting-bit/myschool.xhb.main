@@ -50,25 +50,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/META-INF/myschool.issue.api.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SurveyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SurveyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AnswerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/AnswerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotificationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SelectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SelectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SelectPicMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SelectPicMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SurveyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SurveyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SurveyOneMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/SurveyOneMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/NotificationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SurveyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/SurveyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuCommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuCommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuSubjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/StuSubjectMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuCommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuCommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuSubjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/StuSubjectServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotificationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SelectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SelectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SelectPicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SelectPicMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyOneMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuCommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ScoreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SurveyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SurveyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NotificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectPicMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectPicMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuSubjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/StuSubjectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SurveyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SurveyMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SurveyOneMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SurveyOneMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/ScoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/ScoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SurveyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SurveyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/StuCommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/StuCommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NotificationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SelectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SelectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SelectPicMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SelectPicMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuCommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyOneMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,14 +306,8 @@
       <workItem from="1585915957552" duration="2578000" />
       <workItem from="1585960597710" duration="4647000" />
       <workItem from="1585970406161" duration="4461000" />
-      <workItem from="1585988594304" duration="9075000" />
-    </task>
-    <task id="LOCAL-00001" summary="issue_LZQ">
-      <created>1583377701694</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583377701694</updated>
+      <workItem from="1585988594304" duration="17093000" />
+      <workItem from="1586051009606" duration="11009000" />
     </task>
     <task id="LOCAL-00002" summary="issue_LZQ">
       <created>1583377753553</created>
@@ -628,7 +645,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586002742302</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="issue_LZQ">
+      <created>1586003372156</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586003372156</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,10 +675,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585973667617">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1586065452296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585973667617" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586065452296" />
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -667,62 +691,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585471420678" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1586002740223">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1586003369393">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586002740223" />
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586003369393" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1585990150614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585990150614" />
-    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1585992853360">
+    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1586066435729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585992853360" />
-    <state width="1493" height="300" key="GridCell.Tab.2.bottom" timestamp="1585489952431">
+    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586066435729" />
+    <state width="1493" height="300" key="GridCell.Tab.2.bottom" timestamp="1586012133091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585489952431" />
-    <state width="1493" height="300" key="GridCell.Tab.2.center" timestamp="1585489952431">
+    <state width="1493" height="300" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586012133091" />
+    <state width="1493" height="300" key="GridCell.Tab.2.center" timestamp="1586012133091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585489952431" />
-    <state width="1493" height="300" key="GridCell.Tab.2.left" timestamp="1585489952431">
+    <state width="1493" height="300" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1586012133091" />
+    <state width="1493" height="300" key="GridCell.Tab.2.left" timestamp="1586012133091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585489952431" />
-    <state width="1493" height="300" key="GridCell.Tab.2.right" timestamp="1585489952431">
+    <state width="1493" height="300" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1586012133091" />
+    <state width="1493" height="300" key="GridCell.Tab.2.right" timestamp="1586012133091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585489952431" />
+    <state width="1493" height="300" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586012133091" />
     <state x="270" y="56" key="SettingsEditor" timestamp="1584241825299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -739,20 +763,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585558818378" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585972240629">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586056929791">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585972240629" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586056929791" />
   </component>
 </project>

@@ -11,6 +11,16 @@ public class StuSubject implements Serializable {
     private String numberId;
     //分数
     private String score;
+    //是否缺考
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getSjId() {
         return sjId;

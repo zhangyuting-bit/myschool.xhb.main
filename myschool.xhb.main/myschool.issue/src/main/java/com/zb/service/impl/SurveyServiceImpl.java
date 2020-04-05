@@ -76,7 +76,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),120);
+            redisUtil.set(key, JSON.toJSONString(survey),240);
         }
         return survey;
     }
@@ -104,7 +104,7 @@ public class SurveyServiceImpl implements SurveyService {
             surveyOne.setSurveyId(survey.getSurveyId());
             surveyOneMapper.addSurveyOne(surveyOne);
             String key = "survey:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(survey), 120);
+            redisUtil.set(key, JSON.toJSONString(survey), 240);
             String key1= "ok:" + user.getUserId() + user.getGradeId();
             String ok = "";
             redisUtil.set(key1, JSON.toJSONString(ok), 40);
@@ -175,15 +175,22 @@ public class SurveyServiceImpl implements SurveyService {
             //根据题目编号删除答案信息
             answerMapper.delAnswerBySelId(select.getSelectId());
         }
+        //根据调查编号删除题目信息
+        selectMapper.delSelectBySurId(surveyId);
         //根据班级编号获取用户信息
         List<User>users=notificationMapper.getUserByGradeId(gradeId);
         for (User user : users) {
             String key = "survey:" + user.getUserId() + user.getGradeId();
-            redisUtil.del(key);
-            String key1= "ok:" + user.getUserId() + user.getGradeId();
-            redisUtil.del(key1);
+            if (redisUtil.get(key)!=null){
+                Survey survey=JSON.parseObject(redisUtil.get(key).toString(),Survey.class);
+                if (surveyId.equals(survey.getSurveyId())){
+                    redisUtil.del(key);
+                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    redisUtil.del(key1);
+                }
+            }
             String key2="delSurvey:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString(surveyId),120);
+            redisUtil.set(key2,JSON.toJSONString(surveyId),5);
         }
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){

@@ -5,15 +5,17 @@
 <mapper namespace="com.zb.mapper.StuSubjectMapper">
     <!---->
     <insert id="addStuSubject">
-        INSERT INTO `issue`.`stusubject`
+        INSERT INTO `stusubject`
             (`sjId`,
              `subjectId`,
              `numberId`,
-             `score`)
+             `score`,
+             `status`)
         VALUES (#{sjId},
                 #{subjectId},
                 #{numberId},
-                #{score});
+                #{score},
+                #{status});
     </insert>
     
     <select id="getStuSubjectByNumberId" resultType="com.zb.entity.StuSubject">
@@ -23,6 +25,8 @@
             `stusubject`
         WHERE
             numberId=#{numberId}
+        and
+            subjectId=#{subjectId}
     </select>
 
     <select id="getStuSubjectHigh" resultType="com.zb.entity.StuSubject">

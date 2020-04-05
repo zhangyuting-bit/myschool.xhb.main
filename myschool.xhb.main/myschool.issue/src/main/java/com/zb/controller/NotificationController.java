@@ -61,7 +61,7 @@ public class NotificationController {
     }
 
     //获取推送状态
-    @GetMapping("/getStatus")
+    @GetMapping("/getNotStatus")
     public Dto<Integer> getStatus(String userId,String gradeId){
         return DtoUtil.returnSuccess("ok",notificationService.getStatus(userId,gradeId));
     }

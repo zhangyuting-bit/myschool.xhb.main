@@ -64,7 +64,7 @@ public class ScoreController {
     }
 
     //获取推送状态
-    @GetMapping("/getStatus")
+    @GetMapping("/getScoStatus")
     public Dto<Integer> getStatus(String userId, String gradeId){
         return DtoUtil.returnSuccess("ok",service.getStatus(userId, gradeId));
     }
@@ -82,7 +82,7 @@ public class ScoreController {
     }
 
     //获取撤销信息
-    @GetMapping("/getDelStatus")
+    @GetMapping("/getScoDelStatus")
     public Dto<String> getDelStatus(String userId,String gradeId){
         return DtoUtil.returnSuccess("ok",service.getScoDelStatus(userId,gradeId));
     }

@@ -17,8 +17,16 @@
                 #{comment},
                 #{sum});
     </insert>
-
     <select id="getCommentByScoreId" resultType="com.zb.entity.StuComment">
+        select
+            *
+        from
+            `stucomment`
+        where
+            scoreId=#{scoreId}
+    </select>
+
+    <select id="getCommentByScoreIdOne" resultType="com.zb.entity.StuComment">
         select
             *
         from
@@ -34,7 +42,14 @@
           `sort` = #{sort}
         WHERE `commentId` = #{commentId};
     </update>
-    
+
+    <update id="updateStuCommentSum">
+        UPDATE `stucomment`
+        SET
+          `sum` = #{sum}
+        WHERE `commentId` = #{commentId};
+    </update>
+
     <select id="getCommentByScoreAndNumberId" resultType="com.zb.entity.StuComment">
         SELECT
             *

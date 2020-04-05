@@ -30,17 +30,6 @@
             userId=#{userId}
     </select>
 
-    <select id="getNotificationGradeId" resultType="com.zb.entity.Notification">
-        SELECT
-            *
-        FROM
-            `notification`
-        WHERE
-            gradeId=#{gradeId}
-        <if test="typeId != 0">AND typeId=#{typeId}</if>
-        ORDER BY notifyTime DESC
-    </select>
-
     <select id="getNotificationById" resultType="com.zb.entity.Notification">
         SELECT
             *
@@ -84,12 +73,5 @@
           `endTime` = #{endTime}
         WHERE `notificationId` = #{notificationId};
     </update>
-
-    <!--<update id="updateEndTime">
-        UPDATE `notification`
-        SET
-          `status` = 1
-        WHERE `notificationId` = #{notificationId};
-    </update>-->
 
 </mapper>

@@ -10,7 +10,7 @@ public interface StuSubjectMapper {
     Integer addStuSubject(StuSubject stuSubject);
 
     //根据学号编号获取科目成绩
-    List<StuSubject> getStuSubjectByNumberId(@Param("numberId")String numberId);
+    List<StuSubject> getStuSubjectByNumberId(@Param("numberId")String numberId,@Param("subjectId")String subjectId);
 
     //根据科目成绩编号获取最高分
     StuSubject getStuSubjectHigh(@Param("subjectId")String subjectId);

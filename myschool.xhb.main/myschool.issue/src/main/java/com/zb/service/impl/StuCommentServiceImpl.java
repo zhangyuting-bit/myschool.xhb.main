@@ -38,12 +38,6 @@ public class StuCommentServiceImpl implements StuCommentService {
     @Override
     public Integer addComment(StuComment stuComment) {
         stuComment.setCommentId(IdWorker.getId());
-        double sum=0;
-        List<StuSubject>subjects=stuSubjectMapper.getStuSubjectByNumberId(stuComment.getNumberId());
-        for (StuSubject stuSubject:subjects){
-            sum+=Double.parseDouble(stuSubject.getScore());
-        }
-        stuComment.setSum(sum);
         return stuCommentMapper.addComment(stuComment);
     }
 
