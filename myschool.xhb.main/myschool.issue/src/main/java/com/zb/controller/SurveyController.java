@@ -82,4 +82,7 @@ public class SurveyController {
     public void delStatus(String userId,String gradeId){
         surveyService.delStatus(userId, gradeId);
     }
+
+
+
 }

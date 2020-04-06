@@ -29,4 +29,6 @@ public interface NotificationMapper {
     //修改结束时间
     Integer updateEndTimeOne(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
 
+    //根据通知编号撤销通知
+    Integer delNot(@Param("notificationId")String notificationId);
 }

@@ -45,6 +45,7 @@ public class ScoreServiceImpl implements ScoreService {
     @Resource
     private RedisUtil redisUtil;
 
+
     //添加成绩信息
     @Override
     public Score addScore(Score score) {

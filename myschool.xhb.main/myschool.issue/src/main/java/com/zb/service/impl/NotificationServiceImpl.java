@@ -42,6 +42,12 @@ public class NotificationServiceImpl implements NotificationService {
     @Resource
     private RedisUtil redisUtil;
 
+//    //根据token获取用户编号
+//    public String getUserIdByToken(String token){
+//        String userId="";
+//        return userId;
+//    }
+
     //根据用户编号和通知类型编号获取全部对应通知
     @Override
     public List<Notification> getNotificationGradeId(Integer typeId, String userId) {
@@ -73,7 +79,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification), 120);
+            redisUtil.set(key, JSON.toJSONString(notification), 240);
         }
         return notification;
     }
@@ -176,5 +182,65 @@ public class NotificationServiceImpl implements NotificationService {
             return 1;
         }
         return null;
+    }
+
+    //根据用户编号和通知编号删除通知信息
+    @Override
+    public Integer delNotOneByNotIdAndUserId(String userId,String notificationId){
+        return notOneMapper.delNotOneByNotIdAndUserId(userId, notificationId);
+    }
+
+    //撤销通知信息
+    @Override
+    @Transactional
+    public void returnNot(String notificationId,String gradeId){
+        //根据通知编号撤销通知
+        notificationMapper.delNot(notificationId);
+        //根据通知编号删除个人信息
+        notOneMapper.delNotOneByNotId(notificationId);
+        //根据通知编号删除图片
+        notPicMapper.delPicByNotId(notificationId);
+        //根据通知编号删除文件
+        notDocumentMapper.delDocByNotId(notificationId);
+
+        //根据班级编号获取用户信息
+        List<User>users=notificationMapper.getUserByGradeId(gradeId);
+        for (User user : users) {
+            String key = "notification:" + user.getUserId() + user.getGradeId();
+            Object o=redisUtil.get(key);
+            if (o!=null){
+                Notification notification=JSON.parseObject(o.toString(),Notification.class);
+                if (notificationId.equals(notification.getNotificationId())){
+                    redisUtil.del(key);
+                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    redisUtil.del(key1);
+                }
+            }
+            String key2="delNotification:"+user.getUserId()+gradeId;
+            redisUtil.set(key2,JSON.toJSONString(notificationId),120);
+        }
+        String key="notification:"+notificationId;
+        if (redisUtil.hasKey(key)){
+            redisUtil.del(key);
+        }
+    }
+
+    //获取撤销信息
+    @Override
+    public String getNotDelStatus(String userId,String gradeId){
+        String key="delNotification:"+userId+gradeId;
+        if (redisUtil.hasKey(key)){
+            Object o=redisUtil.get(key);
+            String notificationId=JSON.toJSONString(o.toString());
+            return notificationId;
+        }
+        return null;
+    }
+
+    //删除撤销信息
+    @Override
+    public void delStatus(String userId,String gradeId){
+        String key="delNotification:"+userId+gradeId;
+        redisUtil.del(key);
     }
 }

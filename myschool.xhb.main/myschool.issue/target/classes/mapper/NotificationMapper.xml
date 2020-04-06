@@ -74,4 +74,7 @@
         WHERE `notificationId` = #{notificationId};
     </update>
 
+    <delete id="delNot">
+        delete from notification where notificationId=#{notificationId}
+    </delete>
 </mapper>

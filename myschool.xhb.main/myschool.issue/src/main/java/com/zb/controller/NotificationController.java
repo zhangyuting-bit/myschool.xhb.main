@@ -16,8 +16,8 @@ public class NotificationController {
     private NotificationService notificationService;
 
     ////根据班级编号和通知类型编号获取全部对应通知
-    @GetMapping("/getNotificationGradeId")
-    public Dto<List<Notification>> getNotificationGradeId(
+    @GetMapping("/getNotificationByUserId")
+    public Dto<List<Notification>> getNotificationByUserId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
             String userId) {
         return DtoUtil.returnSuccess("ok",notificationService.getNotificationGradeId(typeId,userId));
@@ -65,4 +65,29 @@ public class NotificationController {
     public Dto<Integer> getStatus(String userId,String gradeId){
         return DtoUtil.returnSuccess("ok",notificationService.getStatus(userId,gradeId));
     }
+
+    //根据用户编号和通知编号删除通知信息
+    @GetMapping("/delNotOne")
+    public Dto<Integer> delNotOneByNotIdAndUserId(String userId,String notificationId){
+        return DtoUtil.returnSuccess("ok",notificationService.delNotOneByNotIdAndUserId(userId, notificationId));
+    }
+
+    //撤销调查信息
+    @GetMapping("/returnNotification")
+    public void returnSurvey(String notificationId,String gradeId){
+        notificationService.returnNot(notificationId, gradeId);
+    }
+
+    //获取撤销信息
+    @GetMapping("/getNotDelStatus")
+    public Dto<String> getNotDelStatus(String userId,String gradeId){
+        return DtoUtil.returnSuccess("ok",notificationService.getNotDelStatus(userId, gradeId));
+    }
+
+    //删除撤销信息
+    @GetMapping("/delNotStatus")
+    public void delStatus(String userId,String gradeId) {
+        notificationService.delStatus(userId, gradeId);
+    }
+
 }

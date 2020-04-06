@@ -17,4 +17,7 @@ public interface NotPicMapper {
 
     //根据通知编号查询状态为0的图片
     NotPic getPicByStatu(@Param("functionId") String functionId);
+
+    //根据通知编号删除图片
+    Integer delPicByNotId(@Param("functionId") String functionId);
 }

@@ -31,5 +31,15 @@ public interface NotificationService {
     //根据通知编号获取通知信息
     public Notification getNotification(String notificationId);
 
+    //根据用户编号和通知编号删除通知信息
+    public Integer delNotOneByNotIdAndUserId(String userId,String notificationId);
 
+    //撤销通知信息
+    public void returnNot(String notificationId,String gradeId);
+
+    //获取撤销信息
+    public String getNotDelStatus(String userId,String gradeId);
+
+    //删除撤销信息
+    public void delStatus(String userId,String gradeId);
 }

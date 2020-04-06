@@ -21,4 +21,8 @@
         WHERE
             functionId=#{functionId}
     </select>
+
+    <delete id="delDocByNotId">
+        delete from notdocument where functionId=#{functionId}
+    </delete>
 </mapper>
