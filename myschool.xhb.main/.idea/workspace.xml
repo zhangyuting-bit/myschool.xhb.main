@@ -50,21 +50,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Collect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/CollectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/CollectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/CollectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/CollectServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/CollectMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,14 +268,7 @@
       <workItem from="1585970406161" duration="4461000" />
       <workItem from="1585988594304" duration="17093000" />
       <workItem from="1586051009606" duration="17778000" />
-      <workItem from="1586154168140" duration="8462000" />
-    </task>
-    <task id="LOCAL-00004" summary="issue_LZQ">
-      <created>1583378812655</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1583378812655</updated>
+      <workItem from="1586154168140" duration="9042000" />
     </task>
     <task id="LOCAL-00005" summary="issue_LZQ">
       <created>1583378817609</created>
@@ -626,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586166135736</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="issue_LZQ">
+      <created>1586176928863</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1586176928863</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,46 +652,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585471420678" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1586166128667">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1586176923287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586166128667" />
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586176923287" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1586092118673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586092118673" />
-    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.0.center" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.0.left" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.0.right" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1586176676413">
+    <state width="1493" height="302" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586176676413" />
-    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
-    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1586176676412">
+    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1586176745579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586176676412" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586176745579" />
     <state width="1493" height="300" key="GridCell.Tab.2.bottom" timestamp="1586176423361">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

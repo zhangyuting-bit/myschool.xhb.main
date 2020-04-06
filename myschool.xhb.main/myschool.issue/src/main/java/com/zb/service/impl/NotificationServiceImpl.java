@@ -58,7 +58,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification = notificationMapper.getNotificationById(notificationId);
             //根据teacherId获取老师信息
             ///////////////////////////
-
+            //根据班级编号获取班级信息
             //根据通知编号查询状态为0的图片
             notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
 
