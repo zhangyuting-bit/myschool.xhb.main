@@ -45,6 +45,32 @@ public class ScoreServiceImpl implements ScoreService {
     @Resource
     private RedisUtil redisUtil;
 
+    public Score getByScoreId(String scoreId){
+        Score score=null;
+        String key="scoreOne:"+scoreId;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            score= JSON.parseObject(o.toString(), Score.class);
+        }else {
+            score=scoreMapper.getScoreByScoreId(scoreId);
+            //根据teacherId获取老师信息
+            ///////////////////////////
+            //根据班级编号获取班级信息
+            /////////////////////////
+            redisUtil.set(key, JSON.toJSONString(score), 120);
+        }
+        return score;
+    }
+    ///根据班级编号获取成绩消息
+    @Override
+    public List<Score> getScoreListByUserId(String userId) {
+        List<Score>list=new ArrayList<>();
+        List<ScoreOne>scoreOnes=scoreOneMapper.getScoreListByUserId(userId);
+        for (ScoreOne scoreOne : scoreOnes) {
+            list.add(getByScoreId(scoreOne.getScoreId()));
+        }
+        return list;
+    }
 
     //添加成绩信息
     @Override
@@ -65,17 +91,6 @@ public class ScoreServiceImpl implements ScoreService {
         return score;
     }
 
-    ///根据班级编号获取成绩消息
-    @Override
-    public List<Score> getScoreListByUserId(String userId) {
-        List<Score>list=new ArrayList<>();
-        List<ScoreOne>scoreOnes=scoreOneMapper.getScoreListByUserId(userId);
-        for (ScoreOne scoreOne : scoreOnes) {
-            list.add(getScore(scoreOne.getScoreId()));
-        }
-        return list;
-    }
-
     //根据消息编号修改消息
     @Override
     public Integer updateScore(Score score) {
@@ -84,7 +99,6 @@ public class ScoreServiceImpl implements ScoreService {
 
     //根据成绩编号查询成绩信息
     @Override
-    @Cacheable(value = "cache", key = "#scoreId")
     public Score getScore(String scoreId) {
         Score score=null;
         String key="score:"+scoreId;

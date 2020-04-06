@@ -48,20 +48,37 @@ public class NotificationServiceImpl implements NotificationService {
 //        return userId;
 //    }
 
+    public Notification getNotificationByNotId(String notificationId){
+        Notification notification = null;
+        String key = "notificationOne:" + notificationId;
+        if (redisUtil.hasKey(key)) {
+            Object o = redisUtil.get(key);
+            notification = JSON.parseObject(o.toString(), Notification.class);
+        } else {
+            notification = notificationMapper.getNotificationById(notificationId);
+            //根据teacherId获取老师信息
+            ///////////////////////////
+
+            //根据通知编号查询状态为0的图片
+            notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
+
+            redisUtil.set(key, JSON.toJSONString(notification), 120);
+        }
+        return notification;
+    }
     //根据用户编号和通知类型编号获取全部对应通知
     @Override
     public List<Notification> getNotificationGradeId(Integer typeId, String userId) {
         List<Notification> list = new ArrayList<>();
         List<NotOne> notOnes = notOneMapper.getOneByUserId(typeId, userId);
         for (NotOne notOne : notOnes) {
-            list.add(getNotification(notOne.getFunctionId()));
+            list.add(getNotificationByNotId(notOne.getFunctionId()));
         }
         return list;
     }
 
     //根据通知编号获取通知信息
     @Override
-    @Cacheable(value = "cache", key = "#notificationId")
     public Notification getNotification(String notificationId) {
         Notification notification = null;
         String key = "notification:" + notificationId;
@@ -73,8 +90,6 @@ public class NotificationServiceImpl implements NotificationService {
             //根据teacherId获取老师信息
             ///////////////////////////
 
-            //根据通知编号查询状态为0的图片
-            notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
             //根据通知编号查询图片
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件

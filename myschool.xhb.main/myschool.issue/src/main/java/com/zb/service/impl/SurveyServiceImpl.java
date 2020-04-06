@@ -43,12 +43,30 @@ public class SurveyServiceImpl implements SurveyService {
     @Resource
     private RedisUtil redisUtil;
 
+
+    public Survey getBySurveyId(String surveyId){
+        Survey survey=null;
+        String key="surveyOne:"+surveyId;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            survey= JSON.parseObject(o.toString(), Survey.class);
+        }else {
+            survey=surveyMapper.getSurveyBySurveyId(surveyId);
+            //根据teacherId获取老师信息
+            ///////////////////////////
+            //根据班级编号获取班级信息
+            /////////////////////////
+            redisUtil.set(key, JSON.toJSONString(survey),120);
+        }
+        return survey;
+    }
     //根据用户编号获取对应调查
     @Override
     public List<Survey> getSurveyByUserId(String userId) {
         List<Survey>list=new ArrayList<>();
-        for (SurveyOne surveyOne:surveyOneMapper.getSurveyOneByUserId(userId)) {
-            list.add(getSurveyBySurveyId(surveyOne.getSurveyId()));
+        List<SurveyOne>ones=surveyOneMapper.getSurveyOneByUserId(userId);
+        for (SurveyOne surveyOne:ones) {
+            list.add(getBySurveyId(surveyOne.getSurveyId()));
         }
         return list;
     }
@@ -66,7 +84,8 @@ public class SurveyServiceImpl implements SurveyService {
             survey=surveyMapper.getSurveyBySurveyId(surveyId);
             //根据teacherId获取老师信息
             ///////////////////////////
-
+            //根据班级编号获取班级信息
+            /////////////////////////
             //根据调查编号获取全部题目
             List<Select>selects=selectMapper.getSelectBySurveyId(survey.getSurveyId());
             for (Select select:selects) {
@@ -91,7 +110,7 @@ public class SurveyServiceImpl implements SurveyService {
 
     //监听添加调查队列
     @RabbitListener(queues = RabbitConfigs.surQueue)
-    public void getNotification(Survey survey){
+    public void getSurvey(Survey survey){
         surveyMapper.addSurvey(survey);
         //根据teacherId获取老师信息
         ///////////////////////////
