@@ -90,4 +90,9 @@ public class NotificationController {
         notificationService.delStatus(userId, gradeId);
     }
 
+    //根据token获取用户编号
+    @GetMapping("/getUserIdByToken/{token}")
+    public String getUserIdByToken(@PathVariable("token") String token){
+        return notificationService.getUserIdByToken(token);
+    }
 }

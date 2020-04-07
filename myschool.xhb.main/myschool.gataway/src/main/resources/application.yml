@@ -1,6 +1,5 @@
 server:
   port: 7002
-  connection-timeout: 1000000
 spring:
   application:
     name: GATEWAYSERVER

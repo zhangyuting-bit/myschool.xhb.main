@@ -2,11 +2,14 @@ package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
+import com.zb.dto.Dto;
 import com.zb.entity.*;
+import com.zb.feign.UserFeignClient;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotOneMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
+import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
@@ -28,6 +31,9 @@ public class NotificationServiceImpl implements NotificationService {
     private NotificationMapper notificationMapper;
 
     @Resource
+    private UserFeignClient userFeignClient;
+
+    @Resource
     private NotOneMapper notOneMapper;
 
     @Resource
@@ -42,11 +48,14 @@ public class NotificationServiceImpl implements NotificationService {
     @Resource
     private RedisUtil redisUtil;
 
-//    //根据token获取用户编号
-//    public String getUserIdByToken(String token){
-//        String userId="";
-//        return userId;
-//    }
+    //根据token获取用户编号
+    @Override
+    public String getUserIdByToken(String token){
+        UserInfo userInfo=(UserInfo) userFeignClient.getUserInfoByToken(token).getData();
+        System.out.println(userInfo.getId());
+        String userId=userInfo.getId();
+        return userId;
+    }
 
     public Notification getNotificationByNotId(String notificationId){
         Notification notification = null;

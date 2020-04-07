@@ -42,4 +42,7 @@ public interface NotificationService {
 
     //删除撤销信息
     public void delStatus(String userId,String gradeId);
+
+    //根据token获取用户编号
+    public String getUserIdByToken(String token);
 }
