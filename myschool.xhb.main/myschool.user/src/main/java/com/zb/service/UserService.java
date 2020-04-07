@@ -32,7 +32,7 @@ public interface UserService {
     //修改用户头像
     public Dto updateUserPic(String id,String userpic);
     //根据token查询用户信息
-    public Dto getUserInfoByToken(String token);
+    public UserInfo getUserInfoByToken(String token);
     //根据用户编号获取用户信息
     UserInfo getUserInfoById(String id);
     //根据教师编号查询教师信息

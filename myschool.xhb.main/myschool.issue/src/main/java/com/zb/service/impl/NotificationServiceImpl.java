@@ -51,12 +51,13 @@ public class NotificationServiceImpl implements NotificationService {
     //根据token获取用户编号
     @Override
     public String getUserIdByToken(String token){
-        UserInfo userInfo=(UserInfo) userFeignClient.getUserInfoByToken(token).getData();
+        UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
         System.out.println(userInfo.getId());
         String userId=userInfo.getId();
         return userId;
     }
 
+    @Cacheable(value = "cache" ,key="#notificationOne")
     public Notification getNotificationByNotId(String notificationId){
         Notification notification = null;
         String key = "notificationOne:" + notificationId;
@@ -88,13 +89,17 @@ public class NotificationServiceImpl implements NotificationService {
 
     //根据通知编号获取通知信息
     @Override
+    @Cacheable(value = "cache" ,key="#notificationId")
     public Notification getNotification(String notificationId) {
         Notification notification = null;
         String key = "notification:" + notificationId;
+        System.out.println("cache");
         if (redisUtil.hasKey(key)) {
+            System.out.println("redis");
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
+            System.out.println("mysql");
             notification = notificationMapper.getNotificationById(notificationId);
             //根据teacherId获取老师信息
             ///////////////////////////
