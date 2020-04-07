@@ -14,4 +14,7 @@ public interface AnswerMapper {
 
     //修改答案图片路径
     Integer updateAnswer(@Param("picSrc")String picSrc,@Param("answerId")String answerId);
+
+    //根据题目编号删除答案信息
+    Integer delAnswerBySelId(@Param("selectId")String selectId);
 }

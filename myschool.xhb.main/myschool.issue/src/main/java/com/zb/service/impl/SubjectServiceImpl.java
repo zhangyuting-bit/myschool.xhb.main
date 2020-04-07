@@ -13,7 +13,7 @@ public class SubjectServiceImpl implements SubjectService {
     @Resource
     private SubjectMapper subjectMapper;
 
-    //添加考试科目
+    ///添加考试科目
     @Override
     public Integer addSubject(Subject subject) {
         subject.setSubjectId(IdWorker.getId());

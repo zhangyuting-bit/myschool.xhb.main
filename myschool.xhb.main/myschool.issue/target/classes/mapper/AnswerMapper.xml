@@ -30,4 +30,8 @@
           `picSrc` = #{picSrc}
         WHERE `answerId` = #{answerId};
     </update>
+
+    <delete id="delAnswerBySelId">
+        delete  from `answer` where selectId=#{selectId}
+    </delete>
 </mapper>

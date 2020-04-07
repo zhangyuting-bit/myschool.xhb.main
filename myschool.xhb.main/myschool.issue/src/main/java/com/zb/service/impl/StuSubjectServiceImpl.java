@@ -13,10 +13,14 @@ public class StuSubjectServiceImpl implements StuSubjectService {
     @Resource
     private StuSubjectMapper stuSubjectMapper;
 
-    //添加科目成绩
+    ///添加科目成绩
     @Override
     public Integer addStuSubject(StuSubject stuSubject) {
         stuSubject.setSjId(IdWorker.getId());
+        if (stuSubject.getScore().equals("缺考")){
+            stuSubject.setScore("0");
+            stuSubject.setStatus("缺考");
+        }
         return stuSubjectMapper.addStuSubject(stuSubject);
     }
 }

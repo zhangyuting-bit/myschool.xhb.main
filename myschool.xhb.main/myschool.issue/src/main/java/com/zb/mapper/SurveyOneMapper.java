@@ -13,4 +13,9 @@ public interface SurveyOneMapper {
     //根据用户编号查询调查信息
     List<SurveyOne>getSurveyOneByUserId(@Param("userId") String userId);
 
+    //根据用户编号和调查编号删除成绩信息
+    Integer delSurveyByUserId(@Param("userId") String userId,@Param("surveyId") String surveyId);
+
+    //根据调查编号删除个人信息
+    Integer delSurveyOneBySurId(@Param("surveyId") String surveyId);
 }

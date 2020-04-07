@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 //学生科目成绩类
 public class StuSubject implements Serializable {
-    //编号
+    ///编号
     private String sjId;
     //科目编号
     private String subjectId;
@@ -11,6 +11,16 @@ public class StuSubject implements Serializable {
     private String numberId;
     //分数
     private String score;
+    //是否缺考
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getSjId() {
         return sjId;

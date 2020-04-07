@@ -25,7 +25,6 @@
     <insert id="addSurvey">
         INSERT INTO `survey`
             (`surveyId`,
-            `typeId`,
              `teacherId`,
              `gradeId`,
              `title`,
@@ -34,7 +33,6 @@
              `status`,
              `count`)
         VALUES (#{surveyId},
-                #{typeId},
                 #{teacherId},
                 #{gradeId},
                 #{title},
@@ -47,15 +45,16 @@
     <update id="updateSurEndTimeOne">
         UPDATE `survey`
         SET
-          `endTime` = #{endTime},
-          `statu` = 0
+          `endTime` = #{endTime}
         WHERE `surveyId` = #{surveyId};
     </update>
 
-    <update id="updateSurEndTime">
-        UPDATE `survey`
-        SET
-          `status` = 1
-        WHERE `surveyId` = #{surveyId};
-    </update>
+
+    <delete id="delSurveyByUserId">
+        delete from survey where userId=#{userId} and surveyId=#{surveyId}
+    </delete>
+
+    <delete id="delSurveyBySurveyId">
+        delete from survey where surveyId=#{surveyId}
+    </delete>
 </mapper>

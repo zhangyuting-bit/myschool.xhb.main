@@ -21,6 +21,6 @@ public interface SurveyMapper {
     //修改结束时间
     Integer updateSurEndTimeOne(@Param("endTime")String endTime,@Param("surveyId")String surveyId);
 
-    //把调查状态修改为已结束
-    Integer updateSurEndTime(@Param("surveyId")String surveyId);
+    //根据调查编号删除调查
+    Integer delSurveyBySurveyId(@Param("surveyId") String surveyId);
 }

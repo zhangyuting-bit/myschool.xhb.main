@@ -5,7 +5,7 @@ import java.util.List;
 
 //发布成绩表
 public class Score implements Serializable {
-    ///发布成绩编号
+    //发布成绩编号
     private String scoreId;
     //通知类型
     private Integer typeId;
@@ -33,9 +33,19 @@ public class Score implements Serializable {
     //发布时间
     private String createTime;
     //学生学号
-    private List<Number>numbers;
+    private List<StuNumber>numbers;
     //科目信息
     private List<Subject>subjects;
+    //学生评论
+    private List<StuComment>stuComments;
+
+    public List<StuComment> getStuComments() {
+        return stuComments;
+    }
+
+    public void setStuComments(List<StuComment> stuComments) {
+        this.stuComments = stuComments;
+    }
 
     public List<Subject> getSubjects() {
         return subjects;
@@ -45,11 +55,11 @@ public class Score implements Serializable {
         this.subjects = subjects;
     }
 
-    public List<Number> getNumbers() {
+    public List<StuNumber> getNumbers() {
         return numbers;
     }
 
-    public void setNumbers(List<Number> numbers) {
+    public void setNumbers(List<StuNumber> numbers) {
         this.numbers = numbers;
     }
 

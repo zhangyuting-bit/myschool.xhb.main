@@ -17,7 +17,7 @@ public class SubjectAddController {
     @Resource
     private SubjectAddService subjectAddService;
 
-    //新增科目信息
+    ///新增科目信息
     @RequestMapping("/addSubjectAdd")
     public Dto<Integer> addSubjectAdd(SubjectAdd subjectAdd) {
         return DtoUtil.returnSuccess("ok",subjectAddService.addSubjectAdd(subjectAdd));

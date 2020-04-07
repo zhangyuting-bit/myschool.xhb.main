@@ -24,4 +24,8 @@
             userId=#{userId}
         ORDER BY createTime DESC
     </select>
+    
+    <delete id="delSurveyOneBySurId">
+        delete from surveyone where surveyId=#{surveyId}
+    </delete>
 </mapper>

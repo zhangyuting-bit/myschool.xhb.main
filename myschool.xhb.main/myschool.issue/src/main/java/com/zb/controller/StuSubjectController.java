@@ -14,6 +14,7 @@ public class StuSubjectController {
     @Resource
     private StuSubjectService stuSubjectService;
 
+    //添加科目成绩
     @RequestMapping("/addStuSubject")
     public Dto<Integer> addStuSubject(StuSubject stuSubject) {
         return DtoUtil.returnSuccess("ok",stuSubjectService.addStuSubject(stuSubject));

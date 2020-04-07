@@ -47,22 +47,10 @@ public class SurveyController {
         return DtoUtil.returnSuccess("ok",surveyService.updateSurEndTimeOne(endTime, surveyId));
     }
 
-    //把调查状态修改为已结束
-    @RequestMapping("/updateSurEndTime/{surveyId}")
-    public Dto<Integer> updateSurEndTime(@PathVariable("surveyId") String surveyId) {
-        return DtoUtil.returnSuccess("ok",surveyService.updateSurEndTime(surveyId));
-    }
-
     //删除推送消息
     @GetMapping("/delStuSur")
     public void delStuSur(String userId, String surveyId, String gradeId){
         surveyService.delStuSur(userId, surveyId, gradeId);
-    }
-
-    //添加推送状态
-    @GetMapping("/addOkSur")
-    public void addStatus(String gradeId) {
-        surveyService.addStatus(gradeId);
     }
 
     //获取推送状态
@@ -70,5 +58,31 @@ public class SurveyController {
     public Dto<Integer> getStatus(String userId,String gradeId){
         return DtoUtil.returnSuccess("ok",surveyService.getStatus(userId,gradeId));
     }
+
+    //根据用户编号和调查编号删除成绩信息
+    @GetMapping("/delSurvey")
+    public Dto<Integer> delSurvey(String userId,String surveyId){
+        return DtoUtil.returnSuccess("ok",surveyService.delSurvey(userId, surveyId));
+    }
+
+    //撤销调查信息
+    @GetMapping("/returnSurvey")
+    public void returnSurvey(String surveyId,String gradeId){
+        surveyService.returnSurvey(surveyId, gradeId);
+    }
+
+    //获取撤销信息
+    @GetMapping("/getSurDelStatus")
+    public Dto<String> getSurDelStatus(String userId,String gradeId){
+        return DtoUtil.returnSuccess("ok",surveyService.getSurDelStatus(userId, gradeId));
+    }
+
+    //删除撤销信息
+    @GetMapping("/delSurStatus")
+    public void delStatus(String userId,String gradeId){
+        surveyService.delStatus(userId, gradeId);
+    }
+
+
 
 }

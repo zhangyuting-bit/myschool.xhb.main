@@ -25,12 +25,19 @@
         WHERE
             gradeId=#{gradeId}
     </select>
-
+    <!---->
     <update id="updateScore">
         UPDATE `score`
         SET
           `examTime` = #{examTime},
           `comment` = #{comment}
+        WHERE `scoreId` = #{scoreId};
+    </update>
+
+    <update id="updateStatus">
+        UPDATE `score`
+        SET
+          `status` = 1
         WHERE `scoreId` = #{scoreId};
     </update>
 
@@ -42,4 +49,8 @@
         WHERE
             scoreId=#{scoreId}
     </select>
+
+    <delete id="delScore">
+        delete from `score` where scoreId=#{scoreId}
+    </delete>
 </mapper>

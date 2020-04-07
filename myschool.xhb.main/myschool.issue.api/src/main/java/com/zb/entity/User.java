@@ -1,11 +1,22 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 //用户类
 public class User implements Serializable {
     private String userId;
     private String gradeId;
     private String userName;
+    private List<Grade>grades;
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Grade> grades) {
+        this.grades = grades;
+    }
 
     public String getUserId() {
         return userId;

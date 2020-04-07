@@ -33,4 +33,7 @@
         WHERE `selectId` = #{selectId};
     </update>
 
+    <delete id="delSelectBySurId">
+        delete from `select` where surveyId=#{surveyId}
+    </delete>
 </mapper>

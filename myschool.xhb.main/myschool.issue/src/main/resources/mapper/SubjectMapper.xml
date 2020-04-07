@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zb.mapper.SubjectMapper">
+    <!---->
     <insert id="addSubject">
         INSERT INTO `subject`
             (`subjectId`,
@@ -21,4 +22,17 @@
         WHERE
             scoreId=#{scoreId}
     </select>
+
+    <update id="updateSubject">
+        UPDATE `issue`.`subject`
+        SET
+          `high` = #{high},
+          `avg` = #{avg},
+          `low` = #{low}
+        WHERE `subjectId` = #{subjectId};
+    </update>
+
+    <delete id="delSubject">
+        delete from `subject` where scoreId=#{scoreId}
+    </delete>
 </mapper>

@@ -1,5 +1,6 @@
 package com.zb.mapper;
 
+import com.zb.entity.Grade;
 import com.zb.entity.Notification;
 import com.zb.entity.User;
 import org.apache.ibatis.annotations.Param;
@@ -10,8 +11,11 @@ public interface NotificationMapper {
     //根据班级编号获取用户信息
     List<User>getUserByGradeId(@Param("gradeId")String gradeId);
 
-    //根据班级编号和通知类型编号获取全部对应通知
-    List<Notification>getNotificationGradeId(@Param("typeId")Integer typeId,@Param("gradeId")String userId);
+    //根据用户编号获取班级信息
+    List<Grade>getGradeByUserId(@Param("userId")String userId);
+
+    //根据用户编号查询用户信息
+    User getUserByUserId(@Param("userId")String userId);
 
     //根据通知编号获取通知信息
     Notification getNotificationById(@Param("notificationId")String notificationId);
@@ -25,6 +29,6 @@ public interface NotificationMapper {
     //修改结束时间
     Integer updateEndTimeOne(@Param("endTime")String endTime,@Param("notificationId")String notificationId);
 
-    //把通知状态修改为已结束
-    Integer updateEndTime(@Param("notificationId")String notificationId);
+    //根据通知编号撤销通知
+    Integer delNot(@Param("notificationId")String notificationId);
 }

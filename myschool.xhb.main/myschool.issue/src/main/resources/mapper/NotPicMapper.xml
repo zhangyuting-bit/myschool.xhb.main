@@ -43,4 +43,8 @@
         AND
             statu=0
     </select>
+    
+    <delete id="delPicByNotId">
+        delete from notpic where functionId=#{functionId}
+    </delete>
 </mapper>

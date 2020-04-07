@@ -3,7 +3,7 @@ package com.zb.entity;
 import java.io.Serializable;
 //分数用户表
 public class ScoreOne implements Serializable {
-    //分数用户编号
+    ///分数用户编号
     private String oneId;
     //分数编号
     private String scoreId;
