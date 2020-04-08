@@ -42,10 +42,7 @@ public interface ScoreService {
     public void returnScore(String scoreId,String gradeId);
 
     //获取撤销信息
-    public String getScoDelStatus(String userId,String gradeId);
-
-    //删除撤销信息
-    public void delStatus(String userId,String gradeId);
+    public String getScoDelStatus(String gradeId);
 
     //删除成绩表
     public Integer delScore(String scoreId);

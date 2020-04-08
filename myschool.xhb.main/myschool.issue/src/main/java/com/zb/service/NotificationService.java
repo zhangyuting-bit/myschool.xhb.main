@@ -38,10 +38,7 @@ public interface NotificationService {
     public void returnNot(String notificationId,String gradeId);
 
     //获取撤销信息
-    public String getNotDelStatus(String userId,String gradeId);
-
-    //删除撤销信息
-    public void delStatus(String userId,String gradeId);
+    public String getNotDelStatus(String gradeId);
 
     //根据token获取用户编号
     public String getUserIdByToken(String token);

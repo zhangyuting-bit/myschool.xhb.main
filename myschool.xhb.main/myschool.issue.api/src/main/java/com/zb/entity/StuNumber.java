@@ -1,6 +1,8 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 //学员学号表
 public class StuNumber implements Serializable {
     //学号编号

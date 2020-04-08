@@ -35,9 +35,6 @@ public interface SurveyService {
      public void returnSurvey(String surveyId,String gradeId);
 
      //获取撤销信息
-     public String getSurDelStatus(String userId,String gradeId);
-
-     //删除撤销信息
-     public void delStatus(String userId,String gradeId);
+     public String getSurDelStatus(String gradeId);
 
 }

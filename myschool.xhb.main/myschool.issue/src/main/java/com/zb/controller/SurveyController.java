@@ -72,17 +72,9 @@ public class SurveyController {
     }
 
     //获取撤销信息
-    @GetMapping("/getSurDelStatus")
-    public Dto<String> getSurDelStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",surveyService.getSurDelStatus(userId, gradeId));
+    @GetMapping("/getSurDelStatus/{gradeId}")
+    public Dto<String> getSurDelStatus(@PathVariable("gradeId")String gradeId){
+        return DtoUtil.returnSuccess("ok",surveyService.getSurDelStatus(gradeId));
     }
-
-    //删除撤销信息
-    @GetMapping("/delSurStatus")
-    public void delStatus(String userId,String gradeId){
-        surveyService.delStatus(userId, gradeId);
-    }
-
-
 
 }

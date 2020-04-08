@@ -56,7 +56,7 @@ public class SurveyServiceImpl implements SurveyService {
             ///////////////////////////
             //根据班级编号获取班级信息
             /////////////////////////
-            redisUtil.set(key, JSON.toJSONString(survey),120);
+            redisUtil.set(key, JSON.toJSONString(survey),1200);
         }
         return survey;
     }
@@ -95,7 +95,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),240);
+            redisUtil.set(key, JSON.toJSONString(survey),1200);
         }
         return survey;
     }
@@ -123,7 +123,7 @@ public class SurveyServiceImpl implements SurveyService {
             surveyOne.setSurveyId(survey.getSurveyId());
             surveyOneMapper.addSurveyOne(surveyOne);
             String key = "survey:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(survey), 240);
+            redisUtil.set(key, JSON.toJSONString(survey), 40);
             String key1= "ok:" + user.getUserId() + user.getGradeId();
             String ok = "";
             redisUtil.set(key1, JSON.toJSONString(ok), 40);
@@ -208,9 +208,9 @@ public class SurveyServiceImpl implements SurveyService {
                     redisUtil.del(key1);
                 }
             }
-            String key2="delSurvey:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString(surveyId),5);
         }
+        String key2="delSurvey:"+gradeId;
+        redisUtil.set(key2,JSON.toJSONString(surveyId),5);
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);
@@ -219,22 +219,14 @@ public class SurveyServiceImpl implements SurveyService {
 
     //获取撤销信息
     @Override
-    public String getSurDelStatus(String userId,String gradeId){
-        String key="delSurvey:"+userId+gradeId;
+    public String getSurDelStatus(String gradeId){
+        String key="delSurvey:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
-            String scoreId=JSON.toJSONString(o.toString());
+            String scoreId=JSON.parseObject(o.toString(),String.class);
             return scoreId;
         }
         return null;
     }
-
-    //删除撤销信息
-    @Override
-    public void delStatus(String userId,String gradeId){
-        String key="delSurvey:"+userId+gradeId;
-        redisUtil.del(key);
-    }
-
 
 }

@@ -82,15 +82,9 @@ public class ScoreController {
     }
 
     //获取撤销信息
-    @GetMapping("/getScoDelStatus")
-    public Dto<String> getDelStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",service.getScoDelStatus(userId,gradeId));
-    }
-
-    //删除撤销信息
-    @GetMapping("/delStatus")
-    public void delStatus(String userId,String gradeId){
-        service.delStatus(userId, gradeId);
+    @GetMapping("/getScoDelStatus/{gradeId}")
+    public Dto<String> getDelStatus(@PathVariable("gradeId") String gradeId){
+        return DtoUtil.returnSuccess("ok",service.getScoDelStatus(gradeId));
     }
 
     //删除成绩表

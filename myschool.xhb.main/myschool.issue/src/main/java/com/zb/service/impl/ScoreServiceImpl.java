@@ -293,9 +293,11 @@ public class ScoreServiceImpl implements ScoreService {
                     redisUtil.del(key1);
                 }
             }
-            String key2="delScore:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString(scoreId),5);
+
         }
+        String key2="delScore:"+gradeId;
+        redisUtil.set(key2,JSON.toJSONString(scoreId),5);
+
         String key="scoreCount:"+gradeId;
         //根据班级编号统计成绩表数量
         if (redisUtil.hasKey(key)){
@@ -317,21 +319,14 @@ public class ScoreServiceImpl implements ScoreService {
 
     //获取撤销信息
     @Override
-    public String getScoDelStatus(String userId,String gradeId){
-        String key="delScore:"+userId+gradeId;
+    public String getScoDelStatus(String gradeId){
+        String key="delScore:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
-            String scoreId=JSON.toJSONString(o.toString());
+            String scoreId=JSON.parseObject(o.toString(),String.class);
             return scoreId;
         }
         return null;
-    }
-
-    //删除撤销信息
-    @Override
-    public void delStatus(String userId,String gradeId){
-        String key="delScore:"+userId+gradeId;
-        redisUtil.del(key);
     }
 
     //删除成绩表

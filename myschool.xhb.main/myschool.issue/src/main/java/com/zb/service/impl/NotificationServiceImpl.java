@@ -72,7 +72,7 @@ public class NotificationServiceImpl implements NotificationService {
             //根据通知编号查询状态为0的图片
             notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
 
-            redisUtil.set(key, JSON.toJSONString(notification), 120);
+            redisUtil.set(key, JSON.toJSONString(notification), 1200);
         }
         return notification;
     }
@@ -108,7 +108,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification), 240);
+            redisUtil.set(key, JSON.toJSONString(notification), 1200);
         }
         return notification;
     }
@@ -116,7 +116,7 @@ public class NotificationServiceImpl implements NotificationService {
     //根据通知编号获取通知信息
     public Notification getNotificationById(Notification notification, String teacherId) {
         String key = "notification:" + teacherId;
-        redisUtil.set(key, JSON.toJSONString(notification), 120);
+        redisUtil.set(key, JSON.toJSONString(notification), 40);
         return notification;
     }
 
@@ -245,9 +245,9 @@ public class NotificationServiceImpl implements NotificationService {
                     redisUtil.del(key1);
                 }
             }
-            String key2="delNotification:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString(notificationId),120);
         }
+        String key2="delNotification:"+gradeId;
+        redisUtil.set(key2,JSON.toJSONString(notificationId),5);
         String key="notification:"+notificationId;
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);
@@ -256,20 +256,13 @@ public class NotificationServiceImpl implements NotificationService {
 
     //获取撤销信息
     @Override
-    public String getNotDelStatus(String userId,String gradeId){
-        String key="delNotification:"+userId+gradeId;
+    public String getNotDelStatus(String gradeId){
+        String key="delNotification:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
-            String notificationId=JSON.toJSONString(o.toString());
+            String notificationId=JSON.parseObject(o.toString(),String.class);
             return notificationId;
         }
         return null;
-    }
-
-    //删除撤销信息
-    @Override
-    public void delStatus(String userId,String gradeId){
-        String key="delNotification:"+userId+gradeId;
-        redisUtil.del(key);
     }
 }
