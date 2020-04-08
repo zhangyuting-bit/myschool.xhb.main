@@ -56,7 +56,7 @@ public class SurveyServiceImpl implements SurveyService {
             ///////////////////////////
             //根据班级编号获取班级信息
             /////////////////////////
-            redisUtil.set(key, JSON.toJSONString(survey),1200);
+            redisUtil.set(key, JSON.toJSONString(survey),120);
         }
         return survey;
     }
@@ -95,7 +95,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),1200);
+            redisUtil.set(key, JSON.toJSONString(survey),120);
         }
         return survey;
     }
@@ -210,7 +210,7 @@ public class SurveyServiceImpl implements SurveyService {
             }
         }
         String key2="delSurvey:"+gradeId;
-        redisUtil.set(key2,JSON.toJSONString(surveyId),5);
+        redisUtil.set(key2,JSON.toJSONString(surveyId),10);
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);

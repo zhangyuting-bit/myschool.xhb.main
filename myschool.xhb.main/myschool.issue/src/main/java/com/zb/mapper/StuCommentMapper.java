@@ -13,7 +13,7 @@ public interface StuCommentMapper {
     List<StuComment>getCommentByScoreId(@Param("scoreId")String scoreId);
 
     //根据评论编号修改顺序
-    Integer updateStuComment(@Param("sort")Integer sort,@Param("commentId")String commentId);
+    Integer updateStuComment(StuComment stuComment);
 
     //根据成绩编号和学号编号获取评论
     StuComment getCommentByScoreAndNumberId(@Param("scoreId")String scoreId,@Param("numberId")String numberId);
@@ -25,5 +25,5 @@ public interface StuCommentMapper {
     List<StuComment>getCommentByScoreIdOne(@Param("scoreId")String scoreId);
 
     //根据评论编号修改总分
-    Integer updateStuCommentSum(@Param("sum")double sum,@Param("commentId")String commentId);
+    Integer updateStuCommentSum(StuComment stuComment);
 }

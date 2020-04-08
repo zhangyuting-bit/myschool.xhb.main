@@ -105,9 +105,7 @@ public class ScoreServiceImpl implements ScoreService {
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             score= JSON.parseObject(o.toString(), Score.class);
-            System.out.println("redis");
         }else {
-            System.out.println("mysql");
             score=scoreMapper.getScoreByScoreId(scoreId);
             //根据teacherId获取老师信息
             ///////////////////////////
@@ -122,7 +120,7 @@ public class ScoreServiceImpl implements ScoreService {
                 stuComment.setNumber(getStuNumber(stuComment.getNumberId()));
             }
             score.setStuComments(stuComments);
-            redisUtil.set(key, JSON.toJSONString(score), 240);
+            redisUtil.set(key, JSON.toJSONString(score), 120);
         }
         return score;
     }
@@ -137,7 +135,7 @@ public class ScoreServiceImpl implements ScoreService {
             stuNumber= JSON.parseObject(o.toString() ,StuNumber.class);
         }else {
             stuNumber=numberMapper.getNumberByNumberId(numberId);
-            redisUtil.set(key, JSON.toJSONString(stuNumber), 240);
+            redisUtil.set(key, JSON.toJSONString(stuNumber), 120);
         }
         return stuNumber;
     }
@@ -149,32 +147,8 @@ public class ScoreServiceImpl implements ScoreService {
         Score score=scoreMapper.getScoreByScoreId(scoreId);
         //根据成绩编号修改发送状态
         scoreMapper.updateStatus(scoreId);
-        //根据成绩编号获取个人评论信息
-        List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
         //根据成绩编号获取科目信息
         List<Subject>subjects=subjectMapper.getSubjectByScoreId(scoreId);
-        for (StuComment stuComment:stuComments) {
-            double sum=0;
-            for (Subject subject:subjects) {
-                //根据学号编号和科目编号获取分数
-                List<StuSubject>list=stuSubjectMapper.getStuSubjectByNumberId(stuComment.getNumberId(),subject.getSubjectId());
-                for (StuSubject stuSubject:list) {
-                    sum += Double.parseDouble(stuSubject.getScore());
-                }
-            }
-            stuCommentMapper.updateStuCommentSum(sum,stuComment.getCommentId());
-        }
-
-        //根据成绩编号获取评论并排序
-        List<StuComment>list=stuCommentMapper.getCommentByScoreIdOne(scoreId);
-        int count=0;
-        for (StuComment stuComment:list) {
-            count++;
-            stuComment.setSort(count);
-            //根据评论编号修改排名
-            stuCommentMapper.updateStuComment(stuComment.getSort(),stuComment.getCommentId());
-        }
-
         for (Subject subject:subjects) {
             double sum=0;
             //根据科目编号获取科目成绩
@@ -202,10 +176,36 @@ public class ScoreServiceImpl implements ScoreService {
             scoreOne.setUserId(user.getUserId());
             scoreOneMapper.addScoreOne(scoreOne);
             String key = "score:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(score), 120);
+            redisUtil.set(key, JSON.toJSONString(score), 40);
             String key1= "ok:" + user.getUserId() + user.getGradeId();
             String ok = "";
-            redisUtil.set(key1, JSON.toJSONString(ok), 40);
+            redisUtil.set(key1, JSON.toJSONString(ok), 20);
+        }
+        //根据成绩编号获取个人评论信息
+        List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
+//        while (stuComments==null){
+//            stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
+//        }
+        for (StuComment stuComment:stuComments) {
+            System.out.println("ok");
+            double sum=0;
+            for (Subject subject:subjects) {
+                //根据学号编号和科目编号获取分数
+                StuSubject stuSubject=stuSubjectMapper.getStuSubjectByNumberId(stuComment.getNumberId(),subject.getSubjectId());
+                sum += Double.parseDouble(stuSubject.getScore());
+            }
+            stuComment.setSum(sum);
+            stuCommentMapper.updateStuCommentSum(stuComment);
+        }
+
+        //根据成绩编号获取评论并排序
+        List<StuComment>list=stuCommentMapper.getCommentByScoreIdOne(scoreId);
+        int count=0;
+        for (StuComment stuComment:list) {
+            count++;
+            stuComment.setSort(count);
+            //根据评论编号修改排名
+            stuCommentMapper.updateStuComment(stuComment);
         }
     }
 
@@ -296,7 +296,7 @@ public class ScoreServiceImpl implements ScoreService {
 
         }
         String key2="delScore:"+gradeId;
-        redisUtil.set(key2,JSON.toJSONString(scoreId),5);
+        redisUtil.set(key2,JSON.toJSONString(scoreId),10);
 
         String key="scoreCount:"+gradeId;
         //根据班级编号统计成绩表数量
@@ -346,7 +346,7 @@ public class ScoreServiceImpl implements ScoreService {
         }else {
             user=notificationMapper.getUserByUserId(userId);
             user.setGrades(notificationMapper.getGradeByUserId(userId));
-            redisUtil.set(key,JSON.toJSONString(user),240);
+            redisUtil.set(key,JSON.toJSONString(user),120);
         }
         return user;
     }

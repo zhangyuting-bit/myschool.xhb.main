@@ -72,7 +72,7 @@ public class NotificationServiceImpl implements NotificationService {
             //根据通知编号查询状态为0的图片
             notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
 
-            redisUtil.set(key, JSON.toJSONString(notification), 1200);
+            redisUtil.set(key, JSON.toJSONString(notification), 120);
         }
         return notification;
     }
@@ -108,7 +108,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification), 1200);
+            redisUtil.set(key, JSON.toJSONString(notification), 120);
         }
         return notification;
     }
@@ -116,7 +116,7 @@ public class NotificationServiceImpl implements NotificationService {
     //根据通知编号获取通知信息
     public Notification getNotificationById(Notification notification, String teacherId) {
         String key = "notification:" + teacherId;
-        redisUtil.set(key, JSON.toJSONString(notification), 40);
+        redisUtil.set(key, JSON.toJSONString(notification), 60);
         return notification;
     }
 
@@ -198,7 +198,7 @@ public class NotificationServiceImpl implements NotificationService {
             redisUtil.set(key1, JSON.toJSONString(notification1), 40);
             String key2 = "ok:" + user.getUserId() + gradeId;
             String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
+            redisUtil.set(key2, JSON.toJSONString(ok), 20);
         }
         redisUtil.del(key);
     }
@@ -247,7 +247,7 @@ public class NotificationServiceImpl implements NotificationService {
             }
         }
         String key2="delNotification:"+gradeId;
-        redisUtil.set(key2,JSON.toJSONString(notificationId),5);
+        redisUtil.set(key2,JSON.toJSONString(notificationId),10);
         String key="notification:"+notificationId;
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);

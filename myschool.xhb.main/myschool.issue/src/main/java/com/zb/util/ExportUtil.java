@@ -114,8 +114,8 @@ public class ExportUtil {
         }
         // 设置表格默认列宽度为15个字节
         sheet.setDefaultColumnWidth((short) 15);
-        // 生成样式
-        Map<String, CellStyle> styles = createStyles(workbook);
+//        // 生成样式
+//        Map<String, CellStyle> styles = createStyles(workbook);
         /*
          * 创建标题行
          */
@@ -124,7 +124,7 @@ public class ExportUtil {
         Map<String, Integer> titleOrder = Maps.newHashMap();
         for (int i = 0; i < titles.size(); i++) {
             Cell cell = row.createCell(i);
-            cell.setCellStyle(styles.get("header"));
+//            cell.setCellStyle(styles.get("header"));
             String title = titles.get(i);
             cell.setCellValue(title);
             titleOrder.put(title, i);
@@ -146,11 +146,11 @@ public class ExportUtil {
                 // 在指定序号处创建cell
                 Cell cell = row.createCell(i);
                 // 设置cell的样式
-                if (index % 2 == 1) {
-                    cell.setCellStyle(styles.get("cellA"));
-                } else {
-                    cell.setCellStyle(styles.get("cellB"));
-                }
+//                if (index % 2 == 1) {
+//                    cell.setCellStyle(styles.get("cellA"));
+//                } else {
+//                    cell.setCellStyle(styles.get("cellB"));
+//                }
                 // 获取列的值
                 Object object = map.getValue();
                 // 判断object的类型
