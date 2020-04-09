@@ -183,11 +183,15 @@ public class ScoreServiceImpl implements ScoreService {
         }
         //根据成绩编号获取个人评论信息
         List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
-//        while (stuComments==null){
-//            stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
-//        }
+        while (true){
+            if (stuComments!=null){
+                break;
+            }else {
+                stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
+            }
+
+        }
         for (StuComment stuComment:stuComments) {
-            System.out.println("ok");
             double sum=0;
             for (Subject subject:subjects) {
                 //根据学号编号和科目编号获取分数
