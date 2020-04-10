@@ -6,6 +6,8 @@ import com.zb.service.AgreementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AgreementServiceImpl implements AgreementService {
 
@@ -20,5 +22,10 @@ public class AgreementServiceImpl implements AgreementService {
     @Override
     public int countIsGive(Agreement agreement) {
         return agreementMapper.countIsGive(agreement);
+    }
+
+    @Override
+    public List listUserId(Integer recordId, Integer recordType) {
+        return agreementMapper.getAgreementUser(recordId,recordType);
     }
 }
