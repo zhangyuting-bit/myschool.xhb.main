@@ -42,4 +42,15 @@
         WHERE
             numberId=#{numberId}
     </select>
+
+    <select id="getNumberByName" resultType="com.zb.entity.StuNumber">
+        SELECT
+            numberId
+        FROM
+            `number`
+        WHERE
+            `stuName`=#{stuName}
+        AND
+            gradeId=#{gradeId}
+    </select>
 </mapper>

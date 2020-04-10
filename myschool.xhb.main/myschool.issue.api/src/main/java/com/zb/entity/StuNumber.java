@@ -16,6 +16,12 @@ public class StuNumber implements Serializable {
     //学生姓名
     private String stuName;
 
+    List<StuSubject>stuSubjects;
+
+    public void setStuSubjects(List<StuSubject> stuSubjects) {
+        this.stuSubjects = stuSubjects;
+    }
+
     public String getStuName() {
         return stuName;
     }

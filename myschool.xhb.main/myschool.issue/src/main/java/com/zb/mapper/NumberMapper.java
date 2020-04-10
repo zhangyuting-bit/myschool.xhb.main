@@ -1,6 +1,7 @@
 package com.zb.mapper;
 
 import com.zb.entity.StuNumber;
+import com.zb.entity.StuSubject;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface NumberMapper {
 
     //根据学号编号获取学号信息
     StuNumber getNumberByNumberId(@Param("numberId")String numberId);
+
+    //根据班级编号和班级名称获取学号信息
+    StuNumber getNumberByName(@Param("stuName")String stuName, @Param("gradeId")String gradeId);
 }

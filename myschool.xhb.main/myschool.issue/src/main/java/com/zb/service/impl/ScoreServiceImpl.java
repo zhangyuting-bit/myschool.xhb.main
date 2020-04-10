@@ -117,7 +117,13 @@ public class ScoreServiceImpl implements ScoreService {
             score.setSubjects(subjectMapper.getSubjectByScoreId(scoreId));
             for (StuComment stuComment:stuComments) {
                 //根据学号表编号获取学号表信息
-                stuComment.setNumber(getStuNumber(stuComment.getNumberId()));
+                StuNumber stuNumber=getStuNumber(stuComment.getNumberId());
+                List<StuSubject>stuSubjects=null;
+                for (Subject subject:score.getSubjects()) {
+                    stuSubjects.add(stuSubjectMapper.getStuSubjectBySubjectAndNumberId(subject.getSubjectId(),stuNumber.getNumberId()));
+                }
+                stuNumber.setStuSubjects(stuSubjects);
+                stuComment.setNumber(stuNumber);
             }
             score.setStuComments(stuComments);
             redisUtil.set(key, JSON.toJSONString(score), 120);

@@ -17,4 +17,11 @@ public class ExportController {
     public String ExportExcel(@PathVariable("scoreId") String scoreId){
         return exportUtil.ExportExcel(scoreId);
     }
+
+    //根据分数编号获取考试信息
+    @GetMapping("/ExcelExport/{scoreId}")
+    public String ExcelExport(@PathVariable("scoreId") String scoreId){
+        return exportUtil.ExcelExport(scoreId);
+    }
+
 }
