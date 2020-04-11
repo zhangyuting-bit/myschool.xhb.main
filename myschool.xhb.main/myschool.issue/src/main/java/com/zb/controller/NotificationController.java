@@ -17,7 +17,7 @@ public class NotificationController {
 
     ////根据班级编号和通知类型编号获取全部对应通知
     @GetMapping("/getNotificationByUserId")
-    public Dto<List<Notification>> getNotificationByUserId(
+    public  Dto<List<Notification>> getNotificationByUserId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
             String userId) {
         return DtoUtil.returnSuccess("ok",notificationService.getNotificationGradeId(typeId,userId));

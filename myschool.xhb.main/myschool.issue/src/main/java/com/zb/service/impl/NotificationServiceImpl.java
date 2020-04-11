@@ -124,7 +124,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
-        rabbitTemplate.convertAndSend(RabbitConfigs.myexchange, RabbitConfigs.nocKey, notification);
+        rabbitTemplate.convertAndSend(RabbitConfigs.nocexchange, RabbitConfigs.nocKey, notification);
         return notification;
     }
 

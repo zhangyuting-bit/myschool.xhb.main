@@ -26,6 +26,12 @@ zuul:
     issueserver:
       path: /issueserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: ISSUESERVER
+    surveyserver:
+      path: /surveyserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: SURVEYSERVER
+    scoreserver:
+      path: /scoreserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: SCORESERVER
     myuserserver:
       path: /userserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: USERSERVICE
