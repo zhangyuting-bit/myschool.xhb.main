@@ -26,17 +26,17 @@ public class RecordServiceImpl implements RecordService {
     }
 
     @Override
-    public int addRecordLables(Integer recordId, Integer lableId) {
+    public int addRecordLables(String recordId, Integer lableId) {
         return recordMapper.addRecordLables(recordId,lableId);
     }
 
     @Override
-    public int getMaxRecordId() {
-        return recordMapper.getMaxRecordId();
+    public String getNewRecordId() {
+        return recordMapper.getNewRecordId();
     }
 
     @Override
-    public int deleteRecord(Integer recordId) {
+    public int deleteRecord(String recordId) {
         return recordMapper.deleteRecord(recordId);
     }
 }

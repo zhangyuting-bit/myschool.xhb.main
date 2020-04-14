@@ -8,6 +8,6 @@ public interface AgreementService {
 
     int giveAnAgreement(Agreement agreement);
     int countIsGive(Agreement agreement);
-    List listUserId(Integer recordId, Integer recordType);
+    List listUserId(String recordId, Integer recordType);
 
 }

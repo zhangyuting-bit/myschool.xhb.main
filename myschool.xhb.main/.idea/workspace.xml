@@ -51,14 +51,76 @@
   <component name="ChangeListManager">
     <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/classes/com/zb/feign/AuthFeignClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/myschool.auth.api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.comment.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.comment/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common/target/myschool.common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/GrowthRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/Lable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/AddRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/RecordServerApp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/mapper/RecordMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/RecordService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/impl/RecordServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/feign/UserFeignClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/TeacherInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/TeacherJob.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/UserInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcUserExt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XuRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/myschool.user.api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/feign/AgreementFeginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/feign/AgreementFeginClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/pojo/Agreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/pojo/Agreement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/feign/AgreementFeginClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/feign/AgreementFeginClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/pojo/Agreement.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/pojo/Agreement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/controller/AgreementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/controller/AgreementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/mapper/AgreementMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/mapper/AgreementMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/AgreementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/AgreementService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/impl/AgreementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/impl/AgreementServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/resources/mapper/AgreementMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/resources/mapper/AgreementMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/controller/AgreementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/controller/AgreementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/mapper/AgreementMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/mapper/AgreementMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/AgreementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/AgreementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/impl/AgreementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/impl/AgreementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/pojo/GrowthRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/pojo/GrowthRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/AddRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/AddRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/mapper/RecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/mapper/RecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/RecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,13 +147,14 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:/apache-maven-3.5.0" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.0\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -227,7 +290,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="" />
+      <changelist id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="" />
       <created>1582970147103</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -288,13 +351,8 @@
       <workItem from="1586051009606" duration="17778000" />
       <workItem from="1586154168140" duration="9106000" />
       <workItem from="1586229923943" duration="350000" />
-    </task>
-    <task id="LOCAL-00007" summary="issue_LZQ">
-      <created>1583403738811</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1583403738812</updated>
+      <workItem from="1586565001793" duration="22000" />
+      <workItem from="1586831168490" duration="5071000" />
     </task>
     <task id="LOCAL-00008" summary="issue_LZQ">
       <created>1583409480108</created>
@@ -632,11 +690,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586508277781</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="点赞显示谁点赞了">
+      <created>1586512594006</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1586512594006</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -654,7 +719,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="issue_LZQ" />
     <MESSAGE value="更新版本号" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新版本号" />
+    <MESSAGE value="点赞显示谁点赞了" />
+    <option name="LAST_COMMIT_MESSAGE" value="点赞显示谁点赞了" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1586171484911">

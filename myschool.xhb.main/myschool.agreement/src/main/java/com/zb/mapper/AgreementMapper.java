@@ -14,7 +14,7 @@ public interface AgreementMapper {
     //是否已点赞
     int countIsGive(Agreement agreement);
     //获取全部点赞人编号
-    List getAgreementUser(@Param("recordId") Integer recordId,
+    List getAgreementUser(@Param("recordId") String recordId,
                           @Param("recordType") Integer recordType);
 
 }

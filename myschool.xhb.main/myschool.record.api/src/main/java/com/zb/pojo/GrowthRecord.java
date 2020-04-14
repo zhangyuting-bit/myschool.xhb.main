@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class GrowthRecord implements Serializable {
 
-    private Integer recordId;
+    private String recordId;
     private String classId;
     private String userId;
     private String recordContent;
@@ -21,11 +21,11 @@ public class GrowthRecord implements Serializable {
         this.createDate = createDate;
     }
 
-    public Integer getRecordId() {
+    public String getRecordId() {
         return recordId;
     }
 
-    public void setRecordId(Integer recordId) {
+    public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
 

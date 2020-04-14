@@ -30,7 +30,7 @@ public class AgreementController {
     }
 
     @RequestMapping(value = "/allagreementuserid")
-    public List allagreementuserid(@RequestParam("recordId") Integer recordId,
+    public List allagreementuserid(@RequestParam("recordId") String recordId,
                                    @RequestParam("recordType") Integer recordType){
         return agreementService.listUserId(recordId,recordType);
     }

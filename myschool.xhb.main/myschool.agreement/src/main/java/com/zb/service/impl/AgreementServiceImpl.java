@@ -25,7 +25,7 @@ public class AgreementServiceImpl implements AgreementService {
     }
 
     @Override
-    public List listUserId(Integer recordId, Integer recordType) {
+    public List listUserId(String recordId, Integer recordType) {
         return agreementMapper.getAgreementUser(recordId,recordType);
     }
 }
