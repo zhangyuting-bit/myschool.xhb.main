@@ -171,8 +171,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/getUserInfoByToken")
-    public Dto getUserInfoByToken(@RequestParam(value = "token") String token){
-        Dto userInfoByToken = userService.getUserInfoByToken(token);
+    public UserInfo getUserInfoByToken(@RequestParam(value = "token") String token){
+        UserInfo userInfoByToken = userService.getUserInfoByToken(token);
         return userInfoByToken;
     }
 

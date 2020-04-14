@@ -1,6 +1,8 @@
 package com.zb.service.impl;
 
 import com.zb.entity.Collect;
+import com.zb.feign.ScoreCollectFeign;
+import com.zb.feign.SurveyCollectFeign;
 import com.zb.mapper.CollectMapper;
 import com.zb.service.CollectService;
 import com.zb.util.IdWorker;
@@ -19,10 +21,10 @@ public class CollectServiceImpl implements CollectService {
     private NotificationServiceImpl notificationService;
 
     @Resource
-    private ScoreServiceImpl scoreService;
+    private SurveyCollectFeign surveyCollectFeign;
 
     @Resource
-    private SurveyServiceImpl surveyService;
+    private ScoreCollectFeign scoreCollectFeign;
 
     //添加收藏
     @Override
@@ -47,10 +49,10 @@ public class CollectServiceImpl implements CollectService {
                 c.setNotification(notificationService.getNotificationByNotId(c.getId()));
                 collects.add(c);
             }else if (c.getTypeId().equals("6")){
-                c.setSurvey(surveyService.getBySurveyId(c.getId()));
+                c.setSurvey(surveyCollectFeign.getBySurveyId(c.getId()));
                 collects.add(c);
             }else if (c.getTypeId().equals("7")){
-                c.setScore(scoreService.getByScoreId(c.getId()));
+                c.setScore(scoreCollectFeign.getByScoreId(c.getId()));
                 collects.add(c);
             }
         }

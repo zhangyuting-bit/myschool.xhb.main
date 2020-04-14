@@ -1,6 +1,7 @@
 package com.zb.feign;
 
 import com.zb.dto.Dto;
+import com.zb.pojo.UserInfo;
 import com.zb.pojo.XcUserExt;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public interface UserFeignClient {
      * @return
      */
     @RequestMapping("/getUserInfoByToken")
-    public Dto getUserInfoByToken(@RequestParam(value = "token") String token);
+    public UserInfo getUserInfoByToken(@RequestParam(value = "token") String token);
 
 
     /**

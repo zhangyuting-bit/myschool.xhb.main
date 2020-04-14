@@ -18,11 +18,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.zb</groupId>
             <artifactId>myschool.user.api</artifactId>
             <version>1.0-SNAPSHOT</version>

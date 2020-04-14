@@ -2,11 +2,14 @@ package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfigs;
+import com.zb.dto.Dto;
 import com.zb.entity.*;
+import com.zb.feign.UserFeignClient;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotOneMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
+import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
@@ -28,6 +31,9 @@ public class NotificationServiceImpl implements NotificationService {
     private NotificationMapper notificationMapper;
 
     @Resource
+    private UserFeignClient userFeignClient;
+
+    @Resource
     private NotOneMapper notOneMapper;
 
     @Resource
@@ -42,12 +48,16 @@ public class NotificationServiceImpl implements NotificationService {
     @Resource
     private RedisUtil redisUtil;
 
-//    //根据token获取用户编号
-//    public String getUserIdByToken(String token){
-//        String userId="";
-//        return userId;
-//    }
+    //根据token获取用户编号
+    @Override
+    public String getUserIdByToken(String token){
+        UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
+        System.out.println(userInfo.getId());
+        String userId=userInfo.getId();
+        return userId;
+    }
 
+    @Cacheable(value = "cache" ,key="#notificationOne")
     public Notification getNotificationByNotId(String notificationId){
         Notification notification = null;
         String key = "notificationOne:" + notificationId;
@@ -79,13 +89,17 @@ public class NotificationServiceImpl implements NotificationService {
 
     //根据通知编号获取通知信息
     @Override
+    @Cacheable(value = "cache" ,key="#notificationId")
     public Notification getNotification(String notificationId) {
         Notification notification = null;
         String key = "notification:" + notificationId;
+        System.out.println("cache");
         if (redisUtil.hasKey(key)) {
+            System.out.println("redis");
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
+            System.out.println("mysql");
             notification = notificationMapper.getNotificationById(notificationId);
             //根据teacherId获取老师信息
             ///////////////////////////
@@ -94,7 +108,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification), 240);
+            redisUtil.set(key, JSON.toJSONString(notification), 120);
         }
         return notification;
     }
@@ -102,7 +116,7 @@ public class NotificationServiceImpl implements NotificationService {
     //根据通知编号获取通知信息
     public Notification getNotificationById(Notification notification, String teacherId) {
         String key = "notification:" + teacherId;
-        redisUtil.set(key, JSON.toJSONString(notification), 120);
+        redisUtil.set(key, JSON.toJSONString(notification), 60);
         return notification;
     }
 
@@ -110,7 +124,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
-        rabbitTemplate.convertAndSend(RabbitConfigs.myexchange, RabbitConfigs.nocKey, notification);
+        rabbitTemplate.convertAndSend(RabbitConfigs.nocexchange, RabbitConfigs.nocKey, notification);
         return notification;
     }
 
@@ -184,7 +198,7 @@ public class NotificationServiceImpl implements NotificationService {
             redisUtil.set(key1, JSON.toJSONString(notification1), 40);
             String key2 = "ok:" + user.getUserId() + gradeId;
             String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
+            redisUtil.set(key2, JSON.toJSONString(ok), 20);
         }
         redisUtil.del(key);
     }
@@ -231,9 +245,9 @@ public class NotificationServiceImpl implements NotificationService {
                     redisUtil.del(key1);
                 }
             }
-            String key2="delNotification:"+user.getUserId()+gradeId;
-            redisUtil.set(key2,JSON.toJSONString(notificationId),120);
         }
+        String key2="delNotification:"+gradeId;
+        redisUtil.set(key2,JSON.toJSONString(notificationId),10);
         String key="notification:"+notificationId;
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);
@@ -242,20 +256,13 @@ public class NotificationServiceImpl implements NotificationService {
 
     //获取撤销信息
     @Override
-    public String getNotDelStatus(String userId,String gradeId){
-        String key="delNotification:"+userId+gradeId;
+    public String getNotDelStatus(String gradeId){
+        String key="delNotification:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
-            String notificationId=JSON.toJSONString(o.toString());
+            String notificationId=JSON.parseObject(o.toString(),String.class);
             return notificationId;
         }
         return null;
-    }
-
-    //删除撤销信息
-    @Override
-    public void delStatus(String userId,String gradeId){
-        String key="delNotification:"+userId+gradeId;
-        redisUtil.del(key);
     }
 }

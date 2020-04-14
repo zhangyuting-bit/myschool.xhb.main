@@ -17,7 +17,7 @@ public class NotificationController {
 
     ////根据班级编号和通知类型编号获取全部对应通知
     @GetMapping("/getNotificationByUserId")
-    public Dto<List<Notification>> getNotificationByUserId(
+    public  Dto<List<Notification>> getNotificationByUserId(
             @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
             String userId) {
         return DtoUtil.returnSuccess("ok",notificationService.getNotificationGradeId(typeId,userId));
@@ -79,15 +79,14 @@ public class NotificationController {
     }
 
     //获取撤销信息
-    @GetMapping("/getNotDelStatus")
-    public Dto<String> getNotDelStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",notificationService.getNotDelStatus(userId, gradeId));
+    @GetMapping("/getNotDelStatus/{gradeId}")
+    public Dto<String> getNotDelStatus(@PathVariable("gradeId") String gradeId){
+        return DtoUtil.returnSuccess("ok",notificationService.getNotDelStatus(gradeId));
     }
 
-    //删除撤销信息
-    @GetMapping("/delNotStatus")
-    public void delStatus(String userId,String gradeId) {
-        notificationService.delStatus(userId, gradeId);
+    //根据token获取用户编号
+    @GetMapping("/getUserIdByToken/{token}")
+    public String getUserIdByToken(@PathVariable("token") String token){
+        return notificationService.getUserIdByToken(token);
     }
-
 }
