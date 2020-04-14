@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 public class AnswerController {
 
-    @Autowired
+    @Autowired(required = false)
     AnswerService answerService;
 
     @RequestMapping(value = "/addAnswer")
