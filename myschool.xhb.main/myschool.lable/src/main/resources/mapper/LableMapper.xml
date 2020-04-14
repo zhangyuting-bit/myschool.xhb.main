@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.LableMapper">
+
+    <select id="listAllPublicLables" resultType="com.zb.pojo.Lable">
+        SELECT * FROM lable WHERE lableType = 0
+    </select>
+
+    <select id="listPersonalLables" resultType="com.zb.pojo.Lable">
+        SELECT * FROM lable WHERE lableType = 1
+        AND userId = #{userId}
+    </select>
+
+    <insert id="addLable">
+        INSERT INTO xhb_lable_db.lable
+        (lableContent,
+        lableType,
+        userId
+        )
+        VALUES
+        (#{lableContent},
+        1,
+        #{userId}
+        );
+    </insert>
+
+    <delete id="delectLable">
+        DELETE FROM lable WHERE lableType = 1
+        AND lableId = #{lableId}
+    </delete>
+
+</mapper>
