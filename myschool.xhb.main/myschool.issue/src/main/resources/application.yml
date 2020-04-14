@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 1001
   connection-timeout: 1000000
 spring:
   application:
@@ -50,6 +50,10 @@ eureka:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  cache:
+    ehcache:
+      config: classpath:/ehcache.xml
+    type: ehcache
 
 hystrix:
   command:

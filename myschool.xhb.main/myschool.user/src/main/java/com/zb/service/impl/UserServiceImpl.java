@@ -308,11 +308,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Dto getUserInfoByToken(String token) {
+    public UserInfo getUserInfoByToken(String token) {
         Dto<XcUserExt> xcUserExtDto = authFeignClient.userJwt(token);
         String id = xcUserExtDto.getData().getId();
         UserInfo userinfo = userMapper.getUserInfoById(id);
-        return DtoUtil.returnSuccess("ok",userinfo);
+        return userinfo;
     }
 
     @Override
