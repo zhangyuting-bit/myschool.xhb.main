@@ -19,6 +19,10 @@
         <module>myshool.class.api</module>
         <module>myschool.issue.api</module>
         <module>myschool.issue</module>
+        <module>myschool.score</module>
+        <module>myschool.score.api</module>
+        <module>myschool.survey</module>
+        <module>myschool.survey.api</module>
 
         <module>myschool.record</module>
         <module>myschool.record.api</module>
@@ -28,6 +32,8 @@
         <module>myschool.agreement.api</module>
         <module>myschool.comment</module>
         <module>myschool.comment.api</module>
+        <module>myschool.task</module>
+        <module>myschool.task.api</module>
 
     </modules>
 

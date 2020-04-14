@@ -50,25 +50,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.task.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task.api/src/main/java/com/zb/pojo/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/TaskServerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/mapper/TaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/mapper/TaskMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment.api/src/main/java/com/zb/feign/CommentFeginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment.api/src/main/java/com/zb/feign/CommentFeginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment.api/src/main/java/com/zb/pojo/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment.api/src/main/java/com/zb/pojo/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment.api/target/classes/com/zb/feign/CommentFeginClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment.api/target/classes/com/zb/feign/CommentFeginClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment.api/target/classes/com/zb/pojo/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment.api/target/classes/com/zb/pojo/Answer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/controller/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/controller/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/mapper/AnswerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/mapper/AnswerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/impl/AnswerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/impl/AnswerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/java/com/zb/service/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/src/main/resources/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/src/main/resources/mapper/AnswerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/controller/AnswerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/controller/AnswerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/mapper/AnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/mapper/AnswerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/service/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/service/AnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/service/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/target/classes/com/zb/service/impl/AnswerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.comment/target/classes/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.comment/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +79,8 @@
         <option value="Mapper__Xml" />
         <option value="Mapper__XML" />
         <option value="mybatisMapper" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -123,7 +120,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.comment/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.task.api/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -131,9 +128,15 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.1508772" />
+    <property name="project.structure.side.proportion" value="0.23858447" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zb" />
       <recent name="com.zb.entity" />
@@ -145,11 +148,11 @@
       <recent name="com.zb.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task.api\src\main\resources" />
       <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.comment\src\main\resources" />
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
-      <recent name="D:\software\idea\item\myschool.xhb.main\myschool.gataway\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -164,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.CommentServerApp">
+  <component name="RunManager" selected="Spring Boot.TaskServerApp">
     <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.agreement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
@@ -273,8 +276,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScoreServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.score" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.ScoreServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SurveyServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.survey" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.SurveyServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.TaskServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.TaskServerApp" />
         <item itemvalue="Spring Boot.CommentServerApp" />
         <item itemvalue="Spring Boot.IssueServerApp" />
         <item itemvalue="Spring Boot.ExportExcel" />
@@ -350,13 +381,6 @@
       <workItem from="1586229923943" duration="350000" />
       <workItem from="1586565001793" duration="22000" />
       <workItem from="1586831168490" duration="21588000" />
-    </task>
-    <task id="LOCAL-00012" summary="issue_LZQ">
-      <created>1583576364732</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1583576364732</updated>
     </task>
     <task id="LOCAL-00013" summary="issue_LZQ">
       <created>1583576379004</created>
@@ -694,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586404814458</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="小小完善一下删除评论">
+      <created>1586878212123</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1586878212124</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +749,8 @@
     <MESSAGE value="更新版本号" />
     <MESSAGE value="点赞显示谁点赞了" />
     <MESSAGE value="消息记录id改为String类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="消息记录id改为String类型" />
+    <MESSAGE value="小小完善一下删除评论" />
+    <option name="LAST_COMMIT_MESSAGE" value="小小完善一下删除评论" />
   </component>
   <component name="WindowStateProjectService">
     <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586250644158">
