@@ -93,7 +93,7 @@ public class ClassController {
     @GetMapping("/showclass/{teacher_id}")
     public Dto showclass(@PathVariable("teacher_id")Integer teacher_id){
         return DtoUtil.returnSuccess("ok", classService.findClassesList(teacher_id));
-}
+    }
     //获取班级内部人员的信息
     @GetMapping("/classinfo/{class_number}")
     public Dto classinfo(@PathVariable("class_number")Integer class_number){
@@ -131,5 +131,21 @@ public class ClassController {
     @GetMapping("/jobshowby/{class_number}")
     public Dto jobshowby(@PathVariable("class_number")Integer  class_number){
         return DtoUtil.returnSuccess("ok",classInfoService.findClassjobBy(class_number));
+    }
+    //静态化页面分享
+    @GetMapping("/classinforby/{class_number}")
+    public Class_add classinforby(@PathVariable("class_number")Integer class_number){
+        System.out.println("查询数据库");
+        return classService.findclassinforBy(class_number);
+    }
+    //根据id获取班级的信息
+    @GetMapping("/showclassid/{id}")
+    public Dto showclassid(@PathVariable(value = "id")String id){
+        return DtoUtil.returnSuccess("ok", classService.findClassByid(id));
+    }
+    //根据用户的id获取该用户所在的所有班级
+    @GetMapping("/userclassinfo/{user_id}")
+    public Dto showclassid(@PathVariable(value = "user_id")Integer user_id){
+        return DtoUtil.returnSuccess("ok", classInfoService.findinfouserid(user_id));
     }
 }

@@ -145,4 +145,9 @@ public class ClassInfoServiceImpl implements ClassInfoService {
         return classInfoMapper.findclassjob(class_number);
     }
 
+    @Override
+    public List<Class_info> findinfouserid(Integer user_id) {
+        return classInfoMapper.getClassInfouserid(user_id);
+    }
+
 }
