@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.ClassTimetableMapper">
+    <insert id="addtimetable" parameterType="com.zb.pojo.Class_Timetable">
+        INSERT INTO class.class_timetable
+                (
+                id,
+                class_number,
+                class_emblem,
+                teacherName,
+                class_name,
+                timetableimage
+                )
+                VALUES
+                (
+                #{id},
+                #{class_number},
+                #{class_emblem},
+                #{teacherName},
+                #{class_name},
+                #{timetableimage}
+                );
+    </insert>
+    <select id="findgettimetableBy" resultType="com.zb.pojo.Class_Timetable">
+        SELECT * FROM class_timetable WHERE class_number=#{class_number}
+    </select>
+    <update id="updatatimetable">
+        UPDATE class_timetable SET timetableimage=#{timetableimage} WHERE class_number=#{class_number}
+    </update>
+    <delete id="deletetimetable">
+        DELETE FROM class_timetable WHERE class_number=#{class_number}
+    </delete>
+</mapper>

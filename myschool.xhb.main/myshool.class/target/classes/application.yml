@@ -31,8 +31,8 @@ spring:
 qiniu:
   accessKey: Q3lPkoJimARA325kn8Zs2ge3mfuoLuYEDhXXWQV-
   secretKey: dPSO3BDuNtC4SrO75CeTqIBQgIEWkvIu3uf4qxLY
-  bucket: myclass01
-  path: http://q6njsany4.bkt.clouddn.com/
+  bucket: myclass02
+  path: http://q8phj8h0i.bkt.clouddn.com/
 eureka:
   client:
     service-url:
