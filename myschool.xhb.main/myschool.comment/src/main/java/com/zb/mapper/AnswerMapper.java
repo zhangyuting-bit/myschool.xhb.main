@@ -14,6 +14,6 @@ public interface AnswerMapper {
     //查看评论回答
     List<Answer> listCommentsAnswer(@Param("commentId") String commentId);
     //删除评论回答
-    int deleteAnswer(@Param("id") Integer id);
+    int deleteAnswer(@Param("id") String id);
 
 }

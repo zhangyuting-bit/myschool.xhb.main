@@ -1,6 +1,7 @@
 package com.zb.controller;
 
 import com.zb.pojo.Comment;
+import com.zb.service.AnswerService;
 import com.zb.service.CommentService;
 import com.zb.util.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
+    @Autowired
+    AnswerService answerService;
+
     @RequestMapping(value = "/addcomment")
     public int addcomment(@RequestBody Comment comment){
         comment.setId(IdWorker.getId());
@@ -31,6 +35,7 @@ public class CommentController {
 
     @RequestMapping(value = "/deletecomment")
     public int deletecomment(@RequestParam("id") String id){
+        answerService.deleteAnswer(id);
         return commentService.deleteComment(id);
     }
 

@@ -139,7 +139,7 @@ public class RecordController {
 
 
     @RequestMapping(value = "/deleteAnswer")
-    public Dto deleteAnswer(@RequestParam("id") Integer id){
+    public Dto deleteAnswer(@RequestParam("id") String id){
         int val = commentFeginClient.deleteAnswer(id);
         if (val == 1) {
             return DtoUtil.returnSuccess("删除回复成功");
