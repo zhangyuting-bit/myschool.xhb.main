@@ -8,12 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfigs {
     //交换机
-    public static final String myexchange="myexchange.boot";
+    public static final String nocexchange="nocexchange.boot";
 
-    //上传调查消息队列
-    public static final String surQueue="sur.boot.queue";
-    //上传调查钥匙
-    public static final String surKey="sur.key.queue";
 
     //上传通知消息队列
     public static final String nocQueue="noc.boot.queue";
@@ -21,17 +17,11 @@ public class RabbitConfigs {
     public static final String nocKey="noc.key.queue";
 
     //交换机配置
-    @Bean(myexchange)
+    @Bean(nocexchange)
     public Exchange createExchange(){
-        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
+        return ExchangeBuilder.topicExchange(nocexchange).durable(true).build();
     }
 
-    //创建上传文件消息队列
-    @Bean(surQueue)
-    public Queue createDocQueue(){
-        Queue queue =new Queue(surQueue);
-        return queue;
-    }
 
     //创建上传通知消息队列
     @Bean(nocQueue)
@@ -40,16 +30,11 @@ public class RabbitConfigs {
         return queue;
     }
 
-    //将上传文件消息对列绑定到交换机上
-    @Bean
-    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(surQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with(surKey).noargs();
-    }
-
     //将上传通知消息对列绑定到交换机上
     @Bean
-    public Binding bindingNoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
+    public Binding bindingNoc(@Qualifier(nocexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(nocKey).noargs();
     }
+
 
 }

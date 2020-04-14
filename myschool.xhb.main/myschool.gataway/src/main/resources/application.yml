@@ -1,6 +1,5 @@
 server:
   port: 7002
-  connection-timeout: 1000000
 spring:
   application:
     name: GATEWAYSERVER
@@ -24,25 +23,22 @@ eureka:
     prefer-ip-address: true #显示浏览器中的状态栏显示ip
 zuul:
   routes:
-<<<<<<< HEAD
     issueserver:
       path: /issueserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: ISSUESERVER
-=======
+    surveyserver:
+      path: /surveyserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: SURVEYSERVER
+    scoreserver:
+      path: /scoreserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: SCORESERVER
     myuserserver:
-
       path: /userserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: USERSERVICE
     authserver:
       path: /authserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: auth2.server
-  host:
-    connect-timeout-millis: 3000
-    socket-timeout-millis: 3000
 
-      path: /classservice/**        #http://localhost:7003/userserver/user/show?uid=2
-      serviceId: CLASSSERVICE
->>>>>>> master
 #    myorderserver:
 #      path: /orderserver/**        #http://localhost:7003/userserver/user/show?uid=2
 #      serviceId: ORDERSERVER
@@ -50,21 +46,13 @@ zuul:
 #    mygoodsserver:
 #      path: /goodsserver/**        #http://localhost:7003/userserver/user/show?uid=2
 #      serviceId: GOODSSERVER
-<<<<<<< HEAD
 qiniu:
   accessKey: ZFYhmom1h56k40C8hBzlx_fVcvsJRcvytGxrDo4L
   secretKey: M6p0Uta1CEjw1j-Sx_bX-U8Ikb4lUN8QFrZxGXDJ
   bucket: mydemo5418
-  path: http://q6nz2qzez.bkt.clouddn.com/
-=======
+  path: http://q89nsulx9.bkt.clouddn.com/
+
 ribbon:
   ReadTimeout: 3000
   ConnectTimeout: 3000
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeout-in-milliseconds: 3000
->>>>>>> master
+

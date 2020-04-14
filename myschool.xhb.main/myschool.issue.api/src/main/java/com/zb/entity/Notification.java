@@ -25,14 +25,13 @@ public class Notification implements Serializable {
     private String audioSrc;
     //视频路径
     private String videoSrc;
-    //是否已结束
-    private Integer status;
     //状态为零的图片
     private NotPic notPic;
     //图片集合
     private List<NotPic>notPics;
     //附件集合
     private List<NotDocument>documents;
+    //教师信息
 
     public List<NotDocument> getDocuments() {
         return documents;
@@ -56,14 +55,6 @@ public class Notification implements Serializable {
 
     public void setNotPic(NotPic notPic) {
         this.notPic = notPic;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     public Integer getTypeId() {

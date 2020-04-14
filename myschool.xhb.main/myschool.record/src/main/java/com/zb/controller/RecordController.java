@@ -7,6 +7,7 @@ import com.zb.pojo.Agreement;
 import com.zb.pojo.GrowthRecord;
 import com.zb.pojo.Lable;
 import com.zb.service.RecordService;
+import com.zb.util.IdWorker;
 import com.zb.vo.AddRecord;
 import com.zb.vo.RetrievalRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,8 @@ public class RecordController {
 
     @RequestMapping(value = "/addrecord")
     public Dto addrecord(@RequestBody AddRecord addRecord) {
+        //随机赋值id
+        addRecord.setRecordId(IdWorker.getId());
         if (addRecord.getVisible() == 1) {
             addRecord.setClassId("0");
         }
@@ -46,7 +49,7 @@ public class RecordController {
         int val = recordService.addRecord(addRecord);
 
         //获取成长记录id
-        Integer recordId = recordService.getMaxRecordId();
+        String recordId = recordService.getNewRecordId();
 
         if (addRecord.getLables() != null) {
             String[] split = addRecord.getLables().split(",");
@@ -64,7 +67,7 @@ public class RecordController {
 
 
     @RequestMapping(value = "/deleterecord/{recordId}")
-    public Dto deleterecord(@PathVariable("recordId") Integer recordId) {
+    public Dto deleterecord(@PathVariable("recordId") String recordId) {
         int val = recordService.deleteRecord(recordId);
         if (val == 1) {
             return DtoUtil.returnSuccess("成长记录撤销成功");

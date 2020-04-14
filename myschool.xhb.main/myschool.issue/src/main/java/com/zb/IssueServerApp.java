@@ -10,7 +10,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableSwagger2
 @MapperScan("com.zb.mapper")
 public class IssueServerApp {
     public static void main(String[] args) {

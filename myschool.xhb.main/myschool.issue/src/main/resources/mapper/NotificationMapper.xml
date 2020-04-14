@@ -3,15 +3,31 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zb.mapper.NotificationMapper">
-    <select id="getNotificationGradeId" resultType="com.zb.entity.Notification">
+    <select id="getUserByGradeId" resultType="com.zb.entity.User">
         SELECT
             *
         FROM
-            `notification`
+            `user`
         WHERE
             gradeId=#{gradeId}
-        <if test="typeId != 0">AND typeId=#{typeId}</if>
-        ORDER BY notifyTime DESC
+    </select>
+
+    <select id="getUserByUserId" resultType="com.zb.entity.User">
+        SELECT
+            *
+        FROM
+            `user`
+        WHERE
+            userId=#{userId}
+    </select>
+
+    <select id="getGradeByUserId" resultType="com.zb.entity.Grade">
+        SELECT
+            gradeId
+        FROM
+            `user`
+        WHERE
+            userId=#{userId}
     </select>
 
     <select id="getNotificationById" resultType="com.zb.entity.Notification">
@@ -54,16 +70,11 @@
     <update id="updateEndTimeOne">
         UPDATE `notification`
         SET
-          `endTime` = #{endTime},
-          `status` = 0
+          `endTime` = #{endTime}
         WHERE `notificationId` = #{notificationId};
     </update>
 
-    <update id="updateEndTime">
-        UPDATE `notification`
-        SET
-          `status` = 1
-        WHERE `notificationId` = #{notificationId};
-    </update>
-
+    <delete id="delNot">
+        delete from notification where notificationId=#{notificationId}
+    </delete>
 </mapper>

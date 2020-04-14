@@ -21,7 +21,8 @@
 
     <insert id="addRecord">
         INSERT INTO growth_record
-        (classId,
+        (recordId,
+        classId,
         userId,
         recordContent,
         visible,
@@ -29,7 +30,8 @@
         createDate
         )
         VALUES
-        (#{classId},
+        (#{recordId},
+        #{classId},
         #{userId},
         #{recordContent},
         #{visible},
@@ -49,8 +51,10 @@
         );
     </insert>
 
-    <select id="getMaxRecordId" resultType="java.lang.Integer">
-        SELECT MAX(recordId) FROM growth_record
+    <select id="getNewRecordId" resultType="java.lang.String">
+        SELECT recordId FROM growth_record
+        ORDER BY createDate DESC
+        LIMIT 1
     </select>
 
     <update id="deleteRecord">

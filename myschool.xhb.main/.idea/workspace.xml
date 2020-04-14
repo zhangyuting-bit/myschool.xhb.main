@@ -49,104 +49,96 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerUploadController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectUploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Answer.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Answer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Select.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Select.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/Survey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/AnswerUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/AnswerUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SelectUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/SelectUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/AnswerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/SurveyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/AnswerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/SelectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/AnswerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/SelectMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/AnswerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/AnswerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectPicService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/SelectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/AnswerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/AnswerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/NotificationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectPicServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SelectServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/SurveyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/SurveyMapper.xml" afterDir="false" />
-=======
 
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
-
-      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Leave_job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/LeaveMq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassleaveServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/src/main/java/com/zb/MyEurekaServerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/src/main/java/com/zb/MyEurekaServerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/classes/com/zb/MyEurekaServerApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/classes/com/zb/MyEurekaServerApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_add.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/Class_info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/pojo/Class_info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/MyClassApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/MyClassApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/ClassInfoMq.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mq/ClassInfoMq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/MyClassApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/MyClassApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassInfoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassInfoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mapper/ClassMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/ClassInfoMq.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/mq/ClassInfoMq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassInfoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/target/classes/mapper/ClassMapper.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/myschool.eureka.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main.iml" beforeDir="false" />
-
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="新增添加标签功能">
+    <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement.api/myschool.agreement.api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement.api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/feign/AgreementFeginClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/pojo/Agreement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/myschool.agreement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/AgreementServerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/controller/AgreementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/mapper/AgreementMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/AgreementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/impl/AgreementServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.agreement/src/main/resources/mapper/AgreementMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/classes/com/zb/feign/AuthFeignClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/myschool.auth.api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.comment.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.comment/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common/target/myschool.common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/GrowthRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/pojo/Lable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/AddRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record.api/target/classes/com/zb/vo/RetrievalRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/RecordServerApp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/mapper/RecordMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/RecordService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/service/impl/RecordServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.record/target/classes/mapper/RecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/feign/UserFeignClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/TeacherInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/TeacherJob.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/UserInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcUserExt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XuRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.user.api/target/myschool.user.api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/pojo/Agreement.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/src/main/java/com/zb/pojo/Agreement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/feign/AgreementFeginClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/feign/AgreementFeginClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/pojo/Agreement.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement.api/target/classes/com/zb/pojo/Agreement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/controller/AgreementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/controller/AgreementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/mapper/AgreementMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/mapper/AgreementMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/AgreementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/AgreementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/impl/AgreementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/src/main/java/com/zb/service/impl/AgreementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/controller/AgreementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/controller/AgreementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/mapper/AgreementMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/mapper/AgreementMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/AgreementService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/AgreementService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/impl/AgreementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.agreement/target/classes/com/zb/service/impl/AgreementServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.lable/src/main/java/com/zb/mapper/LableMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/pojo/GrowthRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/pojo/GrowthRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/AddRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record.api/src/main/java/com/zb/vo/AddRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/controller/RecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/target/classes/com/zb/controller/RecordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/mapper/RecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/mapper/RecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/RecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
 
->>>>>>> master
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util/ExportExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/src/main/java/com/zb/entity/StuNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/StuNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue.api/target/classes/com/zb/entity/StuNumber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/controller/ExportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NumberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NumberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util/ExportUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util/ExportUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NumberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NumberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ExportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/controller/ExportController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NumberMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/mapper/NumberMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/util/ExportUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/com/zb/util/ExportUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NumberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/target/classes/mapper/NumberMapper.xml" afterDir="false" />
+
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,19 +146,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-
-  <component name="Git.Settings">
-
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="mymapper" />
         <option value="Mapper__Xml" />
-<<<<<<< HEAD
         <option value="Mapper__XML" />
-=======
-        <option value="mybatisMapper" />
->>>>>>> master
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -178,26 +162,16 @@
         <entry key="$PROJECT_DIR$/.." value="master" />
       </map>
     </option>
-
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-
-        <option name="mavenHome" value="D:/maven/apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.6.0\conf\settings.xml" />
-
-        <option name="mavenHome" value="F:/apache-maven-3.5.0" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.0\conf\settings.xml" />
-
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
-
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -205,7 +179,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -218,68 +191,32 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="E:/面试题2/网络七层协议/demo" />
-=======
-
-    <property name="last_opened_file_path" value="D:/idea/Administrator/IdeaProjects/my.real" />
-
-
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.agreement/src/main/resources" />
->>>>>>> master
+    <property name="last_opened_file_path" value="C:/北大青鸟课程/S3/微服/18/01/auth2.server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-<<<<<<< HEAD
     <property name="nodejs_package_manager_path" value="npm" />
-=======
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-
->>>>>>> master
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
-
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zb.controller" />
       <recent name="com.zb.config" />
+      <recent name="com.zb.util" />
+      <recent name="com.zb.controller" />
+      <recent name="com.zb.entity" />
       <recent name="com.zb.service" />
-      <recent name="com.zb.service.impl" />
-      <recent name="com.zb" />
-<<<<<<< HEAD
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
-=======
-      <recent name="com.zb.config" />
-      <recent name="com.zb.filter" />
-      <recent name="com.zb.filter" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.agreement\src\main\resources" />
-      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.lable\src\main\resources" />
-      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\resources" />
-      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\pojo" />
->>>>>>> master
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.gataway\src\main\resources" />
       <recent name="D:\software\idea\item\myschool.xhb.main\myschool.eureka\src\main\resources" />
     </key>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Spring Boot.IssueServerApp">
-    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="myschool.issue" />
-=======
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -292,33 +229,53 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RecordServerApp">
-    <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.AgreementServerApp">
+    <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.agreement" />
->>>>>>> master
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExportExcel" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.issue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.util.ExportExcel" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExportUtil" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.issue" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.util.ExportUtil" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.issue" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.zb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-<<<<<<< HEAD
-=======
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="myschool.issue" />
->>>>>>> master
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.IssueServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-=======
     <configuration name="LableServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.lable" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.LableServerApp" />
@@ -333,7 +290,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
->>>>>>> master
     <configuration name="MyEurekaServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyEurekaServerApp" />
@@ -348,6 +304,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySchoolAuthApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MySchoolAuthApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MySchoolUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MySchoolUserApp" />
@@ -355,19 +318,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.IssueServerApp" />
-=======
-    <configuration name="RecordServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="RecordServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.record" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.RecordServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -375,9 +327,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.RecordServerApp" />
-        <item itemvalue="Spring Boot.AgreementServerApp" />
->>>>>>> master
+        <item itemvalue="Spring Boot.IssueServerApp" />
+        <item itemvalue="Spring Boot.ExportExcel" />
+        <item itemvalue="Spring Boot.ExportUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -386,13 +338,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="" />
+      <changelist id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="" />
       <created>1582970147103</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582970147103</updated>
       <workItem from="1582970150562" duration="851000" />
-<<<<<<< HEAD
       <workItem from="1583377391460" duration="5821000" />
       <workItem from="1583392223558" duration="404000" />
       <workItem from="1583392826521" duration="550000" />
@@ -430,76 +381,27 @@
       <workItem from="1585109990990" duration="9801000" />
       <workItem from="1585184133576" duration="29710000" />
       <workItem from="1585285725524" duration="6694000" />
-=======
+      <workItem from="1585310542160" duration="3008000" />
+      <workItem from="1585355938443" duration="2301000" />
+      <workItem from="1585360553910" duration="16019000" />
+      <workItem from="1585393633745" duration="4646000" />
+      <workItem from="1585444417648" duration="33155000" />
+      <workItem from="1585541300957" duration="13979000" />
+      <workItem from="1585618223323" duration="26811000" />
+      <workItem from="1585701827138" duration="2558000" />
+      <workItem from="1585791040968" duration="24247000" />
+      <workItem from="1585897256146" duration="5422000" />
+      <workItem from="1585912267419" duration="664000" />
+      <workItem from="1585915957552" duration="2578000" />
+      <workItem from="1585960597710" duration="4647000" />
+      <workItem from="1585970406161" duration="4461000" />
+      <workItem from="1585988594304" duration="17093000" />
+      <workItem from="1586051009606" duration="17778000" />
+      <workItem from="1586154168140" duration="9106000" />
 
-      <workItem from="1583153721384" duration="635000" />
-
-      <workItem from="1583135250113" duration="2844000" />
-      <workItem from="1583211447689" duration="1298000" />
-      <workItem from="1583383796341" duration="39595000" />
-      <workItem from="1583542534156" duration="5896000" />
-      <workItem from="1583734974166" duration="5857000" />
-      <workItem from="1583807023357" duration="18756000" />
-      <workItem from="1583903218278" duration="24643000" />
-      <workItem from="1584145756371" duration="4349000" />
-      <workItem from="1584335583294" duration="22799000" />
-      <workItem from="1584576317893" duration="12610000" />
-      <workItem from="1584672023419" duration="1627000" />
-      <workItem from="1584750428521" duration="286000" />
-      <workItem from="1584938629225" duration="2655000" />
-      <workItem from="1584969867589" duration="11302000" />
->>>>>>> master
-    </task>
-    <task id="LOCAL-00001" summary="issue_LZQ">
-      <created>1583377701694</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583377701694</updated>
-    </task>
-    <task id="LOCAL-00002" summary="issue_LZQ">
-      <created>1583377753553</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583377753553</updated>
-    </task>
-    <task id="LOCAL-00003" summary="issue_LZQ">
-      <created>1583377760022</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1583377760022</updated>
-
-    </task>
-    <task id="LOCAL-00004" summary="issue_LZQ">
-      <created>1583378812655</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1583378812655</updated>
-    </task>
-    <task id="LOCAL-00005" summary="issue_LZQ">
-      <created>1583378817609</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1583378817609</updated>
-    </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00006" summary="issue_LZQ">
-      <created>1583379668473</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1583379668473</updated>
-    </task>
-    <task id="LOCAL-00007" summary="issue_LZQ">
-      <created>1583403738811</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1583403738812</updated>
+      <workItem from="1586229923943" duration="350000" />
+      <workItem from="1586565001793" duration="22000" />
+      <workItem from="1586831168490" duration="5071000" />
     </task>
     <task id="LOCAL-00008" summary="issue_LZQ">
       <created>1583409480108</created>
@@ -528,6 +430,14 @@
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
       <updated>1583575883495</updated>
+
+      <workItem from="1586229923943" duration="15647000" />
+      <workItem from="1586331795313" duration="6892000" />
+      <workItem from="1586341311752" duration="5411000" />
+      <workItem from="1586354685386" duration="1237000" />
+      <workItem from="1586403534390" duration="32856000" />
+      <workItem from="1586479376067" duration="4733000" />
+
     </task>
     <task id="LOCAL-00012" summary="issue_LZQ">
       <created>1583576364732</created>
@@ -704,74 +614,197 @@
       <option name="project" value="LOCAL" />
       <updated>1585217848890</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
-=======
+    <task id="LOCAL-00037" summary="issue_LZQ">
+      <created>1585467454076</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1585467454076</updated>
+    </task>
+    <task id="LOCAL-00038" summary="issue_LZQ">
+      <created>1585484683240</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1585484683240</updated>
+    </task>
+    <task id="LOCAL-00039" summary="issue_LZQ">
+      <created>1585556736911</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1585556736911</updated>
+    </task>
+    <task id="LOCAL-00040" summary="issue_LZQ">
+      <created>1585558865146</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1585558865146</updated>
+    </task>
+    <task id="LOCAL-00041" summary="issue_LZQ">
+      <created>1585809329361</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1585809329361</updated>
+    </task>
+    <task id="LOCAL-00042" summary="issue_LZQ">
+      <created>1585809568066</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1585809568066</updated>
+    </task>
+    <task id="LOCAL-00043" summary="issue_LZQ">
+      <created>1585809583163</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1585809583163</updated>
+    </task>
+    <task id="LOCAL-00044" summary="issue_LZQ">
+      <created>1585811125039</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1585811125039</updated>
+    </task>
+    <task id="LOCAL-00045" summary="issue_LZQ">
+      <created>1585902994971</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1585902994971</updated>
+    </task>
+    <task id="LOCAL-00046" summary="issue_LZQ">
+      <created>1585992921472</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1585992921472</updated>
+    </task>
+    <task id="LOCAL-00047" summary="issue_LZQ">
+      <created>1586002715775</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1586002715775</updated>
+    </task>
+    <task id="LOCAL-00048" summary="issue_LZQ">
+      <created>1586002730301</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1586002730301</updated>
+    </task>
+    <task id="LOCAL-00049" summary="issue_LZQ">
+      <created>1586002742302</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1586002742302</updated>
+    </task>
+    <task id="LOCAL-00050" summary="issue_LZQ">
+      <created>1586003372156</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586003372156</updated>
+    </task>
+    <task id="LOCAL-00051" summary="issue_LZQ">
+      <created>1586072616122</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1586072616122</updated>
+    </task>
+    <task id="LOCAL-00052" summary="issue_LZQ">
+      <created>1586166135736</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1586166135736</updated>
+    </task>
+    <task id="LOCAL-00053" summary="issue_LZQ">
+      <created>1586176928863</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1586176928863</updated>
+    </task>
+    <task id="LOCAL-00054" summary="issue_LZQ">
+      <created>1586177369582</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1586177369582</updated>
+    </task>
 
-    <task id="LOCAL-00003" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
-      <created>1583631244803</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00055" summary="更新版本号">
+      <created>1586508277780</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1583631244803</updated>
+      <updated>1586508277781</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00056" summary="点赞显示谁点赞了">
+      <created>1586512594006</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1586512594006</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
 
-    <task id="LOCAL-00006" summary="修复无法启动的bug">
-      <created>1584601007603</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
+    <task id="LOCAL-00055" summary="issue_LZQ">
+      <created>1586230453038</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1584601007603</updated>
+      <updated>1586230453039</updated>
     </task>
-    <task id="LOCAL-00007" summary="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)">
-      <created>1584604172451</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
+    <task id="LOCAL-00056" summary="issue_LZQ">
+      <created>1586248836978</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
       <option name="project" value="LOCAL" />
-      <updated>1584604172451</updated>
+      <updated>1586248836978</updated>
     </task>
-    <task id="LOCAL-00008" summary="标签的公共类型和个人类型的展示">
-      <created>1584605891955</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
+    <task id="LOCAL-00057" summary="issue_LZQ">
+      <created>1586251561841</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1584605891955</updated>
+      <updated>1586251561841</updated>
     </task>
-    <task id="LOCAL-00009" summary="个人标签的新增">
-      <created>1584606887193</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
+    <task id="LOCAL-00058" summary="issue_LZQ">
+      <created>1586335167045</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1584606887193</updated>
+      <updated>1586335167045</updated>
     </task>
-    <task id="LOCAL-00010" summary="单新增成长记录，不新增成长记录中添加标签功能">
-      <created>1584609480534</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
+    <task id="LOCAL-00059" summary="issue_LZQ">
+      <created>1586345783434</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
       <option name="project" value="LOCAL" />
-      <updated>1584609480534</updated>
+      <updated>1586345783435</updated>
     </task>
-    <task id="LOCAL-00011" summary="新增成长记录添加标签功能">
-      <created>1584616553705</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
+    <task id="LOCAL-00060" summary="issue_LZQ">
+      <created>1586404814458</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
       <option name="project" value="LOCAL" />
-      <updated>1584616553705</updated>
+      <updated>1586404814458</updated>
     </task>
-    <task id="LOCAL-00012" summary="完成个人标签删除功能和成长记录撤销功能">
-      <created>1584633128568</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1584633128568</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="61" />
 
->>>>>>> master
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -785,112 +818,128 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mc_dev提交了一段代码" />
-    <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
-    <MESSAGE value="修复无法启动的bug" />
-    <MESSAGE value="完成成长记录不同条件的展示(检举条件:仅自己可见，只看自己【目前暂时无法获取自己的用户对象，所以可以选择仅看某人的成长记录，后续会增进】，不同班级)" />
-    <MESSAGE value="标签的公共类型和个人类型的展示" />
-    <MESSAGE value="个人标签的新增" />
-    <MESSAGE value="单新增成长记录，不新增成长记录中添加标签功能" />
-    <MESSAGE value="新增成长记录添加标签功能" />
-    <MESSAGE value="完成个人标签删除功能和成长记录撤销功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成个人标签删除功能和成长记录撤销功能" />
+    <MESSAGE value="issue_LZQ" />
+    <MESSAGE value="更新版本号" />
+    <MESSAGE value="点赞显示谁点赞了" />
+    <option name="LAST_COMMIT_MESSAGE" value="点赞显示谁点赞了" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1585296431553">
+    <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586250644158">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585296431553" />
+    <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586250644158" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1586421618553">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586421618553" />
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1584255995838" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584850346816">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1585745230073">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1584850346816" />
-    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585205000580">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1585745230073" />
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586260083515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585205000580" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1585217847110">
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586260083515" />
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1586404810855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585217847110" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1585208397530">
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586404810855" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1586250625902">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585208397530" />
-    <state width="1493" height="303" key="GridCell.Tab.0.bottom" timestamp="1585309231754">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586250625902" />
+    <state width="1493" height="270" key="GridCell.Tab.0.bottom" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.0.center" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.0.center" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.0.left" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.0.left" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.0.right" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.0.right" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.1.bottom" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.1.bottom" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.1.center" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.1.center" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.1.left" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.1.left" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="303" key="GridCell.Tab.1.right" timestamp="1585309231754">
+    <state width="1493" height="270" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.1.right" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="303" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585309231754" />
-    <state width="1493" height="265" key="GridCell.Tab.2.bottom" timestamp="1585229147637">
+    <state width="1493" height="270" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.2.bottom" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
-    <state width="1493" height="265" key="GridCell.Tab.2.center" timestamp="1585229147637">
+    <state width="1493" height="270" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.2.center" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
-    <state width="1493" height="265" key="GridCell.Tab.2.left" timestamp="1585229147637">
+    <state width="1493" height="270" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.2.left" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
-    <state width="1493" height="265" key="GridCell.Tab.2.right" timestamp="1585229147637">
+    <state width="1493" height="270" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state width="1493" height="270" key="GridCell.Tab.2.right" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585229147637" />
+    <state width="1493" height="270" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586446040088" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1586258755635">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1586258755635" />
     <state x="270" y="56" key="SettingsEditor" timestamp="1584241825299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584241825299" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1585128060799">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1586230528959">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585128060799" />
-    <state x="275" y="66" key="new project wizard" timestamp="1584147539342">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586230528959" />
+    <state x="436" y="199" key="git4idea.merge.GitPullDialog" timestamp="1586245946682">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="275" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584147539342" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1585140615497">
+    <state x="436" y="199" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1586245946682" />
+    <state x="275" y="66" key="new project wizard" timestamp="1585356460484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585140615497" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585143438792">
+    <state x="275" y="66" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585356460484" />
+    <state x="470" y="168" key="refactoring.ChangeSignatureDialog" timestamp="1586416401203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585143438792" />
+    <state x="470" y="168" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1586416401203" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1585558818378">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585558818378" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586423179194">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586423179194" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="values" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

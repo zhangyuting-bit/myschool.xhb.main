@@ -25,4 +25,10 @@
         AND recordId = #{recordId}
     </select>
 
+    <select id="getAgreementUser" resultType="java.lang.String">
+        SELECT userId FROM agreement WHERE
+        recordId = #{recordId}
+        AND recordType = #{recordType}
+    </select>
+
 </mapper>

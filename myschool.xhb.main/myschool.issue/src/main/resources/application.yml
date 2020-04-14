@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 1001
   connection-timeout: 1000000
 spring:
   application:
@@ -28,7 +28,7 @@ qiniu:
   accessKey: ZFYhmom1h56k40C8hBzlx_fVcvsJRcvytGxrDo4L
   secretKey: M6p0Uta1CEjw1j-Sx_bX-U8Ikb4lUN8QFrZxGXDJ
   bucket: mydemo5418
-  path: http://q6nz2qzez.bkt.clouddn.com/
+  path: http://q89nsulx9.bkt.clouddn.com/
 #    publisher-confirms: true
 #    publisher-returns: true
 #    template:
@@ -50,6 +50,10 @@ eureka:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  cache:
+    ehcache:
+      config: classpath:/ehcache.xml
+    type: ehcache
 
 hystrix:
   command:
