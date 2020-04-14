@@ -104,6 +104,7 @@ public class SurveyServiceImpl implements SurveyService {
     @Override
     public Survey addSurvey(Survey survey) {
         survey.setSurveyId(IdWorker.getId());
+        surveyMapper.addSurvey(survey);
         rabbitTemplate.convertAndSend(RabbitConfigs.surexchange,RabbitConfigs.surKey,survey);
         return survey;
     }
@@ -111,7 +112,6 @@ public class SurveyServiceImpl implements SurveyService {
     //监听添加调查队列
     @RabbitListener(queues = RabbitConfigs.surQueue)
     public void getSurvey(Survey survey){
-        surveyMapper.addSurvey(survey);
         //根据teacherId获取老师信息
         ///////////////////////////
         //根据班级编号获取用户信息

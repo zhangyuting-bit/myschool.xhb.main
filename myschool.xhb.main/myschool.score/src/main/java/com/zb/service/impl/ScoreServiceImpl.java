@@ -1,11 +1,13 @@
 package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
 import com.zb.mapper.*;
 import com.zb.service.ScoreService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -145,15 +147,13 @@ public class ScoreServiceImpl implements ScoreService {
         return stuNumber;
     }
 
-    //推送消息给用户
-    @Override
-    @Transactional
-    public void sendScore(String scoreId){
-        Score score=scoreMapper.getScoreByScoreId(scoreId);
+    //监听添加发送成绩队列
+    @RabbitListener(queues = RabbitConfigs.scoQueue)
+    public void  scoreMsg(Score score){
         //根据成绩编号修改发送状态
-        scoreMapper.updateStatus(scoreId);
+        scoreMapper.updateStatus(score.getScoreId());
         //根据成绩编号获取科目信息
-        List<Subject>subjects=subjectMapper.getSubjectByScoreId(scoreId);
+        List<Subject>subjects=subjectMapper.getSubjectByScoreId(score.getScoreId());
         for (Subject subject:subjects) {
             double sum=0;
             //根据科目编号获取科目成绩
@@ -172,6 +172,30 @@ public class ScoreServiceImpl implements ScoreService {
             subjectMapper.updateSubject(subject);
         }
 
+        //根据成绩编号获取个人评论信息
+        List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(score.getScoreId());
+        for (StuComment stuComment:stuComments) {
+            double sum=0;
+            for (Subject subject:subjects) {
+                //根据学号编号和科目编号获取分数
+                StuSubject stuSubject=stuSubjectMapper.getStuSubjectByNumberId(stuComment.getNumberId(),subject.getSubjectId());
+                sum += Double.parseDouble(stuSubject.getScore());
+            }
+            stuComment.setSum(sum);
+            stuCommentMapper.updateStuCommentSum(stuComment);
+        }
+
+        //根据成绩编号获取评论并排序
+        List<StuComment>list=stuCommentMapper.getCommentByScoreIdOne(score.getScoreId());
+        int count=0;
+        for (StuComment stuComment:list) {
+            count++;
+            stuComment.setSort(count);
+            //根据评论编号修改排名
+            stuCommentMapper.updateStuComment(stuComment);
+        }
+
+
         //根据班级编号获取用户信息
         List<User>users=scoreMapper.getUserByGradeId(score.getGradeId());
         for (User user : users) {
@@ -186,28 +210,14 @@ public class ScoreServiceImpl implements ScoreService {
             String ok = "";
             redisUtil.set(key1, JSON.toJSONString(ok), 20);
         }
-        //根据成绩编号获取个人评论信息
-        List<StuComment>stuComments=stuCommentMapper.getCommentByScoreId(scoreId);
-        for (StuComment stuComment:stuComments) {
-            double sum=0;
-            for (Subject subject:subjects) {
-                //根据学号编号和科目编号获取分数
-                StuSubject stuSubject=stuSubjectMapper.getStuSubjectByNumberId(stuComment.getNumberId(),subject.getSubjectId());
-                sum += Double.parseDouble(stuSubject.getScore());
-            }
-            stuComment.setSum(sum);
-            stuCommentMapper.updateStuCommentSum(stuComment);
-        }
+    }
 
-        //根据成绩编号获取评论并排序
-        List<StuComment>list=stuCommentMapper.getCommentByScoreIdOne(scoreId);
-        int count=0;
-        for (StuComment stuComment:list) {
-            count++;
-            stuComment.setSort(count);
-            //根据评论编号修改排名
-            stuCommentMapper.updateStuComment(stuComment);
-        }
+    //推送消息给用户
+    @Override
+    @Transactional
+    public void sendScore(String scoreId){
+        Score score=scoreMapper.getScoreByScoreId(scoreId);
+        rabbitTemplate.convertAndSend(RabbitConfigs.scoexchange, RabbitConfigs.scoKey, score);
     }
 
     //根据成绩编号获取信息
@@ -266,7 +276,6 @@ public class ScoreServiceImpl implements ScoreService {
 
     //撤销成绩信息
     @Override
-    @Transactional
     public void returnScore(String scoreId,String gradeId){
         //根据成绩编号撤销成绩
         scoreMapper.delScore(scoreId);
@@ -351,7 +360,6 @@ public class ScoreServiceImpl implements ScoreService {
 
     //修改删除考试信息
     @Override
-    @Transactional
     public void returnUpdate(String scoreId,String gradeId){
         //根据成绩编号删除个人成绩
         scoreOneMapper.delScoreOneByScoreId(scoreId);

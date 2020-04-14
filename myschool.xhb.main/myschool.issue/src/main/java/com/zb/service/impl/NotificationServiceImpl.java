@@ -113,38 +113,39 @@ public class NotificationServiceImpl implements NotificationService {
         return notification;
     }
 
-    //根据通知编号获取通知信息
-    public Notification getNotificationById(Notification notification, String teacherId) {
-        String key = "notification:" + teacherId;
-        redisUtil.set(key, JSON.toJSONString(notification), 60);
-        return notification;
-    }
-
     //添加新的通知信息
     @Override
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
-        rabbitTemplate.convertAndSend(RabbitConfigs.nocexchange, RabbitConfigs.nocKey, notification);
+        notificationMapper.addNotification(notification);
+        String key = "notification:" + notification.getTeacherId();
+        redisUtil.set(key,JSON.toJSONString(notification), 60);
         return notification;
     }
 
     //监听添加通知队列
     @RabbitListener(queues = RabbitConfigs.nocQueue)
     public void getNotification(Notification notification) {
-        notificationMapper.addNotification(notification);
-        //根据teacherId获取老师信息
-        ///////////////////////////
+        Notification notification1=notificationMapper.getNotificationById(notification.getNotificationId());
+        //根据教师编号获取教师信息
+        //根据班级编号获取班级信息
+        //根据通知编号查询状态为0的图片
+        NotPic picByStatu = notPicMapper.getPicByStatu(notification1.getNotificationId());
+        notification1.setNotPic(picByStatu);
         //根据班级编号获取用户信息
-        List<User>users=notificationMapper.getUserByGradeId(notification.getGradeId());
+        List<User>users=notificationMapper.getUserByGradeId(notification1.getGradeId());
         for (User user : users) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(notification.getNotificationId());
+            notOne.setFunctionId(notification1.getNotificationId());
             notOne.setUserId(user.getUserId());
-            notOne.setTypeId(notification.getTypeId());
+            notOne.setTypeId(notification1.getTypeId());
             notOneMapper.addOne(notOne);
-            String key = "notification:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(getNotificationById(notification, notification.getTeacherId())), 120);
+            String key1 = "notification:" + user.getUserId() + user.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(notification1), 40);
+            String key2 = "ok:" + user.getUserId() + notification1.getGradeId();
+            String ok = "";
+            redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
     }
 
@@ -188,19 +189,7 @@ public class NotificationServiceImpl implements NotificationService {
         String key = "notification:" + teacherId;
         Object o = redisUtil.get(key);
         Notification notification = JSON.parseObject(o.toString(), Notification.class);
-        Notification notification1=notificationMapper.getNotificationById(notification.getNotificationId());
-        //根据通知编号查询状态为0的图片
-        notification1.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
-        //根据班级编号获取用户信息
-        List<User>users=notificationMapper.getUserByGradeId(notification.getGradeId());
-        for (User user : users) {
-            String key1 = "notification:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(notification1), 40);
-            String key2 = "ok:" + user.getUserId() + gradeId;
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 20);
-        }
-        redisUtil.del(key);
+        rabbitTemplate.convertAndSend(RabbitConfigs.nocexchange, RabbitConfigs.nocKey, notification);
     }
 
     //获取推送状态
