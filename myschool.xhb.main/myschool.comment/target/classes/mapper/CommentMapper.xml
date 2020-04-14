@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.CommentMapper">
+
+    <insert id="addComment">
+
+        INSERT INTO xhb_comment_db.comment
+            (id,
+            commentatorId,
+            recordId,
+            commentContent,
+            commentDate,
+            recordType
+            )
+            VALUES
+            (#{id},
+            #{commentatorId},
+            #{recordId},
+            #{commentContent},
+            NOW(),
+            #{recordType}
+            );
+
+    </insert>
+
+    <select id="listRecordOrComments" resultType="com.zb.pojo.Comment">
+        SELECT * FROM xhb_comment_db.comment
+        WHERE 1 = 1
+        AND recordType = #{recordType}
+        AND recordId = #{recordId}
+    </select>
+
+    <delete id="deleteComment">
+        DELETE FROM xhb_comment_db.comment
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
