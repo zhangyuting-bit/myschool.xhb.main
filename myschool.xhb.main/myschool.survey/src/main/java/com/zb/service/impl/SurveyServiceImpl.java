@@ -1,11 +1,10 @@
 package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
-import com.zb.entity.Select;
-import com.zb.entity.Survey;
-import com.zb.entity.SurveyOne;
-import com.zb.entity.User;
+import com.zb.entity.*;
+import com.zb.feign.NotOneFeign;
 import com.zb.mapper.*;
 import com.zb.service.SurveyService;
 import com.zb.util.IdWorker;
@@ -26,7 +25,7 @@ public class SurveyServiceImpl implements SurveyService {
     private SurveyMapper surveyMapper;
 
     @Resource
-    private SurveyOneMapper surveyOneMapper;
+    private NotOneFeign notOneFeign;
 
     @Resource
     private SelectMapper selectMapper;
@@ -60,13 +59,14 @@ public class SurveyServiceImpl implements SurveyService {
         }
         return survey;
     }
+
     //根据用户编号获取对应调查
     @Override
-    public List<Survey> getSurveyByUserId(String userId) {
+    public List<Survey> getSurveyByUserId(Integer typeId,String userId) {
         List<Survey>list=new ArrayList<>();
-        List<SurveyOne>ones=surveyOneMapper.getSurveyOneByUserId(userId);
-        for (SurveyOne surveyOne:ones) {
-            list.add(getBySurveyId(surveyOne.getSurveyId()));
+        List<NotOne>ones=notOneFeign.getOneByUserId(typeId,userId);
+        for (NotOne notOne:ones) {
+            list.add(getBySurveyId(notOne.getFunctionId()));
         }
         return list;
     }
@@ -105,31 +105,17 @@ public class SurveyServiceImpl implements SurveyService {
     public Survey addSurvey(Survey survey) {
         survey.setSurveyId(IdWorker.getId());
         surveyMapper.addSurvey(survey);
-        rabbitTemplate.convertAndSend(RabbitConfigs.surexchange,RabbitConfigs.surKey,survey);
         return survey;
     }
 
-    //监听添加调查队列
-    @RabbitListener(queues = RabbitConfigs.surQueue)
-    public void getSurvey(Survey survey){
+    //推送调查消息
+    @Override
+    public void sendSurvey(String surveyId){
+        Survey survey=surveyMapper.getSurveyBySurveyId(surveyId);
         //根据teacherId获取老师信息
         ///////////////////////////
-        //根据班级编号获取用户信息
-        List<User>users=surveyMapper.getUserByGradeId(survey.getGradeId());
-        for (User user : users) {
-            SurveyOne surveyOne=new SurveyOne();
-            surveyOne.setOneId(IdWorker.getId());
-            surveyOne.setUserId(user.getUserId());
-            surveyOne.setSurveyId(survey.getSurveyId());
-            surveyOneMapper.addSurveyOne(surveyOne);
-            String key = "survey:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(survey), 40);
-            String key1= "ok:" + user.getUserId() + user.getGradeId();
-            String ok = "";
-            redisUtil.set(key1, JSON.toJSONString(ok), 40);
-        }
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.surKey,survey);
     }
-
     //学生端实时显示信息
     @Override
     public Survey getSurStu( String userId,String gradeId){
@@ -172,20 +158,18 @@ public class SurveyServiceImpl implements SurveyService {
         return null;
     }
 
-    //根据用户编号和调查编号删除成绩信息
-    @Override
-    public Integer delSurvey(String userId,String surveyId){
-        return surveyOneMapper.delSurveyByUserId(userId, surveyId);
-    }
-
     //撤销调查信息
     @Override
     @Transactional
-    public void returnSurvey(String surveyId,String gradeId){
+    public void returnSurvey(String surveyId){
+        Survey survey1=surveyMapper.getSurveyBySurveyId(surveyId);
+        if (survey1==null){
+            return;
+        }
         //根据调查编号删除调查
         surveyMapper.delSurveyBySurveyId(surveyId);
         //根据调查编号删除个人信息
-        surveyOneMapper.delSurveyOneBySurId(surveyId);
+        notOneFeign.delNotOneByNotIdAndUserId(surveyId,survey1.getTypeId());
         //根据调查编号查询题目信息
         List<Select>list=selectMapper.getSelectBySurveyId(surveyId);
         for (Select select:list) {
@@ -197,7 +181,7 @@ public class SurveyServiceImpl implements SurveyService {
         //根据调查编号删除题目信息
         selectMapper.delSelectBySurId(surveyId);
         //根据班级编号获取用户信息
-        List<User>users=surveyMapper.getUserByGradeId(gradeId);
+        List<User>users=surveyMapper.getUserByGradeId(survey1.getGradeId());
         for (User user : users) {
             String key = "survey:" + user.getUserId() + user.getGradeId();
             if (redisUtil.get(key)!=null){
@@ -209,7 +193,7 @@ public class SurveyServiceImpl implements SurveyService {
                 }
             }
         }
-        String key2="delSurvey:"+gradeId;
+        String key2="delSurvey:"+survey1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(surveyId),10);
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){

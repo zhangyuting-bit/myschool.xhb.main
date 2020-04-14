@@ -1,6 +1,7 @@
 package com.zb.service.impl;
 
 import com.zb.entity.Collect;
+import com.zb.feign.NotificationCollectFeign;
 import com.zb.feign.ScoreCollectFeign;
 import com.zb.feign.SurveyCollectFeign;
 import com.zb.mapper.CollectMapper;
@@ -18,7 +19,7 @@ public class CollectServiceImpl implements CollectService {
     private CollectMapper collectMapper;
 
     @Resource
-    private NotificationServiceImpl notificationService;
+    private NotificationCollectFeign notificationCollectFeign;
 
     @Resource
     private SurveyCollectFeign surveyCollectFeign;
@@ -46,7 +47,7 @@ public class CollectServiceImpl implements CollectService {
         List<Collect>list=collectMapper.getCollectByUserId(userId);
         for (Collect c:list) {
             if (c.getTypeId().equals("1")||c.getTypeId().equals("2")||c.getTypeId().equals("3")||c.getTypeId().equals("4")||c.getTypeId().equals("5")){
-                c.setNotification(notificationService.getNotificationByNotId(c.getId()));
+                c.setNotification(notificationCollectFeign.getNotificationByNotId(c.getId()));
                 collects.add(c);
             }else if (c.getTypeId().equals("6")){
                 c.setSurvey(surveyCollectFeign.getBySurveyId(c.getId()));

@@ -13,6 +13,36 @@ public class NotOne implements Serializable {
     private Integer typeId;
     //增加时间
     private String createTime;
+    //通知消息
+    private Notification notification;
+    //调查信息
+    private Survey survey;
+    //成绩信息
+    private Score score;
+
+    public Notification getNotification() {
+        return notification;
+    }
+
+    public void setNotification(Notification notification) {
+        this.notification = notification;
+    }
+
+    public Survey getSurvey() {
+        return survey;
+    }
+
+    public void setSurvey(Survey survey) {
+        this.survey = survey;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
+    }
 
     public String getCreateTime() {
         return createTime;

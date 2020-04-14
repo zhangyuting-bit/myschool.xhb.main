@@ -18,9 +18,9 @@ public class SurveyController {
     private SurveyService surveyService;
 
     //根据用户编号查询调查通知
-    @GetMapping("/getSurveyByUserId/{userId}")
-    public Dto<List<Survey>> getSurveyByUserId(@PathVariable("userId") String userId) {
-        return DtoUtil.returnSuccess("ok",surveyService.getSurveyByUserId(userId));
+    @GetMapping("/getSurveyByUserId")
+    public Dto<List<Survey>> getSurveyByUserId(Integer typeId, String userId) {
+        return DtoUtil.returnSuccess("ok",surveyService.getSurveyByUserId(typeId,userId));
     }
 
     //根据调查编号查询调查信息
@@ -47,6 +47,12 @@ public class SurveyController {
         return DtoUtil.returnSuccess("ok",surveyService.updateSurEndTimeOne(endTime, surveyId));
     }
 
+    //推送调查消息
+    @GetMapping("/sendSurvey/{surveyId}")
+    public void sendSurvey(@PathVariable("surveyId") String surveyId){
+        surveyService.sendSurvey(surveyId);
+    }
+
     //删除推送消息
     @GetMapping("/delStuSur")
     public void delStuSur(String userId, String surveyId, String gradeId){
@@ -59,16 +65,10 @@ public class SurveyController {
         return DtoUtil.returnSuccess("ok",surveyService.getStatus(userId,gradeId));
     }
 
-    //根据用户编号和调查编号删除成绩信息
-    @GetMapping("/delSurvey")
-    public Dto<Integer> delSurvey(String userId,String surveyId){
-        return DtoUtil.returnSuccess("ok",surveyService.delSurvey(userId, surveyId));
-    }
-
     //撤销调查信息
-    @GetMapping("/returnSurvey")
-    public void returnSurvey(String surveyId,String gradeId){
-        surveyService.returnSurvey(surveyId, gradeId);
+    @GetMapping("/returnSurvey/{surveyId}")
+    public void returnSurvey(@PathVariable("surveyId") String surveyId){
+        surveyService.returnSurvey(surveyId);
     }
 
     //获取撤销信息
@@ -82,4 +82,5 @@ public class SurveyController {
     public Survey getBySurveyId(@PathVariable("surveyId")String surveyId){
         return surveyService.getBySurveyId(surveyId);
     }
+
 }

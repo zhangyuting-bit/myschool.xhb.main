@@ -1,8 +1,10 @@
 package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
+import com.zb.feign.NotOneFeign;
 import com.zb.mapper.*;
 import com.zb.service.ScoreService;
 import com.zb.util.IdWorker;
@@ -27,7 +29,7 @@ public class ScoreServiceImpl implements ScoreService {
     private ScoreMapper scoreMapper;
 
     @Resource
-    private ScoreOneMapper scoreOneMapper;
+    private NotOneFeign notOneFeign;
 
     @Resource
     private NumberMapper numberMapper;
@@ -64,11 +66,11 @@ public class ScoreServiceImpl implements ScoreService {
     }
     ///根据班级编号获取成绩消息
     @Override
-    public List<Score> getScoreListByUserId(String userId) {
+    public List<Score> getScoreListByUserId(Integer typeId,String userId) {
         List<Score>list=new ArrayList<>();
-        List<ScoreOne>scoreOnes=scoreOneMapper.getScoreListByUserId(userId);
-        for (ScoreOne scoreOne : scoreOnes) {
-            list.add(getByScoreId(scoreOne.getScoreId()));
+        List<NotOne>ones=notOneFeign.getOneByUserId(typeId,userId);
+        for (NotOne notOne : ones) {
+            list.add(getByScoreId(notOne.getFunctionId()));
         }
         return list;
     }
@@ -150,6 +152,15 @@ public class ScoreServiceImpl implements ScoreService {
     //监听添加发送成绩队列
     @RabbitListener(queues = RabbitConfigs.scoQueue)
     public void  scoreMsg(Score score){
+
+
+    }
+
+    //推送消息给用户
+    @Override
+    @Transactional
+    public void sendScore(String scoreId){
+        Score score=scoreMapper.getScoreByScoreId(scoreId);
         //根据成绩编号修改发送状态
         scoreMapper.updateStatus(score.getScoreId());
         //根据成绩编号获取科目信息
@@ -194,30 +205,7 @@ public class ScoreServiceImpl implements ScoreService {
             //根据评论编号修改排名
             stuCommentMapper.updateStuComment(stuComment);
         }
-
-
-        //根据班级编号获取用户信息
-        List<User>users=scoreMapper.getUserByGradeId(score.getGradeId());
-        for (User user : users) {
-            ScoreOne scoreOne = new ScoreOne();
-            scoreOne.setOneId(IdWorker.getId());
-            scoreOne.setScoreId(score.getScoreId());
-            scoreOne.setUserId(user.getUserId());
-            scoreOneMapper.addScoreOne(scoreOne);
-            String key = "score:" + user.getUserId() + user.getGradeId();
-            redisUtil.set(key, JSON.toJSONString(score), 40);
-            String key1= "ok:" + user.getUserId() + user.getGradeId();
-            String ok = "";
-            redisUtil.set(key1, JSON.toJSONString(ok), 20);
-        }
-    }
-
-    //推送消息给用户
-    @Override
-    @Transactional
-    public void sendScore(String scoreId){
-        Score score=scoreMapper.getScoreByScoreId(scoreId);
-        rabbitTemplate.convertAndSend(RabbitConfigs.scoexchange, RabbitConfigs.scoKey, score);
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.scoKey, score);
     }
 
     //根据成绩编号获取信息
@@ -268,19 +256,14 @@ public class ScoreServiceImpl implements ScoreService {
         return null;
     }
 
-    //根据用户编号和成绩编号删除成绩信息
-    @Override
-    public Integer delScoreOne(String userId,String scoreId){
-        return scoreOneMapper.delScoreByUserIdAndScoreId(userId, scoreId);
-    }
-
     //撤销成绩信息
     @Override
-    public void returnScore(String scoreId,String gradeId){
+    public void returnScore(String scoreId){
+        Score score1=scoreMapper.getScoreByScoreId(scoreId);
         //根据成绩编号撤销成绩
         scoreMapper.delScore(scoreId);
         //根据成绩编号删除个人成绩
-        scoreOneMapper.delScoreOneByScoreId(scoreId);
+        notOneFeign.delNotOneByNotIdAndUserId(scoreId,score1.getTypeId());
         //根据成绩编号获取科目信息
         List<Subject>subjects=subjectMapper.getSubjectByScoreId(scoreId);
         for (Subject subject:subjects) {
@@ -292,7 +275,7 @@ public class ScoreServiceImpl implements ScoreService {
         //根据成绩编号删除评论
         stuCommentMapper.delCommentByScoreId(scoreId);
         //根据班级编号获取用户信息
-        List<User>users=scoreMapper.getUserByGradeId(gradeId);
+        List<User>users=scoreMapper.getUserByGradeId(score1.getGradeId());
         for (User user : users) {
             String key = "score:" + user.getUserId() + user.getGradeId();
             if (redisUtil.get(key)!=null){
@@ -305,10 +288,10 @@ public class ScoreServiceImpl implements ScoreService {
             }
 
         }
-        String key2="delScore:"+gradeId;
+        String key2="delScore:"+score1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(scoreId),10);
 
-        String key="scoreCount:"+gradeId;
+        String key="scoreCount:"+score1.getGradeId();
         //根据班级编号统计成绩表数量
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
@@ -360,9 +343,10 @@ public class ScoreServiceImpl implements ScoreService {
 
     //修改删除考试信息
     @Override
-    public void returnUpdate(String scoreId,String gradeId){
+    public void returnUpdate(String scoreId){
+        Score score1=scoreMapper.getScoreByScoreId(scoreId);
         //根据成绩编号删除个人成绩
-        scoreOneMapper.delScoreOneByScoreId(scoreId);
+        notOneFeign.delNotOneByNotIdAndUserId(scoreId,score1.getTypeId());
         //根据成绩编号获取科目信息
         List<Subject>subjects=subjectMapper.getSubjectByScoreId(scoreId);
         for (Subject subject:subjects) {
@@ -372,7 +356,7 @@ public class ScoreServiceImpl implements ScoreService {
         //根据成绩编号删除评论
         stuCommentMapper.delCommentByScoreId(scoreId);
         //根据班级编号获取用户信息
-        List<User>users=scoreMapper.getUserByGradeId(gradeId);
+        List<User>users=scoreMapper.getUserByGradeId(score1.getGradeId());
         for (User user : users) {
             String key = "score:" + user.getUserId() + user.getGradeId();
             if (redisUtil.get(key)!=null){
@@ -384,7 +368,7 @@ public class ScoreServiceImpl implements ScoreService {
                 }
             }
         }
-        String key2="delScore:"+gradeId;
+        String key2="delScore:"+score1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(scoreId),10);
         String key1="score:"+scoreId;
         if (redisUtil.hasKey(key1)){
