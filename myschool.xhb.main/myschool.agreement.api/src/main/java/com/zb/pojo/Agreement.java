@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Agreement implements Serializable {
 
     private Integer id;
-    private Integer recordId;
+    private String recordId;
     private Integer recordType;
     private String userId;
 
@@ -17,11 +17,11 @@ public class Agreement implements Serializable {
         this.id = id;
     }
 
-    public Integer getRecordId() {
+    public String getRecordId() {
         return recordId;
     }
 
-    public void setRecordId(Integer recordId) {
+    public void setRecordId(String recordId) {
         this.recordId = recordId;
     }
 

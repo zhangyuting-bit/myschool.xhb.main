@@ -16,11 +16,11 @@ public interface RecordMapper {
     //新增成长记录
     int addRecord(AddRecord addRecord);
     //成长记录添加标签
-    int addRecordLables(@Param("recordId") Integer recordId,
+    int addRecordLables(@Param("recordId") String recordId,
                         @Param("lableId") Integer lableId);
     //获取最新的成长记录
-    int getMaxRecordId();
+    String getNewRecordId();
     //撤销成长记录
-    int deleteRecord(@Param("recordId") Integer recordId);
+    int deleteRecord(@Param("recordId") String recordId);
 
 }

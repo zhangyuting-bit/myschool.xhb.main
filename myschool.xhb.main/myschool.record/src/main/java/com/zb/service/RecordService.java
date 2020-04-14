@@ -10,7 +10,7 @@ public interface RecordService {
 
     List<GrowthRecord> listRecordsByCondition(RetrievalRecord retrievalRecord);
     int addRecord(AddRecord addRecord);
-    int addRecordLables(Integer recordId,Integer lableId);
-    int getMaxRecordId();
-    int deleteRecord(Integer recordId);
+    int addRecordLables(String recordId,Integer lableId);
+    String getNewRecordId();
+    int deleteRecord(String recordId);
 }

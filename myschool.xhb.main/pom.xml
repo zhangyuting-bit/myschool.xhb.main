@@ -26,6 +26,8 @@
         <module>myschool.lable.api</module>
         <module>myschool.agreement</module>
         <module>myschool.agreement.api</module>
+        <module>myschool.comment</module>
+        <module>myschool.comment.api</module>
 
     </modules>
 
