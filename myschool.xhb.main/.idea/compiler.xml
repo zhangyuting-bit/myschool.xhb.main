@@ -12,12 +12,14 @@
         <module name="myschool.lable" />
         <module name="myschool.record" />
         <module name="myshool.class" />
+        <module name="myschool.comment" />
         <module name="myschool.auth.api" />
         <module name="myschool.user.api" />
         <module name="myschool.common.api" />
         <module name="myschool.agreement" />
         <module name="myschool.eureka" />
         <module name="myschool.issue" />
+        <module name="myschool.comment.api" />
         <module name="myschool.agreement.api" />
         <module name="myschool.gataway" />
         <module name="myschool.lable.api" />

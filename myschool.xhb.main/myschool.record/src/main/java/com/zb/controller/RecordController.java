@@ -3,9 +3,8 @@ package com.zb.controller;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.feign.AgreementFeginClient;
-import com.zb.pojo.Agreement;
-import com.zb.pojo.GrowthRecord;
-import com.zb.pojo.Lable;
+import com.zb.feign.CommentFeginClient;
+import com.zb.pojo.*;
 import com.zb.service.RecordService;
 import com.zb.util.IdWorker;
 import com.zb.vo.AddRecord;
@@ -25,6 +24,9 @@ public class RecordController {
 
     @Autowired
     AgreementFeginClient agreementFeginClient;
+
+    @Autowired
+    CommentFeginClient commentFeginClient;
 
     @RequestMapping(value = "/showrecords")
     public List<GrowthRecord> showRecords(@RequestParam(value = "userId", required = false) String userId,
@@ -78,7 +80,7 @@ public class RecordController {
 
     @RequestMapping(value = "/giveagreement")
     public Dto giveagreement(@RequestBody Agreement agreement) {
-        agreement.setRecordType(4);
+        agreement.setRecordType(8);
         int val = agreementFeginClient.isgive(agreement);
         if (val == 0) {
             val = agreementFeginClient.giveagreement(agreement);
@@ -89,6 +91,60 @@ public class RecordController {
             }
         } else {
             return DtoUtil.returnFail("重复点赞", "8888");
+        }
+    }
+
+
+    @RequestMapping(value = "/commentRecord")
+    public Dto commentRecord(@RequestBody Comment comment){
+        comment.setRecordType(8);
+        int val = commentFeginClient.addcomment(comment);
+        if (val == 1) {
+            return DtoUtil.returnSuccess("成长记录评论成功");
+        } else {
+            return DtoUtil.returnFail("失败", "8888");
+        }
+    }
+
+
+    @RequestMapping(value = "/showRecordComment")
+    public List<Comment> showRecordComment(@RequestParam("recordId") String recordId){
+        return commentFeginClient.somecomments(recordId,8);
+    }
+
+    @RequestMapping(value = "/deletecomment")
+    public Dto deletecomment(@RequestParam("id") String id){
+        int val = commentFeginClient.deletecomment(id);
+        if (val == 1) {
+            return DtoUtil.returnSuccess("删除成长记录评论成功");
+        } else {
+            return DtoUtil.returnFail("失败", "8888");
+        }
+    }
+
+    @RequestMapping(value = "/addAnswer")
+    public Dto addAnswer(@RequestBody Answer answer){
+        int val = commentFeginClient.addAnswer(answer);
+        if (val == 1) {
+            return DtoUtil.returnSuccess("新增回复成功");
+        } else {
+            return DtoUtil.returnFail("失败", "8888");
+        }
+    }
+
+    @RequestMapping(value = "/listCommentsAnswer")
+    public List<Answer> listCommentsAnswer(@RequestParam("commentId") String commentId){
+        return commentFeginClient.listCommentsAnswer(commentId);
+    }
+
+
+    @RequestMapping(value = "/deleteAnswer")
+    public Dto deleteAnswer(@RequestParam("id") Integer id){
+        int val = commentFeginClient.deleteAnswer(id);
+        if (val == 1) {
+            return DtoUtil.returnSuccess("删除回复成功");
+        } else {
+            return DtoUtil.returnFail("失败", "8888");
         }
     }
 

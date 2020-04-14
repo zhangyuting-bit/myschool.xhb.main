@@ -39,4 +39,5 @@ public class RecordServiceImpl implements RecordService {
     public int deleteRecord(String recordId) {
         return recordMapper.deleteRecord(recordId);
     }
+
 }
