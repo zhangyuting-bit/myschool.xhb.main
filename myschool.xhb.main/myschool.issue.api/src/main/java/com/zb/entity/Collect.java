@@ -10,7 +10,7 @@ public class Collect implements Serializable {
     private String typeId;
     //消息编号
     private String id;
-    //用户编号
+    ///用户编号
     private String userId;
 
     //通知消息
