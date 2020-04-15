@@ -48,7 +48,9 @@
              `title`,
              `notifyMessage`,
              `notifyTime`,
-             `endTime`)
+             `endTime`,
+             `statu`,
+             `status`)
         VALUES (#{notificationId},
                 #{typeId},
                 #{teacherId},
@@ -56,7 +58,9 @@
                 #{title},
                 #{notifyMessage},
                 #{notifyTime},
-                #{endTime});
+                #{endTime},
+                #{statu},
+                #{status});
     </insert>
 
     <update id="updateVdoAndAudio">
