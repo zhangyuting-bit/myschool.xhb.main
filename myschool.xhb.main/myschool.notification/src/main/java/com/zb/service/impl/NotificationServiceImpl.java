@@ -214,7 +214,7 @@ public class NotificationServiceImpl implements NotificationService {
         }
         String key2="delNotification:"+notification1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(notificationId),10);
-        String key="notification:"+notificationId;
+        String key="notification:"+notificationId; 
         if (redisUtil.hasKey(key)){
             redisUtil.del(key);
         }

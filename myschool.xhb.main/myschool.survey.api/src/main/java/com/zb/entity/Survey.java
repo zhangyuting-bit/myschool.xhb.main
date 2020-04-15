@@ -43,7 +43,7 @@ public class Survey implements Serializable {
     private String endTime;
     //参与者是否可查调查结果
     private Integer status;
-    //是否已结束
+    //是否匿名
     private Integer statu;
     //题目数量
     private Integer count;

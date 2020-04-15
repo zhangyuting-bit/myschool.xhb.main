@@ -31,7 +31,26 @@ public class Notification implements Serializable {
     private List<NotPic>notPics;
     //附件集合
     private List<NotDocument>documents;
-    //教师信息
+    //是否需要上传作业
+    private Integer statu;
+    //成果是否相互可见
+    private Integer status;
+
+    public Integer getStatu() {
+        return statu;
+    }
+
+    public void setStatu(Integer statu) {
+        this.statu = statu;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public List<NotDocument> getDocuments() {
         return documents;

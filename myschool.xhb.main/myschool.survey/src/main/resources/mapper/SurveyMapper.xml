@@ -39,16 +39,18 @@
              `title`,
              `another`,
              `startTime`,
+             `count`,
              `status`,
-             `count`)
+             `statu`)
         VALUES (#{surveyId},
                 #{teacherId},
                 #{gradeId},
                 #{title},
                 #{another},
                 #{startTime},
+                #{count},
                 #{status},
-                #{count});
+                #{statu});
     </insert>
 
     <update id="updateSurEndTimeOne">
