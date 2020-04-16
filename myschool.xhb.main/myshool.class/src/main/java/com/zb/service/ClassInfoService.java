@@ -25,5 +25,6 @@ public interface ClassInfoService {
     Dto findclassjob(Integer class_number);
     //根据id查询申请人的信息
      List<Class_Job> findClassjobBy(Integer class_number);
-
+     //根据用户的id获取该用户所在的所有班级
+    List<Class_info> findinfouserid(Integer user_id);
 }

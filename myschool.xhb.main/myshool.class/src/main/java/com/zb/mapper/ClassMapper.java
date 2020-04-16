@@ -45,4 +45,6 @@ public interface ClassMapper {
     List<Class_age_real> getAgeReal(@Param("real_id")Integer real_id);
     //修改班级信息
     int updateClass(Class_add classes);
+    //根据id获取班级的信息
+    Class_add getClassByid(@Param("id")String id);
 }

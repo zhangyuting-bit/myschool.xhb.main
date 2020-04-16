@@ -12,7 +12,7 @@ import java.util.List;
 public interface ClassInfoMapper {
     int addClassInfo(Class_info classInfo);
     Class_info getClassInfoBy(@Param("id")String id);
-    Class_info getClassInfouserid(@Param("user_id")Integer user_id);
+    List<Class_info> getClassInfouserid(@Param("user_id")Integer user_id);
     int updateClassInfo(Class_info classInfo);
     //根据班级号查询班级的总人数
     int classcount(@Param("class_number")Integer class_number);

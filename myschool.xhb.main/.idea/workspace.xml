@@ -49,14 +49,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+
+    <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myschool.task.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task.api/src/main/java/com/zb/pojo/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/TaskServerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/controller/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/mapper/TaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/impl/TaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/mapper/TaskMapper.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/DelayRabbitConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RabbitConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/RedisConfig.class" beforeDir="false" />
@@ -263,7 +279,13 @@
       <change beforePath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XcUserExt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/pojo/XuRole.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.user/src/main/java/com/zb/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.user/src/main/java/com/zb/controller/UserController.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -274,6 +296,8 @@
       <list>
         <option value="Mapper__Xml" />
         <option value="Mapper__XML" />
+        <option value="mybatisMapper" />
+        <option value="Interface" />
         <option value="Class" />
         <option value="Interface" />
       </list>
@@ -290,18 +314,20 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.5.0" />
-        <option name="userSettingsFile" value="F:\apache-maven-3.5.0\conf\settings.xml" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
@@ -314,6 +340,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.notification.api/src/main/java/com/zb/entity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.task.api/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -324,11 +351,22 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.proportion" value="0.1508772" />
+    <property name="project.structure.side.proportion" value="0.23858447" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zb.feign" />
+      <recent name="com.zb" />
+      <recent name="com.zb.entity" />
+      <recent name="com.zb.controller" />
+      <recent name="com.zb.config" />
+      <recent name="com.zb.util" />
+      <recent name="com.zb.controller" />
       <recent name="com.zb.entity" />
       <recent name="com.zb" />
       <recent name="com.zb.service.impl" />
@@ -343,9 +381,42 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MySchoolUserApp">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task.api\src\main\resources" />
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.comment\src\main\resources" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
+      <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TaskServerApp">
     <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.agreement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.comment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.CommentServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -459,8 +530,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TaskServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.task" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.TaskServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.TaskServerApp" />
+        <item itemvalue="Spring Boot.CommentServerApp" />
         <item itemvalue="Spring Boot.IssueServerApp" />
         <item itemvalue="Spring Boot.ExportExcel" />
         <item itemvalue="Spring Boot.ExportUtil" />
@@ -472,7 +558,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="" />
+      <changelist id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="" />
       <created>1582970147103</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -549,6 +635,65 @@
       <workItem from="1586921068508" duration="4212000" />
       <workItem from="1586956073758" duration="2574000" />
       <workItem from="1587025964722" duration="4452000" />
+      <workItem from="1586229923943" duration="350000" />
+      <workItem from="1586565001793" duration="22000" />
+      <workItem from="1586831168490" duration="21588000" />
+    </task>
+    <task id="LOCAL-00013" summary="issue_LZQ">
+      <created>1583576379004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576379004</updated>
+    </task>
+    <task id="LOCAL-00014" summary="issue_LZQ">
+      <created>1583578904450</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1583578904450</updated>
+    </task>
+    <task id="LOCAL-00015" summary="issue_LZQ">
+      <created>1583588650208</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583588650208</updated>
+    </task>
+    <task id="LOCAL-00016" summary="issue_LZQ">
+      <created>1583644127090</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1583644127090</updated>
+    </task>
+    <task id="LOCAL-00017" summary="issue_LZQ">
+      <created>1583654799614</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1583654799614</updated>
+    </task>
+    <task id="LOCAL-00018" summary="issue_LZQ">
+      <created>1583662641956</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583662641956</updated>
+    </task>
+    <task id="LOCAL-00019" summary="issue_LZQ">
+      <created>1583668689038</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583668689038</updated>
+    </task>
+    <task id="LOCAL-00020" summary="issue_LZQ">
+      <created>1583676594587</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583676594587</updated>
     </task>
     <task id="LOCAL-00021" summary="issue_LZQ">
       <created>1583999268407</created>
@@ -894,26 +1039,39 @@
       <updated>1586960037705</updated>
     </task>
     <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00061" summary="小小完善一下删除评论">
+      <created>1586878212123</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1586878212124</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="issue_LZQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="issue_LZQ" />
+    <MESSAGE value="更新版本号" />
+    <MESSAGE value="点赞显示谁点赞了" />
+    <MESSAGE value="消息记录id改为String类型" />
+    <MESSAGE value="小小完善一下删除评论" />
+    <option name="LAST_COMMIT_MESSAGE" value="小小完善一下删除评论" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1587028092813">
