@@ -4,6 +4,7 @@ import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.entity.NotOne;
 import com.zb.entity.Notification;
+import com.zb.pojo.UserInfo;
 import com.zb.service.NotOneService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,12 @@ import java.util.List;
 public class NotOneController {
     @Resource
     private NotOneService service;
+
+    //根据用户编号获取用户所在所有班级
+    @GetMapping("/getUserGrade/{userId}")
+    public Dto<UserInfo> getUserGrade(@PathVariable("userId") String userId){
+        return DtoUtil.returnSuccess("ok",service.getUserGrade(userId));
+    }
 
     //根据班级编号和通知类型编号获取全部对应通知
     @GetMapping("/getOneByUserIdAll/{userId}")

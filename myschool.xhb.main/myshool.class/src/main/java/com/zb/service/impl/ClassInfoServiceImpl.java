@@ -80,7 +80,6 @@ public class ClassInfoServiceImpl implements ClassInfoService {
 
     @Override
     public List<Class_info> findClassinfoBy(Integer class_number) {
-
         return classInfoMapper.findClassBy(class_number);
     }
 

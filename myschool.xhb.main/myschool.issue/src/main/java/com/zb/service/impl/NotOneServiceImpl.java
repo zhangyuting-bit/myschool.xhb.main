@@ -52,6 +52,28 @@ public class NotOneServiceImpl implements NotOneService {
         return userId;
     }
 
+    //根据用户编号获取用户所在所有班级
+    @Override
+    public UserInfo getUserGrade(String userId){
+        //String userId=getUserIdByToken(token);
+        UserInfo userInfo=null;
+        String key="user:"+userId;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            userInfo = JSON.parseObject(o.toString(), UserInfo.class);
+        }else {
+            userInfo=userFeignClient.getUserInfoById(userId);
+            List<Class_info>infoList=classMassagesFeign.showclassid(Integer.parseInt(userId));
+            List<String>gradeList=new ArrayList<>();
+            for (Class_info class_info:infoList) {
+                gradeList.add(class_info.getClass_number().toString());
+            }
+            userInfo.setGradeIds(gradeList);
+            redisUtil.set(key,JSON.toJSONString(userInfo), 120);
+        }
+        return userInfo;
+    }
+
     //根据班级编号获取班级信息
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;

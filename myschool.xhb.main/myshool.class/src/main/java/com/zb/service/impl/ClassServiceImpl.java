@@ -98,8 +98,8 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
     }
 
     @Override
-    public Class_add findClassByid(String id) {
-        return classMapper.getClassByid(id);
+    public Class_add findClassByid(String class_number) {
+        return classMapper.getClassByid(class_number);
     }
 
     @Override

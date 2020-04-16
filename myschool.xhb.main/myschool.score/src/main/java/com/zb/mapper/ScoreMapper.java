@@ -6,15 +6,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ScoreMapper {
-    //根据班级编号获取用户信息
-    List<User>getUserByGradeId(@Param("gradeId")String gradeId);
-
-    //根据用户编号获取班级信息
-    List<Grade>getGradeByUserId(@Param("userId")String userId);
-
-    //根据用户编号查询用户信息
-    User getUserByUserId(@Param("userId")String userId);
-
     ///新增成绩消息
     Integer addScore(Score score);
 

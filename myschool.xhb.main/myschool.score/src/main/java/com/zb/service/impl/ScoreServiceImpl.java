@@ -72,7 +72,7 @@ public class ScoreServiceImpl implements ScoreService {
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
         }else {
-            class_add=classMassagesFeign.showclassid(class_number);
+            class_add=classMassagesFeign.showclass(class_number);
             List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
             List<String>userIds=new ArrayList<>();
             for (Class_info class_info:infoList) {
@@ -307,14 +307,14 @@ public class ScoreServiceImpl implements ScoreService {
         //根据成绩编号删除评论
         stuCommentMapper.delCommentByScoreId(scoreId);
         //根据班级编号获取用户信息
-        List<User>users=scoreMapper.getUserByGradeId(score1.getGradeId());
-        for (User user : users) {
-            String key = "score:" + user.getUserId() + user.getGradeId();
+        List<String>userIds=getClassInfo(score1.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            String key = "score:" + userId + score1.getGradeId();
             if (redisUtil.get(key)!=null){
                 Score score=JSON.parseObject(redisUtil.get(key).toString(),Score.class);
                 if (score.getScoreId().equals(scoreId)){
                     redisUtil.del(key);
-                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    String key1= "ok:" + userId + score1.getGradeId();
                     redisUtil.del(key1);
                 }
             }
@@ -388,14 +388,14 @@ public class ScoreServiceImpl implements ScoreService {
         //根据成绩编号删除评论
         stuCommentMapper.delCommentByScoreId(scoreId);
         //根据班级编号获取用户信息
-        List<User>users=scoreMapper.getUserByGradeId(score1.getGradeId());
-        for (User user : users) {
-            String key = "score:" + user.getUserId() + user.getGradeId();
+        List<String>userIds=getClassInfo(score1.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            String key = "score:" + userId + score1.getGradeId();
             if (redisUtil.get(key)!=null){
                 Score score=JSON.parseObject(redisUtil.get(key).toString(),Score.class);
                 if (score.getScoreId().equals(scoreId)){
                     redisUtil.del(key);
-                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    String key1= "ok:" + userId + score1.getGradeId();
                     redisUtil.del(key1);
                 }
             }
@@ -434,22 +434,22 @@ public class ScoreServiceImpl implements ScoreService {
         }
         return null;
     }
-
-    //根据用户编号获取用户信息
-    @Override
-    public User getUserByUserId(String userId) {
-        User user=null;
-        String key="user:"+userId;
-        if (redisUtil.hasKey(key)){
-            Object o=redisUtil.get(key);
-            user=JSON.parseObject(o.toString(),User.class);
-        }else {
-            user=scoreMapper.getUserByUserId(userId);
-            user.setGrades(scoreMapper.getGradeByUserId(userId));
-            redisUtil.set(key,JSON.toJSONString(user),120);
-        }
-        return user;
-    }
+//
+//    //根据用户编号获取用户信息
+//    @Override
+//    public User getUserByUserId(String userId) {
+//        User user=null;
+//        String key="user:"+userId;
+//        if (redisUtil.hasKey(key)){
+//            Object o=redisUtil.get(key);
+//            user=JSON.parseObject(o.toString(),User.class);
+//        }else {
+//            user=scoreMapper.getUserByUserId(userId);
+//            user.setGrades(scoreMapper.getGradeByUserId(userId));
+//            redisUtil.set(key,JSON.toJSONString(user),120);
+//        }
+//        return user;
+//    }
 
 
 }

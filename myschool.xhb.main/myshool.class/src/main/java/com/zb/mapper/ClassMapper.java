@@ -46,5 +46,5 @@ public interface ClassMapper {
     //修改班级信息
     int updateClass(Class_add classes);
     //根据id获取班级的信息
-    Class_add getClassByid(@Param("id")String id);
+    Class_add getClassByid(@Param("class_number")String class_number);
 }

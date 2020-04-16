@@ -68,7 +68,7 @@ public class SurveyServiceImpl implements SurveyService {
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
         }else {
-            class_add=classMassagesFeign.showclassid(class_number);
+            class_add=classMassagesFeign.showclass(class_number);
             List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
             List<String>userIds=new ArrayList<>();
             for (Class_info class_info:infoList) {
@@ -218,17 +218,21 @@ public class SurveyServiceImpl implements SurveyService {
         //根据调查编号删除题目信息
         selectMapper.delSelectBySurId(surveyId);
         //根据班级编号获取用户信息
-        List<User>users=surveyMapper.getUserByGradeId(survey1.getGradeId());
-        for (User user : users) {
-            String key = "survey:" + user.getUserId() + user.getGradeId();
+        List<String>userIds=getClassInfo(survey1.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            String key = "survey:" + userId + survey1.getGradeId();
             if (redisUtil.get(key)!=null){
                 Survey survey=JSON.parseObject(redisUtil.get(key).toString(),Survey.class);
                 if (surveyId.equals(survey.getSurveyId())){
                     redisUtil.del(key);
-                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    String key1= "ok:" + userId + survey1.getGradeId();
                     redisUtil.del(key1);
                 }
             }
+        }
+        String key1 = "surveyOne:" + surveyId;
+        if (redisUtil.hasKey(key1)){
+            redisUtil.del(key1);
         }
         String key2="delSurvey:"+survey1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(surveyId),10);

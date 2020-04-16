@@ -11,8 +11,8 @@ public interface ScoreService {
     //根据班级编号获取成绩消息
     List<Score> getScoreListByUserId(Integer typeId,String userId);
 
-    //根据用户编号获取用户信息
-    User getUserByUserId(String userId);
+//    //根据用户编号获取用户信息
+//    User getUserByUserId(String userId);
 
     //根据消息编号修改消息
     Integer updateScore(Score score);

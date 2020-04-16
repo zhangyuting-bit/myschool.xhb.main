@@ -18,7 +18,7 @@ public interface ClassMassagesFeign {
 
     //根据用户的id获取该用户所在的所有班级信息
     @GetMapping("/userclassinfo/{user_id}")
-    public Class_info showclassid(@PathVariable(value = "user_id")Integer user_id);
+    public List<Class_info> showclassid(@PathVariable(value = "user_id")Integer user_id);
 
     //获取班级内部人员的信息
     @GetMapping("/classinfo/{class_number}")

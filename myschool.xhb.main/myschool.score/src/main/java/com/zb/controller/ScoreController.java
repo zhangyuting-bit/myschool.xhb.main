@@ -90,10 +90,10 @@ public class ScoreController {
     }
 
     //根据用户编号获取班级信息
-    @GetMapping("/getUserByUserId")
-    public User getUserByUserId(String userId){
-        return service.getUserByUserId(userId);
-    }
+//    @GetMapping("/getUserByUserId")
+//    public User getUserByUserId(String userId){
+//        return service.getUserByUserId(userId);
+//    }
 
     //修改删除考试信息
     @GetMapping("/returnUpdate/{scoreId}")
