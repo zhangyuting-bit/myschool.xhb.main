@@ -1,6 +1,7 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+
 //通知,习惯,讨论,作业,活动图片类
 public class NotPic implements Serializable {
     //图片编号

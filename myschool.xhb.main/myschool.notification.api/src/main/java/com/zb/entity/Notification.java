@@ -1,5 +1,8 @@
 package com.zb.entity;
 
+import com.zb.pojo.Class_add;
+import com.zb.pojo.TeacherInfo;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -31,7 +34,36 @@ public class Notification implements Serializable {
     private List<NotPic>notPics;
     //附件集合
     private List<NotDocument>documents;
+    //是否需要上传作业
+    private Integer statu;
+    //成果是否相互可见
+    private Integer status;
     //教师信息
+    private Class_add class_add;
+
+    public Class_add getClass_add() {
+        return class_add;
+    }
+
+    public void setClass_add(Class_add class_add) {
+        this.class_add = class_add;
+    }
+
+    public Integer getStatu() {
+        return statu;
+    }
+
+    public void setStatu(Integer statu) {
+        this.statu = statu;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public List<NotDocument> getDocuments() {
         return documents;

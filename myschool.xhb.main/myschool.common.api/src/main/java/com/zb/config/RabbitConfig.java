@@ -52,4 +52,80 @@ public class RabbitConfig {
     public Binding bindingQg(@Qualifier(myexchange) Exchange exchange,@Qualifier(qgQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with("inform.#.qg.#").noargs();
     }
+
+    //添加通知rabbitmq
+    //上传通知消息队列
+    public static final String nocQueue="noc.boot.queue";
+    //上传文件钥匙
+    public static final String nocKey="noc.key.queue";
+
+    //交换机配置
+//    @Bean(myexchange)
+//    public Exchange createNocExchange(){
+//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
+//    }
+
+
+    //创建上传通知消息队列
+    @Bean(nocQueue)
+    public Queue createNocQueue(){
+        Queue queue =new Queue(nocQueue);
+        return queue;
+    }
+
+    //将上传通知消息对列绑定到交换机上
+    @Bean
+    public Binding bindingNoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(nocKey).noargs();
+    }
+
+    //添加成绩rabbitmq
+    //上传成绩消息队列
+    public static final String scoQueue="sco.boot.queue";
+    //上传成绩钥匙
+    public static final String scoKey="sco.key.queue";
+
+    //交换机配置
+//    @Bean(myexchange)
+//    public Exchange createScoExchange(){
+//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
+//    }
+
+    //创建上传成绩消息队列
+    @Bean(scoQueue)
+    public Queue createScoQueue(){
+        Queue queue =new Queue(scoQueue);
+        return queue;
+    }
+
+    //将上传成绩消息对列绑定到交换机上
+    @Bean
+    public Binding bindingSco(@Qualifier(myexchange) Exchange exchange , @Qualifier(scoQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(scoKey).noargs();
+    }
+
+    //添加调查rabbitmq
+    //上传调查消息队列
+    public static final String surQueue="sur.boot.queue";
+    //上传调查钥匙
+    public static final String surKey="sur.key.queue";
+
+    //交换机配置
+//    @Bean(myexchange)
+//    public Exchange createSurExchange(){
+//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
+//    }
+
+    //创建上传调查消息队列
+    @Bean(surQueue)
+    public Queue createSurQueue(){
+        Queue queue =new Queue(surQueue);
+        return queue;
+    }
+
+    //将上传文件消息对列绑定到交换机上
+    @Bean
+    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(surQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(surKey).noargs();
+    }
 }

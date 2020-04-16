@@ -1,6 +1,7 @@
 package com.zb.entity;
 
 import java.io.Serializable;
+
 //通知,习惯,讨论,作业,活动附件类
 public class NotDocument implements Serializable {
     //附件编号

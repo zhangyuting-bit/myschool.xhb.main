@@ -10,7 +10,7 @@ public interface ScoreService {
     Score addScore(Score score);
 
     //根据班级编号获取成绩消息
-    List<Score> getScoreListByUserId(String userId);
+    List<Score> getScoreListByUserId(Integer typeId,String userId);
 
     //根据用户编号获取用户信息
     User getUserByUserId(String userId);
@@ -37,7 +37,7 @@ public interface ScoreService {
     public Integer getStatus(String userId, String gradeId);
 
     //撤销成绩信息
-    public void returnScore(String scoreId,String gradeId);
+    public void returnScore(String scoreId);
 
     //获取撤销信息
     public String getScoDelStatus(String gradeId);
@@ -45,11 +45,8 @@ public interface ScoreService {
     //删除成绩表
     public Integer delScore(String scoreId);
 
-    //根据用户编号和成绩编号删除成绩信息
-    public Integer delScoreOne(String userId,String scoreId);
-
     //修改删除考试信息
-    public void returnUpdate(String scoreId,String gradeId);
+    public void returnUpdate(String scoreId);
 
     //获取修改的考试信息
     public Score getUpdateScore(String scoreId);

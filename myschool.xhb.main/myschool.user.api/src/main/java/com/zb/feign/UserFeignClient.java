@@ -1,6 +1,7 @@
 package com.zb.feign;
 
 import com.zb.dto.Dto;
+import com.zb.pojo.TeacherInfo;
 import com.zb.pojo.UserInfo;
 import com.zb.pojo.XcUserExt;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -27,7 +28,7 @@ public interface UserFeignClient {
      * @return
      */
     @RequestMapping("/getUserInfoById")
-    public Dto getUserInfoById(@RequestParam(value = "id") String id);
+    public UserInfo getUserInfoById(@RequestParam(value = "id") String id);
 
     /**
      * 根据教师编号获取教师信息
@@ -35,5 +36,5 @@ public interface UserFeignClient {
      * @return
      */
     @RequestMapping("/getTeacherInfoById")
-    public Dto getTeacherInfoById(@RequestParam(value = "id") String id);
+    public TeacherInfo getTeacherInfoById(@RequestParam(value = "id") String id);
 }

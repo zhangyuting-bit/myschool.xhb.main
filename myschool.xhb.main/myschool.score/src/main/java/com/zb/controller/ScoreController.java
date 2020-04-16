@@ -25,9 +25,9 @@ public class ScoreController {
     }
 
     //根据班级编号获取成绩消息
-    @GetMapping("/getScoreListByUserId/{userId}")
-    public Dto<List<Score>> getScoreListByUserId(@PathVariable("userId") String userId) {
-        return DtoUtil.returnSuccess("ok",service.getScoreListByUserId(userId));
+    @GetMapping("/getScoreListByUserId")
+    public Dto<List<Score>> getScoreListByUserId(Integer typeId,String userId) {
+        return DtoUtil.returnSuccess("ok",service.getScoreListByUserId(typeId,userId));
     }
 
     //根据消息编号修改消息
@@ -73,9 +73,9 @@ public class ScoreController {
     }
 
     //撤销成绩信息
-    @GetMapping("/returnScore")
-    public void returnScore(String scoreId,String gradeId){
-        service.returnScore(scoreId, gradeId);
+    @GetMapping("/returnScore/{scoreId}")
+    public void returnScore(@PathVariable("scoreId") String scoreId){
+        service.returnScore(scoreId);
     }
 
     //获取撤销信息
@@ -90,12 +90,6 @@ public class ScoreController {
         return DtoUtil.returnSuccess("ok",service.delScore(scoreId));
     }
 
-    //根据用户编号和成绩编号删除成绩信息
-    @GetMapping("/delScoreOne")
-    public Dto<Integer> delScoreOne(String userId,String scoreId){
-        return DtoUtil.returnSuccess("ok",service.delScoreOne(userId, scoreId));
-    }
-
     //根据用户编号获取班级信息
     @GetMapping("/getUserByUserId")
     public User getUserByUserId(String userId){
@@ -103,9 +97,9 @@ public class ScoreController {
     }
 
     //修改删除考试信息
-    @GetMapping("/returnUpdate")
-    public void returnUpdate(String scoreId,String gradeId){
-        service.returnUpdate(scoreId, gradeId);
+    @GetMapping("/returnUpdate/{scoreId}")
+    public void returnUpdate(@PathVariable("scoreId")String scoreId){
+        service.returnUpdate(scoreId);
     }
 
     //获取修改的考试信息

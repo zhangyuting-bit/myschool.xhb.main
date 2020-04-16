@@ -96,9 +96,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/getUserInfoByUserName")
-    public Dto getUserInfoByUserName(String username){
-        UserInfo user = userService.getUserInfoByUserName(username);
-        return DtoUtil.returnSuccess("ok",user);
+    public UserInfo getUserInfoByUserName(String username){
+        return userService.getUserInfoByUserName(username);
     }
 
     /**
@@ -172,8 +171,7 @@ public class UserController {
      */
     @RequestMapping("/getUserInfoByToken")
     public UserInfo getUserInfoByToken(@RequestParam(value = "token") String token){
-        UserInfo userInfoByToken = userService.getUserInfoByToken(token);
-        return userInfoByToken;
+        return userService.getUserInfoByToken(token);
     }
 
     /**
@@ -182,9 +180,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/getUserInfoById")
-    public Dto getUserInfoById(@RequestParam(value = "id") String id){
-        UserInfo userInfoById = userService.getUserInfoById(id);
-        return DtoUtil.returnSuccess("ok",userInfoById);
+    public UserInfo getUserInfoById(@RequestParam(value = "id") String id){
+        return userService.getUserInfoById(id);
     }
 
     /**
@@ -193,9 +190,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("/getTeacherInfoById")
-    public Dto getTeacherInfoById(@RequestParam(value = "id") String id){
-        TeacherInfo teacherInfoById = userService.getTeacherInfoById(id);
-        return DtoUtil.returnSuccess("ok",teacherInfoById);
+    public TeacherInfo getTeacherInfoById(@RequestParam(value = "id") String id){
+        return userService.getTeacherInfoById(id);
     }
 
 }

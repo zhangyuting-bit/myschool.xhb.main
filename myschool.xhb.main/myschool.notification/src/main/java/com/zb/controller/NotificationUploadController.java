@@ -1,14 +1,10 @@
 package com.zb.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
-import com.zb.config.RabbitConfigs;
-import com.zb.entity.Mudel;
 import com.zb.entity.NotDocument;
 import com.zb.entity.NotPic;
-import com.zb.entity.Notification;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
@@ -16,11 +12,8 @@ import com.zb.service.NotificationService;
 import com.zb.service.UploadService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

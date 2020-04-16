@@ -1,5 +1,7 @@
 package com.zb.entity;
 
+import com.zb.pojo.Class_add;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -38,6 +40,16 @@ public class Score implements Serializable {
     private List<Subject>subjects;
     //学生评论
     private List<StuComment>stuComments;
+    //班级信息
+    private Class_add class_add;
+
+    public Class_add getClass_add() {
+        return class_add;
+    }
+
+    public void setClass_add(Class_add class_add) {
+        this.class_add = class_add;
+    }
 
     public List<StuComment> getStuComments() {
         return stuComments;

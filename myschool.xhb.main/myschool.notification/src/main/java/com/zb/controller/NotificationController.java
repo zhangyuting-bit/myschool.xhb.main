@@ -1,6 +1,5 @@
 package com.zb.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.entity.Notification;
@@ -15,11 +14,15 @@ public class NotificationController {
     @Resource
     private NotificationService notificationService;
 
+    //根据分数编号获取集合成绩单例
+    @GetMapping("/getNotificationByNotId/{notificationId}")
+    public Notification getNotificationByNotId(@PathVariable("notificationId")String notificationId){
+        return notificationService.getNotificationByNotId(notificationId);
+    }
+
     ////根据班级编号和通知类型编号获取全部对应通知
     @GetMapping("/getNotificationByUserId")
-    public  Dto<List<Notification>> getNotificationByUserId(
-            @RequestParam(value = "typeId",required = false,defaultValue = "0") Integer typeId,
-            String userId) {
+    public  Dto<List<Notification>> getNotificationByUserId(Integer typeId,String userId) {
         return DtoUtil.returnSuccess("ok",notificationService.getNotificationGradeId(typeId,userId));
     }
 
@@ -56,8 +59,8 @@ public class NotificationController {
 
     //添加推送状态
     @GetMapping("/addOkNoc")
-    public void addStatus(String gradeId,String teacherId) {
-        notificationService.addStatus(gradeId,teacherId);
+    public void addStatus(String gradeId,String notificationId) {
+        notificationService.addStatus(gradeId,notificationId);
     }
 
     //获取推送状态
@@ -66,16 +69,10 @@ public class NotificationController {
         return DtoUtil.returnSuccess("ok",notificationService.getStatus(userId,gradeId));
     }
 
-    //根据用户编号和通知编号删除通知信息
-    @GetMapping("/delNotOne")
-    public Dto<Integer> delNotOneByNotIdAndUserId(String userId,String notificationId){
-        return DtoUtil.returnSuccess("ok",notificationService.delNotOneByNotIdAndUserId(userId, notificationId));
-    }
-
     //撤销调查信息
-    @GetMapping("/returnNotification")
-    public void returnSurvey(String notificationId,String gradeId){
-        notificationService.returnNot(notificationId, gradeId);
+    @GetMapping("/returnNotification/{notificationId}")
+    public void returnSurvey(@PathVariable("notificationId") String notificationId){
+        notificationService.returnNot(notificationId);
     }
 
     //获取撤销信息
