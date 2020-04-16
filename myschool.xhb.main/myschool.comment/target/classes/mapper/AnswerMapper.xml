@@ -8,13 +8,15 @@
     <insert id="addAnswer">
 
         INSERT INTO xhb_comment_db.answer
-            (commentatorId,
+            (id,
+            commentatorId,
             commentId,
             answerContent,
             answerDate
             )
             VALUES
-            (#{commentatorId},
+            (#{id},
+            #{commentatorId},
             #{commentId},
             #{answerContent},
             NOW()
@@ -29,6 +31,7 @@
 
     <delete id="deleteAnswer">
         DELETE FROM answer WHERE id = #{id}
+        OR commentId = #{id}
     </delete>
 
 </mapper>

@@ -31,6 +31,6 @@ public interface CommentFeginClient {
 
 
     @RequestMapping(value = "/deleteAnswer")
-    public int deleteAnswer(@RequestParam("id") Integer id);
+    public int deleteAnswer(@RequestParam("id") String id);
 
 }

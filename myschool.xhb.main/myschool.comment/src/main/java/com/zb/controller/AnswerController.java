@@ -2,7 +2,7 @@ package com.zb.controller;
 
 import com.zb.pojo.Answer;
 import com.zb.service.AnswerService;
-import org.apache.ibatis.annotations.Param;
+import com.zb.util.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +19,7 @@ public class AnswerController {
 
     @RequestMapping(value = "/addAnswer")
     public int addAnswer(@RequestBody Answer answer){
+        answer.setId(IdWorker.getId());
         return answerService.addAnswer(answer);
     }
 
@@ -29,7 +30,7 @@ public class AnswerController {
 
 
     @RequestMapping(value = "/deleteAnswer")
-    public int deleteAnswer(@RequestParam("id") Integer id){
+    public int deleteAnswer(@RequestParam("id") String id){
         return answerService.deleteAnswer(id);
     }
 

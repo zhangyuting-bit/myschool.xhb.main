@@ -25,7 +25,7 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public int deleteAnswer(Integer id) {
+    public int deleteAnswer(String id) {
         return answerMapper.deleteAnswer(id);
     }
 }
