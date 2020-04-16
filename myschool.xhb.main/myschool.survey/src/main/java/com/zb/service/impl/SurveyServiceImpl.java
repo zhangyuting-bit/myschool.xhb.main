@@ -5,7 +5,10 @@ import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
 import com.zb.feign.NotOneFeign;
+import com.zb.feign.UserFeignClient;
 import com.zb.mapper.*;
+import com.zb.pojo.Class_add;
+import com.zb.pojo.UserInfo;
 import com.zb.service.SurveyService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
@@ -31,6 +34,9 @@ public class SurveyServiceImpl implements SurveyService {
     private SelectMapper selectMapper;
 
     @Resource
+    private UserFeignClient userFeignClient;
+
+    @Resource
     private SelectPicMapper selectPicMapper;
 
     @Resource
@@ -42,6 +48,26 @@ public class SurveyServiceImpl implements SurveyService {
     @Resource
     private RedisUtil redisUtil;
 
+    //根据token获取用户编号
+    public String getUserIdByToken(String token){
+        UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
+        String userId=userInfo.getId();
+        return userId;
+    }
+
+    //根据班级编号获取班级信息
+    public Class_add getClassInfo(String class_number){
+        Class_add class_add=null;
+        String key="class_add:"+class_number;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            class_add = JSON.parseObject(o.toString(), Class_add.class);
+        }else {
+            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+        }
+        return class_add;
+    }
+
     @Override
     public Survey getBySurveyId(String surveyId){
         Survey survey=null;
@@ -51,10 +77,9 @@ public class SurveyServiceImpl implements SurveyService {
             survey= JSON.parseObject(o.toString(), Survey.class);
         }else {
             survey=surveyMapper.getSurveyBySurveyId(surveyId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
             //根据班级编号获取班级信息
-            /////////////////////////
+            Class_add class_add=getClassInfo(survey.getGradeId());
+            survey.setClass_add(class_add);
             redisUtil.set(key, JSON.toJSONString(survey),120);
         }
         return survey;
@@ -82,10 +107,9 @@ public class SurveyServiceImpl implements SurveyService {
             survey= JSON.parseObject(o.toString(), Survey.class);
         }else {
             survey=surveyMapper.getSurveyBySurveyId(surveyId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
             //根据班级编号获取班级信息
-            /////////////////////////
+            Class_add class_add=getClassInfo(survey.getGradeId());
+            survey.setClass_add(class_add);
             //根据调查编号获取全部题目
             List<Select>selects=selectMapper.getSelectBySurveyId(survey.getSurveyId());
             for (Select select:selects) {
@@ -112,8 +136,9 @@ public class SurveyServiceImpl implements SurveyService {
     @Override
     public void sendSurvey(String surveyId){
         Survey survey=surveyMapper.getSurveyBySurveyId(surveyId);
-        //根据teacherId获取老师信息
-        ///////////////////////////
+        //根据班级编号获取班级信息
+        Class_add class_add=getClassInfo(survey.getGradeId());
+        survey.setClass_add(class_add);
         rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.surKey,survey);
     }
     //学生端实时显示信息

@@ -5,7 +5,10 @@ import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
 import com.zb.feign.NotOneFeign;
+import com.zb.feign.UserFeignClient;
 import com.zb.mapper.*;
+import com.zb.pojo.Class_add;
+import com.zb.pojo.UserInfo;
 import com.zb.service.ScoreService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
@@ -38,6 +41,9 @@ public class ScoreServiceImpl implements ScoreService {
     private SubjectMapper subjectMapper;
 
     @Resource
+    private UserFeignClient userFeignClient;
+
+    @Resource
     private StuSubjectMapper stuSubjectMapper;
 
     @Resource
@@ -45,6 +51,26 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Resource
     private RedisUtil redisUtil;
+
+    //根据token获取用户编号
+    public String getUserIdByToken(String token){
+        UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
+        String userId=userInfo.getId();
+        return userId;
+    }
+
+    //根据班级编号获取班级信息
+    public Class_add getClassInfo(String class_number){
+        Class_add class_add=null;
+        String key="class_add:"+class_number;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            class_add = JSON.parseObject(o.toString(), Class_add.class);
+        }else {
+            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+        }
+        return class_add;
+    }
 
     //根据分数编号获取集合成绩单例
     @Override
@@ -56,10 +82,9 @@ public class ScoreServiceImpl implements ScoreService {
             score= JSON.parseObject(o.toString(), Score.class);
         }else {
             score=scoreMapper.getScoreByScoreId(scoreId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
             //根据班级编号获取班级信息
-            /////////////////////////
+            Class_add class_add=getClassInfo(score.getGradeId());
+            score.setClass_add(class_add);
             redisUtil.set(key, JSON.toJSONString(score), 120);
         }
         return score;
@@ -110,10 +135,9 @@ public class ScoreServiceImpl implements ScoreService {
             score= JSON.parseObject(o.toString(), Score.class);
         }else {
             score=scoreMapper.getScoreByScoreId(scoreId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
             //根据班级编号获取班级信息
-            /////////////////////////
+            Class_add class_add=getClassInfo(score.getGradeId());
+            score.setClass_add(class_add);
             //根据成绩编号获取全部评论
             List<StuComment>stuComments=stuCommentMapper.getCommentByScoreIdOne(scoreId);
             //根据调查编号获取全部题目
@@ -149,18 +173,14 @@ public class ScoreServiceImpl implements ScoreService {
         return stuNumber;
     }
 
-    //监听添加发送成绩队列
-    @RabbitListener(queues = RabbitConfigs.scoQueue)
-    public void  scoreMsg(Score score){
-
-
-    }
-
     //推送消息给用户
     @Override
     @Transactional
     public void sendScore(String scoreId){
         Score score=scoreMapper.getScoreByScoreId(scoreId);
+        //根据班级编号获取班级信息
+        Class_add class_add=getClassInfo(score.getGradeId());
+        score.setClass_add(class_add);
         //根据成绩编号修改发送状态
         scoreMapper.updateStatus(score.getScoreId());
         //根据成绩编号获取科目信息

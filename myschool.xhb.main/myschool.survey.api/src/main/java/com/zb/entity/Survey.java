@@ -1,5 +1,7 @@
 package com.zb.entity;
 
+import com.zb.pojo.Class_add;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -49,7 +51,16 @@ public class Survey implements Serializable {
     private Integer count;
     //题目集合
     private List<Select>selects;
-    //教师信息
+    //班级信息
+    private Class_add class_add;
+
+    public Class_add getClass_add() {
+        return class_add;
+    }
+
+    public void setClass_add(Class_add class_add) {
+        this.class_add = class_add;
+    }
 
     public List<Select> getSelects() {
         return selects;

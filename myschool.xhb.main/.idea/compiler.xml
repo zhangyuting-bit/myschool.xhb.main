@@ -8,28 +8,28 @@
         <outputRelativeToContentRoot value="true" />
         <module name="myschool.score" />
         <module name="myschool.notification.api" />
-        <module name="myschool.user" />
+        <module name="myschool.auth" />
         <module name="myschool.common" />
         <module name="myshool.class.api" />
-        <module name="myschool.gataway" />
         <module name="myschool.lable" />
         <module name="myschool.record" />
         <module name="myshool.class" />
         <module name="myschool.score.api" />
         <module name="myschool.survey" />
-        <module name="myschool.issue.api" />
         <module name="myschool.auth.api" />
-        <module name="myschool.issue" />
+        <module name="myschool.user.api" />
         <module name="myschool.common.api" />
         <module name="myschool.agreement" />
-        <module name="myschool.user.api" />
+        <module name="myschool.eureka" />
+        <module name="myschool.issue" />
+        <module name="myschool.notification" />
         <module name="myschool.agreement.api" />
         <module name="myschool.survey.api" />
-        <module name="myschool.notification" />
+        <module name="myschool.gataway" />
         <module name="myschool.lable.api" />
-        <module name="myschool.eureka" />
+        <module name="myschool.issue.api" />
         <module name="myschool.record.api" />
-        <module name="myschool.auth" />
+        <module name="myschool.user" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

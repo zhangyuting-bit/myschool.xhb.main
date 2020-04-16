@@ -11,6 +11,8 @@ import com.zb.feign.UserFeignClient;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
+import com.zb.pojo.Class_add;
+import com.zb.pojo.TeacherInfo;
 import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
@@ -50,10 +52,23 @@ public class NotificationServiceImpl implements NotificationService {
     //根据token获取用户编号
     @Override
     public String getUserIdByToken(String token){
+        //根据token获取用户编号
         UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
-        System.out.println(userInfo.getId());
         String userId=userInfo.getId();
         return userId;
+    }
+
+    //根据班级编号获取班级信息
+    public Class_add getClassInfo(String class_number){
+        Class_add class_add=null;
+        String key="class_add:"+class_number;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            class_add = JSON.parseObject(o.toString(), Class_add.class);
+        }else {
+            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+        }
+        return class_add;
     }
 
     //@Cacheable(value = "cache" ,key="#notificationOne")
@@ -66,9 +81,9 @@ public class NotificationServiceImpl implements NotificationService {
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
             notification = notificationMapper.getNotificationById(notificationId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
             //根据班级编号获取班级信息
+            Class_add class_add=getClassInfo(notification.getGradeId());
+            notification.setClass_add(class_add);
             //根据通知编号查询状态为0的图片
             notification.setNotPic(notPicMapper.getPicByStatu(notification.getNotificationId()));
 
@@ -100,9 +115,9 @@ public class NotificationServiceImpl implements NotificationService {
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
             notification = notificationMapper.getNotificationById(notificationId);
-            //根据teacherId获取老师信息
-            ///////////////////////////
-
+            //根据班级编号获取班级信息
+            Class_add class_add=getClassInfo(notification.getGradeId());
+            notification.setClass_add(class_add);
             //根据通知编号查询图片
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
@@ -160,8 +175,9 @@ public class NotificationServiceImpl implements NotificationService {
     @Override
     public void addStatus(String gradeId, String notificationId) {
         Notification notification=notificationMapper.getNotificationById(notificationId);
-        //根据教师编号获取教师信息
         //根据班级编号获取班级信息
+        Class_add class_add=getClassInfo(notification.getGradeId());
+        notification.setClass_add(class_add);
         //根据通知编号查询状态为0的图片
         NotPic picByStatu = notPicMapper.getPicByStatu(notification.getNotificationId());
         notification.setNotPic(picByStatu);

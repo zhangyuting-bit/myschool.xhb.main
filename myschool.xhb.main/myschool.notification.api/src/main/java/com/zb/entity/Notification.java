@@ -1,5 +1,8 @@
 package com.zb.entity;
 
+import com.zb.pojo.Class_add;
+import com.zb.pojo.TeacherInfo;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -35,6 +38,16 @@ public class Notification implements Serializable {
     private Integer statu;
     //成果是否相互可见
     private Integer status;
+    //教师信息
+    private Class_add class_add;
+
+    public Class_add getClass_add() {
+        return class_add;
+    }
+
+    public void setClass_add(Class_add class_add) {
+        this.class_add = class_add;
+    }
 
     public Integer getStatu() {
         return statu;
