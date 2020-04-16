@@ -350,6 +350,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommentServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.comment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.CommentServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExportExcel" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
@@ -455,6 +462,13 @@
     <configuration name="SurveyServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.survey" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.SurveyServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.task" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.TaskServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

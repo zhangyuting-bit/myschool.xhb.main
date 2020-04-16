@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.agreement" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.agreement.api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.agreement.api/src/main/java" charset="UTF-8" />
@@ -12,6 +11,8 @@
     <file url="file://$PROJECT_DIR$/myschool.auth/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.comment" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.comment.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.comment.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.comment/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.common.api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.common.api/src/main/java" charset="UTF-8" />
@@ -27,30 +28,27 @@
     <file url="file://$PROJECT_DIR$/myschool.lable.api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.lable.api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.lable/src/main/java" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/myschool.notification.api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.notification.api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.notification/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.record.api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.record/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.score.api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.score/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.survey.api/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/myschool.survey/src/main/java" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/myschool.record" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.record.api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.record.api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.record/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.score" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.score.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.score.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.score/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.survey" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.survey.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.survey.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.survey/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.task" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.task.api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.task.api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/myschool.task/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.user" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.user.api" charset="UTF-8" />
-
     <file url="file://$PROJECT_DIR$/myschool.user.api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myschool.user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/myshool.class" charset="UTF-8" />
