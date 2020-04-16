@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zb.mapper.TaskMapper">
+
+    <insert id="addTask">
+
+    INSERT INTO xhb_task_db.task
+        (taskId,
+        subjectId,
+        userId,
+        taskContent,
+        visible,
+        isDelete,
+        createDate,
+        STATUS
+        )
+        VALUES
+        (#{taskId},
+        #{subjectId},
+        #{userId},
+        #{taskContent},
+        0,
+        0,
+        NOW(),
+        1
+        );
+
+    </insert>
+
+    <select id="listNoCorrectTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 1 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listEmendTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 2 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listPassdTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 4 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listAllTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listPersonalTask" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE isDelete = 0 AND visible = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <update id="changeStatus">
+        UPDATE task SET
+        STATUS = #{status},createDate = NOW()
+        WHERE taskId = #{taskId}
+
+    </update>
+
+    <update id="reviseTask">
+        UPDATE task SET
+        STATUS = 3,createDate = NOW(),
+        taskContent = #{taskContent}
+        WHERE taskId = #{taskId}
+    </update>
+
+    <update id="deleteTask">
+        UPDATE task SET
+        isDelete = 1
+        WHERE taskId = #{taskId}
+    </update>
+
+</mapper>

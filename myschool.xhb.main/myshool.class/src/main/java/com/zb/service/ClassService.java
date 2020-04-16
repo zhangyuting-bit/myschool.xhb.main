@@ -25,5 +25,8 @@ public interface ClassService {
     int updateClass(Class_add classes);
     //根据老师的id来获取这位老师创建的班级信息
     List<Class_add> findClassesList(Integer teacher_id);
-
+    //静态化页面分享班级的信息加二维码
+    Class_add findclassinforBy(Integer class_number);
+    //根据班级id查询班级
+    Class_add findClassByid(String id);
 }

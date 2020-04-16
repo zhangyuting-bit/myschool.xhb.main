@@ -1,0 +1,9 @@
+com\zb\pojo\XuRole.class
+com\zb\feign\UserFeignClient.class
+com\zb\pojo\XcUser.class
+com\zb\pojo\TeacherInfo.class
+com\zb\pojo\XcUserExt.class
+com\zb\pojo\TeacherJob.class
+com\zb\pojo\XcMenu.class
+com\zb\pojo\Role.class
+com\zb\pojo\UserInfo.class

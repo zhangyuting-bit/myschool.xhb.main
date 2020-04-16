@@ -93,6 +93,16 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
     }
 
     @Override
+    public Class_add findclassinforBy(Integer class_number) {
+        return classMapper.getClassBy(class_number);
+    }
+
+    @Override
+    public Class_add findClassByid(String id) {
+        return classMapper.getClassByid(id);
+    }
+
+    @Override
     public void afterPropertiesSet() throws Exception {
         this.putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
