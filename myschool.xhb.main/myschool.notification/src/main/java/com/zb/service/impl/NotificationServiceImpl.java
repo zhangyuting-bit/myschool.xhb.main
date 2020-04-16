@@ -5,19 +5,18 @@ import com.zb.config.RabbitConfig;
 import com.zb.entity.NotOne;
 import com.zb.entity.NotPic;
 import com.zb.entity.Notification;
-import com.zb.entity.User;
+import com.zb.feign.ClassMassagesFeign;
 import com.zb.feign.NotOneFeign;
 import com.zb.feign.UserFeignClient;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
 import com.zb.pojo.Class_add;
-import com.zb.pojo.TeacherInfo;
+import com.zb.pojo.Class_info;
 import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -33,6 +32,9 @@ public class NotificationServiceImpl implements NotificationService {
 
     @Resource
     private UserFeignClient userFeignClient;
+
+    @Resource
+    private ClassMassagesFeign classMassagesFeign;
 
     @Resource
     private NotOneFeign notOneFeign;
@@ -66,7 +68,14 @@ public class NotificationServiceImpl implements NotificationService {
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
         }else {
-            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+            class_add=classMassagesFeign.showclass(class_number);
+            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
+            List<String>userIds=new ArrayList<>();
+            for (Class_info class_info:infoList){
+                userIds.add(class_info.getUser_id().toString());
+            }
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 120);
         }
         return class_add;
     }
@@ -211,15 +220,15 @@ public class NotificationServiceImpl implements NotificationService {
         notDocumentMapper.delDocByNotId(notificationId);
 
         //根据班级编号获取用户信息
-        List<User>users=notificationMapper.getUserByGradeId(notification1.getGradeId());
-        for (User user : users) {
-            String key = "notification:" + user.getUserId() + user.getGradeId();
+        List<String>userIds=getClassInfo(notification1.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            String key = "notification:" + userId + notification1.getGradeId();
             Object o=redisUtil.get(key);
             if (o!=null){
                 Notification notification=JSON.parseObject(o.toString(),Notification.class);
                 if (notificationId.equals(notification.getNotificationId())){
                     redisUtil.del(key);
-                    String key1= "ok:" + user.getUserId() + user.getGradeId();
+                    String key1= "ok:" + userId + notification1.getGradeId();
                     redisUtil.del(key1);
                 }
             }

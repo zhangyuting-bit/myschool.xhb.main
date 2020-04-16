@@ -1,7 +1,6 @@
 package com.zb.mapper;
 
 import com.zb.entity.Survey;
-import com.zb.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

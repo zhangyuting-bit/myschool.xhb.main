@@ -3,7 +3,6 @@ package com.zb.controller;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.entity.Score;
-import com.zb.entity.User;
 import com.zb.service.ScoreService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

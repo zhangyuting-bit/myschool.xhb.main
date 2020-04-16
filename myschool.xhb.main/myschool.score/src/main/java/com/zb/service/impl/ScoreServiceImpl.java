@@ -4,10 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
+import com.zb.feign.ClassMassagesFeign;
 import com.zb.feign.NotOneFeign;
 import com.zb.feign.UserFeignClient;
 import com.zb.mapper.*;
 import com.zb.pojo.Class_add;
+import com.zb.pojo.Class_info;
 import com.zb.pojo.UserInfo;
 import com.zb.service.ScoreService;
 import com.zb.util.IdWorker;
@@ -30,6 +32,9 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Resource
     private ScoreMapper scoreMapper;
+
+    @Resource
+    private ClassMassagesFeign classMassagesFeign;
 
     @Resource
     private NotOneFeign notOneFeign;
@@ -67,7 +72,14 @@ public class ScoreServiceImpl implements ScoreService {
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
         }else {
-            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+            class_add=classMassagesFeign.showclassid(class_number);
+            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
+            List<String>userIds=new ArrayList<>();
+            for (Class_info class_info:infoList) {
+                userIds.add(class_info.getUser_id().toString());
+            }
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 120);
         }
         return class_add;
     }

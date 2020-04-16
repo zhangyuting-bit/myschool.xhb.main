@@ -32,7 +32,6 @@ public class Class_info implements Serializable {
     private String relationship;
     private  String createdTime;
     private String updatedTime;
-
     //getter setter
     public void setId (String  id){
         this.id=id;

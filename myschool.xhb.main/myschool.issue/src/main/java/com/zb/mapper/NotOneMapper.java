@@ -1,22 +1,11 @@
 package com.zb.mapper;
 
-import com.zb.entity.Grade;
 import com.zb.entity.NotOne;
-import com.zb.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface NotOneMapper {
-    //根据班级编号获取用户信息
-    List<User>getUserByGradeId(@Param("gradeId")String gradeId);
-
-    //根据用户编号获取班级信息
-    List<Grade>getGradeByUserId(@Param("userId")String userId);
-
-    //根据用户编号查询用户信息
-    User getUserByUserId(@Param("userId")String userId);
-
     //添加通知用户信息
     Integer addOne(NotOne notOne);
 

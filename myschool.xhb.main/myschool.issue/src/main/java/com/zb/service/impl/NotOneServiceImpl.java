@@ -3,10 +3,11 @@ package com.zb.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
 import com.zb.entity.*;
-import com.zb.feign.NotificationCollectFeign;
-import com.zb.feign.ScoreCollectFeign;
-import com.zb.feign.SurveyCollectFeign;
+import com.zb.feign.*;
 import com.zb.mapper.NotOneMapper;
+import com.zb.pojo.Class_add;
+import com.zb.pojo.Class_info;
+import com.zb.pojo.UserInfo;
 import com.zb.service.NotOneService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
@@ -27,7 +28,13 @@ public class NotOneServiceImpl implements NotOneService {
     private RabbitTemplate rabbitTemplate;
 
     @Resource
+    private ClassMassagesFeign classMassagesFeign;
+
+    @Resource
     private NotificationCollectFeign notificationCollectFeign;
+
+    @Resource
+    private UserFeignClient userFeignClient;
 
     @Resource
     private SurveyCollectFeign surveyCollectFeign;
@@ -36,6 +43,34 @@ public class NotOneServiceImpl implements NotOneService {
     private ScoreCollectFeign scoreCollectFeign;
     @Resource
     private RedisUtil redisUtil;
+
+    //根据token获取用户编号
+    public String getUserIdByToken(String token){
+        //根据token获取用户编号
+        UserInfo userInfo = userFeignClient.getUserInfoByToken(token);
+        String userId=userInfo.getId();
+        return userId;
+    }
+
+    //根据班级编号获取班级信息
+    public Class_add getClassInfo(String class_number){
+        Class_add class_add=null;
+        String key="class_add:"+class_number;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            class_add = JSON.parseObject(o.toString(), Class_add.class);
+        }else {
+            class_add=classMassagesFeign.showclass(class_number);
+            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
+            List<String>userIds=new ArrayList<>();
+            for (Class_info class_info:infoList){
+                userIds.add(class_info.getUser_id().toString());
+            }
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+        }
+        return class_add;
+    }
 
     //根据用户编号获取用户所有信息
     @Override
@@ -61,17 +96,17 @@ public class NotOneServiceImpl implements NotOneService {
     @RabbitListener(queues = RabbitConfig.nocQueue)
     public void addNotification(Notification notification) {
         //根据班级编号获取用户信息
-        List<User>users=notOneMapper.getUserByGradeId(notification.getGradeId());
-        for (User user : users) {
+        List<String>userIds=getClassInfo(notification.getGradeId()).getUserIds();
+        for (String userId : userIds) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(notification.getNotificationId());
-            notOne.setUserId(user.getUserId());
+            notOne.setUserId(userId);
             notOne.setTypeId(notification.getTypeId());
             notOneMapper.addOne(notOne);
-            String key1 = "notification:" + user.getUserId() + user.getGradeId();
+            String key1 = "notification:" + userId + notification.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification), 40);
-            String key2 = "ok:" + user.getUserId() + notification.getGradeId();
+            String key2 = "ok:" + userId + notification.getGradeId();
             String ok = "";
             redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
@@ -81,17 +116,17 @@ public class NotOneServiceImpl implements NotOneService {
     @RabbitListener(queues = RabbitConfig.surQueue)
     public void addSurvey(Survey survey) {
         //根据班级编号获取用户信息
-        List<User>users=notOneMapper.getUserByGradeId(survey.getGradeId());
-        for (User user : users) {
+        List<String>userIds=getClassInfo(survey.getGradeId()).getUserIds();
+        for (String userId : userIds) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(survey.getSurveyId());
-            notOne.setUserId(user.getUserId());
+            notOne.setUserId(userId);
             notOne.setTypeId(survey.getTypeId());
             notOneMapper.addOne(notOne);
-            String key1 = "survey:" + user.getUserId() + user.getGradeId();
+            String key1 = "survey:" + userId + survey.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(survey), 40);
-            String key2 = "ok:" + user.getUserId() + survey.getGradeId();
+            String key2 = "ok:" + userId + survey.getGradeId();
             String ok = "";
             redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
@@ -101,17 +136,17 @@ public class NotOneServiceImpl implements NotOneService {
     @RabbitListener(queues = RabbitConfig.scoQueue)
     public void addScore(Score score) {
         //根据班级编号获取用户信息
-        List<User>users=notOneMapper.getUserByGradeId(score.getGradeId());
-        for (User user : users) {
+        List<String>userIds=getClassInfo(score.getGradeId()).getUserIds();
+        for (String userId : userIds) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(score.getScoreId());
-            notOne.setUserId(user.getUserId());
+            notOne.setUserId(userId);
             notOne.setTypeId(score.getTypeId());
             notOneMapper.addOne(notOne);
-            String key1 = "survey:" + user.getUserId() + user.getGradeId();
+            String key1 = "survey:" + userId + score.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(score), 40);
-            String key2 = "ok:" + user.getUserId() + score.getGradeId();
+            String key2 = "ok:" + userId + score.getGradeId();
             String ok = "";
             redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }

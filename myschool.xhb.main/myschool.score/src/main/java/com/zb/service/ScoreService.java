@@ -1,7 +1,6 @@
 package com.zb.service;
 
 import com.zb.entity.Score;
-import com.zb.entity.User;
 
 import java.util.List;
 
