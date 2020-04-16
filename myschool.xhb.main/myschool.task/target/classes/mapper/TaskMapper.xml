@@ -25,9 +25,59 @@
         0,
         0,
         NOW(),
-        0
+        1
         );
 
     </insert>
+
+    <select id="listNoCorrectTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 1 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listEmendTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 2 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listPassdTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE STATUS = 4 AND isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listAllTasks" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE isDelete = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <select id="listPersonalTask" resultType="com.zb.pojo.Task">
+        SELECT * FROM task
+        WHERE isDelete = 0 AND visible = 0
+        ORDER BY  createDate DESC
+    </select>
+
+    <update id="changeStatus">
+        UPDATE task SET
+        STATUS = #{status},createDate = NOW()
+        WHERE taskId = #{taskId}
+
+    </update>
+
+    <update id="reviseTask">
+        UPDATE task SET
+        STATUS = 3,createDate = NOW(),
+        taskContent = #{taskContent}
+        WHERE taskId = #{taskId}
+    </update>
+
+    <update id="deleteTask">
+        UPDATE task SET
+        isDelete = 1
+        WHERE taskId = #{taskId}
+    </update>
 
 </mapper>

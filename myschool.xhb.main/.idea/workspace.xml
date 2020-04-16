@@ -50,21 +50,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myschool.task.api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task.api/src/main/java/com/zb/pojo/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/TaskServerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/controller/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/mapper/TaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/service/impl/TaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.task/src/main/resources/mapper/TaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit.api/myschool.habit.api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit.api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit.api/src/main/java/com/zb/pojo/Habit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/myschool.habit.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/java/com/zb/HabitServerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/java/com/zb/controller/HabitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/java/com/zb/mapper/HabitMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/java/com/zb/service/HabitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/java/com/zb/service/impl/HabitServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.habit/src/main/resources/mapper/HabitMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/mapper/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/src/main/java/com/zb/mapper/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/controller/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/mapper/TaskMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/mapper/TaskMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/TaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/impl/TaskServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/impl/TaskServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/mapper/TaskMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.task/target/classes/mapper/TaskMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/feign/UserFeignClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.user.api/target/classes/com/zb/feign/UserFeignClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.user.api/target/myschool.user.api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.user.api/target/myschool.user.api-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,6 +113,11 @@
         <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1YTchveXAslXM5ioq277RQO62Hm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -120,7 +140,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.task.api/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.habit/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -134,8 +154,12 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task\src\main\resources" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.habit\src\main\resources" />
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task.api\src\main\resources" />
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.comment\src\main\resources" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zb" />
@@ -147,12 +171,8 @@
       <recent name="com.zb.entity" />
       <recent name="com.zb.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task.api\src\main\resources" />
-      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.comment\src\main\resources" />
-      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
-      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
-      <recent name="D:\software\idea\item\myschool.xhb.main\myschool.common.api\src\main\java\com\zb" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -167,7 +187,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TaskServerApp">
+  <component name="RunManager" selected="Spring Boot.HabitServerApp">
     <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.agreement" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
@@ -201,15 +221,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExportUtil" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="myschool.issue" />
+    <configuration name="HabitServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.habit" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zb.util.*" />
+          <option name="PATTERN" value="com.zb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.util.ExportUtil" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.HabitServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -305,11 +325,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TaskServerApp" />
+        <item itemvalue="Spring Boot.HabitServerApp" />
         <item itemvalue="Spring Boot.CommentServerApp" />
+        <item itemvalue="Spring Boot.TaskServerApp" />
         <item itemvalue="Spring Boot.IssueServerApp" />
         <item itemvalue="Spring Boot.ExportExcel" />
-        <item itemvalue="Spring Boot.ExportUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -381,13 +401,8 @@
       <workItem from="1586229923943" duration="350000" />
       <workItem from="1586565001793" duration="22000" />
       <workItem from="1586831168490" duration="21588000" />
-    </task>
-    <task id="LOCAL-00013" summary="issue_LZQ">
-      <created>1583576379004</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1583576379004</updated>
+      <workItem from="1586910213523" duration="2235000" />
+      <workItem from="1587019561593" duration="18655000" />
     </task>
     <task id="LOCAL-00014" summary="issue_LZQ">
       <created>1583578904450</created>
@@ -725,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586878212124</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="基本完成作业模块(未测试)">
+      <created>1586885944463</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1586885944464</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,7 +772,8 @@
     <MESSAGE value="点赞显示谁点赞了" />
     <MESSAGE value="消息记录id改为String类型" />
     <MESSAGE value="小小完善一下删除评论" />
-    <option name="LAST_COMMIT_MESSAGE" value="小小完善一下删除评论" />
+    <MESSAGE value="基本完成作业模块(未测试)" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完成作业模块(未测试)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586250644158">
