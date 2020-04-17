@@ -65,6 +65,7 @@ public class ScoreServiceImpl implements ScoreService {
     }
 
     //根据班级编号获取班级信息
+    @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
         String key="class_add:"+class_number;
@@ -139,6 +140,7 @@ public class ScoreServiceImpl implements ScoreService {
 
     //根据成绩编号查询成绩信息
     @Override
+    @Cacheable(value = "cache" ,key="#scoreId")
     public Score getScore(String scoreId) {
         Score score=null;
         String key="score:"+scoreId;

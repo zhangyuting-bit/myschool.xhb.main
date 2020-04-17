@@ -61,6 +61,7 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     //根据班级编号获取班级信息
+    @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
         String key="class_add:"+class_number;
@@ -80,15 +81,16 @@ public class NotificationServiceImpl implements NotificationService {
         return class_add;
     }
 
-    //@Cacheable(value = "cache" ,key="#notificationOne")
     //根据通知编号获取通知列表单个通知信息
     public Notification getNotificationByNotId(String notificationId){
         Notification notification = null;
         String key = "notificationOne:" + notificationId;
         if (redisUtil.hasKey(key)) {
+            System.out.println("redis");
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
+            System.out.println("mysql");
             notification = notificationMapper.getNotificationById(notificationId);
             //根据班级编号获取班级信息
             Class_add class_add=getClassInfo(notification.getGradeId());
@@ -120,9 +122,11 @@ public class NotificationServiceImpl implements NotificationService {
         Notification notification = null;
         String key = "notification:" + notificationId;
         if (redisUtil.hasKey(key)) {
+            System.out.println("redis");
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
         } else {
+            System.out.println("mysql");
             notification = notificationMapper.getNotificationById(notificationId);
             //根据班级编号获取班级信息
             Class_add class_add=getClassInfo(notification.getGradeId());

@@ -13,6 +13,7 @@ import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -54,6 +55,7 @@ public class NotOneServiceImpl implements NotOneService {
 
     //根据用户编号获取用户所在所有班级
     @Override
+    @Cacheable(value = "cache" ,key="#userId")
     public UserInfo getUserGrade(String userId){
         //String userId=getUserIdByToken(token);
         UserInfo userInfo=null;
@@ -75,6 +77,7 @@ public class NotOneServiceImpl implements NotOneService {
     }
 
     //根据班级编号获取班级信息
+    @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
         String key="class_add:"+class_number;

@@ -61,6 +61,7 @@ public class SurveyServiceImpl implements SurveyService {
     }
 
     //根据班级编号获取班级信息
+    @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
         String key="class_add:"+class_number;
