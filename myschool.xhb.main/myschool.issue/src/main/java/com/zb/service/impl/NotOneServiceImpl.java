@@ -255,13 +255,13 @@ public class NotOneServiceImpl implements NotOneService {
 
         //查询redis是否存在相应班级信息
         String key1="class_add:"+gradeId;
-        if (redisUtil.hasKey(key)){
-            Object o = redisUtil.get(key);
+        if (redisUtil.hasKey(key1)){
+            Object o = redisUtil.get(key1);
             Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
             List<String>userIds=class_add.getUserIds();
             userIds.add(userId);
             class_add.setUserIds(userIds);
-            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+            redisUtil.set(key1,JSON.toJSONString(class_add), 120);
         }
     }
 
@@ -289,13 +289,13 @@ public class NotOneServiceImpl implements NotOneService {
 
         //查询redis是否存在相应班级信息
         String key1="class_add:"+gradeId;
-        if (redisUtil.hasKey(key)){
-            Object o = redisUtil.get(key);
+        if (redisUtil.hasKey(key1)){
+            Object o = redisUtil.get(key1);
             Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
             List<String>userIds=class_add.getUserIds();
             userIds.remove(userId);
             class_add.setUserIds(userIds);
-            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+            redisUtil.set(key1,JSON.toJSONString(class_add), 120);
         }
     }
 }
