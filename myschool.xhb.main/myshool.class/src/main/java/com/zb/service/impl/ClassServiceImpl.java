@@ -107,6 +107,7 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
         this.putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
     }
+
     /**
      * 获取上传凭证
      *
