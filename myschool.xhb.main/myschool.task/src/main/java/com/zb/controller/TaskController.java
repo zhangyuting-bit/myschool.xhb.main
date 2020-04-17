@@ -125,7 +125,7 @@ public class TaskController {
     //评论
     @RequestMapping(value = "/commentTask")
     public Dto commentTask(@RequestBody Comment comment){
-        comment.setRecordType(8);
+        comment.setRecordType(4);
         int val = commentFeginClient.addcomment(comment);
         if (val == 1) {
             return DtoUtil.returnSuccess("成长记录评论成功");

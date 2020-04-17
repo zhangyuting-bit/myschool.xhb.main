@@ -40,6 +40,8 @@
         <module>myschool.comment.api</module>
         <module>myschool.task</module>
         <module>myschool.task.api</module>
+        <module>myschool.habit</module>
+        <module>myschool.habit.api</module>
 
     </modules>
 
