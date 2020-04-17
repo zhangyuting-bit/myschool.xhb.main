@@ -1,10 +1,14 @@
 package com.zb.service;
 
 import com.zb.entity.Score;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface ScoreService {
+    //根据班级编号获取成绩消息
+    List<Score>getScoreListByGradeId(String gradeId);
+
     ///新增成绩消息
     Score addScore(Score score);
 

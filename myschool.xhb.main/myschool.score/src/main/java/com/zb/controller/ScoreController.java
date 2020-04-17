@@ -112,4 +112,10 @@ public class ScoreController {
     public Score getByScoreId(@PathVariable("scoreId")String scoreId){
         return service.getByScoreId(scoreId);
     }
+
+    //根据班级编号获取成绩消息
+    @GetMapping("/getScoreListByGradeId/{gradeId}")
+    public List<Score> getScoreListByGradeId(@PathVariable("gradeId") String gradeId){
+        return service.getScoreListByGradeId(gradeId);
+    }
 }

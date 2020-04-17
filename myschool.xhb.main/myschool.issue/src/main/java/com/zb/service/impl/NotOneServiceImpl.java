@@ -128,6 +128,7 @@ public class NotOneServiceImpl implements NotOneService {
             notOne.setFunctionId(notification.getNotificationId());
             notOne.setUserId(userId);
             notOne.setTypeId(notification.getTypeId());
+            notOne.setCreateTime(notification.getNotifyTime());
             notOneMapper.addOne(notOne);
             String key1 = "notification:" + userId + notification.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification), 40);
@@ -148,6 +149,7 @@ public class NotOneServiceImpl implements NotOneService {
             notOne.setFunctionId(survey.getSurveyId());
             notOne.setUserId(userId);
             notOne.setTypeId(survey.getTypeId());
+            notOne.setCreateTime(survey.getStartTime());
             notOneMapper.addOne(notOne);
             String key1 = "survey:" + userId + survey.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(survey), 40);
@@ -168,6 +170,7 @@ public class NotOneServiceImpl implements NotOneService {
             notOne.setFunctionId(score.getScoreId());
             notOne.setUserId(userId);
             notOne.setTypeId(score.getTypeId());
+            notOne.setCreateTime(score.getCreateTime());
             notOneMapper.addOne(notOne);
             String key1 = "survey:" + userId + score.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(score), 40);
@@ -195,4 +198,104 @@ public class NotOneServiceImpl implements NotOneService {
         return notOneMapper.delNotOneByNotId(userId,functionId,typeId);
     }
 
+    //加入班级后添加之前此班级发的信息
+    public void intoClass(String gradeId,String userId){
+        //根据班级编号查询此班级所有之前发送的信息
+        List<Notification>notifications=notificationCollectFeign.getNotificationByGrade(gradeId);
+        List<Survey>surveys=surveyCollectFeign.getSurveyByGrade(gradeId);
+        List<Score>scores=scoreCollectFeign.getScoreListByGradeId(gradeId);
+        for (Notification notification:notifications) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(notification.getNotificationId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(notification.getTypeId());
+            notOne.setCreateTime(notification.getNotifyTime());
+            notOneMapper.addOne(notOne);
+        }
+
+        for (Survey survey : surveys) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(survey.getSurveyId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(survey.getTypeId());
+            notOne.setCreateTime(survey.getStartTime());
+            notOneMapper.addOne(notOne);
+        }
+
+        for (Score score : scores) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(score.getScoreId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(score.getTypeId());
+            notOne.setCreateTime(score.getCreateTime());
+            notOneMapper.addOne(notOne);
+        }
+
+        StuNumber stuNumber=new StuNumber();
+        stuNumber.setNumberId(IdWorker.getId());
+        stuNumber.setGradeId(gradeId);
+        stuNumber.setStuId(userId);
+        stuNumber.setStuName("张三");
+        //添加学生学号表
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.numKey, stuNumber);
+
+        //查询redis是否存在相应用户信息
+        String key="user:"+userId;
+        if (redisUtil.hasKey(key)) {
+            Object o = redisUtil.get(key);
+            UserInfo userInfo = JSON.parseObject(o.toString(), UserInfo.class);
+            List<String>gradeIds=userInfo.getGradeIds();
+            gradeIds.add(gradeId);
+            userInfo.setGradeIds(gradeIds);
+            redisUtil.set(key,JSON.toJSONString(userInfo), 120);
+        }
+
+        //查询redis是否存在相应班级信息
+        String key1="class_add:"+gradeId;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
+            List<String>userIds=class_add.getUserIds();
+            userIds.add(userId);
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+        }
+    }
+
+    //退班之后删除此班级发的消息
+    public void delClass(String gradeId,String userId){
+        //根据班级编号和用户编号删除notOne表里的个人信息
+        notOneMapper.delNotOneByGradeIdAndUserId(gradeId,userId);
+
+        //删除学生学号表
+        StuNumber stuNumber=new StuNumber();
+        stuNumber.setGradeId(gradeId);
+        stuNumber.setStuId(userId);
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.delKey, stuNumber);
+
+        //查询redis是否存在相应用户信息
+        String key="user:"+userId;
+        if (redisUtil.hasKey(key)) {
+            Object o = redisUtil.get(key);
+            UserInfo userInfo = JSON.parseObject(o.toString(), UserInfo.class);
+            List<String>gradeIds=userInfo.getGradeIds();
+            gradeIds.remove(gradeId);
+            userInfo.setGradeIds(gradeIds);
+            redisUtil.set(key,JSON.toJSONString(userInfo), 120);
+        }
+
+        //查询redis是否存在相应班级信息
+        String key1="class_add:"+gradeId;
+        if (redisUtil.hasKey(key)){
+            Object o = redisUtil.get(key);
+            Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
+            List<String>userIds=class_add.getUserIds();
+            userIds.remove(userId);
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+        }
+    }
 }

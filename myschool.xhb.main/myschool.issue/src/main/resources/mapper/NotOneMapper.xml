@@ -8,11 +8,13 @@
             (`oneId`,
             `typeId`,
              `functionId`,
-             `userId`)
+             `userId`,
+             `createTime`)
         VALUES (#{oneId},
                 #{typeId},
                 #{functionId},
-                #{userId});
+                #{userId},
+                #{createTime});
     </insert>
 
     <select id="getOneByUserId" resultType="com.zb.entity.NotOne">
@@ -28,6 +30,10 @@
 
     <delete id="delNotOneByNotIdAndUserId">
         delete from `notone` where typeId=#{typeId} and functionId=#{functionId}
+    </delete>
+
+    <delete id="delNotOneByGradeIdAndUserId">
+        delete from `notone` where gradeId=#{gradeId} and userId=#{userId}
     </delete>
 
     <delete id="delNotOneByNotId">

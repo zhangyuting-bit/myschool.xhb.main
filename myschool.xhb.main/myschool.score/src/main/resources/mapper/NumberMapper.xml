@@ -53,4 +53,9 @@
         AND
             gradeId=#{gradeId}
     </select>
+
+    <delete id="delClass">
+        delete from `number` where gradeId=#{gradeId} and userId=#{userId}
+    </delete>
+
 </mapper>

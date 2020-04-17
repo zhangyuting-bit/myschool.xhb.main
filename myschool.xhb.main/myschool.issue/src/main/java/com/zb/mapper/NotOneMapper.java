@@ -19,4 +19,7 @@ public interface NotOneMapper {
     //根据通知编号删除个人信息
     Integer delNotOneByNotId(@Param("userId")String userId,@Param("functionId")String functionId
             ,@Param("typeId")Integer typeId);
+
+    //根据班级编号和用户编号删除notOne表里的个人信息
+    Integer delNotOneByGradeIdAndUserId(@Param("gradeId")String gradeId,@Param("userId")String userId);
 }

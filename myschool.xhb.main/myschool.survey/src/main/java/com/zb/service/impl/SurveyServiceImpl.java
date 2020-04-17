@@ -255,4 +255,10 @@ public class SurveyServiceImpl implements SurveyService {
         return null;
     }
 
+    //根据班级编号获取调查信息
+    @Override
+    public List<Survey> getSurveyByGrade(String gradeId) {
+        return surveyMapper.getSurveyByGrade(gradeId);
+    }
+
 }

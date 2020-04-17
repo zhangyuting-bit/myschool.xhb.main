@@ -1,10 +1,14 @@
 package com.zb.service;
 
 import com.zb.entity.Notification;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface NotificationService {
+    //根据班级编号获取全部通知信息
+    List<Notification>getNotificationByGrade(String gradeId);
+
     //根据分数编号获取集合成绩单例
     public Notification getNotificationByNotId(String notificationId);
 

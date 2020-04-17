@@ -454,4 +454,10 @@ public class ScoreServiceImpl implements ScoreService {
 //    }
 
 
+    //根据班级编号获取成绩消息
+    @Override
+    public List<Score> getScoreListByGradeId(String gradeId) {
+        return scoreMapper.getScoreListByGradeId(gradeId);
+    }
+
 }

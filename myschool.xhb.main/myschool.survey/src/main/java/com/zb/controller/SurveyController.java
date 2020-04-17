@@ -83,4 +83,9 @@ public class SurveyController {
         return surveyService.getBySurveyId(surveyId);
     }
 
+    //根据班级编号获取调查信息
+    @GetMapping("/getSurveyByGrade/{gradeId}")
+    public List<Survey> getSurveyByGrade(@PathVariable("gradeId") String gradeId){
+        return surveyService.getSurveyByGrade(gradeId);
+    }
 }

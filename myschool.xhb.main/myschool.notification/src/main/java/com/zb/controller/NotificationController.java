@@ -86,4 +86,11 @@ public class NotificationController {
     public String getUserIdByToken(@PathVariable("token") String token){
         return notificationService.getUserIdByToken(token);
     }
+
+
+    //根据班级编号获取全部通知信息
+    @GetMapping("/getNotificationByGrade/{gradeId}")
+    public List<Notification> getNotificationByGrade(@PathVariable("gradeId") String gradeId) {
+        return notificationService.getNotificationByGrade(gradeId);
+    }
 }

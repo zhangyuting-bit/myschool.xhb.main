@@ -260,4 +260,11 @@ public class NotificationServiceImpl implements NotificationService {
         }
         return null;
     }
+
+
+    //根据班级编号获取全部通知信息
+    @Override
+    public List<Notification> getNotificationByGrade(String gradeId) {
+        return notificationMapper.getNotificationByGrade(gradeId);
+    }
 }

@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface NotificationMapper {
+    //根据班级编号获取全部通知信息
+    List<Notification>getNotificationByGrade(@Param("gradeId")String gradeId);
+
     //根据通知编号获取通知信息
     Notification getNotificationById(@Param("notificationId")String notificationId);
 
