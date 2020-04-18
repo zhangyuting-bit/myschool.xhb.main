@@ -154,7 +154,7 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with(numKey).noargs();
     }
 
-    //添加学号rabbitmq
+    //删除学号rabbitmq
     //上传调查消息队列
     public static final String delQueue="num.boot.queue";
     //上传调查钥匙
@@ -179,4 +179,28 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with(delKey).noargs();
     }
 
+    //发送短信rabbitmq
+    //上传调查消息队列
+    public static final String sendQueue="send.boot.queue";
+    //上传调查钥匙
+    public static final String sendKey="send.key.queue";
+
+    //交换机配置
+//    @Bean(myexchange)
+//    public Exchange createSurExchange(){
+//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
+//    }
+
+    //创建上传调查消息队列
+    @Bean(sendQueue)
+    public Queue createSendQueue(){
+        Queue queue =new Queue(sendQueue);
+        return queue;
+    }
+
+    //将上传文件消息对列绑定到交换机上
+    @Bean
+    public Binding bindingSend(@Qualifier(myexchange) Exchange exchange , @Qualifier(sendQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(sendKey).noargs();
+    }
 }

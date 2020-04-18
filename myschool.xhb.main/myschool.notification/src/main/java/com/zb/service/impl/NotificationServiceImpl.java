@@ -2,12 +2,14 @@ package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
+import com.zb.entity.JobTask;
 import com.zb.entity.NotOne;
 import com.zb.entity.NotPic;
 import com.zb.entity.Notification;
 import com.zb.feign.ClassMassagesFeign;
 import com.zb.feign.NotOneFeign;
 import com.zb.feign.UserFeignClient;
+import com.zb.mapper.JobTaskMapper;
 import com.zb.mapper.NotDocumentMapper;
 import com.zb.mapper.NotPicMapper;
 import com.zb.mapper.NotificationMapper;
@@ -17,6 +19,7 @@ import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
+import com.zb.vo.JobVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -27,6 +30,9 @@ import java.util.List;
 
 @Service
 public class NotificationServiceImpl implements NotificationService {
+    @Resource
+    private JobTaskMapper jobTaskMapper;
+
     @Resource
     private NotificationMapper notificationMapper;
 
@@ -145,6 +151,23 @@ public class NotificationServiceImpl implements NotificationService {
     public Notification addNotification(Notification notification) {
         notification.setNotificationId(IdWorker.getId());
         notificationMapper.addNotification(notification);
+        if (!notification.getTaskTime().equals("不提醒")){
+            JobTask jobTask=new JobTask();
+            jobTask.setId(IdWorker.getId());
+            jobTask.setGradeId(notification.getGradeId());
+            jobTask.setNotificationId(notification.getNotificationId());
+            jobTask.setTaskTime(notification.getTaskTime());
+            jobTaskMapper.addJobTask(jobTask);
+            String key="jobTask";
+            if (redisUtil.hasKey(key)){
+                Object o=redisUtil.get(key);
+                JobVo jobVo= JSON.parseObject(o.toString(),JobVo.class);
+                List<JobTask>tasks=jobVo.getJobTasks();
+                tasks.add(jobTask);
+                jobVo.setJobTasks(tasks);
+                redisUtil.set(key,JSON.toJSONString(jobVo));
+            }
+        }
         return notification;
     }
 

@@ -1,22 +1,30 @@
 package com.zb.service.impl;
 
+import com.zb.config.RabbitConfig;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.feign.AuthFeignClient;
 import com.zb.mapper.UserMapper;
 import com.zb.mapper.RoleMapper;
 import com.zb.pojo.*;
+import com.zb.register.service.CCPRestSDK;
 import com.zb.service.UserService;
 import com.zb.util.IdWorker;
+import com.zb.vo.SendVo;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
+    @Autowired
+    private CCPRestSDK restAPI;
 
     @Autowired(required = false)
     private UserMapper userMapper;
@@ -323,5 +331,26 @@ public class UserServiceImpl implements UserService {
     @Override
     public TeacherInfo getTeacherInfoById(String id) {
         return userMapper.getTeacherInfoById(id);
+    }
+
+    //监听定时发信息队列
+    @RabbitListener(queues = RabbitConfig.sendQueue)
+    public void sendMsg(SendVo sendVo){
+        UserInfo userInfo=userMapper.getUserInfoById(sendVo.getUserId());
+        HashMap<String, Object> result = null;
+        restAPI.init("app.cloopen.com", "8883");
+        restAPI.setAccount("8a216da86f17653b016f4612998122bb", "c24d6c51aa10429baa5ead2330bb4180");
+        restAPI.setAppId("8a216da86f17653b016f461299eb22c1");
+        result = restAPI.sendTemplateSMS(userInfo.getPhone(),"1" ,new String[]{sendVo.getClassName()+"班的老师"+sendVo.getTeacherName()+"提醒您今日还未进行习惯打卡","5"});
+        if("000000".equals(result.get("statusCode"))){
+            HashMap<String,Object> data = (HashMap<String, Object>) result.get("data");
+            Set<String> keySet = data.keySet();
+            for(String key:keySet){
+                Object object = data.get(key);
+                System.out.println(key +" = "+object);
+            }
+        }else{
+            System.out.println("状态码：" + result.get("statusCode") +" 发送信息= "+result.get("statusMsg"));
+        }
     }
 }

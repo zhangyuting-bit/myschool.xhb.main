@@ -11,6 +11,7 @@ import com.zb.pojo.UserInfo;
 import com.zb.service.NotOneService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
+import com.zb.vo.UserVo;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
@@ -42,6 +43,7 @@ public class NotOneServiceImpl implements NotOneService {
 
     @Resource
     private ScoreCollectFeign scoreCollectFeign;
+
     @Resource
     private RedisUtil redisUtil;
 
@@ -56,24 +58,24 @@ public class NotOneServiceImpl implements NotOneService {
     //根据用户编号获取用户所在所有班级
     @Override
     @Cacheable(value = "cache" ,key="#userId")
-    public UserInfo getUserGrade(String userId){
+    public UserVo getUserGrade(String userId){
         //String userId=getUserIdByToken(token);
-        UserInfo userInfo=null;
-        String key="user:"+userId;
+        UserVo userVo=null;
+        String key="grade:"+userId;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
-            userInfo = JSON.parseObject(o.toString(), UserInfo.class);
+            userVo = JSON.parseObject(o.toString(), UserVo.class);
         }else {
-            userInfo=userFeignClient.getUserInfoById(userId);
+            UserInfo userInfo=userFeignClient.getUserInfoById(userId);
             List<Class_info>infoList=classMassagesFeign.showclassid(Integer.parseInt(userId));
             List<String>gradeList=new ArrayList<>();
             for (Class_info class_info:infoList) {
                 gradeList.add(class_info.getClass_number().toString());
             }
-            userInfo.setGradeIds(gradeList);
-            redisUtil.set(key,JSON.toJSONString(userInfo), 120);
+            userVo.setGradeList(gradeList);
+            redisUtil.set(key,JSON.toJSONString(userVo), 120);
         }
-        return userInfo;
+        return userVo;
     }
 
     //根据班级编号获取班级信息

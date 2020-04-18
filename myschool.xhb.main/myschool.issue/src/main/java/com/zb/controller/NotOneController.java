@@ -6,6 +6,7 @@ import com.zb.entity.NotOne;
 import com.zb.entity.Notification;
 import com.zb.pojo.UserInfo;
 import com.zb.service.NotOneService;
+import com.zb.vo.UserVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,7 @@ public class NotOneController {
 
     //根据用户编号获取用户所在所有班级
     @GetMapping("/getUserGrade/{userId}")
-    public Dto<UserInfo> getUserGrade(@PathVariable("userId") String userId){
+    public Dto<UserVo> getUserGrade(@PathVariable("userId") String userId){
         return DtoUtil.returnSuccess("ok",service.getUserGrade(userId));
     }
 
