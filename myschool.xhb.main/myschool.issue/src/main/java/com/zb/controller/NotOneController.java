@@ -7,10 +7,7 @@ import com.zb.entity.Notification;
 import com.zb.pojo.UserInfo;
 import com.zb.service.NotOneService;
 import com.zb.vo.UserVo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -19,6 +16,12 @@ import java.util.List;
 public class NotOneController {
     @Resource
     private NotOneService service;
+
+    //添加个人信息
+    @RequestMapping("/addNotOne")
+    public Integer addNotOne(@RequestBody NotOne notOne){
+        return service.addNotOne(notOne);
+    }
 
     //根据用户编号获取用户所在所有班级
     @GetMapping("/getUserGrade/{userId}")

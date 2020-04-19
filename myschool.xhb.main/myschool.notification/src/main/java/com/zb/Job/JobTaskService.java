@@ -85,25 +85,4 @@ public class JobTaskService {
         return jobTasks;
     }
 
-    //根据用户编号获取用户所在所有班级
-    @Cacheable(value = "cache" ,key="#userId")
-    public UserVo getUserGrade(String userId){
-        UserVo userVo=null;
-        String key="grade:"+userId;
-        if (redisUtil.hasKey(key)){
-            Object o = redisUtil.get(key);
-            userVo = JSON.parseObject(o.toString(), UserVo.class);
-        }else {
-            UserInfo userInfo=userFeignClient.getUserInfoById(userId);
-            List<Class_info>infoList=classMassagesFeign.showclassid(Integer.parseInt(userId));
-            List<String>gradeList=new ArrayList<>();
-            for (Class_info class_info:infoList) {
-                gradeList.add(class_info.getClass_number().toString());
-            }
-            userVo.setGradeList(gradeList);
-            redisUtil.set(key,JSON.toJSONString(userVo), 120);
-        }
-        return userVo;
-    }
-
 }

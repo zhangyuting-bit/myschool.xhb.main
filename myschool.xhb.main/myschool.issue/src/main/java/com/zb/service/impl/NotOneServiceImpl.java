@@ -14,6 +14,7 @@ import com.zb.util.RedisUtil;
 import com.zb.vo.UserVo;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -60,13 +61,12 @@ public class NotOneServiceImpl implements NotOneService {
     @Cacheable(value = "cache" ,key="#userId")
     public UserVo getUserGrade(String userId){
         //String userId=getUserIdByToken(token);
-        UserVo userVo=null;
+        UserVo userVo=new UserVo();
         String key="grade:"+userId;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             userVo = JSON.parseObject(o.toString(), UserVo.class);
         }else {
-            UserInfo userInfo=userFeignClient.getUserInfoById(userId);
             List<Class_info>infoList=classMassagesFeign.showclassid(Integer.parseInt(userId));
             List<String>gradeList=new ArrayList<>();
             for (Class_info class_info:infoList) {
@@ -79,24 +79,30 @@ public class NotOneServiceImpl implements NotOneService {
     }
 
     //根据班级编号获取班级信息
-    @Cacheable(value = "cache" ,key="#class_number")
-    public Class_add getClassInfo(String class_number){
-        Class_add class_add=null;
-        String key="class_add:"+class_number;
-        if (redisUtil.hasKey(key)){
-            Object o = redisUtil.get(key);
-            class_add = JSON.parseObject(o.toString(), Class_add.class);
-        }else {
-            class_add=classMassagesFeign.showclass(class_number);
-            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
-            List<String>userIds=new ArrayList<>();
-            for (Class_info class_info:infoList){
-                userIds.add(class_info.getUser_id().toString());
-            }
-            class_add.setUserIds(userIds);
-            redisUtil.set(key,JSON.toJSONString(class_add), 120);
-        }
-        return class_add;
+//    @Cacheable(value = "cache" ,key="#class_number")
+//    public Class_add getClassInfo(String class_number){
+//        Class_add class_add=null;
+//        String key="class_add:"+class_number;
+//        if (redisUtil.hasKey(key)){
+//            Object o = redisUtil.get(key);
+//            class_add = JSON.parseObject(o.toString(), Class_add.class);
+//        }else {
+//            class_add=classMassagesFeign.showclass(class_number);
+//            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
+//            List<String>userIds=new ArrayList<>();
+//            for (Class_info class_info:infoList){
+//                userIds.add(class_info.getUser_id().toString());
+//            }
+//            class_add.setUserIds(userIds);
+//            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+//        }
+//        return class_add;
+//    }
+
+    //添加个人信息
+    @Override
+    public Integer addNotOne(NotOne notOne){
+        return notOneMapper.addOne(notOne);
     }
 
     //根据用户编号获取用户所有信息
@@ -119,68 +125,23 @@ public class NotOneServiceImpl implements NotOneService {
         return ones;
     }
 
-    //监听添加通知队列
-    @RabbitListener(queues = RabbitConfig.nocQueue)
-    public void addNotification(Notification notification) {
-        //根据班级编号获取用户信息
-        List<String>userIds=getClassInfo(notification.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(notification.getNotificationId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(notification.getTypeId());
-            notOne.setCreateTime(notification.getNotifyTime());
-            notOneMapper.addOne(notOne);
-            String key1 = "notification:" + userId + notification.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(notification), 40);
-            String key2 = "ok:" + userId + notification.getGradeId();
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
-        }
-    }
+//    //监听添加通知队列
+//    @RabbitListener(queues = RabbitConfig.nocQueue)
+//    public void addNotification(Notification notification) {
+//
+//    }
 
     //监听添加调查队列
-    @RabbitListener(queues = RabbitConfig.surQueue)
-    public void addSurvey(Survey survey) {
-        //根据班级编号获取用户信息
-        List<String>userIds=getClassInfo(survey.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(survey.getSurveyId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(survey.getTypeId());
-            notOne.setCreateTime(survey.getStartTime());
-            notOneMapper.addOne(notOne);
-            String key1 = "survey:" + userId + survey.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(survey), 40);
-            String key2 = "ok:" + userId + survey.getGradeId();
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
-        }
-    }
+//    @RabbitListener(queues = RabbitConfig.surQueue)
+//    public void addSurvey(Survey survey) {
+//
+//    }
 
     //监听添加成绩队列
-    @RabbitListener(queues = RabbitConfig.scoQueue)
-    public void addScore(Score score) {
-        //根据班级编号获取用户信息
-        List<String>userIds=getClassInfo(score.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(score.getScoreId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(score.getTypeId());
-            notOne.setCreateTime(score.getCreateTime());
-            notOneMapper.addOne(notOne);
-            String key1 = "survey:" + userId + score.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(score), 40);
-            String key2 = "ok:" + userId + score.getGradeId();
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
-        }
-    }
+//    @RabbitListener(queues = RabbitConfig.scoQueue)
+//    public void addScore(Score score) {
+//
+//    }
 
     //根据用户编号和通知类型编号获取全部对应通知
     @Override

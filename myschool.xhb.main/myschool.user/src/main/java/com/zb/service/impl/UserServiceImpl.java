@@ -349,8 +349,6 @@ public class UserServiceImpl implements UserService {
                 Object object = data.get(key);
                 System.out.println(key +" = "+object);
             }
-        }else{
-            System.out.println("状态码：" + result.get("statusCode") +" 发送信息= "+result.get("statusMsg"));
         }
     }
 }

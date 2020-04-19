@@ -189,7 +189,6 @@ public class ScoreServiceImpl implements ScoreService {
 
     //推送消息给用户
     @Override
-    @Transactional
     public void sendScore(String scoreId){
         Score score=scoreMapper.getScoreByScoreId(scoreId);
         //根据班级编号获取班级信息
@@ -239,7 +238,23 @@ public class ScoreServiceImpl implements ScoreService {
             //根据评论编号修改排名
             stuCommentMapper.updateStuComment(stuComment);
         }
-        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.scoKey, score);
+
+        //根据班级编号获取用户信息
+        List<String>userIds=getClassInfo(score.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(score.getScoreId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(score.getTypeId());
+            notOne.setCreateTime(score.getCreateTime());
+            notOneFeign.addNotOne(notOne);
+            String key1 = "survey:" + userId + score.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(score), 40);
+            String key2 = "ok:" + userId + score.getGradeId();
+            String ok = "";
+            redisUtil.set(key2, JSON.toJSONString(ok), 40);
+        }
     }
 
     //根据成绩编号获取信息
