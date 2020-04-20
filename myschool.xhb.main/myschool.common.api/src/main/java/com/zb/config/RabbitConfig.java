@@ -53,154 +53,80 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with("inform.#.qg.#").noargs();
     }
 
-    //添加通知rabbitmq
-    //上传通知消息队列
-    public static final String nocQueue="noc.boot.queue";
-    //上传文件钥匙
-    public static final String nocKey="noc.key.queue";
-
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createNocExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-
-    //创建上传通知消息队列
-    @Bean(nocQueue)
-    public Queue createNocQueue(){
-        Queue queue =new Queue(nocQueue);
-        return queue;
-    }
-
-    //将上传通知消息对列绑定到交换机上
-    @Bean
-    public Binding bindingNoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(nocQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with(nocKey).noargs();
-    }
-
-    //添加成绩rabbitmq
-    //上传成绩消息队列
-    public static final String scoQueue="sco.boot.queue";
-    //上传成绩钥匙
-    public static final String scoKey="sco.key.queue";
-
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createScoExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-    //创建上传成绩消息队列
-    @Bean(scoQueue)
-    public Queue createScoQueue(){
-        Queue queue =new Queue(scoQueue);
-        return queue;
-    }
-
-    //将上传成绩消息对列绑定到交换机上
-    @Bean
-    public Binding bindingSco(@Qualifier(myexchange) Exchange exchange , @Qualifier(scoQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with(scoKey).noargs();
-    }
-
-    //添加调查rabbitmq
-    //上传调查消息队列
-    public static final String surQueue="sur.boot.queue";
-    //上传调查钥匙
-    public static final String surKey="sur.key.queue";
-
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createSurExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-    //创建上传调查消息队列
-    @Bean(surQueue)
-    public Queue createSurQueue(){
-        Queue queue =new Queue(surQueue);
-        return queue;
-    }
-
-    //将上传文件消息对列绑定到交换机上
-    @Bean
-    public Binding bindingDoc(@Qualifier(myexchange) Exchange exchange , @Qualifier(surQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with(surKey).noargs();
-    }
 
     //添加学号rabbitmq
-    //上传调查消息队列
+    //添加学号消息队列
     public static final String numQueue="num.boot.queue";
-    //上传调查钥匙
+    //添加学号钥匙
     public static final String numKey="num.key.queue";
 
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createSurExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-    //创建上传调查消息队列
+    //创建添加学号消息队列
     @Bean(numQueue)
     public Queue createNumQueue(){
         Queue queue =new Queue(numQueue);
         return queue;
     }
 
-    //将上传文件消息对列绑定到交换机上
+    //将添加学号消息队列绑定到交换机上
     @Bean
     public Binding bindingNum(@Qualifier(myexchange) Exchange exchange , @Qualifier(numQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(numKey).noargs();
     }
 
     //删除学号rabbitmq
-    //上传调查消息队列
+    //删除学号消息队列
     public static final String delQueue="num.boot.queue";
-    //上传调查钥匙
+    //删除学号钥匙
     public static final String delKey="num.key.queue";
 
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createSurExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-    //创建上传调查消息队列
+    //创建删除学号消息队列
     @Bean(delQueue)
     public Queue createDelQueue(){
         Queue queue =new Queue(delQueue);
         return queue;
     }
 
-    //将上传文件消息对列绑定到交换机上
+    //将删除学号消息队列绑定到交换机上
     @Bean
     public Binding bindingDel(@Qualifier(myexchange) Exchange exchange , @Qualifier(delQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(delKey).noargs();
     }
 
     //发送短信rabbitmq
-    //上传调查消息队列
+    //发送短信消息队列
     public static final String sendQueue="send.boot.queue";
-    //上传调查钥匙
+    //发送短信钥匙
     public static final String sendKey="send.key.queue";
 
-    //交换机配置
-//    @Bean(myexchange)
-//    public Exchange createSurExchange(){
-//        return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
-//    }
-
-    //创建上传调查消息队列
+    //创建发送短信消息队列
     @Bean(sendQueue)
     public Queue createSendQueue(){
         Queue queue =new Queue(sendQueue);
         return queue;
     }
 
-    //将上传文件消息对列绑定到交换机上
+    //将发送短信消息对列绑定到交换机上
     @Bean
     public Binding bindingSend(@Qualifier(myexchange) Exchange exchange , @Qualifier(sendQueue) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with(sendKey).noargs();
+    }
+
+    //发送班级信息rabbitmq
+    //发送短信消息队列
+    public static final String classQueue="class.boot.queue";
+    //发送短信钥匙
+    public static final String classKey="class.key.queue";
+
+    //创建发送短信消息队列
+    @Bean(classQueue)
+    public Queue createclassQueue(){
+        Queue queue =new Queue(classQueue);
+        return queue;
+    }
+
+    //将发送短信消息对列绑定到交换机上
+    @Bean
+    public Binding bindingclass(@Qualifier(myexchange) Exchange exchange , @Qualifier(classQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(classKey).noargs();
     }
 }

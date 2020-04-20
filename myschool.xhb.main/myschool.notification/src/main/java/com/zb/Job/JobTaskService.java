@@ -32,9 +32,6 @@ public class JobTaskService {
     private ClassMassagesFeign classMassagesFeign;
 
     @Resource
-    private UserFeignClient userFeignClient;
-
-    @Resource
     private RedisUtil redisUtil;
 
     @Resource

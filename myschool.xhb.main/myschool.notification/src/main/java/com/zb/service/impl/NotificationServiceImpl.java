@@ -70,7 +70,8 @@ public class NotificationServiceImpl implements NotificationService {
     @Cacheable(value = "cache", key = "#class_number")
     public Class_add getClassInfo(String class_number) {
         Class_add class_add = null;
-        String key = "class_add:" + class_number;
+        //存储班级信息的key值
+        String key = "ca:" + class_number;
         if (redisUtil.hasKey(key)) {
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
@@ -90,7 +91,7 @@ public class NotificationServiceImpl implements NotificationService {
     //根据通知编号获取通知列表单个通知信息
     public Notification getNotificationByNotId(String notificationId) {
         Notification notification = null;
-        String key = "notificationOne:" + notificationId;
+        String key = "notOne:" + notificationId;
         if (redisUtil.hasKey(key)) {
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
@@ -124,7 +125,7 @@ public class NotificationServiceImpl implements NotificationService {
     @Cacheable(value = "cache", key = "#notificationId")
     public Notification getNotification(String notificationId) {
         Notification notification = null;
-        String key = "notification:" + notificationId;
+        String key = "not:" + notificationId;
         if (redisUtil.hasKey(key)) {
             Object o = redisUtil.get(key);
             notification = JSON.parseObject(o.toString(), Notification.class);
@@ -173,7 +174,7 @@ public class NotificationServiceImpl implements NotificationService {
     //学生端实时显示信息
     @Override
     public Notification getNocStu(Integer typeId, String userId, String gradeId) {
-        String key = "notification:" + userId + gradeId;
+        String key = "not:" + userId + gradeId;
         Object o = redisUtil.get(key);
         if (o != null) {
             Notification notification = JSON.parseObject(o.toString(), Notification.class);
@@ -193,7 +194,7 @@ public class NotificationServiceImpl implements NotificationService {
     //删除推送消息
     @Override
     public void delStuNoc(String userId, String notificationId, String gradeId) {
-        String key = "notification:" + userId + gradeId;
+        String key = "not:" + userId + gradeId;
         Object o = redisUtil.get(key);
         if (o != null) {
             Notification notification = JSON.parseObject(o.toString(), Notification.class);
@@ -224,7 +225,7 @@ public class NotificationServiceImpl implements NotificationService {
             notOne.setTypeId(notification.getTypeId());
             notOne.setCreateTime(notification.getNotifyTime());
             notOneFeign.addNotOne(notOne);
-            String key1 = "notification:" + userId + notification.getGradeId();
+            String key1 = "not:" + userId + notification.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification), 40);
             String key2 = "ok:" + userId + notification.getGradeId();
             String ok = "";
@@ -261,7 +262,7 @@ public class NotificationServiceImpl implements NotificationService {
         //根据班级编号获取用户信息
         List<String> userIds = getClassInfo(notification1.getGradeId()).getUserIds();
         for (String userId : userIds) {
-            String key = "notification:" + userId + notification1.getGradeId();
+            String key = "not:" + userId + notification1.getGradeId();
             Object o = redisUtil.get(key);
             if (o != null) {
                 Notification notification = JSON.parseObject(o.toString(), Notification.class);
@@ -272,13 +273,13 @@ public class NotificationServiceImpl implements NotificationService {
                 }
             }
         }
-        String key1 = "notificationOne:" + notificationId;
+        String key1 = "notOne:" + notificationId;
         if (redisUtil.hasKey(key1)) {
             redisUtil.del(key1);
         }
-        String key2 = "delNotification:" + notification1.getGradeId();
+        String key2 = "delNot:" + notification1.getGradeId();
         redisUtil.set(key2, JSON.toJSONString(notificationId), 10);
-        String key = "notification:" + notificationId;
+        String key = "not:" + notificationId;
         if (redisUtil.hasKey(key)) {
             redisUtil.del(key);
         }
@@ -287,7 +288,7 @@ public class NotificationServiceImpl implements NotificationService {
     //获取撤销信息
     @Override
     public String getNotDelStatus(String gradeId) {
-        String key = "delNotification:" + gradeId;
+        String key = "delNot:" + gradeId;
         if (redisUtil.hasKey(key)) {
             Object o = redisUtil.get(key);
             String notificationId = JSON.parseObject(o.toString(), String.class);

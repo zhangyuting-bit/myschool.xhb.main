@@ -64,7 +64,7 @@ public class SurveyServiceImpl implements SurveyService {
     @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
-        String key="class_add:"+class_number;
+        String key="ca:"+class_number;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
@@ -84,7 +84,7 @@ public class SurveyServiceImpl implements SurveyService {
     @Override
     public Survey getBySurveyId(String surveyId){
         Survey survey=null;
-        String key="surveyOne:"+surveyId;
+        String key="surOne:"+surveyId;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             survey= JSON.parseObject(o.toString(), Survey.class);
@@ -246,11 +246,11 @@ public class SurveyServiceImpl implements SurveyService {
                 }
             }
         }
-        String key1 = "surveyOne:" + surveyId;
+        String key1 = "surOne:" + surveyId;
         if (redisUtil.hasKey(key1)){
             redisUtil.del(key1);
         }
-        String key2="delSurvey:"+survey1.getGradeId();
+        String key2="delSur:"+survey1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(surveyId),10);
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){
@@ -261,7 +261,7 @@ public class SurveyServiceImpl implements SurveyService {
     //获取撤销信息
     @Override
     public String getSurDelStatus(String gradeId){
-        String key="delSurvey:"+gradeId;
+        String key="delSur:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
             String scoreId=JSON.parseObject(o.toString(),String.class);

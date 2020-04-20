@@ -68,7 +68,7 @@ public class ScoreServiceImpl implements ScoreService {
     @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
-        String key="class_add:"+class_number;
+        String key="ca:"+class_number;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
@@ -89,7 +89,7 @@ public class ScoreServiceImpl implements ScoreService {
     @Override
     public Score getByScoreId(String scoreId){
         Score score=null;
-        String key="scoreOne:"+scoreId;
+        String key="scoOne:"+scoreId;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             score= JSON.parseObject(o.toString(), Score.class);
@@ -119,7 +119,7 @@ public class ScoreServiceImpl implements ScoreService {
         score.setScoreId(IdWorker.getId());
         //添加成绩
         scoreMapper.addScore(score);
-        String key="scoreCount:"+score.getGradeId();
+        String key="scoC:"+score.getGradeId();
         //根据班级编号统计成绩表数量
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
@@ -249,7 +249,7 @@ public class ScoreServiceImpl implements ScoreService {
             notOne.setTypeId(score.getTypeId());
             notOne.setCreateTime(score.getCreateTime());
             notOneFeign.addNotOne(notOne);
-            String key1 = "survey:" + userId + score.getGradeId();
+            String key1 = "score:" + userId + score.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(score), 40);
             String key2 = "ok:" + userId + score.getGradeId();
             String ok = "";
@@ -340,7 +340,7 @@ public class ScoreServiceImpl implements ScoreService {
         String key2="delScore:"+score1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(scoreId),10);
 
-        String key="scoreCount:"+score1.getGradeId();
+        String key="scoC:"+score1.getGradeId();
         //根据班级编号统计成绩表数量
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
@@ -352,10 +352,17 @@ public class ScoreServiceImpl implements ScoreService {
             }
             redisUtil.set(key,JSON.toJSONString(count));
         }
+
         String key1="score:"+scoreId;
         if (redisUtil.hasKey(key1)){
             redisUtil.del(key1);
         }
+
+        String key3="scoOne:"+scoreId;
+        if (redisUtil.hasKey(key3)){
+            redisUtil.del(key3);
+        }
+
     }
 
     //获取修改的考试信息

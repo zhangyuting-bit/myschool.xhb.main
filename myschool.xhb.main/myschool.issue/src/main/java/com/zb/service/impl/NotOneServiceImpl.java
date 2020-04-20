@@ -78,27 +78,6 @@ public class NotOneServiceImpl implements NotOneService {
         return userVo;
     }
 
-    //根据班级编号获取班级信息
-//    @Cacheable(value = "cache" ,key="#class_number")
-//    public Class_add getClassInfo(String class_number){
-//        Class_add class_add=null;
-//        String key="class_add:"+class_number;
-//        if (redisUtil.hasKey(key)){
-//            Object o = redisUtil.get(key);
-//            class_add = JSON.parseObject(o.toString(), Class_add.class);
-//        }else {
-//            class_add=classMassagesFeign.showclass(class_number);
-//            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
-//            List<String>userIds=new ArrayList<>();
-//            for (Class_info class_info:infoList){
-//                userIds.add(class_info.getUser_id().toString());
-//            }
-//            class_add.setUserIds(userIds);
-//            redisUtil.set(key,JSON.toJSONString(class_add), 120);
-//        }
-//        return class_add;
-//    }
-
     //添加个人信息
     @Override
     public Integer addNotOne(NotOne notOne){
@@ -124,24 +103,6 @@ public class NotOneServiceImpl implements NotOneService {
         }
         return ones;
     }
-
-//    //监听添加通知队列
-//    @RabbitListener(queues = RabbitConfig.nocQueue)
-//    public void addNotification(Notification notification) {
-//
-//    }
-
-    //监听添加调查队列
-//    @RabbitListener(queues = RabbitConfig.surQueue)
-//    public void addSurvey(Survey survey) {
-//
-//    }
-
-    //监听添加成绩队列
-//    @RabbitListener(queues = RabbitConfig.scoQueue)
-//    public void addScore(Score score) {
-//
-//    }
 
     //根据用户编号和通知类型编号获取全部对应通知
     @Override
@@ -217,7 +178,7 @@ public class NotOneServiceImpl implements NotOneService {
         }
 
         //查询redis是否存在相应班级信息
-        String key1="class_add:"+gradeId;
+        String key1="ca:"+gradeId;
         if (redisUtil.hasKey(key1)){
             Object o = redisUtil.get(key1);
             Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
@@ -251,7 +212,7 @@ public class NotOneServiceImpl implements NotOneService {
         }
 
         //查询redis是否存在相应班级信息
-        String key1="class_add:"+gradeId;
+        String key1="ca:"+gradeId;
         if (redisUtil.hasKey(key1)){
             Object o = redisUtil.get(key1);
             Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
