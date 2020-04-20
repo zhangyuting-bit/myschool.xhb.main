@@ -9,8 +9,40 @@
         <module>myschool.gataway</module>
         <module>myschool.common</module>
         <module>myschool.common.api</module>
+
+        <module>myschool.user</module>
+        <module>myschool.user.api</module>
+        <module>myschool.auth</module>
+        <module>myschool.auth.api</module>
+
         <module>myshool.class</module>
         <module>myshool.class.api</module>
+        <module>myschool.issue.api</module>
+        <module>myschool.issue</module>
+        <module>myschool.score</module>
+        <module>myschool.score.api</module>
+        <module>myschool.survey</module>
+        <module>myschool.survey.api</module>
+
+        <module>myschool.record</module>
+        <module>myschool.record.api</module>
+        <module>myschool.lable</module>
+        <module>myschool.lable.api</module>
+        <module>myschool.agreement</module>
+        <module>myschool.agreement.api</module>
+        <module>myschool.survey.api</module>
+        <module>myschool.survey</module>
+        <module>myschool.score.api</module>
+        <module>myschool.score</module>
+        <module>myschool.notification</module>
+        <module>myschool.notification.api</module>
+        <module>myschool.comment</module>
+        <module>myschool.comment.api</module>
+        <module>myschool.task</module>
+        <module>myschool.task.api</module>
+        <module>myschool.habit</module>
+        <module>myschool.habit.api</module>
+
     </modules>
 
     <parent>

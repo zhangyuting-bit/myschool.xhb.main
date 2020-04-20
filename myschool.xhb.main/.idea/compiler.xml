@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="myshool.class" />
-        <module name="myschool.common.api" />
-        <module name="myshool.class.api" />
-        <module name="myschool.common" />
-        <module name="myschool.gataway" />
-        <module name="myschool.eureka" />
-      </profile>
-    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="myschool.xhb.main" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

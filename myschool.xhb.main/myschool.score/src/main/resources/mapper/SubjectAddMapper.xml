@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.SubjectAddMapper">
+    <!---->
+    <insert id="addSubjectAdd">
+        INSERT INTO `subjectadd`
+            (`id`,
+             `subjectName`,
+             `gradeId`)
+        VALUES (#{id},
+                #{subjectName},
+                #{gradeId});
+    </insert>
+
+    <select id="getByGradeId" resultType="com.zb.entity.SubjectAdd">
+        SELECT
+            *
+        FROM
+            `subjectadd`
+        WHERE
+            gradeId=#{gradeId}
+    </select>
+
+    <delete id="delSubjectAdd">
+        delete from subjectadd where id=#{id}
+    </delete>
+</mapper>
