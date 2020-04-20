@@ -4,18 +4,16 @@ import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
-import com.zb.mapper.ClassMapper;
 import com.zb.mapper.ClassTimetableMapper;
 import com.zb.pojo.Class_Timetable;
-import com.zb.pojo.Class_add;
 import com.zb.service.ClassTimetableService;
-import com.zb.util.IdWorker;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+
 @Service
 public class ClassTimetableServiceImpl implements ClassTimetableService, InitializingBean {
     @Autowired
@@ -73,11 +71,11 @@ public class ClassTimetableServiceImpl implements ClassTimetableService, Initial
     public int updatatimetable(Class_Timetable timetable) {
         return classTimetableMapper.updatatimetable(timetable);
     }
-
     @Override
     public int deletetimetable(Integer class_number) {
         return classTimetableMapper.deletetimetable(class_number);
     }
+
 
     @Override
     public void afterPropertiesSet() throws Exception {
