@@ -24,15 +24,20 @@ public class NumberServiceImpl implements NumberService {
     }
 
     //学生加入班级时添加学生学号
-    @RabbitListener(queues = RabbitConfig.numQueue)
-    public void intoClass(StuNumber stuNumber){
+    //@RabbitListener(queues = RabbitConfig.numQueue)
+    public void intoClass(String gradeId,String userId,String userName){
+        StuNumber stuNumber=new StuNumber();
+        stuNumber.setNumberId(IdWorker.getId());
+        stuNumber.setGradeId(gradeId);
+        stuNumber.setStuId(userId);
+        stuNumber.setStuName(userName);
         numberMapper.addNumber(stuNumber);
     }
 
-    //学生退出班级时
-    @RabbitListener(queues = RabbitConfig.delQueue)
-    public void delClass(StuNumber stuNumber){
-        numberMapper.delClass(stuNumber.getGradeId(),stuNumber.getStuId());
+    //学生退出班级时删除学生学号
+    //@RabbitListener(queues = RabbitConfig.delQueue)
+    public void delClass(String gradeId,String userId){
+        numberMapper.delClass(gradeId,userId);
     }
 
     //根据班级编号查询学生学号

@@ -158,14 +158,6 @@ public class NotOneServiceImpl implements NotOneService {
             notOneMapper.addOne(notOne);
         }
 
-        StuNumber stuNumber=new StuNumber();
-        stuNumber.setNumberId(IdWorker.getId());
-        stuNumber.setGradeId(gradeId);
-        stuNumber.setStuId(userId);
-        stuNumber.setStuName("张三");
-        //添加学生学号表
-        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.numKey, stuNumber);
-
         //查询redis是否存在相应用户信息
         String key="user:"+userId;
         if (redisUtil.hasKey(key)) {
@@ -193,12 +185,6 @@ public class NotOneServiceImpl implements NotOneService {
     public void delClass(String gradeId,String userId){
         //根据班级编号和用户编号删除notOne表里的个人信息
         notOneMapper.delNotOneByGradeIdAndUserId(gradeId,userId);
-
-        //删除学生学号表
-        StuNumber stuNumber=new StuNumber();
-        stuNumber.setGradeId(gradeId);
-        stuNumber.setStuId(userId);
-        rabbitTemplate.convertAndSend(RabbitConfig.myexchange, RabbitConfig.delKey, stuNumber);
 
         //查询redis是否存在相应用户信息
         String key="user:"+userId;
