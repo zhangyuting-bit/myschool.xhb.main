@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface TaskMapper {
 
-    //新增作业成功
+    //新增作业成果
     int addTask(Task task);
     //展示全部待批改作业
     List<Task> listNoCorrectTasks();
