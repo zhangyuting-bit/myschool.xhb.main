@@ -33,7 +33,4 @@
     <delete id="deletetimetable">
         DELETE FROM class_timetable WHERE class_number=#{class_number}
     </delete>
-    <select id="getteacherBy" resultType="com.zb.pojo.Teacherinfo">
-        SELECT * FROM teacherinfo WHERE userId=#{userId}
-    </select>
 </mapper>
