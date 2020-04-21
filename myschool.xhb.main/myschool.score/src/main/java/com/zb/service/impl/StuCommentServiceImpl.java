@@ -3,6 +3,7 @@ package com.zb.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.zb.entity.StuComment;
 import com.zb.entity.Subject;
+import com.zb.mapper.NumberMapper;
 import com.zb.mapper.StuCommentMapper;
 import com.zb.mapper.StuSubjectMapper;
 import com.zb.mapper.SubjectMapper;
@@ -21,7 +22,7 @@ public class StuCommentServiceImpl implements StuCommentService {
     private StuCommentMapper stuCommentMapper;
 
     @Resource
-    private ScoreServiceImpl scoreService;
+    private NumberMapper numberMapper;
 
     @Resource
     private SubjectMapper subjectMapper;
@@ -50,13 +51,13 @@ public class StuCommentServiceImpl implements StuCommentService {
             stuComment= JSON.parseObject(o.toString() , StuComment.class);
         }else {
             stuComment=stuCommentMapper.getCommentByScoreAndNumberId(scoreId,numberId);
-            stuComment.setNumber(scoreService.getStuNumber(numberId));
+            stuComment.setNumber(numberMapper.getNumberByNumberId(numberId));
             List<Subject>subjects=subjectMapper.getSubjectByScoreId(scoreId);
             for (Subject subject:subjects) {
                 subject.setStuSubject(stuSubjectMapper.getStuSubjectBySubjectAndNumberId(subject.getSubjectId(),numberId));
             }
             stuComment.setSubjects(subjects);
-            redisUtil.set(key, JSON.toJSONString(stuComment), 120);
+            redisUtil.set(key, JSON.toJSONString(stuComment), 240);
         }
         return stuComment;
     }

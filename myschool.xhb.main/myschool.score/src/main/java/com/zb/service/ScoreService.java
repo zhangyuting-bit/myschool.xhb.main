@@ -1,19 +1,19 @@
 package com.zb.service;
 
 import com.zb.entity.Score;
-import com.zb.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface ScoreService {
+    //根据班级编号获取成绩消息
+    List<Score>getScoreListByGradeId(String gradeId);
+
     ///新增成绩消息
     Score addScore(Score score);
 
     //根据班级编号获取成绩消息
     List<Score> getScoreListByUserId(Integer typeId,String userId);
-
-    //根据用户编号获取用户信息
-    User getUserByUserId(String userId);
 
     //根据消息编号修改消息
     Integer updateScore(Score score);
@@ -33,9 +33,6 @@ public interface ScoreService {
     //删除推送消息
     public void delStuSco(String userId, String scoreId, String gradeId);
 
-    //获取推送状态
-    public Integer getStatus(String userId, String gradeId);
-
     //撤销成绩信息
     public void returnScore(String scoreId);
 
@@ -47,9 +44,6 @@ public interface ScoreService {
 
     //修改删除考试信息
     public void returnUpdate(String scoreId);
-
-    //获取修改的考试信息
-    public Score getUpdateScore(String scoreId);
 
     //根据分数编号获取集合成绩单例
     public Score getByScoreId(String scoreId);

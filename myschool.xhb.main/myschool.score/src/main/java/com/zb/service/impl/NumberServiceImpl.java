@@ -1,9 +1,11 @@
 package com.zb.service.impl;
 
+import com.zb.config.RabbitConfig;
 import com.zb.entity.StuNumber;
 import com.zb.mapper.NumberMapper;
 import com.zb.service.NumberService;
 import com.zb.util.IdWorker;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -21,13 +23,30 @@ public class NumberServiceImpl implements NumberService {
         return numberMapper.addNumber(number);
     }
 
+    //学生加入班级时添加学生学号
+    //@RabbitListener(queues = RabbitConfig.numQueue)
+    public void intoClass(String gradeId,String userId,String userName){
+        StuNumber stuNumber=new StuNumber();
+        stuNumber.setNumberId(IdWorker.getId());
+        stuNumber.setGradeId(gradeId);
+        stuNumber.setStuId(userId);
+        stuNumber.setStuName(userName);
+        numberMapper.addNumber(stuNumber);
+    }
+
+    //学生退出班级时删除学生学号
+    //@RabbitListener(queues = RabbitConfig.delQueue)
+    public void delClass(String gradeId,String userId){
+        numberMapper.delClass(gradeId,userId);
+    }
+
     //根据班级编号查询学生学号
     @Override
     public List<StuNumber> getNumberByGradeId(String gradeId) {
         return numberMapper.getNumberByGradeId(gradeId);
     }
 
-    //根据班级编号删除学生学号信息
+    //根据班级编号修改学生学号信息
     @Override
     public Integer updateNumber(String numberId) {
         return numberMapper.updateNumber(numberId);

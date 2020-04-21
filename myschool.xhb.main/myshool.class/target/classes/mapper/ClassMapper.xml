@@ -68,6 +68,6 @@
         SELECT * FROM class_add WHERE teacher_id=#{teacher_id}
     </select>
     <select id="getClassByid" resultType="com.zb.pojo.Class_add">
-        SELECT * FROM class_add WHERE id=#{id}
+        SELECT * FROM class_add WHERE class_number=#{class_number}
     </select>
 </mapper>

@@ -7,28 +7,40 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="myschool.score" />
+<<<<<<< HEAD
+        <module name="myschool.notification.api" />
+        <module name="myschool.auth" />
+=======
 
         <module name="myschool.survey" />
         <module name="myschool.user" />
         <module name="myschool.notification.api" />
         <module name="myschool.auth" />
         <module name="myschool.survey.api" />
+>>>>>>> master
         <module name="myschool.common" />
         <module name="myschool.task" />
         <module name="myschool.lable" />
         <module name="myschool.record" />
         <module name="myshool.class" />
+<<<<<<< HEAD
+=======
         <module name="myschool.score.api" />
         <module name="myshool.class.api" />
+>>>>>>> master
         <module name="myschool.score.api" />
         <module name="myschool.survey" />
+        <module name="myschool.comment" />
         <module name="myschool.auth.api" />
         <module name="myschool.user.api" />
-        <module name="myschool.common.api" />
+        <module name="myshool.class.api" />
         <module name="myschool.agreement" />
+        <module name="myschool.task.api" />
         <module name="myschool.eureka" />
         <module name="myschool.issue" />
         <module name="myschool.notification" />
+<<<<<<< HEAD
+=======
         <module name="myschool.issue" />
         <module name="myschool.survey" />
         <module name="myschool.comment" />
@@ -40,11 +52,12 @@
         <module name="myschool.task.api" />
         <module name="myschool.eureka" />
         <module name="myschool.user.api" />
+>>>>>>> master
         <module name="myschool.comment.api" />
-
         <module name="myschool.agreement.api" />
         <module name="myschool.survey.api" />
         <module name="myschool.gataway" />
+        <module name="myschool.common.api" />
         <module name="myschool.lable.api" />
         <module name="myschool.issue.api" />
         <module name="myschool.record.api" />

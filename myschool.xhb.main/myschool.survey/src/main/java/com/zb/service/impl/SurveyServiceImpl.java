@@ -4,10 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
 import com.zb.config.RabbitConfigs;
 import com.zb.entity.*;
+import com.zb.feign.ClassMassagesFeign;
 import com.zb.feign.NotOneFeign;
 import com.zb.feign.UserFeignClient;
 import com.zb.mapper.*;
 import com.zb.pojo.Class_add;
+import com.zb.pojo.Class_info;
 import com.zb.pojo.UserInfo;
 import com.zb.service.SurveyService;
 import com.zb.util.IdWorker;
@@ -29,6 +31,9 @@ public class SurveyServiceImpl implements SurveyService {
 
     @Resource
     private NotOneFeign notOneFeign;
+
+    @Resource
+    private ClassMassagesFeign classMassagesFeign;
 
     @Resource
     private SelectMapper selectMapper;
@@ -56,14 +61,22 @@ public class SurveyServiceImpl implements SurveyService {
     }
 
     //根据班级编号获取班级信息
+    @Cacheable(value = "cache" ,key="#class_number")
     public Class_add getClassInfo(String class_number){
         Class_add class_add=null;
-        String key="class_add:"+class_number;
+        String key="ca:"+class_number;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             class_add = JSON.parseObject(o.toString(), Class_add.class);
         }else {
-            //class_add=userFeignClient.getTeacherInfoById(teacherId);
+            class_add=classMassagesFeign.showclass(class_number);
+            List<Class_info>infoList=classMassagesFeign.classinfo(Integer.parseInt(class_number));
+            List<String>userIds=new ArrayList<>();
+            for (Class_info class_info:infoList) {
+                userIds.add(class_info.getUser_id().toString());
+            }
+            class_add.setUserIds(userIds);
+            redisUtil.set(key,JSON.toJSONString(class_add), 240);
         }
         return class_add;
     }
@@ -71,7 +84,7 @@ public class SurveyServiceImpl implements SurveyService {
     @Override
     public Survey getBySurveyId(String surveyId){
         Survey survey=null;
-        String key="surveyOne:"+surveyId;
+        String key="surOne:"+surveyId;
         if (redisUtil.hasKey(key)){
             Object o = redisUtil.get(key);
             survey= JSON.parseObject(o.toString(), Survey.class);
@@ -119,7 +132,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),120);
+            redisUtil.set(key, JSON.toJSONString(survey),240);
         }
         return survey;
     }
@@ -139,7 +152,19 @@ public class SurveyServiceImpl implements SurveyService {
         //根据班级编号获取班级信息
         Class_add class_add=getClassInfo(survey.getGradeId());
         survey.setClass_add(class_add);
-        rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.surKey,survey);
+        //根据班级编号获取用户信息
+        List<String>userIds=getClassInfo(survey.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(survey.getSurveyId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(survey.getTypeId());
+            notOne.setCreateTime(survey.getStartTime());
+            notOneFeign.addNotOne(notOne);
+            String key1 = "survey:" + userId + survey.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(survey), 40);
+        }
     }
     //学生端实时显示信息
     @Override
@@ -168,19 +193,8 @@ public class SurveyServiceImpl implements SurveyService {
             Survey survey = JSON.parseObject(o.toString(), Survey.class);
             if (surveyId.equals(survey.getSurveyId())) {
                 redisUtil.del(key);
-                redisUtil.del("ok:" + userId + gradeId);
             }
         }
-    }
-
-    //获取推送状态
-    @Override
-    public Integer getStatus(String userId, String gradeId) {
-        String key = "ok:" + userId + gradeId;
-        if (redisUtil.hasKey(key)) {
-            return 1;
-        }
-        return null;
     }
 
     //撤销调查信息
@@ -206,19 +220,21 @@ public class SurveyServiceImpl implements SurveyService {
         //根据调查编号删除题目信息
         selectMapper.delSelectBySurId(surveyId);
         //根据班级编号获取用户信息
-        List<User>users=surveyMapper.getUserByGradeId(survey1.getGradeId());
-        for (User user : users) {
-            String key = "survey:" + user.getUserId() + user.getGradeId();
+        List<String>userIds=getClassInfo(survey1.getGradeId()).getUserIds();
+        for (String userId : userIds) {
+            String key = "survey:" + userId + survey1.getGradeId();
             if (redisUtil.get(key)!=null){
                 Survey survey=JSON.parseObject(redisUtil.get(key).toString(),Survey.class);
                 if (surveyId.equals(survey.getSurveyId())){
                     redisUtil.del(key);
-                    String key1= "ok:" + user.getUserId() + user.getGradeId();
-                    redisUtil.del(key1);
                 }
             }
         }
-        String key2="delSurvey:"+survey1.getGradeId();
+        String key1 = "surOne:" + surveyId;
+        if (redisUtil.hasKey(key1)){
+            redisUtil.del(key1);
+        }
+        String key2="delSur:"+survey1.getGradeId();
         redisUtil.set(key2,JSON.toJSONString(surveyId),10);
         String key="survey:"+surveyId;
         if (redisUtil.hasKey(key)){
@@ -229,13 +245,19 @@ public class SurveyServiceImpl implements SurveyService {
     //获取撤销信息
     @Override
     public String getSurDelStatus(String gradeId){
-        String key="delSurvey:"+gradeId;
+        String key="delSur:"+gradeId;
         if (redisUtil.hasKey(key)){
             Object o=redisUtil.get(key);
             String scoreId=JSON.parseObject(o.toString(),String.class);
             return scoreId;
         }
         return null;
+    }
+
+    //根据班级编号获取调查信息
+    @Override
+    public List<Survey> getSurveyByGrade(String gradeId) {
+        return surveyMapper.getSurveyByGrade(gradeId);
     }
 
 }

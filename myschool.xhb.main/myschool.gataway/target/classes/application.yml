@@ -26,6 +26,12 @@ zuul:
     issueserver:
       path: /issueserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: ISSUESERVER
+<<<<<<< HEAD
+    notificationserver:
+      path: /notificationserver/**        #http://localhost:7003/userserver/user/show?uid=2
+      serviceId: NOTIFICATIONSERVER
+=======
+>>>>>>> master
     surveyserver:
       path: /surveyserver/**        #http://localhost:7003/userserver/user/show?uid=2
       serviceId: SURVEYSERVER

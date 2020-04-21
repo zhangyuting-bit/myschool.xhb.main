@@ -64,10 +64,10 @@ public class NotificationController {
     }
 
     //获取推送状态
-    @GetMapping("/getNotStatus")
-    public Dto<Integer> getStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",notificationService.getStatus(userId,gradeId));
-    }
+//    @GetMapping("/getNotStatus")
+//    public Dto<Integer> getStatus(String userId,String gradeId){
+//        return DtoUtil.returnSuccess("ok",notificationService.getStatus(userId,gradeId));
+//    }
 
     //撤销调查信息
     @GetMapping("/returnNotification/{notificationId}")
@@ -85,5 +85,12 @@ public class NotificationController {
     @GetMapping("/getUserIdByToken/{token}")
     public String getUserIdByToken(@PathVariable("token") String token){
         return notificationService.getUserIdByToken(token);
+    }
+
+
+    //根据班级编号获取全部通知信息
+    @GetMapping("/getNotificationByGrade/{gradeId}")
+    public List<Notification> getNotificationByGrade(@PathVariable("gradeId") String gradeId) {
+        return notificationService.getNotificationByGrade(gradeId);
     }
 }

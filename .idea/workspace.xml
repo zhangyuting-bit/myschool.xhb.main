@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="044170f4-e2fa-48f4-9a4b-86d07e04425a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/Select.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/SelectPic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/Survey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/SurveyOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey.api/src/main/java/com/zb/entity/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/SurveyServerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/config/FileUploadConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/config/RabbitConfigs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/controller/AnswerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/controller/AnswerUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/controller/SelectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/controller/SelectUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/controller/SurveyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/mapper/AnswerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/mapper/SelectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/mapper/SelectPicMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/mapper/SurveyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/mapper/SurveyOneMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/AnswerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/SelectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/SurveyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/UploadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/impl/AnswerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/impl/SelectServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/impl/SurveyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/service/impl/UploadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/util/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/java/com/zb/util/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/ehcache.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/mapper/AnswerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/mapper/SelectMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/mapper/SelectPicMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/mapper/SurveyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.survey/src/main/resources/mapper/SurveyOneMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.xhb.main/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.xhb.main/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.gataway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.gataway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.gataway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.gataway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/src/main/java/com/zb/entity/StuNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/src/main/java/com/zb/entity/StuNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/src/main/java/com/zb/entity/StuSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/target/classes/com/zb/entity/StuNumber.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/target/classes/com/zb/entity/StuNumber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/target/classes/com/zb/entity/StuSubject.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue.api/target/classes/com/zb/entity/StuSubject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/controller/ScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/service/ScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/service/ScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/service/impl/ScoreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/util/ExportExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/util/ExportExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/util/ExportUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/java/com/zb/util/ExportUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/src/main/resources/mapper/StuSubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/controller/ScoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/controller/ScoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/service/ScoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/service/ScoreService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/service/impl/ScoreServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/util/ExportExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/util/ExportExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/util/ExportUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/com/zb/util/ExportUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/myschool.issue/target/classes/mapper/StuSubjectMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.xhb.main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.xhb.main/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586526619372</updated>
       <workItem from="1586526620892" duration="12000" />
+      <workItem from="1587471918658" duration="88000" />
     </task>
     <servers />
   </component>

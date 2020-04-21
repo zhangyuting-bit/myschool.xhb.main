@@ -1,6 +1,7 @@
 package com.zb.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserInfo implements Serializable {
     private String id;
@@ -14,6 +15,16 @@ public class UserInfo implements Serializable {
     private String status;
     private String create_time;
     private String update_time;
+    //用户所有班级编号
+    private List<String>gradeIds;
+
+    public List<String> getGradeIds() {
+        return gradeIds;
+    }
+
+    public void setGradeIds(List<String> gradeIds) {
+        this.gradeIds = gradeIds;
+    }
 
     public String getId() {
         return id;

@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 
@@ -84,6 +85,7 @@ public class ClassController {
     public Dto updateclass(Class_add classes){
         return DtoUtil.returnSuccess("ok", classService.updateClass(classes));
     }
+
     //根据班号查看班级的信息
     @GetMapping("/classnumber/{class_number}")
     public Dto classnumber(@PathVariable("class_number")Integer class_number){
@@ -96,8 +98,8 @@ public class ClassController {
     }
     //获取班级内部人员的信息
     @GetMapping("/classinfo/{class_number}")
-    public Dto classinfo(@PathVariable("class_number")Integer class_number){
-        return DtoUtil.returnSuccess("ok",classInfoService.findClassinfoBy(class_number));
+    public List<Class_info> classinfo(@PathVariable("class_number")Integer class_number){
+        return classInfoService.findClassinfoBy(class_number);
     }
     @PostMapping("/updateclassinfo")
     public Dto updateclassinfo(Class_info classinfo){
@@ -139,13 +141,13 @@ public class ClassController {
         return classService.findclassinforBy(class_number);
     }
     //根据id获取班级的信息
-    @GetMapping("/showclassid/{id}")
-    public Dto showclassid(@PathVariable(value = "id")String id){
-        return DtoUtil.returnSuccess("ok", classService.findClassByid(id));
+    @GetMapping("/showclassid/{class_number}")
+    public Class_add showclass(@PathVariable(value = "class_number")String class_number){
+        return classService.findClassByid(class_number);
     }
     //根据用户的id获取该用户所在的所有班级
     @GetMapping("/userclassinfo/{user_id}")
-    public Dto showclassid(@PathVariable(value = "user_id")Integer user_id){
-        return DtoUtil.returnSuccess("ok", classInfoService.findinfouserid(user_id));
+    public List<Class_info> showclassid(@PathVariable(value = "user_id")Integer user_id){
+        return classInfoService.findinfouserid(user_id);
     }
 }
