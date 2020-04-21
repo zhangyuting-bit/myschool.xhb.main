@@ -50,6 +50,14 @@
   </component>
   <component name="ChangeListManager">
 
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="mc_dev04 14 提交的功能 接口">
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/util/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/feign/ClassMassagesFeign.class" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/target/classes/com/zb/feign/ClassMassagesFeign.class" afterDir="false" />
+
     <list default="true" id="54f54cf5-7c77-44c9-809f-f49b32c07c7c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/myschool.xhb.main.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/myschool.auth.api/target/classes/com/zb/feign/AuthFeignClient.class" afterDir="false" />
@@ -120,7 +128,6 @@
       <change beforePath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/java/com/zb/service/impl/RecordServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.record/src/main/resources/mapper/RecordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/util/ExportExcel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
@@ -157,9 +164,16 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="mc-dev0414" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -191,7 +205,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.habit/src/main/resources" />
+
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/myschool.notification.api/src/main/java/com/zb/entity" />
+
+
     <property name="last_opened_file_path" value="C:/北大青鸟课程/S3/微服/18/01/auth2.server" />
+
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -199,6 +225,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -209,6 +239,14 @@
       <recent name="com.zb.entity" />
       <recent name="com.zb.service" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myschool.common.api\src\main\java\com\zb\util" />
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\java\com\zb" />
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\util" />
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class.api\src\main\java\com\zb\pojo" />
+      <recent name="D:\Small blackboard\myschool.xhb.main\myschool.xhb.main\myshool.class\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\myschool.xhb.main\myschool.xhb.main\myschool.task\src\main\resources" />
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\java\com\zb\util" />
       <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.issue\src\main\resources" />
@@ -229,6 +267,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Spring Boot.MyClassApp">
+    <configuration name="DownLoad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zb.config.DownLoad" />
+      <module name="myshool.class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+  <component name="RunManager" selected="Spring Boot.HabitServerApp">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.notification.api\src\main\java\com\zb\entity" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.notification\src\main\resources\mapper" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.notification\src\main\java\com\zb\service\impl" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.notification\src\main\java\com\zb\service" />
+      <recent name="F:\MyGit\myschool.xhb.main\myschool.xhb.main\myschool.notification\src\main\java\com\zb\mapper" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MySchoolUserApp">
   <component name="RunManager" selected="Spring Boot.AgreementServerApp">
     <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myschool.agreement" />
@@ -250,6 +308,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QiNiu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zb.config.QiNiu" />
+      <module name="myshool.class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zb.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    <configuration name="HabitServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myschool.habit" />
     <configuration name="ExportUtil" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
@@ -258,11 +327,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.HabitServerApp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.util.ExportUtil" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyClassApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="myshool.class" />
     <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
@@ -327,6 +399,14 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MyClassApp" />
+        <item itemvalue="Application.DownLoad" />
+        <item itemvalue="Application.QiNiu" />
+        <item itemvalue="Spring Boot.HabitServerApp" />
+        <item itemvalue="Spring Boot.CommentServerApp" />
+        <item itemvalue="Spring Boot.TaskServerApp" />
+        <item itemvalue="Spring Boot.IssueServerApp" />
+        <item itemvalue="Spring Boot.ExportExcel" />
         <item itemvalue="Spring Boot.IssueServerApp" />
         <item itemvalue="Spring Boot.ExportExcel" />
         <item itemvalue="Spring Boot.ExportUtil" />
@@ -344,6 +424,99 @@
       <option name="presentableId" value="Default" />
       <updated>1582970147103</updated>
       <workItem from="1582970150562" duration="851000" />
+      <workItem from="1583135250113" duration="2844000" />
+      <workItem from="1583211447689" duration="1298000" />
+      <workItem from="1583383796341" duration="39595000" />
+      <workItem from="1583542534156" duration="5896000" />
+      <workItem from="1583734974166" duration="5857000" />
+      <workItem from="1583807023357" duration="18756000" />
+      <workItem from="1583903218278" duration="24643000" />
+      <workItem from="1584145756371" duration="4349000" />
+      <workItem from="1584335583294" duration="22799000" />
+      <workItem from="1584576317893" duration="12610000" />
+      <workItem from="1584672023419" duration="1627000" />
+      <workItem from="1584750428521" duration="286000" />
+      <workItem from="1584938629225" duration="2655000" />
+      <workItem from="1584969867589" duration="15517000" />
+      <workItem from="1585096334312" duration="48683000" />
+      <workItem from="1585555401151" duration="3092000" />
+      <workItem from="1585632405884" duration="15147000" />
+      <workItem from="1585959666496" duration="1111000" />
+      <workItem from="1586745406526" duration="14014000" />
+      <workItem from="1587083215456" duration="24858000" />
+      <workItem from="1587341996294" duration="2124000" />
+    </task>
+    <task id="LOCAL-00001" summary="mc_dev提交了一段代码">
+      <created>1583135444339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583135444339</updated>
+    </task>
+    <task id="LOCAL-00002" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
+      <created>1583630647194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583630647195</updated>
+    </task>
+    <task id="LOCAL-00003" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
+      <created>1583631244803</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583631244803</updated>
+    </task>
+    <task id="LOCAL-00004" summary="mc_dev 提交班级的创建以及加入班级的一些功能">
+      <created>1585038839177</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585038839177</updated>
+    </task>
+    <task id="LOCAL-00005" summary="mc_dev03 27 提交的功能">
+      <created>1585303848698</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585303848698</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mc_dev03 27 提交的功能">
+      <created>1585303860519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585303860519</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mc_dev04 14 提交的功能 接口">
+      <created>1586858815567</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1586858815568</updated>
+    </task>
+    <task id="LOCAL-00008" summary="mc_dev04 14 提交的功能 接口">
+      <created>1586858909549</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586858909549</updated>
+    </task>
+    <task id="LOCAL-00009" summary="mc_dev04 14 提交的功能 接口">
+      <created>1587345771496</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587345771496</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mc_dev04 14 提交的功能 接口">
+      <created>1587345796374</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587345796374</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
       <workItem from="1583377391460" duration="5821000" />
       <workItem from="1583392223558" duration="404000" />
       <workItem from="1583392826521" duration="550000" />
@@ -798,8 +971,86 @@
       <option name="project" value="LOCAL" />
       <updated>1586404814458</updated>
     </task>
+    <task id="LOCAL-00061" summary="issue_LZQ">
+      <created>1586497429216</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1586497429216</updated>
+    </task>
+    <task id="LOCAL-00062" summary="issue_LZQ">
+      <created>1586591025957</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1586591025957</updated>
+    </task>
+    <task id="LOCAL-00063" summary="issue_LZQ">
+      <created>1586839887976</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1586839887977</updated>
+    </task>
+    <task id="LOCAL-00062" summary="基本完成作业模块(未测试)">
+      <created>1586885944463</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1586885944464</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00064" summary="issue_LZQ">
+      <created>1586871259079</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1586871259079</updated>
+    </task>
+    <task id="LOCAL-00065" summary="issue_LZQ">
+      <created>1586871278971</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1586871278971</updated>
+    </task>
+    <task id="LOCAL-00066" summary="issue_LZQ">
+      <created>1586871306621</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1586871306621</updated>
+    </task>
+    <task id="LOCAL-00067" summary="issue_LZQ">
+      <created>1586871338911</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1586871338911</updated>
+    </task>
+    <task id="LOCAL-00068" summary="issue_LZQ">
+      <created>1586959882478</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1586959882478</updated>
+    </task>
+    <task id="LOCAL-00069" summary="issue_LZQ">
+      <created>1586960037704</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1586960037705</updated>
+    </task>
+    <task id="LOCAL-00070" summary="issue_LZQ">
+      <created>1587033322680</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1587033322680</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <option name="localTasksCounter" value="61" />
-
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -819,6 +1070,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="mc_dev提交了一段代码" />
+    <MESSAGE value="mc_dev 提交班级的创建以及加入班级的一些功能" />
+    <MESSAGE value="mc_dev03 27 提交的功能" />
+    <MESSAGE value="mc_dev04 14 提交的功能 接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="mc_dev04 14 提交的功能 接口" />
     <MESSAGE value="issue_LZQ" />
     <MESSAGE value="更新版本号" />
     <MESSAGE value="点赞显示谁点赞了" />

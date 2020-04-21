@@ -86,9 +86,9 @@ public class ClassFileServiceImpl implements ClassFileService, InitializingBean 
      */
     private static void download(String url, String filepath) {
         OkHttpClient client = new OkHttpClient();
-        System.out.println(url);
+        System.out.println(url+"@@@@@@@@@@@@@@@");
         String strs=url.substring(url.indexOf("m")+2, url.indexOf("?"));
-        System.out.println(strs);
+        System.out.println(strs+"!!!!!!!!!!!!!!!!!!");
         Request req = new Request.Builder().url(url).build();
         okhttp3.Response resp = null;
         try {

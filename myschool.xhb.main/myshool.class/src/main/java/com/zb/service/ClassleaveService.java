@@ -2,7 +2,6 @@ package com.zb.service;
 
 import com.qiniu.http.Response;
 import com.zb.dto.Dto;
-import com.zb.pojo.Class_info;
 import com.zb.pojo.Class_leave;
 import com.zb.pojo.Leave_job;
 
