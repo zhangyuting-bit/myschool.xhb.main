@@ -5,7 +5,6 @@ import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
-import com.zb.pojo.Class_File;
 import com.zb.pojo.Class_Timetable;
 import com.zb.pojo.Class_add;
 import com.zb.service.ClassService;

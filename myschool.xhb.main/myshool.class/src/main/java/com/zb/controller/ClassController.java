@@ -5,9 +5,11 @@ import com.qiniu.http.Response;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
+import com.zb.feign.UserFeignClient;
 import com.zb.pojo.Class_Subject;
 import com.zb.pojo.Class_add;
 import com.zb.pojo.Class_info;
+import com.zb.pojo.UserInfo;
 import com.zb.service.ClassInfoService;
 import com.zb.service.ClassService;
 import com.zb.util.IdWorker;
@@ -30,11 +32,14 @@ public class ClassController {
     private ClassService classService;
     @Autowired
     private ClassInfoService classInfoService;
+    @Autowired
+    private UserFeignClient userFeignClient;
     @Value("${qiniu.path}")
     private String path;
     private String key=null;
-    @PostMapping("/classfiles")
-    public Dto classfiles(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,Class_add classAdd)throws Exception{
+    @PostMapping("/classfiles/{token}")
+    public Dto classfiles(HttpServletRequest request, @RequestParam(required = false,value = "files") MultipartFile[] files,Class_add classAdd,@PathVariable(value = "token")String token)throws Exception{
+        UserInfo userBy = userFeignClient.getUserInfoByToken(token);
         for (MultipartFile file : files) {
             if (Objects.isNull(file) || file.isEmpty()) {
                 return DtoUtil.returnSuccess("文件为空，请重新上传");
@@ -58,8 +63,8 @@ public class ClassController {
                 Integer number= (int)(random.nextDouble()*(99999-10000 + 1))+ 10000;
                 classAdd.setClass_number(number);
                 classAdd.setId(IdWorker.getId());
-                classAdd.setTeacher_id(1);
-                classAdd.setTeacherName("孟老师");//这里根据用户的id获取用户的名称
+                classAdd.setTeacher_id(userBy.getId());
+                classAdd.setTeacherName(userBy.getName());//这里根据用户的id获取用户的名称
                 classAdd.setClass_emblem(path+key);
                 classService.addClass(classAdd);
             } catch (IOException e) {
@@ -110,10 +115,10 @@ public class ClassController {
     public Dto classinfoby(@PathVariable("id")String id){
         return DtoUtil.returnSuccess("ok", classInfoService.getClassInfoBy(id));
     }
-    @PostMapping("/addclassjob/{class_number}/{user_id}")
+    @PostMapping("/addclassjob/{class_number}/{token}")
     public Dto addclassjob(
-            Class_info classInfo,@PathVariable("class_number")Integer class_number,@PathVariable("user_id")Integer user_id){
-        return DtoUtil.returnSuccess("ok", classInfoService.addClassInfo(classInfo,class_number,user_id));
+            Class_info classInfo,@PathVariable("class_number")Integer class_number,@PathVariable("token")String  token){
+        return DtoUtil.returnSuccess("ok", classInfoService.addnumberClassInfo(classInfo,class_number,token));
     }
     //
     @GetMapping("/addclassinfo/{class_number}")
