@@ -4,12 +4,10 @@ import com.rabbitmq.tools.json.JSONUtil;
 import com.zb.config.RabbitConfig;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
+import com.zb.feign.UserFeignClient;
 import com.zb.mapper.ClassInfoMapper;
 import com.zb.mapper.ClassMapper;
-import com.zb.pojo.Class_Job;
-import com.zb.pojo.Class_add;
-import com.zb.pojo.Class_info;
-import com.zb.pojo.Jurisdiction;
+import com.zb.pojo.*;
 import com.zb.service.ClassInfoService;
 import com.zb.util.IdWorker;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -25,47 +23,36 @@ public class ClassInfoServiceImpl implements ClassInfoService {
     @Autowired
     private ClassMapper classMapper;
     @Autowired
+    private UserFeignClient userFeignClient;
+    @Autowired
     private RabbitTemplate rabbitTemplate;
     @Override
     public Dto addClassInfo(Class_info classInfo) {
-        Class_info classInfoBy = classInfoMapper.getClassInfoBy(classInfo.getId());
-        if(classInfoBy==null){
-            Class_info info=new Class_info();
-            info.setId(IdWorker.getId());
-            info.setCall("孟老师"); //这个地方调用登录的feign来传用户的名称
-            info.setRelationship("");
-            info.setUser_id(classInfo.getUser_id());
-            info.setClass_number(classInfo.getClass_number());
-            info.setJurisdiction("最高管理员"); //一开始添加 1表示在本班级的最高级别
-            info.setClass_subject(classInfo.getClass_subject());
-            info.setState(1);
-            classInfoMapper.addClassInfo(info);
-            }
-            return DtoUtil.returnSuccess("ok");
+        return DtoUtil.returnSuccess("ok",classInfoMapper.addClassInfo(classInfo));
     }
 
     @Override
-    public int addClassInfo(Class_info classInfo,Integer class_number, Integer user_id) {
+    public int addnumberClassInfo(Class_info classInfo,Integer class_number, String token) {
         //这里调用登录用户的feign的接口获取用户的id和名称
-
-            if(user_id==1){
+        UserInfo userInfoByToken = userFeignClient.getUserInfoByToken(token);
+            if(userInfoByToken.getCodeType()==1){
                 Class_Job job=new Class_Job();
                 job.setId(IdWorker.getId());
                 job.setClass_number(class_number);
                 job.setCall("老师");
                 job.setJurisdiction("任课老师");
                 job.setRelationship("");
-                job.setUser_id(user_id);
+                job.setUser_id(userInfoByToken.getCodeType());
                 job.setJurisdiction_id(1);
                 job.setState(0);
                return classInfoMapper.addClassJob(job);
             }
             //根据你登录的身份来判断你是家人 还是教师
-            if(user_id==2){
+            if(userInfoByToken.getCodeType()==2){
                 Class_Job jobs=new Class_Job();
                 jobs.setId(IdWorker.getId());
                 jobs.setClass_number(class_number);
-                jobs.setUser_id(user_id);
+                jobs.setUser_id(userInfoByToken.getCodeType());
                 jobs.setCall(classInfo.getCall());
                 jobs.setRelationship(classInfo.getRelationship());
                 jobs.setJurisdiction_id(2);
@@ -73,7 +60,15 @@ public class ClassInfoServiceImpl implements ClassInfoService {
                 jobs.setState(0);
                 System.out.println("班级内的名称："+classInfo.getCall());
                 System.out.println("内部关系："+classInfo.getRelationship());
-                return classInfoMapper.addClassJob(jobs);
+                int count = classInfoMapper.addClassJob(jobs);
+                if(count>0){
+                    Class_Jobinfo jobinfo=new Class_Jobinfo();
+                    jobinfo.setNumber(jobs.getUser_id());
+                    jobinfo.setCall_name(jobs.getCall());
+                    jobinfo.setClass_number(jobs.getClass_number());
+                    rabbitTemplate.convertAndSend(RabbitConfig.myexchange, "inform.classinfo", jobinfo);
+                    return count;
+                }
             }
         return 0;
     }

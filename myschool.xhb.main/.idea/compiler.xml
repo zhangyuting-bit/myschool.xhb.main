@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+<<<<<<< HEAD
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -64,6 +65,8 @@
         <module name="myschool.user" />
       </profile>
     </annotationProcessing>
+=======
+>>>>>>> b7ffed6ed28f5dbd1b9c006056db676441a55e2f
     <bytecodeTargetLevel>
       <module name="myschool.xhb.main" target="1.8" />
     </bytecodeTargetLevel>

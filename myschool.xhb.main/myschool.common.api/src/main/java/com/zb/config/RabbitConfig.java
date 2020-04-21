@@ -10,16 +10,16 @@ public class RabbitConfig {
     public static final String CLASSQUEUE="class.queue";
     public static final String jobQueue="job.leave.queue";
     public static final String myexchange="myexchange.boot";
-    public static final String qgQueue="qg.boot.queue";
+    public static final String classinfo="classinfo.queue";
 
     @Bean(myexchange)
     public Exchange createExchange(){
         return ExchangeBuilder.topicExchange(myexchange).durable(true).build();
     }
 
-    @Bean(qgQueue)
+    @Bean(classinfo)
     public Queue createQgQueue(){
-        Queue queue=new Queue(qgQueue);
+        Queue queue=new Queue(classinfo);
         return queue;
     }
 
@@ -49,8 +49,8 @@ public class RabbitConfig {
     }
 
     @Bean
-    public Binding bindingQg(@Qualifier(myexchange) Exchange exchange,@Qualifier(qgQueue) Queue queue){
-        return BindingBuilder.bind(queue).to(exchange).with("inform.#.qg.#").noargs();
+    public Binding bindingQg(@Qualifier(myexchange) Exchange exchange,@Qualifier(classinfo) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with("inform.#.classinfo.#").noargs();
     }
 
     //发送短信rabbitmq

@@ -10,7 +10,7 @@ import java.util.List;
 public interface ClassInfoService {
     Dto addClassInfo(Class_info classInfo);
     //根据搜索的班级号来加入班级
-    int addClassInfo(Class_info info,Integer class_number,Integer user_id);
+    int addnumberClassInfo(Class_info info,Integer class_number,String token);
     //根据班号获取班级人员的信息
     List<Class_info> findClassinfoBy(Integer class_number);
     //修改在本班级内的学生信息
