@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.SubjectMapper">
+    <!---->
+    <insert id="addSubject">
+        INSERT INTO `subject`
+            (`subjectId`,
+             `scoreId`,
+             `type`)
+        VALUES (#{subjectId},
+                #{scoreId},
+                #{type});
+    </insert>
+    
+    <select id="getSubjectByScoreId" resultType="com.zb.entity.Subject">
+        SELECT
+            *
+        FROM
+            `subject`
+        WHERE
+            scoreId=#{scoreId}
+    </select>
+
+    <update id="updateSubject">
+        UPDATE `subject`
+        SET
+          `high` = #{high},
+          `avg` = #{avg},
+          `low` = #{low}
+        WHERE `subjectId` = #{subjectId};
+    </update>
+
+    <delete id="delSubject">
+        delete from `subject` where scoreId=#{scoreId}
+    </delete>
+</mapper>

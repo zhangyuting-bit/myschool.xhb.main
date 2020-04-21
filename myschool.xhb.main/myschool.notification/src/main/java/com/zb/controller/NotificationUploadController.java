@@ -69,7 +69,7 @@ public class NotificationUploadController {
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
                 String str=file.getContentType().split("/")[1];
                 System.out.println(str);
-                if (str.equals("bmp")||str.equals("jpg")||str.equals("gif")||str.equals("png")){
+                if (str.equals("bmp")||str.equals("jpeg")||str.equals("gif")||str.equals("png")){
                     NotPic notPic=new NotPic();
                     notPic.setPicId(IdWorker.getId());
                     notPic.setFunctionId(functionId);

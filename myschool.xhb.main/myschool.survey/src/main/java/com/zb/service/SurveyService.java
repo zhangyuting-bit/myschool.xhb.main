@@ -30,10 +30,6 @@ public interface SurveyService {
      //删除推送消息
      public void delStuSur(String userId, String surveyId, String gradeId);
 
-     //获取推送状态
-     public Integer getStatus(String userId, String gradeId);
-     
-
      //撤销调查信息
      public void returnSurvey(String surveyId);
 

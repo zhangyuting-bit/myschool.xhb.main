@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.NumberMapper">
+    <!---->
+        <insert id="addNumber">
+            INSERT INTO `number`
+            (`numberId`,
+             `gradeId`,
+             `stuId`,
+             `stuNo`,
+             `stuName`)
+            VALUES (#{numberId},
+                    #{gradeId},
+                    #{stuId},
+                    #{stuNo},
+                    #{stuName});
+        </insert>
+
+    <select id="getNumberByGradeId" resultType="com.zb.entity.StuNumber">
+        SELECT
+            *
+        FROM
+            `number`
+        WHERE
+            gradeId=#{gradeId}
+    </select>
+    
+    <update id="updateNumber">
+        UPDATE `number`
+        SET
+          `stuNo` = #{stuNo}
+        WHERE `numberId` = #{numberId};
+    </update>
+
+    <select id="getNumberByNumberId" resultType="com.zb.entity.StuNumber">
+        SELECT
+            *
+        FROM
+            `number`
+        WHERE
+            numberId=#{numberId}
+    </select>
+
+    <select id="getNumberByName" resultType="com.zb.entity.StuNumber">
+        SELECT
+            numberId
+        FROM
+            `number`
+        WHERE
+            `stuName`=#{stuName}
+        AND
+            gradeId=#{gradeId}
+    </select>
+
+    <delete id="delClass">
+        delete from `number` where gradeId=#{gradeId} and userId=#{userId}
+    </delete>
+
+</mapper>

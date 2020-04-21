@@ -337,17 +337,18 @@ public class UserServiceImpl implements UserService {
     @RabbitListener(queues = RabbitConfig.sendQueue)
     public void sendMsg(SendVo sendVo){
         UserInfo userInfo=userMapper.getUserInfoById(sendVo.getUserId());
-        HashMap<String, Object> result = null;
-        restAPI.init("app.cloopen.com", "8883");
-        restAPI.setAccount("8a216da86f17653b016f4612998122bb", "c24d6c51aa10429baa5ead2330bb4180");
-        restAPI.setAppId("8a216da86f17653b016f461299eb22c1");
-        result = restAPI.sendTemplateSMS(userInfo.getPhone(),"1" ,new String[]{sendVo.getClassName()+"班的老师"+sendVo.getTeacherName()+"提醒您今日还未进行习惯打卡","5"});
-        if("000000".equals(result.get("statusCode"))){
-            HashMap<String,Object> data = (HashMap<String, Object>) result.get("data");
-            Set<String> keySet = data.keySet();
-            for(String key:keySet){
-                Object object = data.get(key);
-                System.out.println(key +" = "+object);
+        if (userInfo.getCodeType()==2){
+            HashMap<String, Object> result = null;
+            restAPI.init("app.cloopen.com", "8883");
+            restAPI.setAccount("8a216da86f17653b016f4612998122bb", "c24d6c51aa10429baa5ead2330bb4180");
+            restAPI.setAppId("8a216da86f17653b016f461299eb22c1");
+            result = restAPI.sendTemplateSMS(userInfo.getPhone(),"1" ,new String[]{sendVo.getClassName()+"班的老师"+sendVo.getTeacherName()+"提醒您今日还未进行习惯打卡","5"});
+            if("000000".equals(result.get("statusCode"))){
+                HashMap<String,Object> data = (HashMap<String, Object>) result.get("data");
+                Set<String> keySet = data.keySet();
+                for(String key:keySet){
+                    Object object = data.get(key);
+                }
             }
         }
     }

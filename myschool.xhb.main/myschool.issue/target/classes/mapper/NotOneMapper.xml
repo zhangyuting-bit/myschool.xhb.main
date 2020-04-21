@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.NotOneMapper">
+    <insert id="addOne">
+        INSERT INTO `notone`
+            (`oneId`,
+            `typeId`,
+             `functionId`,
+             `userId`,
+             `createTime`)
+        VALUES (#{oneId},
+                #{typeId},
+                #{functionId},
+                #{userId},
+                #{createTime});
+    </insert>
+
+    <select id="getOneByUserId" resultType="com.zb.entity.NotOne">
+        SELECT
+            *
+        FROM
+            `notone`
+        WHERE
+            userId=#{userId}
+        <if test="typeId != 0">AND typeId=#{typeId}</if>
+        ORDER BY createTime DESC
+    </select>
+
+    <delete id="delNotOneByNotIdAndUserId">
+        delete from `notone` where typeId=#{typeId} and functionId=#{functionId}
+    </delete>
+
+    <delete id="delNotOneByGradeIdAndUserId">
+        delete from `notone` where gradeId=#{gradeId} and userId=#{userId}
+    </delete>
+
+    <delete id="delNotOneByNotId">
+        delete from `notone` where functionId=#{functionId} and userId=#{userId} and typeId=#{typeId}
+    </delete>
+</mapper>

@@ -76,7 +76,7 @@ public class SurveyServiceImpl implements SurveyService {
                 userIds.add(class_info.getUser_id().toString());
             }
             class_add.setUserIds(userIds);
-            redisUtil.set(key,JSON.toJSONString(class_add), 120);
+            redisUtil.set(key,JSON.toJSONString(class_add), 240);
         }
         return class_add;
     }
@@ -132,7 +132,7 @@ public class SurveyServiceImpl implements SurveyService {
                 select.setAnswers(answerMapper.getAnswerBySelectId(select.getSelectId()));
             }
             survey.setSelects(selects);
-            redisUtil.set(key, JSON.toJSONString(survey),120);
+            redisUtil.set(key, JSON.toJSONString(survey),240);
         }
         return survey;
     }
@@ -164,9 +164,6 @@ public class SurveyServiceImpl implements SurveyService {
             notOneFeign.addNotOne(notOne);
             String key1 = "survey:" + userId + survey.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(survey), 40);
-            String key2 = "ok:" + userId + survey.getGradeId();
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
     }
     //学生端实时显示信息
@@ -196,19 +193,8 @@ public class SurveyServiceImpl implements SurveyService {
             Survey survey = JSON.parseObject(o.toString(), Survey.class);
             if (surveyId.equals(survey.getSurveyId())) {
                 redisUtil.del(key);
-                redisUtil.del("ok:" + userId + gradeId);
             }
         }
-    }
-
-    //获取推送状态
-    @Override
-    public Integer getStatus(String userId, String gradeId) {
-        String key = "ok:" + userId + gradeId;
-        if (redisUtil.hasKey(key)) {
-            return 1;
-        }
-        return null;
     }
 
     //撤销调查信息
@@ -241,8 +227,6 @@ public class SurveyServiceImpl implements SurveyService {
                 Survey survey=JSON.parseObject(redisUtil.get(key).toString(),Survey.class);
                 if (surveyId.equals(survey.getSurveyId())){
                     redisUtil.del(key);
-                    String key1= "ok:" + userId + survey1.getGradeId();
-                    redisUtil.del(key1);
                 }
             }
         }

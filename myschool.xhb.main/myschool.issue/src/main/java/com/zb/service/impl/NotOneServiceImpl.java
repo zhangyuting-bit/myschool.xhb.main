@@ -73,7 +73,7 @@ public class NotOneServiceImpl implements NotOneService {
                 gradeList.add(class_info.getClass_number().toString());
             }
             userVo.setGradeList(gradeList);
-            redisUtil.set(key,JSON.toJSONString(userVo), 120);
+            redisUtil.set(key,JSON.toJSONString(userVo), 240);
         }
         return userVo;
     }

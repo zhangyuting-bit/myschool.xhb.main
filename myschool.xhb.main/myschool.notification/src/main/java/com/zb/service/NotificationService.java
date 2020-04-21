@@ -30,9 +30,6 @@ public interface NotificationService {
     //添加推送状态
     public void addStatus(String gradeId,String notificationId);
 
-    //获取推送状态
-    public Integer getStatus(String userId,String gradeId);
-
     //根据通知编号获取通知信息
     public Notification getNotification(String notificationId);
 

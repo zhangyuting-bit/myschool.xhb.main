@@ -83,7 +83,7 @@ public class NotificationServiceImpl implements NotificationService {
                 userIds.add(class_info.getUser_id().toString());
             }
             class_add.setUserIds(userIds);
-            redisUtil.set(key, JSON.toJSONString(class_add), 120);
+            redisUtil.set(key, JSON.toJSONString(class_add), 240);
         }
         return class_add;
     }
@@ -138,7 +138,7 @@ public class NotificationServiceImpl implements NotificationService {
             notification.setNotPics(notPicMapper.getPicByFId(notification.getNotificationId()));
             //根据通知编号查询附件
             notification.setDocuments(notDocumentMapper.getDocumentByNId(notification.getNotificationId()));
-            redisUtil.set(key, JSON.toJSONString(notification), 120);
+            redisUtil.set(key, JSON.toJSONString(notification), 240);
         }
         return notification;
     }
@@ -163,7 +163,7 @@ public class NotificationServiceImpl implements NotificationService {
                     List<JobTask> tasks = jobVo.getJobTasks();
                     tasks.add(jobTask);
                     jobVo.setJobTasks(tasks);
-                    redisUtil.set(key, JSON.toJSONString(jobVo));
+                    redisUtil.set(key, JSON.toJSONString(jobVo),240);
                 }
             }
         }
@@ -200,7 +200,6 @@ public class NotificationServiceImpl implements NotificationService {
             Notification notification = JSON.parseObject(o.toString(), Notification.class);
             if (notificationId.equals(notification.getNotificationId())) {
                 redisUtil.del(key);
-                redisUtil.del("ok:" + userId + gradeId);
             }
         }
     }
@@ -227,20 +226,7 @@ public class NotificationServiceImpl implements NotificationService {
             notOneFeign.addNotOne(notOne);
             String key1 = "not:" + userId + notification.getGradeId();
             redisUtil.set(key1, JSON.toJSONString(notification), 40);
-            String key2 = "ok:" + userId + notification.getGradeId();
-            String ok = "";
-            redisUtil.set(key2, JSON.toJSONString(ok), 40);
         }
-    }
-
-    //获取推送状态
-    @Override
-    public Integer getStatus(String userId, String gradeId) {
-        String key = "ok:" + userId + gradeId;
-        if (redisUtil.hasKey(key)) {
-            return 1;
-        }
-        return null;
     }
 
     //撤销通知信息
@@ -268,8 +254,6 @@ public class NotificationServiceImpl implements NotificationService {
                 Notification notification = JSON.parseObject(o.toString(), Notification.class);
                 if (notificationId.equals(notification.getNotificationId())) {
                     redisUtil.del(key);
-                    String key1 = "ok:" + userId + notification1.getGradeId();
-                    redisUtil.del(key1);
                 }
             }
         }

@@ -77,7 +77,7 @@ public class JobTaskService {
             jobVo.setId(1);
             jobTasks=jobTaskMapper.getJobTaskAll();
             jobVo.setJobTasks(jobTasks);
-            redisUtil.set(key,JSON.toJSONString(jobVo));
+            redisUtil.set(key,JSON.toJSONString(jobVo),240);
         }
         return jobTasks;
     }

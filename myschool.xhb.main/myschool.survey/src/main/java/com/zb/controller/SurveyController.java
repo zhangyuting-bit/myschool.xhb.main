@@ -59,12 +59,6 @@ public class SurveyController {
         surveyService.delStuSur(userId, surveyId, gradeId);
     }
 
-    //获取推送状态
-    @GetMapping("/getSurStatus")
-    public Dto<Integer> getStatus(String userId,String gradeId){
-        return DtoUtil.returnSuccess("ok",surveyService.getStatus(userId,gradeId));
-    }
-
     //撤销调查信息
     @GetMapping("/returnSurvey/{surveyId}")
     public void returnSurvey(@PathVariable("surveyId") String surveyId){
