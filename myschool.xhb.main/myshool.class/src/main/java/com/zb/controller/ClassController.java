@@ -108,10 +108,10 @@ public class ClassController {
     public Dto classinfoby(@PathVariable("id")String id){
         return DtoUtil.returnSuccess("ok", classInfoService.getClassInfoBy(id));
     }
-    @PostMapping("/addclassjob/{class_number}/{user_id}")
+    @PostMapping("/addclassjob/{class_number}/{token}")
     public Dto addclassjob(
-            Class_info classInfo,@PathVariable("class_number")Integer class_number,@PathVariable("user_id")Integer user_id){
-        return DtoUtil.returnSuccess("ok", classInfoService.addClassInfo(classInfo,class_number,user_id));
+            Class_info classInfo,@PathVariable("class_number")Integer class_number,@PathVariable("token")String  token){
+        return DtoUtil.returnSuccess("ok", classInfoService.addnumberClassInfo(classInfo,class_number,token));
     }
     //
     @GetMapping("/addclassinfo/{class_number}")
