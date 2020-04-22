@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="myschool.score" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <module name="myschool.notification.api" />
         <module name="myschool.auth" />
 =======
@@ -19,7 +20,11 @@
         <module name="myschool.auth" />
         <module name="myschool.survey.api" />
 >>>>>>> master
+=======
+        <module name="myschool.survey" />
+>>>>>>> c79516d544d9d35fc179f97f902257527f01a8e2
         <module name="myschool.common" />
+        <module name="myschool.lable.api" />
         <module name="myschool.task" />
         <module name="myschool.lable" />
         <module name="myschool.record" />
@@ -30,6 +35,7 @@
         <module name="myshool.class.api" />
 >>>>>>> master
         <module name="myschool.score.api" />
+<<<<<<< HEAD
         <module name="myschool.survey" />
         <module name="myschool.comment" />
         <module name="myschool.auth.api" />
@@ -54,21 +60,39 @@
         <module name="myschool.eureka" />
         <module name="myschool.user.api" />
 >>>>>>> master
-        <module name="myschool.comment.api" />
+=======
+        <module name="myshool.class.api" />
+        <module name="myschool.comment" />
+        <module name="myschool.auth.api" />
+        <module name="myschool.user" />
+        <module name="myschool.notification.api" />
         <module name="myschool.agreement.api" />
+        <module name="myschool.task.api" />
+        <module name="myschool.eureka" />
+        <module name="myschool.user.api" />
+        <module name="myschool.agreement" />
+>>>>>>> c79516d544d9d35fc179f97f902257527f01a8e2
+        <module name="myschool.comment.api" />
         <module name="myschool.survey.api" />
         <module name="myschool.gataway" />
         <module name="myschool.common.api" />
+<<<<<<< HEAD
         <module name="myschool.lable.api" />
+=======
+        <module name="myschool.issue" />
+>>>>>>> c79516d544d9d35fc179f97f902257527f01a8e2
         <module name="myschool.issue.api" />
         <module name="myschool.record.api" />
         <module name="myschool.user" />
       </profile>
     </annotationProcessing>
+<<<<<<< HEAD
 =======
 >>>>>>> b7ffed6ed28f5dbd1b9c006056db676441a55e2f
     <bytecodeTargetLevel>
       <module name="myschool.xhb.main" target="1.8" />
     </bytecodeTargetLevel>
+=======
+>>>>>>> c79516d544d9d35fc179f97f902257527f01a8e2
   </component>
 </project>

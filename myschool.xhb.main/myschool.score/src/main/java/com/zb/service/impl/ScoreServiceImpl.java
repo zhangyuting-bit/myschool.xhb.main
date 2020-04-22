@@ -229,17 +229,8 @@ public class ScoreServiceImpl implements ScoreService {
 
         //根据班级编号获取用户信息
         List<String> userIds = getClassInfo(score.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(score.getScoreId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(score.getTypeId());
-            notOne.setCreateTime(score.getCreateTime());
-            notOneFeign.addNotOne(notOne);
-            String key1 = "score:" + userId + score.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(score), 40);
-        }
+        score.setUserIds(userIds);
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.scoKey,score);
     }
 
     //根据成绩编号获取信息

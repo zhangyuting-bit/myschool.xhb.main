@@ -8,9 +8,6 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface NotOneService {
-    //添加个人信息
-    public Integer addNotOne(NotOne notOne);
-
     //根据用户编号获取用户所在所有班级
     public UserVo getUserGrade(String userId);
 

@@ -53,6 +53,63 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with("inform.#.classinfo.#").noargs();
     }
 
+    //添加通知rabbitmq
+    //添加通知消息队列
+    public static final String notQueue="not.boot.queue";
+    //添加通知钥匙
+    public static final String notKey="not.key.queue";
+
+    //创建添加通知消息队列
+    @Bean(notQueue)
+    public Queue createNotQueue(){
+        Queue queue =new Queue(notQueue);
+        return queue;
+    }
+
+    //将添加通知队列绑定到交换机上
+    @Bean
+    public Binding bindingNot(@Qualifier(myexchange) Exchange exchange , @Qualifier(notQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(notKey).noargs();
+    }
+
+    //添加调查rabbitmq
+    //添加调查消息队列
+    public static final String surQueue="sur.boot.queue";
+    //添加调查钥匙
+    public static final String surKey="sur.key.queue";
+
+    //创建添加调查消息队列
+    @Bean(surQueue)
+    public Queue createSurQueue(){
+        Queue queue =new Queue(surQueue);
+        return queue;
+    }
+
+    //将添加调查消息对列绑定到交换机上
+    @Bean
+    public Binding bindingSur(@Qualifier(myexchange) Exchange exchange , @Qualifier(surQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(surKey).noargs();
+    }
+
+    //添加成绩rabbitmq
+    //添加成绩消息队列
+    public static final String scoQueue="sco.boot.queue";
+    //添加成绩钥匙
+    public static final String scoKey="sco.key.queue";
+
+    //创建添加成绩消息队列
+    @Bean(scoQueue)
+    public Queue createScoQueue(){
+        Queue queue =new Queue(scoQueue);
+        return queue;
+    }
+
+    //将添加成绩消息对列绑定到交换机上
+    @Bean
+    public Binding bindingSco(@Qualifier(myexchange) Exchange exchange , @Qualifier(scoQueue) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with(scoKey).noargs();
+    }
+
     //发送短信rabbitmq
     //发送短信消息队列
     public static final String sendQueue="send.boot.queue";
