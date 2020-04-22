@@ -57,7 +57,6 @@ qiniu:
   secretKey: M6p0Uta1CEjw1j-Sx_bX-U8Ikb4lUN8QFrZxGXDJ
   bucket: mydemo5418
   path: http://q89nsulx9.bkt.clouddn.com/
-
 ribbon:
   ReadTimeout: 3000
   ConnectTimeout: 3000
