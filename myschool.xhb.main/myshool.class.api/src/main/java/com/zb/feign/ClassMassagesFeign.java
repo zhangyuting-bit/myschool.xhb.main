@@ -1,12 +1,9 @@
 package com.zb.feign;
 
 import com.zb.dto.Dto;
-<<<<<<< HEAD
 import com.zb.dto.DtoUtil;
 import com.zb.pojo.Class_add;
 import com.zb.pojo.Class_info;
-=======
->>>>>>> b7ffed6ed28f5dbd1b9c006056db676441a55e2f
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

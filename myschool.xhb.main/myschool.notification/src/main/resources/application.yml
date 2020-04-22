@@ -1,6 +1,5 @@
 server:
   port: 1004
-  connection-timeout: 1000000
 spring:
   application:
     name: NOTIFICATIONSERVER
