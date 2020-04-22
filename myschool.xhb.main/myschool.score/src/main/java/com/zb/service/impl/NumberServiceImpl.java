@@ -3,6 +3,7 @@ package com.zb.service.impl;
 import com.zb.config.RabbitConfig;
 import com.zb.entity.StuNumber;
 import com.zb.mapper.NumberMapper;
+import com.zb.pojo.Class_Jobinfo;
 import com.zb.service.NumberService;
 import com.zb.util.IdWorker;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -24,13 +25,13 @@ public class NumberServiceImpl implements NumberService {
     }
 
     //学生加入班级时添加学生学号
-    //@RabbitListener(queues = RabbitConfig.numQueue)
-    public void intoClass(String gradeId,String userId,String userName){
+    @RabbitListener(queues = RabbitConfig.classinfo)
+    public void intoClass(Class_Jobinfo jobinfo){
         StuNumber stuNumber=new StuNumber();
         stuNumber.setNumberId(IdWorker.getId());
-        stuNumber.setGradeId(gradeId);
-        stuNumber.setStuId(userId);
-        stuNumber.setStuName(userName);
+        stuNumber.setGradeId(jobinfo.getClass_number().toString());
+        stuNumber.setStuId(jobinfo.getNumber().toString());
+        stuNumber.setStuName(jobinfo.getCall_name());
         numberMapper.addNumber(stuNumber);
     }
 

@@ -5,6 +5,7 @@ import com.zb.config.RabbitConfig;
 import com.zb.entity.*;
 import com.zb.feign.*;
 import com.zb.mapper.NotOneMapper;
+import com.zb.pojo.Class_Jobinfo;
 import com.zb.pojo.Class_add;
 import com.zb.pojo.Class_info;
 import com.zb.pojo.UserInfo;
@@ -12,6 +13,7 @@ import com.zb.service.NotOneService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import com.zb.vo.UserVo;
+import org.apache.activemq.broker.scheduler.Job;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
@@ -165,16 +167,17 @@ public class NotOneServiceImpl implements NotOneService {
     }
 
     //加入班级后添加之前此班级发的信息
-    public void intoClass(String gradeId,String userId){
+    @RabbitListener(queues = RabbitConfig.classinfo)
+    public void intoClass(Class_Jobinfo jobinfo){
         //根据班级编号查询此班级所有之前发送的信息
-        List<Notification>notifications=notificationCollectFeign.getNotificationByGrade(gradeId);
-        List<Survey>surveys=surveyCollectFeign.getSurveyByGrade(gradeId);
-        List<Score>scores=scoreCollectFeign.getScoreListByGradeId(gradeId);
+        List<Notification>notifications=notificationCollectFeign.getNotificationByGrade(jobinfo.getClass_number().toString());
+        List<Survey>surveys=surveyCollectFeign.getSurveyByGrade(jobinfo.getClass_number().toString());
+        List<Score>scores=scoreCollectFeign.getScoreListByGradeId(jobinfo.getClass_number().toString());
         for (Notification notification:notifications) {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(notification.getNotificationId());
-            notOne.setUserId(userId);
+            notOne.setUserId(jobinfo.getNumber().toString());
             notOne.setTypeId(notification.getTypeId());
             notOne.setCreateTime(notification.getNotifyTime());
             notOneMapper.addOne(notOne);
@@ -184,7 +187,7 @@ public class NotOneServiceImpl implements NotOneService {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(survey.getSurveyId());
-            notOne.setUserId(userId);
+            notOne.setUserId(jobinfo.getNumber().toString());
             notOne.setTypeId(survey.getTypeId());
             notOne.setCreateTime(survey.getStartTime());
             notOneMapper.addOne(notOne);
@@ -194,30 +197,30 @@ public class NotOneServiceImpl implements NotOneService {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(score.getScoreId());
-            notOne.setUserId(userId);
+            notOne.setUserId(jobinfo.getNumber().toString());
             notOne.setTypeId(score.getTypeId());
             notOne.setCreateTime(score.getCreateTime());
             notOneMapper.addOne(notOne);
         }
 
         //查询redis是否存在相应用户信息
-        String key="user:"+userId;
+        String key="user:"+jobinfo.getNumber().toString();
         if (redisUtil.hasKey(key)) {
             Object o = redisUtil.get(key);
             UserInfo userInfo = JSON.parseObject(o.toString(), UserInfo.class);
             List<String>gradeIds=userInfo.getGradeIds();
-            gradeIds.add(gradeId);
+            gradeIds.add(jobinfo.getClass_number().toString());
             userInfo.setGradeIds(gradeIds);
             redisUtil.set(key,JSON.toJSONString(userInfo), 120);
         }
 
         //查询redis是否存在相应班级信息
-        String key1="ca:"+gradeId;
+        String key1="ca:"+jobinfo.getClass_number().toString();
         if (redisUtil.hasKey(key1)){
             Object o = redisUtil.get(key1);
             Class_add class_add = JSON.parseObject(o.toString(), Class_add.class);
             List<String>userIds=class_add.getUserIds();
-            userIds.add(userId);
+            userIds.add(jobinfo.getNumber().toString());
             class_add.setUserIds(userIds);
             redisUtil.set(key1,JSON.toJSONString(class_add), 120);
         }
