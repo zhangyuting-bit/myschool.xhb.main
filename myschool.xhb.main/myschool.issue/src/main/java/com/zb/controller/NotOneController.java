@@ -17,12 +17,6 @@ public class NotOneController {
     @Resource
     private NotOneService service;
 
-    //添加个人信息
-    @RequestMapping("/addNotOne")
-    public Integer addNotOne(@RequestBody NotOne notOne){
-        return service.addNotOne(notOne);
-    }
-
     //根据用户编号获取用户所在所有班级
     @GetMapping("/getUserGrade/{userId}")
     public Dto<UserVo> getUserGrade(@PathVariable("userId") String userId){

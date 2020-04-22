@@ -22,8 +22,4 @@ public interface NotOneFeign {
     public Integer delNotOneByNotIdAndUserId(@RequestParam(value = "functionId",required = false)String functionId
             ,@RequestParam(value = "typeId",required = false) Integer typeId);
 
-    //添加个人信息
-    @RequestMapping("/addNotOne")
-    public Integer addNotOne(@RequestBody NotOne notOne);
-
 }
