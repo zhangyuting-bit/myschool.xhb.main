@@ -49,7 +49,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+    <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="issue_LZQ">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.common.api/src/main/java/com/zb/config/RabbitConfig.java" afterDir="false" />
@@ -113,7 +113,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../北大青鸟课程/S3/微服/18/01/myshop.main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -374,6 +374,7 @@
       <workItem from="1587272042144" duration="1866000" />
       <workItem from="1587342859659" duration="6602000" />
       <workItem from="1587438207690" duration="8817000" />
+<<<<<<< HEAD
       <workItem from="1587450355808" duration="600000" />
       <workItem from="1587517393120" duration="2431000" />
     </task>
@@ -404,6 +405,11 @@
       <option name="presentableId" value="LOCAL-00040" />
       <option name="project" value="LOCAL" />
       <updated>1585558865146</updated>
+=======
+      <workItem from="1587450355808" duration="1927000" />
+      <workItem from="1587465564154" duration="1070000" />
+      <workItem from="1587471895333" duration="15000" />
+>>>>>>> origin/issue_LZQ
     </task>
     <task id="LOCAL-00041" summary="issue_LZQ">
       <created>1585809329361</created>
@@ -720,7 +726,35 @@
       <option name="project" value="LOCAL" />
       <updated>1587449897933</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="issue_LZQ">
+      <created>1587452005574</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1587452005574</updated>
+    </task>
+    <task id="LOCAL-00087" summary="issue_LZQ">
+      <created>1587453036141</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1587453036141</updated>
+    </task>
+    <task id="LOCAL-00088" summary="issue_LZQ">
+      <created>1587453596732</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1587453596732</updated>
+    </task>
+    <task id="LOCAL-00089" summary="issue_LZQ">
+      <created>1587465970539</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1587465970540</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -767,15 +801,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587041598717" />
-    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1587449886191">
+    <state x="347" y="0" key="CommitChangelistDialog2" timestamp="1587471907737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587449886191" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587265795630">
+    <state x="347" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587471907737" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587471795391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
+<<<<<<< HEAD
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587265795630" />
     <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587519677992">
+=======
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587471795391" />
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587449944914">
+>>>>>>> origin/issue_LZQ
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587519677992" />
@@ -831,10 +870,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584241825299" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587449943144">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587466023151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587449943144" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587466023151" />
     <state x="436" y="199" key="git4idea.merge.GitPullDialog" timestamp="1587092503299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
