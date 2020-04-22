@@ -78,10 +78,52 @@ public class NotOneServiceImpl implements NotOneService {
         return userVo;
     }
 
-    //添加个人信息
-    @Override
-    public Integer addNotOne(NotOne notOne){
-        return notOneMapper.addOne(notOne);
+    //添加个人通知消息
+    @RabbitListener(queues = RabbitConfig.notQueue)
+    public void addNotOne(Notification notification){
+        for (String userId : notification.getUserId()) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(notification.getNotificationId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(notification.getTypeId());
+            notOne.setCreateTime(notification.getNotifyTime());
+            notOneMapper.addOne(notOne);
+            String key1 = "not:" + userId + notification.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(notification), 40);
+        }
+    }
+
+    //添加个人调查消息
+    @RabbitListener(queues = RabbitConfig.surQueue)
+    public void addSurOne(Survey survey){
+        for (String userId : survey.getUserIds()) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(survey.getSurveyId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(survey.getTypeId());
+            notOne.setCreateTime(survey.getStartTime());
+            notOneMapper.addOne(notOne);
+            String key1 = "survey:" + userId + survey.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(survey), 40);
+        }
+    }
+
+    //添加个人成绩消息
+    @RabbitListener(queues = RabbitConfig.scoQueue)
+    public void addScoOne(Score score){
+        for (String userId : score.getUserIds()) {
+            NotOne notOne = new NotOne();
+            notOne.setOneId(IdWorker.getId());
+            notOne.setFunctionId(score.getScoreId());
+            notOne.setUserId(userId);
+            notOne.setTypeId(score.getTypeId());
+            notOne.setCreateTime(score.getCreateTime());
+            notOneMapper.addOne(notOne);
+            String key1 = "score:" + userId + score.getGradeId();
+            redisUtil.set(key1, JSON.toJSONString(score), 40);
+        }
     }
 
     //根据用户编号获取用户所有信息

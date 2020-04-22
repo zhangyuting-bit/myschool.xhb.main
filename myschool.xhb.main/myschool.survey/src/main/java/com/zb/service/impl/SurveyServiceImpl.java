@@ -154,17 +154,8 @@ public class SurveyServiceImpl implements SurveyService {
         survey.setClass_add(class_add);
         //根据班级编号获取用户信息
         List<String>userIds=getClassInfo(survey.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(survey.getSurveyId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(survey.getTypeId());
-            notOne.setCreateTime(survey.getStartTime());
-            notOneFeign.addNotOne(notOne);
-            String key1 = "survey:" + userId + survey.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(survey), 40);
-        }
+        survey.setUserIds(userIds);
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.surKey,survey);
     }
     //学生端实时显示信息
     @Override

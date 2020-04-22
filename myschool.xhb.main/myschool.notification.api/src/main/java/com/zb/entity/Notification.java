@@ -42,6 +42,16 @@ public class Notification implements Serializable {
     private Class_add class_add;
     //提醒时间
     private String taskTime;
+    //用户编号信息
+    private List<String>userId;
+
+    public List<String> getUserId() {
+        return userId;
+    }
+
+    public void setUserId(List<String> userId) {
+        this.userId = userId;
+    }
 
     public String getTaskTime() {
         return taskTime;

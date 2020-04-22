@@ -216,17 +216,8 @@ public class NotificationServiceImpl implements NotificationService {
         notification.setNotPic(picByStatu);
         //根据班级编号获取用户信息
         List<String> userIds = getClassInfo(notification.getGradeId()).getUserIds();
-        for (String userId : userIds) {
-            NotOne notOne = new NotOne();
-            notOne.setOneId(IdWorker.getId());
-            notOne.setFunctionId(notification.getNotificationId());
-            notOne.setUserId(userId);
-            notOne.setTypeId(notification.getTypeId());
-            notOne.setCreateTime(notification.getNotifyTime());
-            notOneFeign.addNotOne(notOne);
-            String key1 = "not:" + userId + notification.getGradeId();
-            redisUtil.set(key1, JSON.toJSONString(notification), 40);
-        }
+        notification.setUserId(userIds);
+        rabbitTemplate.convertAndSend(RabbitConfig.myexchange,RabbitConfig.notKey,notification);
     }
 
     //撤销通知信息

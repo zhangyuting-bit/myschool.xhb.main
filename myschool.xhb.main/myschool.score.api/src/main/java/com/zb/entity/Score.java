@@ -42,6 +42,16 @@ public class Score implements Serializable {
     private List<StuComment>stuComments;
     //班级信息
     private Class_add class_add;
+    //用户编号
+    private List<String>userIds;
+
+    public List<String> getUserIds() {
+        return userIds;
+    }
+
+    public void setUserIds(List<String> userIds) {
+        this.userIds = userIds;
+    }
 
     public Class_add getClass_add() {
         return class_add;
