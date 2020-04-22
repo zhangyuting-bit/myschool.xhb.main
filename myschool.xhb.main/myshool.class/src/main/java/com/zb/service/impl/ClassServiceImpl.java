@@ -98,8 +98,8 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
     }
 
     @Override
-    public Class_add findClassByid(String id) {
-        return classMapper.getClassByid(id);
+    public Class_add findClassByid(String class_number) {
+        return classMapper.getClassByid(class_number);
     }
 
     @Override
@@ -107,6 +107,7 @@ public class ClassServiceImpl implements ClassService, InitializingBean {
         this.putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
     }
+
     /**
      * 获取上传凭证
      *

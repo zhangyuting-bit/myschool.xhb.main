@@ -40,6 +40,16 @@ public class Notification implements Serializable {
     private Integer status;
     //教师信息
     private Class_add class_add;
+    //提醒时间
+    private String taskTime;
+
+    public String getTaskTime() {
+        return taskTime;
+    }
+
+    public void setTaskTime(String taskTime) {
+        this.taskTime = taskTime;
+    }
 
     public Class_add getClass_add() {
         return class_add;

@@ -3,7 +3,6 @@ package com.zb.controller;
 import com.zb.dto.Dto;
 import com.zb.dto.DtoUtil;
 import com.zb.entity.Score;
-import com.zb.entity.User;
 import com.zb.service.ScoreService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,12 +59,6 @@ public class ScoreController {
         return DtoUtil.returnSuccess("ok",service.getScoStu(userId, gradeId));
     }
 
-    //获取推送状态
-    @GetMapping("/getScoStatus")
-    public Dto<Integer> getStatus(String userId, String gradeId){
-        return DtoUtil.returnSuccess("ok",service.getStatus(userId, gradeId));
-    }
-
     //删除推送消息
     @GetMapping("/delStuSco")
     public void delStuSco(String userId, String scoreId, String gradeId){
@@ -90,12 +83,6 @@ public class ScoreController {
         return DtoUtil.returnSuccess("ok",service.delScore(scoreId));
     }
 
-    //根据用户编号获取班级信息
-    @GetMapping("/getUserByUserId")
-    public User getUserByUserId(String userId){
-        return service.getUserByUserId(userId);
-    }
-
     //修改删除考试信息
     @GetMapping("/returnUpdate/{scoreId}")
     public void returnUpdate(@PathVariable("scoreId")String scoreId){
@@ -105,12 +92,18 @@ public class ScoreController {
     //获取修改的考试信息
     @GetMapping("/getUpdateScore/{scoreId}")
     public Dto<Score> getUpdateScore(@PathVariable("scoreId") String scoreId){
-        return DtoUtil.returnSuccess("ok",service.getUpdateScore(scoreId));
+        return DtoUtil.returnSuccess("ok",service.getScore(scoreId));
     }
 
     //根据分数编号获取集合成绩单例
     @GetMapping("/getByScoreId/{scoreId}")
     public Score getByScoreId(@PathVariable("scoreId")String scoreId){
         return service.getByScoreId(scoreId);
+    }
+
+    //根据班级编号获取成绩消息
+    @GetMapping("/getScoreListByGradeId/{gradeId}")
+    public List<Score> getScoreListByGradeId(@PathVariable("gradeId") String gradeId){
+        return service.getScoreListByGradeId(gradeId);
     }
 }

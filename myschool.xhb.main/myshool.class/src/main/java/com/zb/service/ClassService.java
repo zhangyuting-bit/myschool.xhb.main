@@ -28,5 +28,5 @@ public interface ClassService {
     //静态化页面分享班级的信息加二维码
     Class_add findclassinforBy(Integer class_number);
     //根据班级id查询班级
-    Class_add findClassByid(String id);
+    Class_add findClassByid(String class_number);
 }

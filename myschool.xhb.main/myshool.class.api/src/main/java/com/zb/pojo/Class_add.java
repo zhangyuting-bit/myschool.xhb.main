@@ -1,6 +1,7 @@
 package com.zb.pojo;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
 *   pojo of class_add
@@ -32,6 +33,17 @@ public class Class_add implements Serializable {
     public Integer class_count;
     private  String createdTime;
     private String updatedTime;
+    //班级学生编号集合
+    private List<String>userIds;
+
+    public List<String> getUserIds() {
+        return userIds;
+    }
+
+    public void setUserIds(List<String> userIds) {
+        this.userIds = userIds;
+    }
+
     //getter setter
     public void setId (String  id){
         this.id=id;

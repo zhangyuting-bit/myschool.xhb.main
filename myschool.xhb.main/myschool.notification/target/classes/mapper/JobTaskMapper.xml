@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.JobTaskMapper">
+    <select id="getJobTaskAll" resultType="com.zb.entity.JobTask">
+        SELECT
+            *
+        FROM
+            jobtask
+    </select>
+
+    <insert id="addJobTask">
+        INSERT INTO `jobtask`
+                    (`id`,
+                     `notificationId`,
+                     `gradeId`,
+                     `taskTime`)
+            VALUES (#{id},
+                    #{notificationId},
+                    #{gradeId},
+                    #{taskTime});
+    </insert>
+
+    <delete id="delJobTask">
+        delete from jobtask where notificationId=#{notificationId}
+    </delete>
+
+    <update id="updateTime">
+        UPDATE `jobtask`
+            SET
+              `taskTime` = #{taskTime}
+            WHERE `notificationId` = #{notificationId};
+    </update>
+</mapper>

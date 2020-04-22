@@ -20,4 +20,7 @@ public interface NumberMapper {
 
     //根据班级编号和班级名称获取学号信息
     StuNumber getNumberByName(@Param("stuName")String stuName, @Param("gradeId")String gradeId);
+
+    //根据班级编号和用户删除学生学号信息
+    Integer delClass(@Param("gradeId")String gradeId,@Param("userId")String userId);
 }

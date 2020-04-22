@@ -1,10 +1,14 @@
 package com.zb.service;
 
 import com.zb.entity.Survey;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface SurveyService {
+     //根据班级编号获取调查信息
+     List<Survey>getSurveyByGrade(String gradeId);
+
      //根据用户编号查询调查通知
      public List<Survey> getSurveyByUserId(Integer typeId,String userId);
 
@@ -25,10 +29,6 @@ public interface SurveyService {
 
      //删除推送消息
      public void delStuSur(String userId, String surveyId, String gradeId);
-
-     //获取推送状态
-     public Integer getStatus(String userId, String gradeId);
-     
 
      //撤销调查信息
      public void returnSurvey(String surveyId);
