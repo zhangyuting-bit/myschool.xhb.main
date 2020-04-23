@@ -19,10 +19,10 @@ import com.zb.pojo.UserInfo;
 import com.zb.service.NotificationService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
-import com.zb.vo.JobVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -156,15 +156,6 @@ public class NotificationServiceImpl implements NotificationService {
                 jobTask.setNotificationId(notification.getNotificationId());
                 jobTask.setTaskTime(notification.getTaskTime());
                 jobTaskMapper.addJobTask(jobTask);
-                String key = "jobTask";
-                if (redisUtil.hasKey(key)) {
-                    Object o = redisUtil.get(key);
-                    JobVo jobVo = JSON.parseObject(o.toString(), JobVo.class);
-                    List<JobTask> tasks = jobVo.getJobTasks();
-                    tasks.add(jobTask);
-                    jobVo.setJobTasks(tasks);
-                    redisUtil.set(key, JSON.toJSONString(jobVo),240);
-                }
             }
         }
         return notification;
@@ -222,6 +213,7 @@ public class NotificationServiceImpl implements NotificationService {
 
     //撤销通知信息
     @Override
+    @Transactional
     public void returnNot(String notificationId) {
         Notification notification1 = notificationMapper.getNotificationById(notificationId);
         if (notification1 == null) {

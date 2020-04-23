@@ -51,55 +51,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/config/Swagger2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/RedisUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Status$ExpireEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/classes/com/zb/util/Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common.api/target/myschool.common.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.common/target/myschool.common-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.eureka/target/myschool.eureka-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.gataway/target/myschool.gataway-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/com/zb/HabitServerApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/com/zb/controller/HabitController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/com/zb/mapper/HabitMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/com/zb/service/HabitService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/com/zb/service/impl/HabitServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.habit/target/classes/mapper/HabitMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.notification/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.notification/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/controller/TaskController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/mapper/TaskMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/TaskService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/com/zb/service/impl/TaskServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.task/target/classes/mapper/TaskMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/classes/META-INF/myshool.class.api.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/target/myshool.class.api-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/controller/ClassTimetableController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/ClassInfoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/classes/com/zb/service/impl/ClassTimetableServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/myshool.class-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/target/myshool.class-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotOneMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotOneMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotOneMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.notification.api/src/main/java/com/zb/vo/JobVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/Job/JobTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/Job/JobTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +116,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/北大青鸟课程/S3/微服/18/01/auth2.server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -191,7 +149,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MyClassApp">
-    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
         <pattern>
@@ -204,7 +162,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyClassApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MyClassApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myshool.class" />
       <extension name="coverage">
         <pattern>
@@ -217,7 +175,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyGatWayServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MyGatWayServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.gataway" />
       <extension name="coverage">
         <pattern>
@@ -230,7 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MySchoolUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MySchoolUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.user" />
       <extension name="coverage">
         <pattern>
@@ -243,7 +201,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotificationServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="NotificationServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.notification" />
       <extension name="coverage">
         <pattern>
@@ -256,15 +214,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.MyClassApp" />
-        <item itemvalue="Spring Boot.MySchoolUserApp" />
-        <item itemvalue="Spring Boot.NotificationServerApp" />
-        <item itemvalue="Spring Boot.IssueServerApp" />
-        <item itemvalue="Spring Boot.MyGatWayServerApp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -291,11 +240,35 @@
       <option name="project" value="LOCAL" />
       <updated>1587530303771</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="issue_LZQ">
+      <created>1587534500945</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587534500945</updated>
+    </task>
+    <task id="LOCAL-00005" summary="issue_LZQ">
+      <created>1587534515108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587534515109</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="" />
+      <created>1587538538936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587538538936</updated>
+      <workItem from="1587538583364" duration="1799000" />
+      <workItem from="1587614123426" duration="5743000" />
+      <workItem from="1587629001894" duration="2614000" />
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -324,10 +297,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1587346237181" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587532876884">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587629307950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587532876884" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587629307950" />
     <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586250644158">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -348,46 +321,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586260083515" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587534491646">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587534514040">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587534491646" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1586250625902">
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587534514040" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587626721013">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586250625902" />
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587534459523">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587626721013" />
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
-    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1587534459522">
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587534459522" />
-    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1587534459522">
+    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587534459522" />
-    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1587534459523">
+    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1587534459523">
+    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
-    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1587534459523">
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
-    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1587534459523">
+    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
-    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1587534459523">
+    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1587629675203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587534459523" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
     <state width="1493" height="270" key="GridCell.Tab.2.bottom" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -412,10 +385,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584241825299" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587472113739">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587534547239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587472113739" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587534547239" />
     <state x="436" y="199" key="git4idea.merge.GitPullDialog" timestamp="1587092503299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

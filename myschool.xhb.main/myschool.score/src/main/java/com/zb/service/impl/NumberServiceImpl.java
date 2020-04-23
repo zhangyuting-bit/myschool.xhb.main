@@ -27,6 +27,9 @@ public class NumberServiceImpl implements NumberService {
     //学生加入班级时添加学生学号
     @RabbitListener(queues = RabbitConfig.classinfo)
     public void intoClass(Class_Jobinfo jobinfo){
+        if(numberMapper.getNumberByName(jobinfo.getCall_name(),jobinfo.getClass_number().toString())!=null){
+            return;
+        }
         StuNumber stuNumber=new StuNumber();
         stuNumber.setNumberId(IdWorker.getId());
         stuNumber.setGradeId(jobinfo.getClass_number().toString());

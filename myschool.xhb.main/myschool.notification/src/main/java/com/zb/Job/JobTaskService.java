@@ -1,25 +1,18 @@
 package com.zb.Job;
 
-import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
 import com.zb.entity.JobTask;
 import com.zb.feign.ClassMassagesFeign;
-import com.zb.feign.UserFeignClient;
 import com.zb.mapper.JobTaskMapper;
 import com.zb.pojo.Class_add;
 import com.zb.pojo.Class_info;
-import com.zb.pojo.UserInfo;
 import com.zb.util.RedisUtil;
-import com.zb.vo.JobVo;
 import com.zb.vo.SendVo;
-import com.zb.vo.UserVo;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -39,7 +32,7 @@ public class JobTaskService {
 
     @Scheduled(fixedDelay = 60000)
     public void send(){
-        List<JobTask>jobTasks=addRedis();
+        List<JobTask>jobTasks=jobTaskMapper.getJobTaskAll();;
         for (JobTask jobTask:jobTasks) {
             Date d=new Date();
             int h=d.getHours();
@@ -63,23 +56,4 @@ public class JobTaskService {
             }
         }
     }
-
-    //获取定时任务集合
-    public List<JobTask> addRedis(){
-        List<JobTask>jobTasks=new ArrayList<>();
-        String key="jobTask";
-        if (redisUtil.hasKey(key)){
-            Object o=redisUtil.get(key);
-            JobVo jobVo= JSON.parseObject(o.toString(),JobVo.class);
-            jobTasks=jobVo.getJobTasks();
-        }else {
-            JobVo jobVo=new JobVo();
-            jobVo.setId(1);
-            jobTasks=jobTaskMapper.getJobTaskAll();
-            jobVo.setJobTasks(jobTasks);
-            redisUtil.set(key,JSON.toJSONString(jobVo),240);
-        }
-        return jobTasks;
-    }
-
 }

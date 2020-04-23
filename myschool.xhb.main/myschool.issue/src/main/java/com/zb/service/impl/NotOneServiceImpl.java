@@ -169,6 +169,9 @@ public class NotOneServiceImpl implements NotOneService {
     //加入班级后添加之前此班级发的信息
     @RabbitListener(queues = RabbitConfig.classinfo)
     public void intoClass(Class_Jobinfo jobinfo){
+        if (notOneMapper.getOneByUser(jobinfo.getNumber().toString())!=null){
+            return;
+        }
         //根据班级编号查询此班级所有之前发送的信息
         List<Notification>notifications=notificationCollectFeign.getNotificationByGrade(jobinfo.getClass_number().toString());
         List<Survey>surveys=surveyCollectFeign.getSurveyByGrade(jobinfo.getClass_number().toString());
