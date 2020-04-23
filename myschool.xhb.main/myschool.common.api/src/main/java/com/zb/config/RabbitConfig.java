@@ -11,6 +11,10 @@ public class RabbitConfig {
     public static final String jobQueue="job.leave.queue";
     public static final String myexchange="myexchange.boot";
     public static final String classinfo="classinfo.queue";
+    //申请退出班级列
+    public static final String outclass="outclass.queue";
+    //刘志强专用
+    public static final String outclassinfo="outclassinfo.queue";
 
     @Bean(myexchange)
     public Exchange createExchange(){
@@ -34,8 +38,16 @@ public class RabbitConfig {
         Queue queue=new Queue(jobQueue);
         return queue;
     }
-
-
+    @Bean(outclass)
+    public Queue createoutclassQueue(){
+        Queue queue=new Queue(outclass);
+        return queue;
+    }
+    @Bean(outclassinfo)
+    public Queue createoutclassinfoQueue(){
+        Queue queue=new Queue(outclassinfo);
+        return queue;
+    }
 
     @Bean
     public Binding bindingEmail(@Qualifier(myexchange) Exchange exchange, @Qualifier(CLASSQUEUE) Queue queue){
@@ -51,6 +63,14 @@ public class RabbitConfig {
     @Bean
     public Binding bindingQg(@Qualifier(myexchange) Exchange exchange,@Qualifier(classinfo) Queue queue){
         return BindingBuilder.bind(queue).to(exchange).with("inform.#.classinfo.#").noargs();
+    }
+    @Bean
+    public Binding bindingout(@Qualifier(myexchange) Exchange exchange,@Qualifier(outclass) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with("inform.#.outclass.#").noargs();
+    }
+    @Bean
+    public Binding bindingoutclassinfo(@Qualifier(myexchange) Exchange exchange,@Qualifier(outclassinfo) Queue queue){
+        return BindingBuilder.bind(queue).to(exchange).with("inform.#.outclassinfo.#").noargs();
     }
 
     //添加通知rabbitmq
