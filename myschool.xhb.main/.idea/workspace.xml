@@ -50,18 +50,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/ClassTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassTaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/job/ClassTaskJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassTaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassTaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassTaskMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +329,7 @@
       <workItem from="1587629001894" duration="5403000" />
       <workItem from="1587688995916" duration="5670000" />
       <workItem from="1587730549086" duration="1212000" />
-      <workItem from="1587782054300" duration="4078000" />
+      <workItem from="1587782054300" duration="4744000" />
     </task>
     <task id="LOCAL-00006" summary="issue_LZQ">
       <created>1587637231935</created>
@@ -349,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587637231935</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="issue_LZQ">
+      <created>1587786225894</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587786225894</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,10 +402,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586260083515" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587637216624">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587786218843">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587637216624" />
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587786218843" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587782788782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -470,10 +466,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587643240464" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587534547239">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587786241189">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587534547239" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587786241189" />
     <state x="436" y="199" key="git4idea.merge.GitPullDialog" timestamp="1587092503299">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
