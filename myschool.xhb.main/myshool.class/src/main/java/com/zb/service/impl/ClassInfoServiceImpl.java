@@ -1,5 +1,6 @@
 package com.zb.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.rabbitmq.tools.json.JSONUtil;
 import com.zb.config.RabbitConfig;
 import com.zb.dto.Dto;
@@ -7,6 +8,7 @@ import com.zb.dto.DtoUtil;
 import com.zb.feign.UserFeignClient;
 import com.zb.mapper.ClassInfoMapper;
 import com.zb.mapper.ClassMapper;
+import com.zb.mapper.ClassTaskMapper;
 import com.zb.pojo.*;
 import com.zb.service.ClassInfoService;
 import com.zb.util.IdWorker;
@@ -14,6 +16,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -22,6 +25,10 @@ public class ClassInfoServiceImpl implements ClassInfoService {
     private ClassInfoMapper classInfoMapper;
     @Autowired
     private ClassMapper classMapper;
+
+    @Resource
+    private ClassTaskMapper classTaskMapper;
+
     @Autowired
     private UserFeignClient userFeignClient;
     @Autowired
@@ -62,11 +69,16 @@ public class ClassInfoServiceImpl implements ClassInfoService {
                 System.out.println("内部关系："+classInfo.getRelationship());
                 int count = classInfoMapper.addClassJob(jobs);
                 if(count>0){
+                    ClassTask task=new ClassTask();
+                    task.setId(IdWorker.getId());
+                    task.setMq_exchange(RabbitConfig.myexchange);
+                    task.setMq_routingkey("inform.classinfo");
                     Class_Jobinfo jobinfo=new Class_Jobinfo();
                     jobinfo.setNumber(jobs.getUser_id());
                     jobinfo.setCall_name(jobs.getCall());
                     jobinfo.setClass_number(jobs.getClass_number());
-                    rabbitTemplate.convertAndSend(RabbitConfig.myexchange, "inform.classinfo", jobinfo);
+                    task.setRequest_body(JSON.toJSONString(jobinfo));
+                    classTaskMapper.addTask(task);
                     return count;
                 }
             }

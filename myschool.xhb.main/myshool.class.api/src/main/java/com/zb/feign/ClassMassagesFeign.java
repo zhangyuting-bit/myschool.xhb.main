@@ -7,6 +7,7 @@ import com.zb.pojo.Class_info;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -23,4 +24,8 @@ public interface ClassMassagesFeign {
     //获取班级内部人员的信息
     @GetMapping("/classinfo/{class_number}")
     public List<Class_info> classinfo(@PathVariable("class_number")Integer class_number);
+
+    //根据任务编号更改count
+    @RequestMapping("/updateTaskCount/{id}")
+    public Integer updateTaskCount(@PathVariable("id") String id);
 }

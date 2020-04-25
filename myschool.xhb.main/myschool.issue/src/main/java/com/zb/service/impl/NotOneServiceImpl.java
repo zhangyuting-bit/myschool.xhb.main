@@ -1,24 +1,24 @@
 package com.zb.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.rabbitmq.client.Channel;
 import com.zb.config.RabbitConfig;
 import com.zb.entity.*;
 import com.zb.feign.*;
 import com.zb.mapper.NotOneMapper;
-import com.zb.pojo.Class_Jobinfo;
-import com.zb.pojo.Class_add;
-import com.zb.pojo.Class_info;
-import com.zb.pojo.UserInfo;
+import com.zb.pojo.*;
 import com.zb.service.NotOneService;
 import com.zb.util.IdWorker;
 import com.zb.util.RedisUtil;
 import com.zb.vo.UserVo;
 import org.apache.activemq.broker.scheduler.Job;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -167,8 +167,10 @@ public class NotOneServiceImpl implements NotOneService {
     }
 
     //加入班级后添加之前此班级发的信息
+    @Transactional
     @RabbitListener(queues = RabbitConfig.classinfo)
-    public void intoClass(Class_Jobinfo jobinfo){
+    public void intoClass(ClassTask classTask){
+        Class_Jobinfo jobinfo=JSON.parseObject(classTask.getRequest_body(),Class_Jobinfo.class);
         if (notOneMapper.getOneByUser(jobinfo.getNumber().toString())!=null){
             return;
         }
@@ -227,6 +229,7 @@ public class NotOneServiceImpl implements NotOneService {
             class_add.setUserIds(userIds);
             redisUtil.set(key1,JSON.toJSONString(class_add), 120);
         }
+        classMassagesFeign.updateTaskCount(classTask.getId());
     }
 
     //退班之后删除此班级发的消息

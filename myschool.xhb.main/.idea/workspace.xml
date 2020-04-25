@@ -50,14 +50,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b015b49-0041-4c73-afb8-eb6186e3dd72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/pojo/ClassTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/controller/ClassTaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/job/ClassTaskJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/mapper/ClassTaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/ClassTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassTaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myshool.class/src/main/resources/mapper/ClassTaskMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotOneMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/mapper/NotOneMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/java/com/zb/service/impl/NotOneServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotOneMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.issue/src/main/resources/mapper/NotOneMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.notification.api/src/main/java/com/zb/vo/JobVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/Job/JobTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/Job/JobTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.notification/src/main/java/com/zb/service/impl/NotificationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myschool.score/src/main/java/com/zb/service/impl/NumberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class.api/src/main/java/com/zb/feign/ClassMassagesFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/myshool.class/src/main/java/com/zb/service/impl/ClassInfoServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="F:\apache-maven-3.5.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -116,7 +121,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../北大青鸟课程/S3/微服/18/01/myshop.main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -149,6 +154,27 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MyClassApp">
+    <configuration name="AgreementServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.agreement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.AgreementServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.comment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.CommentServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HabitServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.habit" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.HabitServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IssueServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.issue" />
       <extension name="coverage">
@@ -158,6 +184,13 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.IssueServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LableServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.lable" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.LableServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -175,6 +208,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyEurekaServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyEurekaServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyGatWayServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="myschool.gataway" />
       <extension name="coverage">
@@ -184,6 +224,13 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MyGatWayServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySchoolAuthApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.MySchoolAuthApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,6 +257,34 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.NotificationServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecordServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.record" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.RecordServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScoreServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.score" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.ScoreServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SurveyServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.survey" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.SurveyServerApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskServerApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myschool.task" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zb.TaskServerApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -262,9 +337,19 @@
       <updated>1587538538936</updated>
       <workItem from="1587538583364" duration="1799000" />
       <workItem from="1587614123426" duration="5743000" />
-      <workItem from="1587629001894" duration="2614000" />
+      <workItem from="1587629001894" duration="5403000" />
+      <workItem from="1587688995916" duration="5670000" />
+      <workItem from="1587730549086" duration="1212000" />
+      <workItem from="1587782054300" duration="4078000" />
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="issue_LZQ">
+      <created>1587637231935</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587637231935</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,10 +390,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="500" y="212" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586250644158" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1587518815649">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1587785495325">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587518815649" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587785495325" />
     <state x="514" y="279" width="508" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584255995838">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -321,46 +406,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586260083515" />
-    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587534514040">
+    <state x="363" y="0" key="CommitChangelistDialog2" timestamp="1587637216624">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587534514040" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587626721013">
+    <state x="363" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1587637216624" />
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1587782788782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587626721013" />
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587629675203">
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587782788782" />
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.0.center" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.0.left" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.0.right" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.1.center" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.1.left" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
-    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1587629675203">
+    <state width="1493" height="368" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right" timestamp="1587650663089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587629675203" />
+    <state width="1493" height="368" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587650663089" />
     <state width="1493" height="270" key="GridCell.Tab.2.bottom" timestamp="1586446040088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -381,10 +466,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1586258755635" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1584241825299">
+    <state x="270" y="56" key="SettingsEditor" timestamp="1587643240464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584241825299" />
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587643240464" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587534547239">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -1,8 +1,11 @@
 package com.zb.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.zb.config.RabbitConfig;
 import com.zb.entity.StuNumber;
+import com.zb.feign.ClassMassagesFeign;
 import com.zb.mapper.NumberMapper;
+import com.zb.pojo.ClassTask;
 import com.zb.pojo.Class_Jobinfo;
 import com.zb.service.NumberService;
 import com.zb.util.IdWorker;
@@ -17,6 +20,9 @@ public class NumberServiceImpl implements NumberService {
     @Resource
     private NumberMapper numberMapper;
 
+    @Resource
+    private ClassMassagesFeign classMassagesFeign;
+
     ///添加学生学号
     @Override
     public Integer addNumber(StuNumber number) {
@@ -26,7 +32,8 @@ public class NumberServiceImpl implements NumberService {
 
     //学生加入班级时添加学生学号
     @RabbitListener(queues = RabbitConfig.classinfo)
-    public void intoClass(Class_Jobinfo jobinfo){
+    public void intoClass(ClassTask classTask){
+        Class_Jobinfo jobinfo= JSON.parseObject(classTask.getRequest_body(),Class_Jobinfo.class);
         if(numberMapper.getNumberByName(jobinfo.getCall_name(),jobinfo.getClass_number().toString())!=null){
             return;
         }
@@ -36,6 +43,7 @@ public class NumberServiceImpl implements NumberService {
         stuNumber.setStuId(jobinfo.getNumber().toString());
         stuNumber.setStuName(jobinfo.getCall_name());
         numberMapper.addNumber(stuNumber);
+        classMassagesFeign.updateTaskCount(classTask.getId());
     }
 
     //学生退出班级时删除学生学号

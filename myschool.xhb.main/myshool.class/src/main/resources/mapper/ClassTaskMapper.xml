@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zb.mapper.ClassTaskMapper">
+    <select id="getTaskAll" resultType="com.zb.pojo.ClassTask">
+        SELECT
+            *
+        FROM
+            `class_task`
+        WHERE
+            TIMESTAMPDIFF( MINUTE,update_time, NOW())>1
+        AND
+            `count` != 2
+    </select>
+
+    <select id="findTaskById" resultType="com.zb.pojo.ClassTask">
+         SELECT * FROM class_task WHERE id =#{id}
+    </select>
+
+    <insert id="addTask">
+        INSERT INTO `class_task`
+            (`id`,
+             `mq_exchange`,
+             `mq_routingkey`,
+             `request_body`)
+        VALUES (#{id},
+                #{mq_exchange},
+                #{mq_routingkey},
+                #{request_body});
+    </insert>
+
+    <delete id="delTaskByCount">
+        delete from class_task where `count`=2
+    </delete>
+
+    <update id="updateTaskTime">
+        update class_task set update_time = now() where id = #{id}
+    </update>
+
+    <update id="updateTaskVersion">
+        update class_task set version = version +1 where id =#{id}  and version =#{version}
+    </update>
+
+    <update id="updateTaskCount">
+        update class_task set `count` = `count`+1 where id = #{id}
+    </update>
+</mapper>
