@@ -13,7 +13,7 @@ public interface NotOneMapper {
     List<NotOne> getOneByUserId(@Param("typeId")Integer typeId,@Param("userId")String userId);
 
     //根据消息类型和编号获取个人信息
-    List<NotOne> getOneByUser(@Param("userId")String userId);
+    List<NotOne> getOneByUser(@Param("userId")String userId,@Param("gradeId")String gradeId);
 
     //根据类型编号和通知编号删除通知信息
     Integer delNotOneByNotIdAndUserId(@Param("functionId")String functionId

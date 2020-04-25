@@ -8,11 +8,13 @@
             (`oneId`,
             `typeId`,
              `functionId`,
+             `gradeId`,
              `userId`,
              `createTime`)
         VALUES (#{oneId},
                 #{typeId},
                 #{functionId},
+                #{gradeId},
                 #{userId},
                 #{createTime});
     </insert>
@@ -35,6 +37,8 @@
             `notone`
         WHERE
             userId=#{userId}
+        and
+            gradeId=#{gradeId}
     </select>
 
     <delete id="delNotOneByNotIdAndUserId">

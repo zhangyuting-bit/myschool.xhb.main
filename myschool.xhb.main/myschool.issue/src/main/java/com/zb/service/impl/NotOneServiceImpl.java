@@ -87,6 +87,7 @@ public class NotOneServiceImpl implements NotOneService {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(notification.getNotificationId());
+            notOne.setGradeId(notification.getGradeId());
             notOne.setUserId(userId);
             notOne.setTypeId(notification.getTypeId());
             notOne.setCreateTime(notification.getNotifyTime());
@@ -103,6 +104,7 @@ public class NotOneServiceImpl implements NotOneService {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(survey.getSurveyId());
+            notOne.setGradeId(survey.getGradeId());
             notOne.setUserId(userId);
             notOne.setTypeId(survey.getTypeId());
             notOne.setCreateTime(survey.getStartTime());
@@ -119,6 +121,7 @@ public class NotOneServiceImpl implements NotOneService {
             NotOne notOne = new NotOne();
             notOne.setOneId(IdWorker.getId());
             notOne.setFunctionId(score.getScoreId());
+            notOne.setGradeId(score.getGradeId());
             notOne.setUserId(userId);
             notOne.setTypeId(score.getTypeId());
             notOne.setCreateTime(score.getCreateTime());
@@ -171,7 +174,7 @@ public class NotOneServiceImpl implements NotOneService {
     @RabbitListener(queues = RabbitConfig.classinfo)
     public void intoClass(ClassTask classTask){
         Class_Jobinfo jobinfo=JSON.parseObject(classTask.getRequest_body(),Class_Jobinfo.class);
-        if (notOneMapper.getOneByUser(jobinfo.getNumber().toString())!=null){
+        if (notOneMapper.getOneByUser(jobinfo.getNumber().toString(),jobinfo.getClass_number().toString())!=null){
             return;
         }
         //根据班级编号查询此班级所有之前发送的信息

@@ -13,6 +13,17 @@ public class NotOne implements Serializable {
     private Integer typeId;
     //增加时间
     private String createTime;
+    //班级编号
+    private String gradeId;
+
+    public String getGradeId() {
+        return gradeId;
+    }
+
+    public void setGradeId(String gradeId) {
+        this.gradeId = gradeId;
+    }
+
     //通知消息
     private Notification notification;
     //调查信息

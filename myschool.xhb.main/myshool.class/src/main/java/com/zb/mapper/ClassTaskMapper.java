@@ -1,10 +1,12 @@
 package com.zb.mapper;
 
 import com.zb.pojo.ClassTask;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+@Mapper
 public interface ClassTaskMapper {
     //获取全部任务
     List<ClassTask>getTaskAll();
